@@ -361,7 +361,7 @@ $stag_shortcodes['icon'] = array(
 			)
 		),
 	),
-	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{new_window}}"]',
+	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{new_window}}" style="{{style}}"]',
 	'popup_title' => __( 'Insert Icon Shortcode', 'stag' )
 );
 
