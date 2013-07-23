@@ -320,5 +320,51 @@ $stag_shortcodes['video'] = array(
 	'popup_title' => __( 'Insert Video Shortcode', 'stag' )
 );
 
+$stag_shortcodes['icon'] = array(
+	'no_preview' => true,
+	'params' => array(
+		'icon' => array(
+			'std' => '',
+			'type' => 'icons',
+			'label' => __( 'Icon', 'stag' ),
+			'desc' => __( 'Choose an icon', 'stag' )
+		),
+		'url' => array(
+			'std' => '',
+			'type' => 'text',
+			'label' => __( 'URL', 'stag' ),
+			'desc' => __( 'Enter the URL where icon should be linked (optional)', 'stag' )
+		),
+		'new_window' => array(
+			'type' => 'select',
+			'label' => __( 'Open in new window', 'stag' ),
+			'desc' => __( 'Do you want to open the link in a new window?', 'stag' ),
+			'options' => array(
+				'no' => __( 'No', 'stag' ),
+				'yes' => __( 'Yes', 'stag' ),
+			)
+		),
+		'size' => array(
+			'std' => '50px',
+			'type' => 'text',
+			'label' => __( 'Font Size', 'stag' ),
+			'desc' => __( 'Enter the icon\'s font size in px, em or %', 'stag' ),
+		),
+		'style' => array(
+			'type' => 'select',
+			'label' => __('Style', 'stag'),
+			'desc' => __('Select the icon style', 'stag'),
+			'options' => array(
+				'normal' => __( 'Normal', 'stag' ),
+				'squared' => __( 'Squared', 'stag' ),
+				'stroke' => __( 'Stroke', 'stag' ),
+			)
+		),
+	),
+	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{new_window}}"]',
+	'popup_title' => __( 'Insert Icon Shortcode', 'stag' )
+);
+
+
 
 ?>

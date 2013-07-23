@@ -284,6 +284,50 @@ $accent: #363f48;
 .stag-clearfix { zoom:1; /* For IE 6/7 (trigger hasLayout) */ }
 
 
+.stag-icon-link{
+	text-decoration: none;
+}
+
+.stag-icon{
+	display: inline-block;
+	padding: 10px 14px;
+	margin-right: 0.2em;
+	border: 1px solid transparent;
+	@include transition(all .2s);
+	@include box-sizing(border-box);
+}
+
+.stag-icon--normal{
+	text-align: center;
+	color: $accent;
+	&:hover{
+		@include opacity(.75);
+	}
+}
+
+.stag-icon--squared{
+	margin: 0 1px 1px 0;
+	background: $accent;
+	text-align: center;
+	color: white;
+	&:hover{
+		@include opacity(.75);
+	}
+}
+
+.stag-icon--stroke{
+	color: $accent;
+	margin: 0 -1px -1px 0;
+	position: relative;
+	border-color: $accent;
+
+	&:hover{
+		color: white;
+		background: $accent;
+	}
+}
+
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
 	.stag-toggle{
 		.stag-toggle-title{

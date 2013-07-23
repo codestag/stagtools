@@ -10,6 +10,7 @@ $strings = 'tinyMCE.addI18n({' . _WP_Editors::$mce_locale . ':{
         tabs: "' . esc_js( __( 'Tabs', 'stag' ) ) . '",
         toggle: "' . esc_js( __( 'Toggle', 'stag' ) ) . '",
         dropcap: "' . esc_js( __( 'Dropcap', 'stag' ) ) . '",
+        icon: "' . esc_js( __( 'Font Icon', 'stag' ) ) . '",
         
         media_elements: "' . esc_js( __( 'Media Elements', 'stag' ) ) . '",
         image: "' . esc_js( __( 'Image', 'stag' ) ) . '",

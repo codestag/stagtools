@@ -107,10 +107,12 @@ class StagTools {
 
 	public function frontend_style() {
 		wp_register_style( 'stag-shortcode-styles', plugin_dir_url( __FILE__ )  . 'assets/css/stag-shortcodes.css' , '', $this->version, 'all' );
+		wp_register_style( 'font-awesome', plugin_dir_url( __FILE__ )  . 'assets/css/font-awesome.css' , '', '3.2.1', 'all' );
 
 		wp_register_script( 'stag-shortcode-scripts', plugin_dir_url( __FILE__ ) . 'assets/js/stag-shortcode-scripts.js', array( 'jquery', 'jquery-ui-accordion', 'jquery-ui-tabs' ), $this->version, true );
 
 		wp_enqueue_style( 'stag-shortcode-styles' );
+		wp_enqueue_style( 'font-awesome' );
 
 		wp_enqueue_script( 'jquery-ui-accordion' );
 		wp_enqueue_script( 'jquery-ui-tabs' );

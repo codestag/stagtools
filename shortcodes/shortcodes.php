@@ -317,4 +317,30 @@ function stag_video( $atts, $content = null ) {
 add_shortcode( 'stag_video', 'stag_video' );
 endif;
 
+if( !function_exists( 'stag_icon') ) :
+
+function stag_icon( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'icon' => '',
+		'url' => '',
+		'size' => '50px',
+		'new_window' => 'no',
+		'style' => 'normal'
+	), $atts ) );
+
+	$new_window = ( $new_window == "no") ? '_self' : '_blank';
+
+	$output = '';
+
+	if( $url != '' ){
+		$output .= '<a class="stag-icon-link" href="'. esc_url($url) .'" target="'. $new_window .'"><i class="stag-icon stag-icon--'.$style.' icon-'. $icon .'" style="font-size: '. $size .'; width: '. $size .'; line-height: '. $size .';"></i></a>';
+	}else{
+		$output .= '<i class="stag-icon stag-icon--'.$style.' icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i>';
+	}
+
+	return $output;
+}
+add_shortcode( 'stag_icon', 'stag_icon' );
+endif;
+
 ?>

@@ -35,6 +35,7 @@
 					a.addWithPopup( b, ed.getLang('stag.intro'), "intro" );
 					a.addWithPopup( b, ed.getLang('stag.tabs'), "tabs" );
 					a.addWithPopup( b, ed.getLang('stag.toggle'), "toggle" );
+					a.addWithPopup( b, ed.getLang('stag.icon'), "icon" );
 					
 					// b.addSeparator();
 

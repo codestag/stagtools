@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-21 23:47+0530\n"
-"PO-Revision-Date: 2013-07-21 23:47+0530\n"
+"POT-Creation-Date: 2013-07-23 12:05+0530\n"
+"PO-Revision-Date: 2013-07-23 12:05+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -15,6 +15,50 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+#: ../stagtools.php:159
+msgid "StagTools"
+msgstr ""
+
+#: ../stagtools.php:168
+msgid "OAuth Consumer Key"
+msgstr ""
+
+#: ../stagtools.php:175
+msgid "OAuth Consumer Secret"
+msgstr ""
+
+#: ../stagtools.php:182
+msgid "OAuth Access Token"
+msgstr ""
+
+#: ../stagtools.php:189
+msgid "OAuth Access Secret"
+msgstr ""
+
+#: ../stagtools.php:202
+msgid "FAQ"
+msgstr ""
+
+#: ../stagtools.php:203
+msgid "Few resources to help you getting started."
+msgstr ""
+
+#: ../stagtools.php:206
+msgid "Where do I find these keys?"
+msgstr ""
+
+#: ../stagtools.php:207 ../stagtools.php:212
+#, php-format
+msgid ""
+"In order to use the new Twitter widget, you must first register a Twitter "
+"app, which will provide you with the keys you see above. Start by %s to the "
+"Twitter developer dashboard."
+msgstr ""
+
+#: ../stagtools.php:211
+msgid "Where are my widgets?"
+msgstr ""
 
 #: ../assets/js/plugin-lang.php:5
 msgid "Alerts / Notification"
@@ -48,15 +92,19 @@ msgstr ""
 msgid "Dropcap"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:14
+#: ../assets/js/plugin-lang.php:13
+msgid "Font Icon"
+msgstr ""
+
+#: ../assets/js/plugin-lang.php:15
 msgid "Media Elements"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:15 ../shortcodes/config.php:267
+#: ../assets/js/plugin-lang.php:16 ../shortcodes/config.php:267
 msgid "Image"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:16
+#: ../assets/js/plugin-lang.php:17
 msgid "Video"
 msgstr ""
 
@@ -614,7 +662,7 @@ msgstr ""
 msgid "Enter the dropcap's text"
 msgstr ""
 
-#: ../shortcodes/config.php:253
+#: ../shortcodes/config.php:253 ../shortcodes/config.php:350
 msgid "Font Size"
 msgstr ""
 
@@ -639,58 +687,126 @@ msgid "Select the CSS3 image filter style"
 msgstr ""
 
 #: ../shortcodes/config.php:275
-msgid "Grayscale"
+msgid "No Filter"
 msgstr ""
 
 #: ../shortcodes/config.php:276
+msgid "Grayscale"
+msgstr ""
+
+#: ../shortcodes/config.php:277
 msgid "Sepia"
 msgstr ""
 
+#: ../shortcodes/config.php:278
+msgid "Blur"
+msgstr ""
+
+#: ../shortcodes/config.php:279
+msgid "Hue Rotate"
+msgstr ""
+
+#: ../shortcodes/config.php:280
+msgid "Contrast"
+msgstr ""
+
 #: ../shortcodes/config.php:281
-msgid "Alignment"
+msgid "Brightness"
 msgstr ""
 
 #: ../shortcodes/config.php:282
-msgid "Choose Image Alignment"
-msgstr ""
-
-#: ../shortcodes/config.php:284
-msgid "None"
-msgstr ""
-
-#: ../shortcodes/config.php:285
-msgid "Left"
-msgstr ""
-
-#: ../shortcodes/config.php:286
-msgid "Center"
+msgid "Invert"
 msgstr ""
 
 #: ../shortcodes/config.php:287
-msgid "Right"
+msgid "Alignment"
+msgstr ""
+
+#: ../shortcodes/config.php:288
+msgid "Choose Image Alignment"
+msgstr ""
+
+#: ../shortcodes/config.php:290
+msgid "None"
+msgstr ""
+
+#: ../shortcodes/config.php:291
+msgid "Left"
 msgstr ""
 
 #: ../shortcodes/config.php:292
+msgid "Center"
+msgstr ""
+
+#: ../shortcodes/config.php:293
+msgid "Right"
+msgstr ""
+
+#: ../shortcodes/config.php:299 ../shortcodes/config.php:335
+msgid "URL"
+msgstr ""
+
+#: ../shortcodes/config.php:300
+msgid "Enter the URL where image should be linked (optional)"
+msgstr ""
+
+#: ../shortcodes/config.php:304
 msgid "Insert Image Shortcode"
 msgstr ""
 
-#: ../shortcodes/config.php:302 ../shortcodes/shortcode-class.php:124
+#: ../shortcodes/config.php:314 ../shortcodes/shortcode-class.php:124
 msgid "Choose Video"
 msgstr ""
 
-#: ../shortcodes/config.php:303
+#: ../shortcodes/config.php:315
 msgid ""
 "Either upload a new video, choose an existing video from your media library "
 "or link to a video by URL. <br><br>"
 msgstr ""
 
-#: ../shortcodes/config.php:304
+#: ../shortcodes/config.php:316
 #, php-format
 msgid "A list of all shortcode video services can be found on %s.<br>"
 msgstr ""
 
-#: ../shortcodes/config.php:308
+#: ../shortcodes/config.php:320
 msgid "Insert Video Shortcode"
+msgstr ""
+
+#: ../shortcodes/config.php:329
+msgid "Icon"
+msgstr ""
+
+#: ../shortcodes/config.php:330
+msgid "Choose an icon"
+msgstr ""
+
+#: ../shortcodes/config.php:336
+msgid "Enter the URL where icon should be linked (optional)"
+msgstr ""
+
+#: ../shortcodes/config.php:340
+msgid "Open in new window"
+msgstr ""
+
+#: ../shortcodes/config.php:341
+msgid "Do you want to open the link in a new window?"
+msgstr ""
+
+#: ../shortcodes/config.php:343
+msgid "No"
+msgstr ""
+
+#: ../shortcodes/config.php:344
+msgid "Yes"
+msgstr ""
+
+#: ../shortcodes/config.php:351
+msgid "Enter the icon's font size in px, em or %"
+msgstr ""
+
+#: ../shortcodes/config.php:355
+msgid "Insert Icon Shortcode"
 msgstr ""
 
 #: ../shortcodes/shortcode-class.php:26
@@ -699,6 +815,42 @@ msgstr ""
 
 #: ../shortcodes/shortcode-class.php:116
 msgid "Choose Image"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1138
+msgid "right now"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1141
+msgid " seconds ago"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1144
+msgid "About 1 minute ago"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1147
+msgid " minutes ago"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1150
+msgid "about 1 hour ago"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1153
+msgid " hours ago"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1156
+msgid "Yesterday"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1159
+msgid " days ago"
+msgstr ""
+
+#: ../widgets/twitteroauth.php:1162
+msgid "over a year ago"
 msgstr ""
 
 #: ../widgets/widget-dribbble.php:8
@@ -714,6 +866,7 @@ msgid "Please check your dribbble username"
 msgstr ""
 
 #: ../widgets/widget-dribbble.php:84 ../widgets/widget-flickr.php:81
+#: ../widgets/widget-twitter.php:136
 msgid "Title:"
 msgstr ""
 
@@ -748,4 +901,54 @@ msgstr ""
 
 #: ../widgets/widget-flickr.php:92
 msgid "Number of photos to show:"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:8
+msgid "Display your latest tweets"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:10
+msgid "Stag Twitter Feed"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:35
+msgid "Please fill all widget settings."
+msgstr ""
+
+#: ../widgets/widget-twitter.php:47
+msgid "Couldn't retrieve tweets! Wrong username!"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:51
+msgid ""
+"You will need to regenerate it <a href=\"//dev.twitter.com/apps\">here</a>."
+msgstr ""
+
+#: ../widgets/widget-twitter.php:132
+#, php-format
+msgid "Make sure you have filled your twitter oAuth keys under %s."
+msgstr ""
+
+#: ../widgets/widget-twitter.php:141
+msgid "Twitter Handle:"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:146
+msgid "Cache tweets in every "
+msgstr ""
+
+#: ../widgets/widget-twitter.php:148
+msgid "hours"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:152
+msgid "Number of tweets (max 10) to show:"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:158
+msgid "Show retweets?"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:163
+msgid "Show replies?"
 msgstr ""

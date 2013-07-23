@@ -173,6 +173,7 @@ jQuery(document).ready(function($) {
             // adds the filled-in shortcode as hidden input
             $('#_stag_ushortcode').remove();
             $('#stag-sc-form-table').prepend('<div id="_stag_ushortcode" class="hidden">' + uShortcode + '</div>');
+
         },
         cLoadVals: function()
         {
@@ -312,6 +313,7 @@ jQuery(document).ready(function($) {
                 shortcode = $('#_stag_shortcode', form).text(),
                 popupType = $('#_stag_popup', form).text(),
                 uShortcode = '',
+                iconSelector = $('.stag-all-icons').find('i'),
                 closePopup = $('#close-popup');
 
             closePopup.on('click', function(){
@@ -342,6 +344,14 @@ jQuery(document).ready(function($) {
             // update on value change
             $('.stag-input', form).live('change', function() {
                 stags.loadVals();
+            });
+
+            // font icon selection thing
+            iconSelector.on('click', function(){
+                iconSelector.removeClass('active-icon');
+                $(this).addClass('active-icon');
+                $('#stag_icon').val( $(this).data('icon-id') );
+                $('.stag-input').trigger('change');
             });
 
             // when insert is clicked

@@ -389,6 +389,55 @@
   /* For IE 6/7 (trigger hasLayout) */
 }
 
+.stag-icon-link {
+  text-decoration: none;
+}
+
+.stag-icon {
+  display: inline-block;
+  padding: 10px 14px;
+  margin-right: 0.2em;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.stag-icon--normal {
+  text-align: center;
+  color: #363f48;
+}
+.stag-icon--normal:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+}
+
+.stag-icon--squared {
+  margin: 0 1px 1px 0;
+  background: #363f48;
+  text-align: center;
+  color: white;
+}
+.stag-icon--squared:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+}
+
+.stag-icon--stroke {
+  color: #363f48;
+  margin: 0 -1px -1px 0;
+  position: relative;
+  border-color: #363f48;
+}
+.stag-icon--stroke:hover {
+  color: white;
+  background: #363f48;
+}
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .stag-toggle .stag-toggle-title:after {
     background-position: 0px -32px;
