@@ -324,8 +324,7 @@ function stag_icon( $atts, $content = null ) {
 		'icon' => '',
 		'url' => '',
 		'size' => '50px',
-		'new_window' => 'no',
-		'style' => 'normal'
+		'new_window' => 'no'
 	), $atts ) );
 
 	$new_window = ( $new_window == "no") ? '_self' : '_blank';
@@ -333,9 +332,9 @@ function stag_icon( $atts, $content = null ) {
 	$output = '';
 
 	if( $url != '' ){
-		$output .= '<a class="stag-icon-link" href="'. esc_url($url) .'" target="'. $new_window .'"><i class="stag-icon stag-icon--'.$style.' icon-'. $icon .'" style="font-size: '. $size .'; width: '. $size .'; line-height: '. $size .';"></i></a>';
+		$output .= '<a class="stag-icon-link" href="'. esc_url($url) .'" target="'. $new_window .'"><i class="stag-icon icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
 	}else{
-		$output .= '<i class="stag-icon stag-icon--'.$style.' icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i>';
+		$output .= '<i class="stag-icon icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i>';
 	}
 
 	return $output;
