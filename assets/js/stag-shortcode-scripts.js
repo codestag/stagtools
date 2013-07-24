@@ -10,9 +10,9 @@
 
 		$(".stag-toggle").each( function () {
 			if($(this).attr('data-id') == 'closed') {
-				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, active: false  });
+				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, heightStyle: "content", active: false  });
 			} else {
-				$(this).accordion({ header: '.stag-toggle-title', collapsible: true});
+				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, heightStyle: "content"});
 			}
 		});
 	});

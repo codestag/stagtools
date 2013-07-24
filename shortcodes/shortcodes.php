@@ -218,7 +218,9 @@ endif;
 
 if( ! function_exists( 'stag_tabs' ) ) :
 function stag_tabs( $atts, $content = null ) {
-	$defaults = array();
+	$defaults = array(
+		'style' => 'normal'
+	);
 	extract( shortcode_atts( $defaults, $atts ) );
 
 	preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
@@ -229,7 +231,7 @@ function stag_tabs( $atts, $content = null ) {
     $output = '';
 
     if( count( $tab_titles ) ) {
-    	$output .= '<div id="stag-tabs-'. rand(1, 100) .'" class="stag-tabs"><div class="stag-tab-inner">';
+    	$output .= '<div id="stag-tabs-'. rand(1, 100) .'" class="stag-tabs stag-tabs--'. $style .'"><div class="stag-tab-inner">';
     	$output .= '<ul class="stag-nav stag-clearfix">';
 
     	foreach( $tab_titles as $tab ) {
@@ -263,9 +265,10 @@ if( ! function_exists( 'stag_toggle' ) ) :
 function stag_toggle( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'title' => 'Title Goes Here',
-		'state' => 'open'
+		'state' => 'open',
+		'style' => 'normal'
 	), $atts ) );
-	return "<div data-id='".$state."' class=\"stag-toggle\"><span class=\"stag-toggle-title\">". $title ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
+	return "<div data-id='".$state."' class=\"stag-toggle stag-toggle--". $style ."\"><span class=\"stag-toggle-title\">". $title ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
 }
 add_shortcode( 'stag_toggle', 'stag_toggle' );
 endif;

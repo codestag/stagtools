@@ -1,13 +1,20 @@
 <?php
-/*
-Plugin Name: StagTools
-Plugin URI: http://codestag.com/plugins/stagtools
-Description: A plugin to extend Codestag themes functionality offering widget, shortcodes and social icons.
-Version: 1.0
-Author: Ram Ratan Maurya
-Author URI: http://mauryaratan.me
-License: GPL2
+/**
+ * Plugin Name: StagTools
+ * Plugin URI: http://codestag.com/plugins/stagtools
+ * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
+ * Version: 1.0
+ * Author: Ram Ratan Maurya
+ * Author URI: http://mauryaratan.me
+ * License: GPL2
+ * Requires at least: 3.5
+ * Tested up to: 3.6
+ * 
+ * Text Domain: stag
+ * Domain Path: /languages/
 */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( ! class_exists( 'StagTools' ) ) {
 
@@ -24,35 +31,66 @@ if ( ! class_exists( 'StagTools' ) ) {
 
 class StagTools {
 
+	/**
+	* @var string
+	*/
 	public $version = '1.0';
 	
+	/**
+	* @var string
+	*/
 	public $plugin_url;
 	
+	/**
+	* @var string
+	*/
 	public $plugin_path;
 	
+	/**
+	* @var string
+	*/
 	public $template_url;
-	
-	public $errors = array();
-	
-	public $messages = array();
 
+	/**
+	 * StagTools Constructor.
+	 *
+	 * @access public
+	 * @return void
+	 */
 	public function __construct() {
 
 		// Define version constant
 		define( 'STAGTOOLS_VERSION', $this->version );
 
+		// Hooks
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
 		add_action( 'init', array( &$this, 'init' ) );
 		add_action( 'admin_init', array( &$this, 'admin_init' ) );
 		add_action( 'admin_menu', array( &$this, 'stag_add_options_page' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_menu_styles' ) );
+		add_action( 'admin_head', array( &$this, 'widget_styles' ) );
 
-		// Installtion
-		register_activation_hook( __FILE__, array( &$this, 'install' ) );
+		// Uninstall hook
 		register_uninstall_hook( __FILE__, 'stagtools_uninstall' );
 
 		// Include required files
 		$this->includes();
 
+	}
+
+	/**
+	 * action_links function.
+	 *
+	 * @access public
+	 * @param mixed $links
+	 * @return void
+	 */
+	public function action_links( $links ) {
+		$plugin_links = array(
+			'<a href="' . admin_url( 'options-general.php?page=stagtools' ) . '">' . __( 'Settings', 'stag' ) . '</a>'
+		);
+
+		return array_merge( $plugin_links, $links );
 	}
 
 	function init() {
@@ -92,6 +130,9 @@ class StagTools {
 		include_once( 'widgets/widget-twitter.php' );
 	}
 
+	/**
+	* Admin Includes
+	*/
 	public function admin_includes(){
 		include_once( 'shortcodes/stag-shortcodes.php' );	
 
@@ -127,10 +168,6 @@ class StagTools {
 		wp_enqueue_style( 'stag-admin-options-styles', plugin_dir_url( __FILE__ ) . 'assets/css/stag-admin-options.css', false, $this->version );
 	}
 
-	public function install() {
-		
-	}
-
 	public function plugin_path() {
 		if ( $this->plugin_path ) return $this->plugin_path;
 
@@ -151,6 +188,11 @@ class StagTools {
 		return $input;
 	}
 
+	/**
+	* StagTools Settings Page
+	*
+	* @return void
+	*/
 	public function settings_page(){
 	?>
 
@@ -204,12 +246,17 @@ class StagTools {
 
 			<div class="s-help-row">
 				<h3><?php _e( 'Where do I find these keys?', 'stag' ); ?></h3>
-				<p><?php echo sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by %s to the Twitter developer dashboard.', 'stag' ), '<a target="blank" href="//dev.twitter.com/apps">signing-in</a>' ); ?></p>
+				<p><?php echo sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by %s to the Twitter developer dashboard.', 'stag' ), '<a target="_blank" href="//dev.twitter.com/apps">signing-in</a>' ); ?></p>
 			</div>
 
 			<div class="s-help-row">
 				<h3><?php _e( 'Where are my widgets?', 'stag' ); ?></h3>
-				<p><?php echo sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by %s to the Twitter developer dashboard.', 'stag' ), '<a target="blank" href="//cl.ly/image/1H1U1i1T3u0h">Create a new application</a>' ); ?></p>
+				<p><?php echo sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by %s to the Twitter developer dashboard.', 'stag' ), '<a target="_blank" href="//cl.ly/image/1H1U1i1T3u0h">creating a new application</a>' ); ?></p>
+			</div>
+
+			<div class="s-help-row">
+				<h3><?php _e( 'Can I insert shortcodes manually instead of using shortcode generator?', 'stag' ); ?></h3>
+				<p><?php echo sprintf( __( 'Yes; although we have a shortcode builder you can also see a list of %s and use it manually in any supported area.', 'stag' ), '<a target="_blank" href="//gist.github.com/mauryaratan/6043954">all available shortcodes</a>' ); ?></p>
 			</div>
 		</div>
 
@@ -218,12 +265,46 @@ class StagTools {
 	<?php
 	}
 
+	/**
+	* Widget styles
+	* 
+	* @access public 
+	* @return void 
+	*/
+	public function widget_styles() {
+		global $pagenow;
+		if( $pagenow != 'widgets.php' ) return;
+		?>
+		<style type="text/css">
+		div[id*="stag"] .widget-top{
+		  background: #C8E5F3 !important;
+		  border-color: #B4D0DD !important;
+		  box-shadow: inset 0 1px 0 white !important;
+		  -webkit-box-shadow: inset 0 1px 0 white !important;
+		  -moz-box-shadow: inset 0 1px 0 white !important;
+		  -ms-box-shadow: inset 0 1px 0 white !important;
+		  -o-box-shadow: inset 0 1px 0 white !important;
+		  background: -moz-linear-gradient(top,  #EAF8FF 0%, #C8E5F3 100%) !important;
+		  background: -webkit-linear-gradient(top, #EAF8FF 0%,#C8E5F3 100%) !important;
+		  background: linear-gradient(to bottom, #EAF8FF 0%,#C8E5F3 100%) !important;
+		  border-bottom: 1px solid #98B3C0 !important;
+		  margin-top: 0px;
+		}
+		</style>
+		<?php
+	}
+
 }
 
 $GLOBALS['stagtools'] = new StagTools();
 
 }
 
+/**
+ * Uninstallation function
+ *
+ * Delete saved options by plugin upon uninstallation.
+ */
 function stagtools_uninstall() {
 	if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
 		exit ();

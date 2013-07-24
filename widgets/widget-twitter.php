@@ -44,7 +44,22 @@ class stag_twitter_widget extends WP_Widget{
 
 		if( $diff >= $crt || empty($last_cache) ) {
 			$connection = $tw_helper->getConnectionWithAccessToken( $stag_options['consumer_key'], $stag_options['consumer_secret'], $stag_options['access_key'], $stag_options['access_secret'] );
-			$tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name" . $twitter_username . "&count=10&exclude_replies=0" ) or die( __( "Couldn't retrieve tweets! Wrong username!", "stag" ) );
+
+			$query_string = '';
+
+			if( $instance['show_replies'] == 1 ) {
+				$query_string .= '&exclude_replies=false';
+			} else {
+				$query_string .= '&exclude_replies=true';
+			}
+
+			if( $instance['show_retweets'] == 1) {
+				$query_string .= '&include_rts=true';
+			} else {
+				$query_string .= '&include_rts=false';
+			}
+
+			$tweets = $connection->get( "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" . $instance['twitter_username'] . "&count=". $instance['tweet_count'] . $query_string ) or die( __( "Couldn't retrieve tweets! Wrong username!", "stag" ) );
 
 			if( !empty( $tweets->errors ) ) {
 				if( $tweets->errors[0]->message == 'Invalid or expired token' ) {
@@ -82,7 +97,8 @@ class stag_twitter_widget extends WP_Widget{
 				$output .= '</p>';
 				$output .= '<p><time datetime="'. $tweet['created_at'] .'" class="time"><a href="'. $protocol .'//twitter.com/'. $twitter_username .'/statuses/'. $tweet['status_id'] .' target="_blank">'. $tw_helper->twitter_widget_relative_time( $tweet['created_at'] ) .'</a></time></p>';
 				$output .= '</li>';
-				if( $count == $instance['postcount']){ break; }
+				
+				if( $count == $instance['tweet_count'] ) { break; }
 				$count++;
 			}
 
@@ -149,7 +165,7 @@ class stag_twitter_widget extends WP_Widget{
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('tweet_count'); ?>"><?php _e( 'Number of tweets (max 10) to show:', 'stag' ); ?></label>
+			<label for="<?php echo $this->get_field_id('tweet_count'); ?>"><?php _e( 'Number of tweets to show:', 'stag' ); ?></label>
 			<input type="number" class="widefat" id="<?php echo $this->get_field_id('tweet_count'); ?>" name="<?php echo $this->get_field_name('tweet_count'); ?>" value="<?php echo $instance['tweet_count']; ?>">
 		</p>
 

@@ -39,8 +39,8 @@ $stag_shortcodes['button'] = array(
 			'label' => __( 'Button Type', 'stag' ),
 			'desc' => __( 'Select the button\'s type', 'stag' ),
 			'options' => array(
-				'round' => __( 'Round', 'stag' ),
-				'square' => __( 'Square', 'stag' )
+				'normal' => __( 'Normal', 'stag' ),
+				'stroke' => __( 'stroke', 'stag' )
 			)
 		),
 		'target' => array(
@@ -94,6 +94,15 @@ $stag_shortcodes['alert'] = array(
 $stag_shortcodes['toggle'] = array(
 	'no_preview' => true,
 	'params' => array(
+		'style' => array(
+			'type' => 'select',
+			'label' => __('Toggle Style', 'stag'),
+			'desc' => __('Select the toggle\'s style', 'stag'),
+			'options' => array(
+				'normal' => __( 'Normal', 'stag' ),
+				'stroke' => __( 'Stroke', 'stag' ),
+			)
+		),
 		'title' => array(
 			'type' => 'text',
 			'label' => __('Toggle Content Title', 'stag'),
@@ -116,7 +125,7 @@ $stag_shortcodes['toggle'] = array(
 			)
 		),
 	),
-	'shortcode' => '[stag_toggle title="{{title}}" state="{{state}}"]{{content}}[/stag_toggle]',
+	'shortcode' => '[stag_toggle style="{{style}}" title="{{title}}" state="{{state}}"]{{content}}[/stag_toggle]',
 	'popup_title' => __('Insert Toggle Content Shortcode', 'stag')
 );
 
@@ -205,9 +214,19 @@ $stag_shortcodes['intro'] = array(
 );
 
 $stag_shortcodes['tabs'] = array(
-	'params' => array(),
+	'params' => array(
+		'style' => array(
+			'type' => 'select',
+			'label' => __('Tabs Style', 'stag'),
+			'desc' => __('Select the tabs\'s style', 'stag'),
+			'options' => array(
+				'normal' => __( 'Normal', 'stag' ),
+				'stroke' => __( 'Stroke', 'stag' ),
+			)
+		)
+	),
 	'no_preview' => true,
-	'shortcode' => '[stag_tabs] {{child_shortcode}}  [/stag_tabs]',
+	'shortcode' => '[stag_tabs style="{{style}}"]{{child_shortcode}} [/stag_tabs]',
 	'popup_title' => __( 'Insert Tab Shortcode', 'stag' ),
 	'child_shortcode' => array(
 		'params' => array(

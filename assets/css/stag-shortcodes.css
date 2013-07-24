@@ -26,21 +26,25 @@
 }
 .stag-button:hover {
   color: #fff;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
-  opacity: 0.75;
+  text-decoration: none;
 }
 .stag-button:visited {
-  color: #fff !important;
+  color: inherit;
+}
+
+.stag-button--normal:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
 }
 
 .stag-button--medium {
   font-size: 18px;
-  padding: 18px 22px;
+  padding: 17px 22px;
 }
 
 .stag-button--large {
   font-size: 20px;
-  padding: 24px 40px;
+  padding: 22px 40px;
 }
 
 .stag-button--grey {
@@ -90,6 +94,103 @@
 
 .stag-button--purple {
   background: #c16ad7;
+}
+
+.stag-button--stroke {
+  background: white;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.stag-button--stroke.stag-button--grey {
+  border-color: #979797;
+  color: #979797 !important;
+}
+.stag-button--stroke.stag-button--grey:hover {
+  background: #979797;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--black {
+  border-color: black;
+  color: black !important;
+}
+.stag-button--stroke.stag-button--black:hover {
+  background: black;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--green {
+  border-color: #84c333;
+  color: #84c333 !important;
+}
+.stag-button--stroke.stag-button--green:hover {
+  background: #84c333;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--yellow {
+  border-color: #ffd164;
+  color: #ffd164 !important;
+}
+.stag-button--stroke.stag-button--yellow:hover {
+  background: #ffd164;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--dark {
+  border-color: #363f48;
+  color: #363f48 !important;
+}
+.stag-button--stroke.stag-button--dark:hover {
+  background: #363f48;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--light {
+  border-color: whitesmoke;
+  color: whitesmoke !important;
+}
+.stag-button--stroke.stag-button--light:hover {
+  background: whitesmoke;
+  color: #a9a9a9 !important;
+}
+.stag-button--stroke.stag-button--blue {
+  border-color: #1b93c7;
+  color: #1b93c7 !important;
+}
+.stag-button--stroke.stag-button--blue:hover {
+  background: #1b93c7;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--light-blue {
+  border-color: #56c3f2;
+  color: #56c3f2 !important;
+}
+.stag-button--stroke.stag-button--light-blue:hover {
+  background: #56c3f2;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--red {
+  border-color: #d15858;
+  color: #d15858 !important;
+}
+.stag-button--stroke.stag-button--red:hover {
+  background: #d15858;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--orange {
+  border-color: #fc901d;
+  color: #fc901d !important;
+}
+.stag-button--stroke.stag-button--orange:hover {
+  background: #fc901d;
+  color: white !important;
+}
+.stag-button--stroke.stag-button--purple {
+  border-color: #c16ad7;
+  color: #c16ad7 !important;
+}
+.stag-button--stroke.stag-button--purple:hover {
+  background: #c16ad7;
+  color: white !important;
 }
 
 .stag-intro-text {
@@ -187,28 +288,53 @@
   outline: 0;
 }
 .stag-tabs .stag-nav a {
-  background: #363f48;
-  color: #fff;
   text-decoration: none;
   display: block;
   padding: 15px 10px;
   line-height: 1;
-}
-.stag-tabs .ui-tabs-active a {
-  background: #fbfbfb;
-  color: #bcbcbc;
   outline: 0;
 }
 .stag-tabs .stag-tab {
-  padding: 20px;
+  padding: 21px 20px 20px 20px;
+}
+.stag-tabs .stag-tab p:last-of-type {
+  margin-bottom: 0;
+}
+.stag-tabs .stag-tab p:first-of-type {
+  margin-top: 0;
+}
+
+.stag-tabs--normal .stag-nav a {
+  background: #363f48;
+  color: #fff;
+}
+.stag-tabs--normal .stag-nav .ui-tabs-active a {
   background: #fbfbfb;
+  color: #363f48;
+  outline: 0;
+}
+.stag-tabs--normal .stag-tab {
+  background: #fbfbfb;
+}
+
+.stag-tabs--stroke .stag-nav li {
+  margin: 0 -1px 0 0 !important;
+}
+.stag-tabs--stroke .stag-nav a {
+  border: 1px solid #363f48;
+  color: #363f48;
+}
+.stag-tabs--stroke .stag-nav .ui-tabs-active a {
+  border-bottom-color: white;
+}
+.stag-tabs--stroke .stag-tab {
+  border: 1px solid #363f48;
+  margin-top: -1px;
 }
 
 .stag-toggle .stag-toggle-title {
   display: block;
-  background: #363f48;
   padding: 15px 10px;
-  color: white;
   outline: 0;
   cursor: pointer;
   position: relative;
@@ -226,8 +352,19 @@
   background-position: 0px -24px;
 }
 .stag-toggle .stag-toggle-content {
-  background: #fbfbfb;
   padding: 20px;
+}
+
+.stag-toggle--normal .stag-toggle-title {
+  background: #363f48;
+  color: white;
+}
+
+.stag-toggle--stroke .stag-toggle-title {
+  border: 1px solid #363f48;
+}
+.stag-toggle--stroke .stag-toggle-title:after {
+  background-image: url("../img/bg-toggle-dark.png") !important;
 }
 
 .stag-image {

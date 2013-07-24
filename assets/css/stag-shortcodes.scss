@@ -1,6 +1,7 @@
 @import "compass/css3";
 
 $button-grey: #979797;
+$button-black: #000;
 $button-green: #84c333;
 $button-yellow: #ffd164;
 $button-dark: #363f48;
@@ -35,21 +36,25 @@ $accent: #363f48;
 	@include transition(opacity .2s linear);
 	&:hover{
 		color: #fff;
-		@include opacity(.75);
+		text-decoration: none;
 	}
 	&:visited{
-		color: #fff !important;
+		color: inherit;
 	}
+}
+
+.stag-button--normal:hover{
+	@include opacity(.75);
 }
 
 .stag-button--medium{
 	font-size: 18px;
-	padding: 18px 22px;
+	padding: 17px 22px;
 }
 
 .stag-button--large{
 	font-size: 20px;
-	padding: 24px 40px;
+	padding: 22px 40px;
 }
 
 .stag-button--grey { background: $button-grey; }
@@ -64,6 +69,111 @@ $accent: #363f48;
 .stag-button--red { background: $button-red; }
 .stag-button--orange { background: $button-orange; }
 .stag-button--purple { background: $button-purple; }
+
+.stag-button--stroke{
+	background: white;
+	border: 1px solid transparent;
+	@include transition(all .5s ease-in-out);
+	&.stag-button--grey{
+		border-color: $button-grey;
+		color: $button-grey !important;
+		&:hover{
+			background: $button-grey;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--black{
+		border-color: $button-black;
+		color: $button-black !important;
+		&:hover{
+			background: $button-black;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--green{
+		border-color: $button-green;
+		color: $button-green !important;
+		&:hover{
+			background: $button-green;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--yellow{
+		border-color: $button-yellow;
+		color: $button-yellow !important;
+		&:hover{
+			background: $button-yellow;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--dark{
+		border-color: $button-dark;
+		color: $button-dark !important;
+		&:hover{
+			background: $button-dark;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--light{
+		border-color: $button-light;
+		color: $button-light !important;
+		&:hover{
+			background: $button-light;
+			color: #a9a9a9 !important;
+		}
+	}
+
+	&.stag-button--blue{
+		border-color: $button-blue;
+		color: $button-blue !important;
+		&:hover{
+			background: $button-blue;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--light-blue{
+		border-color: $button-light-blue;
+		color: $button-light-blue !important;
+		&:hover{
+			background: $button-light-blue;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--red{
+		border-color: $button-red;
+		color: $button-red !important;
+		&:hover{
+			background: $button-red;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--orange{
+		border-color: $button-orange;
+		color: $button-orange !important;
+		&:hover{
+			background: $button-orange;
+			color: white !important;
+		}
+	}
+
+	&.stag-button--purple{
+		border-color: $button-purple;
+		color: $button-purple !important;
+		&:hover{
+			background: $button-purple;
+			color: white !important;
+		}
+	}
+
+}
 
 .stag-intro-text{
 	font-size: 135%;
@@ -143,35 +253,67 @@ $accent: #363f48;
 			outline: 0;
 		}
 		a{
-			background: $accent;
-			color: #fff;
 			text-decoration: none;
 			display: block;
 			padding: 15px 10px;
 			line-height: 1;
+			outline: 0;
 		}
-	}
-
-	.ui-tabs-active a{
-		background: #fbfbfb;
-		color: #bcbcbc;
-		outline: 0;
 	}
 	
 	.stag-tab{
-		padding: 20px;
-		background: #fbfbfb;
+		padding: 21px 20px 20px 20px ;
+		p:last-of-type{
+			margin-bottom: 0;
+		}
+		p:first-of-type{
+			margin-top: 0;
+		}
 	}
 
+}
+
+.stag-tabs--normal{
+	.stag-nav{
+		a{
+			background: $accent;
+			color: #fff;
+		}
+		.ui-tabs-active a{
+			background: #fbfbfb;
+			color: $accent;
+			outline: 0;
+		}
+	}
+	.stag-tab{
+		background: #fbfbfb;
+	}
+}
+
+.stag-tabs--stroke{
+	.stag-nav{
+		li{
+			margin: 0 -1px 0 0 !important;
+		}
+		a{
+			border: 1px solid $accent;
+			color: $accent;
+		}
+		.ui-tabs-active a{
+			border-bottom-color: white;
+		}
+	}
+	.stag-tab{
+		border: 1px solid $accent;
+		margin-top: -1px;
+	}
 }
 
 .stag-toggle{
 	@extend %s-margin;
 	.stag-toggle-title{
 		display: block;
-		background: $accent;
 		padding: 15px 10px;
-		color: white;
 		outline: 0;
 		cursor: pointer;
 		position: relative;
@@ -190,8 +332,22 @@ $accent: #363f48;
 	}
 
 	.stag-toggle-content{
-		background: #fbfbfb;
 		padding: 20px;
+	}
+}
+
+.stag-toggle--normal{
+	.stag-toggle-title{
+		background: $accent;
+		color: white;
+	}
+}
+.stag-toggle--stroke{
+	.stag-toggle-title{
+		border: 1px solid $accent;
+		&:after{
+			background-image: url('../img/bg-toggle-dark.png') !important;
+		}
 	}
 }
 
