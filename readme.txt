@@ -70,9 +70,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Screenshots ==
 
-1. StagTools shortcode builder.
-2. StagTools settings panel for twitter widget settings.
-3. The StagTools widget will appear in your list of available widgets.
+1. StagTools widgets will appear in you list of available widgets.
+2. Shortcode builder is located on your WordPress editor at very last.
+2. All widgets added by StagTools are highlighted.
+3. Settings panel for adding twitter oAuth keys.
 
 ==Installation==
 
