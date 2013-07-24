@@ -10,11 +10,11 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-StagTools is a poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
+StagTools is a powerful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
 
 == Description ==
 
-StagTools powers your WordPress website with some regularly needed shortcodes including buttons, columns, alerts, font icons etc. It also includes several widgets and cutsom post types (only for Codestag Themes).
+StagTools powers your WordPress website with some regularly needed shortcodes including buttons, columns, alerts, font icons etc. It also includes several widgets and custom post types (only for Codestag Themes).
 
 = Shortcodes =
 StagTools comes with following shortcodes:
