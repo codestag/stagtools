@@ -256,7 +256,7 @@ class StagTools {
 
 			<div class="s-help-row">
 				<h3><?php _e( 'Can I insert shortcodes manually instead of using shortcode generator?', 'stag' ); ?></h3>
-				<p><?php echo sprintf( __( 'Yes; although we have a shortcode builder you can also see a list of %s and use it manually in any supported area.', 'stag' ), '<a target="_blank" href="//gist.github.com/mauryaratan/6043954">all available shortcodes</a>' ); ?></p>
+				<p><?php echo sprintf( __( 'Yes; although we have a shortcode builder you can also see a list of %s and use it manually in any supported area.', 'stag' ), '<a target="_blank" href="//gist.github.com/mauryaratan/6071262">all available shortcodes</a>' ); ?></p>
 			</div>
 		</div>
 

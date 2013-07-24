@@ -56,7 +56,7 @@ The StagTools provides extra functionality to any WordPress theme. It includes s
 
 = Can I insert shortcodes manually instead of using shortcode generator? =
 
-Yes; although we have a shortcode builder you can also see a list of [all available shortcodes](https://gist.github.com/mauryaratan/6043954) and use it manually in any supported area.
+Yes; although we have a shortcode builder you can also see a list of [all available shortcodes](https://gist.github.com/mauryaratan/6071262) and use it manually in any supported area.
 
 = Can I use this plugin with other themes? =
 
