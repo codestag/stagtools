@@ -278,6 +278,7 @@
 .stag-tabs .stag-nav {
   list-style: none !important;
   margin: 0;
+  padding: 0;
 }
 .stag-tabs .stag-nav li {
   margin: 0;

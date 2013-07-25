@@ -6,7 +6,7 @@
 				var popup = params.identifier;
 
 				// load thickbox
-				tb_show("Insert Stag Shortcode", e + "/popup.php?popup=" + popup + "&width=" + 670);
+				tb_show("Insert Stag Shortcode", ajaxurl + "?action=popup&popup=" + popup + "&width=" + 670 );
 			});
 		},
 		
@@ -37,12 +37,6 @@
 					a.addWithPopup( b, ed.getLang('stag.toggle'), "toggle" );
 					a.addWithPopup( b, ed.getLang('stag.icon'), "icon" );
 					
-					// b.addSeparator();
-
-
-					// c = b.addMenu({title:ed.getLang('stag.dropcaps')});
-					// 	a.addImmediate(c, ed.getLang('stag.dropcaps'),"[stag_check2]" );
-
 				});
 
 				return d;

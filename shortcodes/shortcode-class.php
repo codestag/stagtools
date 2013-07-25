@@ -1,7 +1,5 @@
 <?php
 
-require_once( 'get-wp.php' );
-
 class stag_shortcodes {
 
 	var	$conf;
