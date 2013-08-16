@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: StagTools
- * Plugin URI: http://codestag.com/plugins/stagtools
+ * Plugin URI: http://wordpress.org/plugins/stagtools/
  * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Ram Ratan Maurya
  * Author URI: http://mauryaratan.me
  * License: GPL2
@@ -34,7 +34,7 @@ class StagTools {
 	/**
 	* @var string
 	*/
-	public $version = '1.0';
+	public $version = '1.0.1';
 	
 	/**
 	* @var string
@@ -98,6 +98,12 @@ class StagTools {
 
 		add_action( 'wp_enqueue_scripts', array( &$this, 'frontend_style' ) );
 		add_filter( 'body_class', array( &$this, 'body_class' ) );
+
+
+		if( current_theme_supports( 'stag-portfolio' ) ) include_once( 'cpt/cpt-portfolio.php' );
+		if( current_theme_supports( 'stag-slides' ) ) include_once( 'cpt/cpt-slides.php' );
+		if( current_theme_supports( 'stag-team' ) ) include_once( 'cpt/cpt-team.php' );
+		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'cpt/cpt-testimonials.php' );
 	}
 
 	function admin_init() {
@@ -134,12 +140,7 @@ class StagTools {
 	* Admin Includes
 	*/
 	public function admin_includes(){
-		include_once( 'shortcodes/stag-shortcodes.php' );	
-
-		if( current_theme_supports( 'stag-portfolio' ) ) include_once( 'cpt/cpt-portfolio.php' );
-		if( current_theme_supports( 'stag-portfolio' ) ) include_once( 'cpt/cpt-slides.php' );
-		if( current_theme_supports( 'stag-portfolio' ) ) include_once( 'cpt/cpt-team.php' );
-		if( current_theme_supports( 'stag-portfolio' ) ) include_once( 'cpt/cpt-testimonials.php' );
+		include_once( 'shortcodes/stag-shortcodes.php' );
 	}
 
 	public function frontend_includes(){
