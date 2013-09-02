@@ -130,7 +130,7 @@ class stag_shortcodes {
 						$output .= '<div class="stag-all-icons">';
 
 						foreach( $this->fontIcons() as $icon ) {
-							$output .= '<i data-icon-id="'.$icon.'" class="icon-'.$icon.'" rel="icon-'.$icon.'"></i>';
+							$output .= '<i data-icon-id="'.$icon.'" class="stag-icon icon-'.$icon.'" rel="icon-'.$icon.'"></i>';
 						}
 
 						$output .= '</div>';

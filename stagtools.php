@@ -3,7 +3,7 @@
  * Plugin Name: StagTools
  * Plugin URI: http://wordpress.org/plugins/stagtools/
  * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
- * Version: 1.0.1
+ * Version: 1.0.3
  * Author: Ram Ratan Maurya
  * Author URI: http://mauryaratan.me
  * License: GPL2
@@ -34,7 +34,7 @@ class StagTools {
 	/**
 	* @var string
 	*/
-	public $version = '1.0.1';
+	public $version = '1.0.3';
 	
 	/**
 	* @var string
@@ -69,9 +69,6 @@ class StagTools {
 		add_action( 'admin_menu', array( &$this, 'stag_add_options_page' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_menu_styles' ) );
 		add_action( 'admin_head', array( &$this, 'widget_styles' ) );
-
-		// Uninstall hook
-		register_uninstall_hook( __FILE__, 'stagtools_uninstall' );
 
 		// Include required files
 		$this->includes();
@@ -300,18 +297,3 @@ class StagTools {
 $GLOBALS['stagtools'] = new StagTools();
 
 }
-
-/**
- * Uninstallation function
- *
- * Delete saved options by plugin upon uninstallation.
- */
-function stagtools_uninstall() {
-	if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
-		exit ();
-	delete_option( 'stag_options' );
-	delete_option( 'stag_twitter_widget_tweets' );
-	delete_option( 'stag_twitter_widget_last_cache' );
-}
-
-?>
