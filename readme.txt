@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ratan.ma
 Tags: widgets, icons, retina, codestag, shortcodes, themeforest, font-icons
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 ==Changelog==
+
+= 1.0.4 - 09/07/2013 =
+* New - Google Map Shortcode
+* Fix - Flickr Widget disabled wrapper warnings
 
 = 1.0.3 - 09/01/2013 =
 * Fix - Admin font icon rendering issue

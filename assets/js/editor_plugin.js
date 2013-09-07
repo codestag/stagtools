@@ -36,6 +36,7 @@
 					a.addWithPopup( b, ed.getLang('stag.tabs'), "tabs" );
 					a.addWithPopup( b, ed.getLang('stag.toggle'), "toggle" );
 					a.addWithPopup( b, ed.getLang('stag.icon'), "icon" );
+					a.addWithPopup( b, ed.getLang('stag.map'), "map" );
 					
 				});
 

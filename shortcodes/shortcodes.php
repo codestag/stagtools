@@ -345,4 +345,20 @@ function stag_icon( $atts, $content = null ) {
 add_shortcode( 'stag_icon', 'stag_icon' );
 endif;
 
-?>
+if( !function_exists( 'stag_map') ) :
+/**
+ * Google Map Shortcode
+ * 
+ * @since 1.0.4
+ */
+function stag_map($atts){
+	extract( shortcode_atts( array(
+		'url' => '',
+		'width' => '100%',
+		'height' => '350'
+	), $atts ) );
+  	
+  	return "<iframe class='google-map' width='{$width}' height='{$height}' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='". esc_url($url) ."&amp;output=embed'></iframe>";
+}
+add_shortcode( 'stag_map', 'stag_map' );
+endif;

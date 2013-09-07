@@ -15,5 +15,6 @@ $strings = 'tinyMCE.addI18n({' . _WP_Editors::$mce_locale . ':{
         media_elements: "' . esc_js( __( 'Media Elements', 'stag' ) ) . '",
         image: "' . esc_js( __( 'Image', 'stag' ) ) . '",
         video: "' . esc_js( __( 'Video', 'stag' ) ) . '",
+        map: "' . esc_js( __( 'Google Map', 'stag' ) ) . '",
     }
 }})';

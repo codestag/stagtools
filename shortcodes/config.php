@@ -374,6 +374,16 @@ $stag_shortcodes['icon'] = array(
 	'popup_title' => __( 'Insert Icon Shortcode', 'stag' )
 );
 
-
-
-?>
+$stag_shortcodes['map'] = array(
+	'no_preview' => true,
+	'params' => array(
+		'url' => array(
+			'std' => '',
+			'type' => 'text',
+			'label' => __( 'Enter URL', 'stag' ),
+			'desc' => __( '', '' )
+		)
+	),
+	'shortcode' => '[stag_map url="{{url}}"]',
+	'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
+);
