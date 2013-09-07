@@ -16,6 +16,18 @@ class stag_flickr_widget extends WP_Widget{
 		$flickr_id = $instance['flickr_id'];
 		$flickr_count = $instance['flickr_count'];
 		$new_window = $instance['new_window'];
+
+		
+		include_once(ABSPATH . WPINC . '/feed.php');
+		if( $flickr_count == '') $flickr_count = 5;
+
+		$rss = fetch_feed('http://api.flickr.com/services/feeds/photos_public.gne?ids='.$flickr_id.'&lang=en-us&format=rss_200');
+		add_filter( 'wp_feed_cache_transient_lifetime', create_function( '$a', 'return 1800;' ) );
+
+		if( !is_wp_error( $rss ) ){
+			$items = $rss->get_items( 0, $rss->get_item_quantity( $flickr_count ) );
+		}
+
 		echo $before_widget;
 
 ?>
@@ -25,26 +37,14 @@ class stag_flickr_widget extends WP_Widget{
 		<ul class="flickr-photos">
 			<?php
 
-			if ( $flickr_id != '' ) {
-				$images = array();
-				$regx = "/<img(.+)\/>/";
-				$rss_url = 'http://api.flickr.com/services/feeds/photos_public.gne?ids='.$flickr_id.'&lang=en-us&format=rss_200';
-
-				$flickr_feed = simplexml_load_file( $rss_url );
-
-				$image_count = 0;
-
-				foreach( $flickr_feed->channel->item as $item ) {
-					$img_src = $item->children("media", true)->thumbnail->attributes()->url;
-					$img_height = $item->children("media", true)->thumbnail->attributes()->height;
-					$img_width = $item->children("media", true)->thumbnail->attributes()->width;
-
-					if( $flickr_count == '') $flickr_count = 5;
-
-					if( $image_count < $flickr_count ) {
-						echo '<li><a href="' . $item->link . '"><img src="'. $img_src .'" width="'.$img_width.'" height="'.$img_height.'" alt="'.$item->title.'"></a></li>';
-					}
-					$image_count++;
+			foreach( $items as $item ) {
+				$image_group = $item->get_item_tags('http://search.yahoo.com/mrss/', 'thumbnail');
+				$image_attrs = $image_group[0]['attribs'];
+				foreach( $image_attrs as $image ) {
+					$url = $image['url'];
+					$width = $image['width'];
+					$height = $image['height'];
+					echo '<li><a target="_blank" href="' . $item->get_permalink() . '"><img src="'. $url .'" width="' . $width . '" height="' . $height . '" alt="'. $item->get_title() .'"></a></li>';
 				}
 			}
 
