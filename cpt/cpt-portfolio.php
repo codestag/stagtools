@@ -15,26 +15,29 @@ $labels = array(
 );
 
 $args = array(
-	'labels'              => $labels,
-	'public'              => true,
-	'exclude_from_search' => true,
-	'publicly_queryable'  => true,
-	'rewrite'             => array('slug' => 'portfolio'),
-	'show_ui'             => true,
-	'query_var'           => true,
-	'capability_type'     => 'post',
-	'hierarchical'        => false,
-	'menu_position'       => null,
-	'supports'            => array( 'title', 'editor', 'thumbnail' )
+	'labels'            => $labels,
+	'public'            => true,
+	'show_ui'           => true,
+	'show_in_menu'      => true,
+	'show_in_nav_menus' => false,
+	'rewrite'           => array('slug' => 'portfolio'),
+	'supports'          => array( 'title', 'editor', 'thumbnail' ),
+	'has_archive'       => true,
+	'taxonomies'        => array('skill')
 );
 
 register_post_type( 'portfolio', $args );
 
 register_taxonomy( 'skill', 'portfolio', array(
-	'hierarchical'   => true,
-	'label'          => __( 'Skills', 'stag' ),
-	'singular_label' => __( 'Skill', 'stag' ),
-	'rewrite'        => array( 'slug' => 'skill', 'hierarchical' => true)
+	'label'             => __( 'Skills', 'stag' ),
+	'singular_label'    => __( 'Skill', 'stag' ),
+	'public'            => true,
+	'hierarchical'      => true,
+	'show_ui'           => true,
+	'show_in_nav_menus' => false,
+	'args'              => array( 'orderby' => 'term_order' ),
+	'query_var'         => true,
+	'rewrite'           => array( 'slug' => 'skill', 'hierarchical' => true)
 ) );
 
 function stag_portfolio_edit_columns( $columns ) {

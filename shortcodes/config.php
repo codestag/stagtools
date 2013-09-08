@@ -381,7 +381,7 @@ $stag_shortcodes['map'] = array(
 			'std' => '',
 			'type' => 'text',
 			'label' => __( 'Enter URL', 'stag' ),
-			'desc' => __( '', '' )
+			'desc' => __( 'Enter Google Map URL', '' )
 		)
 	),
 	'shortcode' => '[stag_map url="{{url}}"]',
