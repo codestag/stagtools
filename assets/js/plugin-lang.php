@@ -2,6 +2,7 @@
 
 $strings = 'tinyMCE.addI18n({' . _WP_Editors::$mce_locale . ':{
     stag:{
+        insert: "' . esc_js( __( 'Insert Stag Shortcode', 'stag' ) ) . '",
         alert: "' . esc_js( __( 'Alerts / Notification', 'stag' ) ) . '",
         button: "' . esc_js( __( 'Buttons', 'stag' ) ) . '",
         columns: "' . esc_js( __( 'Columns', 'stag' ) ) . '",

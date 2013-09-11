@@ -210,7 +210,7 @@ endif;
 
 if( ! function_exists( 'stag_intro' ) ):
 function stag_intro( $atts, $content = null ) {
-	return '<div class="stag-intro-text">' . do_shortcode($content) . '</div>';
+	return '<span class="stag-intro-text">' . do_shortcode($content) . '</span>';
 }
 add_shortcode( 'stag_intro', 'stag_intro' );
 endif;

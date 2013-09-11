@@ -97,7 +97,7 @@
 }
 
 .stag-button--stroke {
-  background: white;
+  background: transparent;
   border: 1px solid transparent;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -196,6 +196,7 @@
 .stag-intro-text {
   font-size: 135%;
   margin-bottom: 3em;
+  display: block;
 }
 
 /* ALERTS */

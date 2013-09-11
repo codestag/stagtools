@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 12:59+0530\n"
-"PO-Revision-Date: 2013-07-25 12:59+0530\n"
+"POT-Creation-Date: 2013-09-08 11:10+0530\n"
+"PO-Revision-Date: 2013-09-08 11:10+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -16,43 +16,43 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../stagtools.php:90
+#: ../stagtools.php:87
 msgid "Settings"
 msgstr ""
 
-#: ../stagtools.php:201
+#: ../stagtools.php:199
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:210
+#: ../stagtools.php:208
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: ../stagtools.php:217
+#: ../stagtools.php:215
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: ../stagtools.php:224
+#: ../stagtools.php:222
 msgid "OAuth Access Token"
 msgstr ""
 
-#: ../stagtools.php:231
+#: ../stagtools.php:229
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: ../stagtools.php:244
+#: ../stagtools.php:242
 msgid "FAQ"
 msgstr ""
 
-#: ../stagtools.php:245
+#: ../stagtools.php:243
 msgid "Few resources to help you getting started."
 msgstr ""
 
-#: ../stagtools.php:248
+#: ../stagtools.php:246
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:249 ../stagtools.php:254
+#: ../stagtools.php:247 ../stagtools.php:252
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -60,15 +60,15 @@ msgid ""
 "Twitter developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:253
+#: ../stagtools.php:251
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:258
+#: ../stagtools.php:256
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:259
+#: ../stagtools.php:257
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of %s and "
@@ -123,177 +123,181 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:5 ../cpt/cpt-portfolio.php:6
+#: ../assets/js/plugin-lang.php:18
+msgid "Google Map"
+msgstr ""
+
+#: ../cpt/cpt-portfolio.php:4 ../cpt/cpt-portfolio.php:5
 msgid "Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:7 ../cpt/cpt-slides.php:7 ../cpt/cpt-team.php:7
-#: ../cpt/cpt-testimonials.php:7
+#: ../cpt/cpt-portfolio.php:6 ../cpt/cpt-slides.php:6 ../cpt/cpt-team.php:6
+#: ../cpt/cpt-testimonials.php:6
 msgid "Add New"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:8
+#: ../cpt/cpt-portfolio.php:7
 msgid "Add New Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:9
+#: ../cpt/cpt-portfolio.php:8
 msgid "Edit Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:10
+#: ../cpt/cpt-portfolio.php:9
 msgid "New Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:11
+#: ../cpt/cpt-portfolio.php:10
 msgid "View Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:12
+#: ../cpt/cpt-portfolio.php:11
 msgid "Search Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:13
+#: ../cpt/cpt-portfolio.php:12
 msgid "No Portfolios found"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:14
+#: ../cpt/cpt-portfolio.php:13
 msgid "No Portfolios found in trash"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:38 ../cpt/cpt-portfolio.php:48
+#: ../cpt/cpt-portfolio.php:35 ../cpt/cpt-portfolio.php:44
 msgid "Skills"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:39
+#: ../cpt/cpt-portfolio.php:36
 msgid "Skill"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:47
+#: ../cpt/cpt-portfolio.php:43
 msgid "Portfolio Title"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:49 ../cpt/cpt-slides.php:40 ../cpt/cpt-team.php:41
-#: ../cpt/cpt-testimonials.php:40
+#: ../cpt/cpt-portfolio.php:45 ../cpt/cpt-slides.php:38 ../cpt/cpt-team.php:39
+#: ../cpt/cpt-testimonials.php:38
 msgid "Date"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:5
+#: ../cpt/cpt-slides.php:4
 msgid "Slides"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:6
+#: ../cpt/cpt-slides.php:5
 msgid "Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:8
+#: ../cpt/cpt-slides.php:7
 msgid "Add New Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:9
+#: ../cpt/cpt-slides.php:8
 msgid "Edit Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:10
+#: ../cpt/cpt-slides.php:9
 msgid "New Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:11
+#: ../cpt/cpt-slides.php:10
 msgid "View Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:12
+#: ../cpt/cpt-slides.php:11
 msgid "Search Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:13
+#: ../cpt/cpt-slides.php:12
 msgid "No Slides found"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:14
+#: ../cpt/cpt-slides.php:13
 msgid "No Slides found in trash"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:39
+#: ../cpt/cpt-slides.php:37
 msgid "Slide Title"
 msgstr ""
 
-#: ../cpt/cpt-team.php:5 ../cpt/cpt-team.php:6
+#: ../cpt/cpt-team.php:4 ../cpt/cpt-team.php:5
 msgid "Team"
 msgstr ""
 
-#: ../cpt/cpt-team.php:8
+#: ../cpt/cpt-team.php:7
 msgid "Add New Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:9
+#: ../cpt/cpt-team.php:8
 msgid "Edit Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:10
+#: ../cpt/cpt-team.php:9
 msgid "New Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:11
+#: ../cpt/cpt-team.php:10
 msgid "View Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:12
+#: ../cpt/cpt-team.php:11
 msgid "Search Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:13
+#: ../cpt/cpt-team.php:12
 msgid "No Team Member found"
 msgstr ""
 
-#: ../cpt/cpt-team.php:14
+#: ../cpt/cpt-team.php:13
 msgid "No Team Member in trash"
 msgstr ""
 
-#: ../cpt/cpt-team.php:39
+#: ../cpt/cpt-team.php:37
 msgid "Team Member Title"
 msgstr ""
 
-#: ../cpt/cpt-team.php:40
+#: ../cpt/cpt-team.php:38
 msgid "Member Info"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:5
+#: ../cpt/cpt-testimonials.php:4
 msgid "Testimonials"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:6
+#: ../cpt/cpt-testimonials.php:5
 msgid "Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:8
+#: ../cpt/cpt-testimonials.php:7
 msgid "Add New Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:9
+#: ../cpt/cpt-testimonials.php:8
 msgid "Edit Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:10
+#: ../cpt/cpt-testimonials.php:9
 msgid "New Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:11
+#: ../cpt/cpt-testimonials.php:10
 msgid "View Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:12
+#: ../cpt/cpt-testimonials.php:11
 msgid "Search Testimonials"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:13
+#: ../cpt/cpt-testimonials.php:12
 msgid "No Testimonials found"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:14
+#: ../cpt/cpt-testimonials.php:13
 msgid "No Testimonials in trash"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:39
+#: ../cpt/cpt-testimonials.php:37
 msgid "Testimonial Title"
 msgstr ""
 
@@ -835,6 +839,18 @@ msgstr ""
 
 #: ../shortcodes/config.php:374
 msgid "Insert Icon Shortcode"
+msgstr ""
+
+#: ../shortcodes/config.php:383
+msgid "Enter URL"
+msgstr ""
+
+#: ../shortcodes/config.php:384
+msgid "Enter Google Map URL"
+msgstr ""
+
+#: ../shortcodes/config.php:388
+msgid "Insert Google Map Shortcode"
 msgstr ""
 
 #: ../shortcodes/shortcode-class.php:24

@@ -1,6 +1,6 @@
 <?php
 
-$labels = array(
+$portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 	'name'               => __( 'Portfolio', 'stag' ),
 	'singular_name'      => __( 'Portfolio', 'stag' ),
 	'add_new'            => __( 'Add New', 'stag' ),
@@ -12,21 +12,25 @@ $labels = array(
 	'not_found'          => __( 'No Portfolios found', 'stag' ),
 	'not_found_in_trash' => __( 'No Portfolios found in trash', 'stag' ),
 	'parent_item_colon'  => ''
-);
+) );
 
-$args = array(
-	'labels'            => $labels,
+$archives = defined( 'STAG_PORTFOLIO_DISABLE_ARCHIVE' ) && STAG_PORTFOLIO_DISABLE_ARCHIVE ? false : true;
+$slug     = defined( 'STAG_PORTFOLIO_SLUG' ) ? STAG_PORTFOLIO_SLUG : 'portfolio';
+$rewrite  = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array('slug' => $slug, 'with_front' => false);
+
+$portfolio_args = array(
+	'labels'            => $portfolio_labels,
 	'public'            => true,
 	'show_ui'           => true,
 	'show_in_menu'      => true,
 	'show_in_nav_menus' => false,
-	'rewrite'           => array('slug' => 'portfolio'),
-	'supports'          => array( 'title', 'editor', 'thumbnail' ),
-	'has_archive'       => true,
-	'taxonomies'        => array('skill')
+	'rewrite'           => $rewrite,
+	'supports'          => apply_filters( 'stag_portfolio_supports', array( 'title', 'editor', 'thumbnail' ) ),
+	'has_archive'       => $archives,
+	'taxonomies'        => array( 'skill' )
 );
 
-register_post_type( 'portfolio', $args );
+register_post_type( 'portfolio', apply_filters( 'stag_portfolio_post_type_args', $portfolio_args ) );
 
 register_taxonomy( 'skill', 'portfolio', array(
 	'label'             => __( 'Skills', 'stag' ),
@@ -45,7 +49,7 @@ function stag_portfolio_edit_columns( $columns ) {
 		"cb" => "<input type=\"checkbox\">",
 		"title" => __( 'Portfolio Title', 'stag' ),
 		"type" => __( 'Skills', 'stag' ),
-		"date" => __('Date', 'stag')
+		"date" => __( 'Date', 'stag' )
 	);
 	return $columns;
 }
