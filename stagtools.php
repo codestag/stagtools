@@ -303,3 +303,20 @@ class StagTools {
 $GLOBALS['stagtools'] = new StagTools();
 
 }
+
+
+/**
+ * Flush the rewrite rules on activation
+ */
+function stagtools_activation() {
+	flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'stagtools_activation' );
+
+/**
+ * Also flush the rewrite rules on deactivation
+ */
+function stagtools_deactivation() {
+	flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'stagtools_activation' );
