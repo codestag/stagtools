@@ -5,11 +5,11 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ratan.ma
 Tags: widgets, icons, retina, codestag, shortcodes, themeforest, font-icons
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-StagTools is a powerful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
+StagTools is a powerful plugin to extend functionality to your WordPress themes offering shortcodes, FontAwesome icons and useful widgets.
 
 == Description ==
 
@@ -76,6 +76,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 ==Changelog==
+
+= 1.0.7 - 09/14/2013 =
+* Fix - Disable Portfolio Archives
 
 = 1.0.6 - 09/11/2013 =
 * New - [Modify Portfolio post type label, slug and rewrites](https://github.com/mauryaratan/stagtools/wiki/Constants-and-Filters)

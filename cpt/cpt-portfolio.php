@@ -14,7 +14,7 @@ $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 	'parent_item_colon'  => ''
 ) );
 
-$archives = defined( 'STAG_PORTFOLIO_DISABLE_ARCHIVE' ) && STAG_PORTFOLIO_DISABLE_ARCHIVE ? false : true;
+
 $slug     = defined( 'STAG_PORTFOLIO_SLUG' ) ? STAG_PORTFOLIO_SLUG : 'portfolio';
 $rewrite  = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array('slug' => $slug, 'with_front' => false);
 
@@ -26,7 +26,7 @@ $portfolio_args = array(
 	'show_in_nav_menus' => false,
 	'rewrite'           => $rewrite,
 	'supports'          => apply_filters( 'stag_portfolio_supports', array( 'title', 'editor', 'thumbnail' ) ),
-	'has_archive'       => $archives,
+	'has_archive'       => false,
 	'taxonomies'        => array( 'skill' )
 );
 
