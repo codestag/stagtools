@@ -5,7 +5,7 @@ add_action( 'widgets_init', create_function( '', 'return register_widget( "stag_
 class stag_flickr_widget extends WP_Widget{
 	
 	function stag_flickr_widget() {
-		$widget_ops = array( 'classname' => 'stag-flickr', 'description' => __( 'Display your latest Flickr shots', 'stag' ) );
+		$widget_ops = array( 'classname' => 'stag-flickr', 'description' => __( 'Display your latest Flickr photos', 'stag' ) );
 		$control_ops = array( 'width' => 200, 'height' => 350, 'id_base' => 'stag-flickr' );
 		$this->WP_Widget( 'stag-flickr', __( 'Stag Flickr Photos', 'stag' ), $widget_ops, $control_ops );
 	}
@@ -15,7 +15,7 @@ class stag_flickr_widget extends WP_Widget{
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$flickr_id = $instance['flickr_id'];
 		$flickr_count = $instance['flickr_count'];
-		$new_window = $instance['new_window'];
+		
 
 		
 		include_once(ABSPATH . WPINC . '/feed.php');
@@ -61,16 +61,14 @@ class stag_flickr_widget extends WP_Widget{
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['flickr_id'] = strip_tags( $new_instance['flickr_id'] );
 		$instance['flickr_count'] = strip_tags( $new_instance['flickr_count'] );
-		$instance['new_window'] = $new_instance['new_window'];
 		return $instance;
 	}
 
 	function form( $instance ){
 		$defaults = array(
-			'title' => '',
+			'title' => 'Flickr Photos',
 			'flickr_id' => '',
 			'flickr_count' => 4,
-			'new_window' => ''
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -93,10 +91,6 @@ class stag_flickr_widget extends WP_Widget{
 			<input type="text" class="small-text" id="<?php echo $this->get_field_id('flickr_count'); ?>" name="<?php echo $this->get_field_name('flickr_count'); ?>" value="<?php echo $instance['flickr_count']; ?>">
 		</p>
 
-		<p>
-			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('new_window'); ?>" name="<?php echo $this->get_field_name('new_window'); ?>" value="1" <?php checked( $instance['new_window'], 1); ?>>
-			<label for="<?php echo $this->get_field_id('new_window'); ?>"><?php _e( 'Open links in new window?', 'stag' ); ?></label>
-		</p>
 
 		<?php
 	}
