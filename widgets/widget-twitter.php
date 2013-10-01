@@ -95,7 +95,7 @@ class stag_twitter_widget extends WP_Widget{
 				$output .= '<li><p>';
 				$output .= $tw_helper->twitter_widget_convert_links( $tweet['text'] );
 				$output .= '</p>';
-				$output .= '<p><time datetime="'. $tweet['created_at'] .'" class="time"><a href="'. $protocol .'//twitter.com/'. $twitter_username .'/statuses/'. $tweet['status_id'] .' target="_blank">'. $tw_helper->twitter_widget_relative_time( $tweet['created_at'] ) .'</a></time></p>';
+				$output .= '<p><time datetime="'. $tweet['created_at'] .'" class="time"><a href="'. $protocol .'//twitter.com/'. $twitter_username .'/statuses/'. $tweet['status_id'] .'" target="_blank">'. $tw_helper->twitter_widget_relative_time( $tweet['created_at'] ) .'</a></time></p>';
 				$output .= '</li>';
 				
 				if( $count == $instance['tweet_count'] ) { break; }
