@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-08 11:10+0530\n"
-"PO-Revision-Date: 2013-09-08 11:10+0530\n"
+"POT-Creation-Date: 2013-10-01 10:31+0530\n"
+"PO-Revision-Date: 2013-10-01 10:32+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -20,39 +20,39 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../stagtools.php:199
+#: ../stagtools.php:205
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:208
+#: ../stagtools.php:214
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: ../stagtools.php:215
+#: ../stagtools.php:221
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: ../stagtools.php:222
+#: ../stagtools.php:228
 msgid "OAuth Access Token"
 msgstr ""
 
-#: ../stagtools.php:229
+#: ../stagtools.php:235
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: ../stagtools.php:242
+#: ../stagtools.php:248
 msgid "FAQ"
 msgstr ""
 
-#: ../stagtools.php:243
+#: ../stagtools.php:249
 msgid "Few resources to help you getting started."
 msgstr ""
 
-#: ../stagtools.php:246
+#: ../stagtools.php:252
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:247 ../stagtools.php:252
+#: ../stagtools.php:253 ../stagtools.php:258
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -60,15 +60,15 @@ msgid ""
 "Twitter developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:251
+#: ../stagtools.php:257
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:256
+#: ../stagtools.php:262
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:257
+#: ../stagtools.php:263
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of %s and "
@@ -76,54 +76,58 @@ msgid ""
 msgstr ""
 
 #: ../assets/js/plugin-lang.php:5
-msgid "Alerts / Notification"
+msgid "Insert Stag Shortcode"
 msgstr ""
 
 #: ../assets/js/plugin-lang.php:6
-msgid "Buttons"
+msgid "Alerts / Notification"
 msgstr ""
 
 #: ../assets/js/plugin-lang.php:7
-msgid "Columns"
+msgid "Buttons"
 msgstr ""
 
 #: ../assets/js/plugin-lang.php:8
+msgid "Columns"
+msgstr ""
+
+#: ../assets/js/plugin-lang.php:9
 msgid "Divider / Horizontal Ruler"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:9 ../shortcodes/config.php:207
+#: ../assets/js/plugin-lang.php:10 ../shortcodes/config.php:207
 msgid "Intro Text"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:10
+#: ../assets/js/plugin-lang.php:11
 msgid "Tabs"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:11
+#: ../assets/js/plugin-lang.php:12
 msgid "Toggle"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:12
+#: ../assets/js/plugin-lang.php:13
 msgid "Dropcap"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:13
+#: ../assets/js/plugin-lang.php:14
 msgid "Font Icon"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:15
+#: ../assets/js/plugin-lang.php:16
 msgid "Media Elements"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:16 ../shortcodes/config.php:286
+#: ../assets/js/plugin-lang.php:17 ../shortcodes/config.php:286
 msgid "Image"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:17
+#: ../assets/js/plugin-lang.php:18
 msgid "Video"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:18
+#: ../assets/js/plugin-lang.php:19
 msgid "Google Map"
 msgstr ""
 
@@ -164,7 +168,7 @@ msgstr ""
 msgid "No Portfolios found in trash"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:35 ../cpt/cpt-portfolio.php:44
+#: ../cpt/cpt-portfolio.php:35 ../cpt/cpt-portfolio.php:50
 msgid "Skills"
 msgstr ""
 
@@ -172,11 +176,11 @@ msgstr ""
 msgid "Skill"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:43
+#: ../cpt/cpt-portfolio.php:49
 msgid "Portfolio Title"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:45 ../cpt/cpt-slides.php:38 ../cpt/cpt-team.php:39
+#: ../cpt/cpt-portfolio.php:51 ../cpt/cpt-slides.php:38 ../cpt/cpt-team.php:39
 #: ../cpt/cpt-testimonials.php:38
 msgid "Date"
 msgstr ""
@@ -913,7 +917,7 @@ msgstr ""
 msgid "Please check your dribbble username"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:84 ../widgets/widget-flickr.php:81
+#: ../widgets/widget-dribbble.php:84 ../widgets/widget-flickr.php:79
 #: ../widgets/widget-twitter.php:152
 msgid "Title:"
 msgstr ""
@@ -926,28 +930,28 @@ msgstr ""
 msgid "Number of shots to show:"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:100 ../widgets/widget-flickr.php:98
+#: ../widgets/widget-dribbble.php:100
 msgid "Open links in new window?"
 msgstr ""
 
 #: ../widgets/widget-flickr.php:8
-msgid "Display your latest Flickr shots"
+msgid "Display your latest Flickr photos"
 msgstr ""
 
 #: ../widgets/widget-flickr.php:10
 msgid "Stag Flickr Photos"
 msgstr ""
 
-#: ../widgets/widget-flickr.php:86
+#: ../widgets/widget-flickr.php:84
 msgid "Your Flickr User ID:"
 msgstr ""
 
-#: ../widgets/widget-flickr.php:88
+#: ../widgets/widget-flickr.php:86
 #, php-format
 msgid "Head over to %s to find your Flickr user ID."
 msgstr ""
 
-#: ../widgets/widget-flickr.php:92
+#: ../widgets/widget-flickr.php:90
 msgid "Number of photos to show:"
 msgstr ""
 
