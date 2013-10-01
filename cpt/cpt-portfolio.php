@@ -25,8 +25,7 @@ $portfolio_args = array(
 	'show_in_menu'      => true,
 	'show_in_nav_menus' => false,
 	'rewrite'           => $rewrite,
-	'supports'          => apply_filters( 'stag_portfolio_supports', array( 'title', 'editor', 'thumbnail' ) ),
-	// 'has_archive'       => false,
+	'supports'          => apply_filters( 'stag_portfolio_supports', array( 'title', 'editor', 'thumbnail', 'revisions' ) ),
 	'taxonomies'        => array( 'skill' )
 );
 
