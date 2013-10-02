@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ratan.ma
 Tags: widgets, icons, retina, codestag, shortcodes, themeforest, font-icons
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 ==Changelog==
+
+= 1.0.8 - 10/02/2013 =
+* Fix - Twitter widget incorrect links
+* New - Revisions support for portfolio
 
 = 1.0.7 - 09/14/2013 =
 * Fix - Disable Portfolio Archives
