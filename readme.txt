@@ -1,7 +1,7 @@
 ===StagTools===
 
 Contributors: mauryaratan
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ratan.maurya@gmail.com&item_name=Donation+for+StagTools
+Donate link: http://codest.ag/st-donate
 Tags: widgets, icons, retina, codestag, shortcodes, themeforest, font-icons
 Requires at least: 3.5
 Tested up to: 3.6
