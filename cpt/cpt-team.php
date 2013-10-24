@@ -52,5 +52,3 @@ function stag_team_custom_column( $columns ) {
 
 add_filter('manage_edit-team_columns', 'stag_team_edit_columns');
 add_action('manage_posts_custom_column',  'stag_team_custom_column');
-
-?>

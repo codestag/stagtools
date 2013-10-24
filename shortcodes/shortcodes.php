@@ -320,7 +320,7 @@ function stag_video( $atts, $content = null ) {
 add_shortcode( 'stag_video', 'stag_video' );
 endif;
 
-if( !function_exists( 'stag_icon') ) :
+if( ! function_exists( 'stag_icon') ) :
 
 function stag_icon( $atts, $content = null ) {
 	extract( shortcode_atts( array(
@@ -345,7 +345,7 @@ function stag_icon( $atts, $content = null ) {
 add_shortcode( 'stag_icon', 'stag_icon' );
 endif;
 
-if( !function_exists( 'stag_map') ) :
+if( ! function_exists( 'stag_map') ) :
 /**
  * Google Map Shortcode
  * 

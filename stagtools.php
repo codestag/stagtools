@@ -21,10 +21,9 @@ if ( ! class_exists( 'StagTools' ) ) {
 /**
  * Main StagTools Class
  *
- * @package WordPress
- * @subpackage StagTools
+ * @package StagTools
  * @version 1.0
- * @author Ram Ratan Maurya
+ * @author Ram Ratan Maurya (Codestag)
  * @link http://mauryaratan.me
  * @link http://codestag.com
  */
