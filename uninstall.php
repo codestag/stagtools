@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Uninstall StagTools
+ *
+ * @package StagTools
+ * @author Ram Ratan Maurya
+ */
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) exit;
 
 // Delete Plugin Options
