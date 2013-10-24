@@ -28,8 +28,12 @@
   color: #fff;
   text-decoration: none;
 }
-.stag-button:visited {
-  color: inherit;
+
+.stag-icon--before .stag-icon{
+  margin-right: 0.2em;
+}
+.stag-icon--after .stag-icon{
+  margin-left: 0.2em;
 }
 
 .stag-button--normal:hover {
@@ -195,15 +199,16 @@
 
 .stag-intro-text {
   font-size: 135%;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   display: block;
 }
 
 /* ALERTS */
 .stag-alert {
-  padding: 21px 15px;
   text-align: center;
   color: #fff;
+  padding: 21px 15px;
+  margin: 1em 0;
 }
 
 .stag-alert--white {
@@ -249,6 +254,7 @@
   border: 0;
   height: 1px;
   background: #363f48;
+  margin: 2em 0;
 }
 
 .stag-divider--strong {
@@ -534,7 +540,6 @@
 
 .stag-icon {
   display: inline-block;
-  margin-right: 0.2em;
   text-align: center;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
