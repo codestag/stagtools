@@ -179,20 +179,24 @@ function stag_button( $atts, $content = null ) {
 	), $atts ) );
 	
 	$button_icon = '';
+	$class       = " stag-button--{$size}";
+	$class       .= " stag-button--{$style}";
+	$class       .= " stag-button--{$type}";
 
 	if( ! empty($icon) ) {
 		if ( $icon_order == 'before' ) {
 			$button_content = stag_icon( array( 'icon' => $icon ) );
-			$button_content .= " ". do_shortcode($content);
+			$button_content .= do_shortcode($content);
 		} else {
-			$button_content = do_shortcode($content) . " ";
+			$button_content = do_shortcode($content);
 			$button_content .= stag_icon( array( 'icon' => $icon ) );
 		}
+		$class .= " stag-icon--{$icon_order}";
 	} else {
 		$button_content = do_shortcode($content);
 	}
 
-	return '<a target="'.$target.'" class="stag-button stag-button--'.$size.' stag-button--'.$style.' stag-button--'.$type.'" href="'.$url.'">'. $button_content .'</a>';
+	return '<a target="'.$target.'" href="'.$url.'" class="stag-button'. $class .'">'. $button_content .'</a>';
 }
 add_shortcode( 'stag_button', 'stag_button' );
 endif;
