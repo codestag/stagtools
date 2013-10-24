@@ -163,21 +163,36 @@ add_shortcode( 'stag_five_sixth_last', 'stag_five_sixth_last' );
 endif;
 
 
-
-
 if( ! function_exists( 'stag_button' ) ) :
 /**
  * Buttons
  */
 function stag_button( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'url' => '#',
-		'target' => '_self',
-		'style' => 'grey',
-		'size' => 'small',
-		'type' => 'round'
+		'url'        => '#',
+		'target'     => '_self',
+		'style'      => 'grey',
+		'size'       => 'small',
+		'type'       => 'round',
+		'icon'       => '',
+		'icon_order' => 'before'
 	), $atts ) );
-	return '<a target="'.$target.'" class="stag-button stag-button--'.$size.' stag-button--'.$style.' stag-button--'.$type.'" href="'.$url.'">'. do_shortcode($content) .'</a>';
+	
+	$button_icon = '';
+
+	if( ! empty($icon) ) {
+		if ( $icon_order == 'before' ) {
+			$button_content = stag_icon( array( 'icon' => $icon ) );
+			$button_content .= " ". do_shortcode($content);
+		} else {
+			$button_content = do_shortcode($content) . " ";
+			$button_content .= stag_icon( array( 'icon' => $icon ) );
+		}
+	} else {
+		$button_content = do_shortcode($content);
+	}
+
+	return '<a target="'.$target.'" class="stag-button stag-button--'.$size.' stag-button--'.$style.' stag-button--'.$type.'" href="'.$url.'">'. $button_content .'</a>';
 }
 add_shortcode( 'stag_button', 'stag_button' );
 endif;
@@ -324,20 +339,29 @@ if( ! function_exists( 'stag_icon') ) :
 
 function stag_icon( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'icon' => '',
-		'url' => '',
-		'size' => '50px',
+		'icon'       => '',
+		'url'        => '',
+		'size'       => '',
 		'new_window' => 'no'
 	), $atts ) );
 
 	$new_window = ( $new_window == "no") ? '_self' : '_blank';
 
 	$output = '';
+	$attrs = '';
+
+	if( ! empty($url) ){
+		$a_attrs = ' href="'. esc_url($url) .'" target="'. esc_attr($new_window) .'"';
+	}
+
+	if( !empty($size) ) {
+		$attrs .= ' style="font-size:'. esc_attr($size) .';line-height:'. esc_attr($size) .'"';
+	}
 
 	if( $url != '' ){
-		$output .= '<a class="stag-icon-link" href="'. esc_url($url) .'" target="'. $new_window .'"><i class="stag-icon icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
+		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="stag-icon icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
 	}else{
-		$output .= '<i class="stag-icon icon-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i>';
+		$output .= '<i class="stag-icon icon-'. $icon .'" '. $attrs .'></i>';
 	}
 
 	return $output;

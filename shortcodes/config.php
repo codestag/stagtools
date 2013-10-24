@@ -45,6 +45,21 @@ $stag_shortcodes['button'] = array(
 				'stroke' => __( 'stroke', 'stag' )
 			)
 		),
+		'icon' => array(
+			'std' => '',
+			'type' => 'icons',
+			'label' => __( 'Button Icon', 'stag' ),
+			'desc' => __( 'Choose an icon', 'stag' )
+		),
+		'icon_order' => array(
+			'type' => 'select',
+			'label' => __( 'Font Order', 'stag' ),
+			'desc' => __( 'Select if the icon should display before text or after text.', 'stag' ),
+			'options' => array(
+				'before' => __( 'Before Text', 'stag' ),
+				'after' => __( 'After Text', 'stag' )
+			)
+		),
 		'target' => array(
 			'type' => 'select',
 			'label' => __( 'Button Target', 'stag' ),
@@ -61,7 +76,7 @@ $stag_shortcodes['button'] = array(
 			'desc' => __( 'Add the button\'s text', 'stag' ),
 		)
 	),
-	'shortcode' => '[stag_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}"]{{content}}[/stag_button]',
+	'shortcode' => '[stag_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}" icon="{{icon}}" icon_order="{{icon_order}}"]{{content}}[/stag_button]',
 	'popup_title' => __('Insert Button Shortcode', 'stag')
 );
 
