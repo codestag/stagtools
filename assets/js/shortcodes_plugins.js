@@ -272,7 +272,14 @@ jQuery(document).ready(function($) {
 
         media: function(){
             var stag_media_frame,
+                frame_title,
                 insertButton = $('.stag-open-media');
+
+            if ( insertButton.data('type') === "image" ) {
+                frame_title = StagShortcodes.media_frame_image_title;
+            } else if ( insertButton.data('type') === "video" ) {
+                frame_title = StagShortcodes.media_frame_video_title;
+            }
 
             insertButton.on('click', function(e){
                 e.preventDefault();
@@ -286,7 +293,7 @@ jQuery(document).ready(function($) {
                     className: 'media-frame stag-media-frame',
                     frame: 'select',
                     multiple: false,
-                    title: 'Upload or Choose Your Custom Image File',
+                    title: frame_title,
                     library: {
                         type: insertButton.data('type')
                     },

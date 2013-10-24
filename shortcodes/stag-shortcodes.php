@@ -19,8 +19,10 @@ class StagShortcodes {
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins.js', false, $stagtools->version, false );
 			wp_localize_script( 'jquery', 'StagShortcodes', array(
-				'plugin_folder' => WP_PLUGIN_URL .'/shortcodes',
-				'is_scs_active' => $stagtools->is_scs_active()
+				'plugin_folder'     => WP_PLUGIN_URL .'/shortcodes',
+				'is_scs_active'     => $stagtools->is_scs_active(),
+				'media_frame_video_title' => __( 'Upload or Choose Your Custom Video File', 'stag' ),
+				'media_frame_image_title' => __( 'Upload or Choose Your Custom Image File', 'stag' )
 			) );
 		}
 	}
