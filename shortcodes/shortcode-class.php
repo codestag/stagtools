@@ -38,6 +38,7 @@ class stag_shortcodes {
 	}
 
 	function format_shortcode() {
+		global $stagtools;
 		require_once( $this->conf );
 
 		if( isset( $stag_shortcodes[$this->popup]['child_shortcode'] ) ) {
@@ -137,6 +138,19 @@ class stag_shortcodes {
 						$output .= '<input class="stag-input" type="hidden" name="' . $pkey . '" id="' . $pkey . '" value="' . $param['std'] . '" />';
 						$output .= $row_end;
 						$this->append_output( $output );
+					break;
+
+					case 'widget_area':
+						if ( $stagtools->is_scs_active() ){
+							$output = $row_start;
+
+							$output .= "<p>Hello Custom Widget Area</p>";
+
+							$output .= $row_end;
+							$this->append_output( $output );
+						} else {
+							return false;
+						}
 					break;
 
 				}

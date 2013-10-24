@@ -3,7 +3,7 @@
  * Plugin Name: StagTools
  * Plugin URI: http://wordpress.org/plugins/stagtools/
  * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
- * Version: 1.0.8
+ * Version: 1.1
  * Author: Ram Ratan Maurya
  * Author URI: http://mauryaratan.me
  * License: GPL2
@@ -34,7 +34,7 @@ class StagTools {
 	/**
 	* @var string
 	*/
-	public $version = '1.0.8';
+	public $version = '1.1';
 	
 	/**
 	* @var string
@@ -296,6 +296,19 @@ class StagTools {
 		}
 		</style>
 		<?php
+	}
+
+	/**
+	 * Check if the plugin Stag Custom Sidebars is active
+	 *
+	 * @since 1.1
+	 * @link http://wordpress.org/plugins/stag-custom-sidebars
+	 * @return boolean
+	 */
+	public function is_scs_active(){
+		include_once(ABSPATH .'wp-admin/includes/plugin.php');
+		if( is_plugin_active('stag-custom-sidebars/stag-custom-sidebars.php') ) return true;
+		return false;
 	}
 
 }

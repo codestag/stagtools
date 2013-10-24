@@ -1,5 +1,7 @@
 <?php
 
+global $stagtools;
+
 $stag_shortcodes['button'] = array(
 	'no_preview' => true,
 	'params' => array(
@@ -381,9 +383,45 @@ $stag_shortcodes['map'] = array(
 			'std' => '',
 			'type' => 'text',
 			'label' => __( 'Enter URL', 'stag' ),
-			'desc' => __( 'Enter Google Map URL', '' )
+			'desc' => __( 'Enter Google Map URL', 'stag' )
 		)
 	),
 	'shortcode' => '[stag_map url="{{url}}"]',
 	'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
 );
+
+/**
+ * Process only if the plugin Stag Custom Sidebar is active
+ *
+ * @since 1.1
+ * @link http://wordpress.org/plugins/stag-custom-sidebars
+ */
+if ( $stagtools->is_scs_active() ) {
+	$option = get_option('stag_custom_sidebars');
+
+	$sidebars = array();
+
+	foreach ( $option as $key => $val ) {
+		$sidebars[sanitize_html_class( sanitize_title_with_dashes( $val ) )] = $val;
+	}
+
+	$stag_shortcodes['widget_area'] = array(
+		'no_preview' => true,
+		'params' => array(
+			'id' => array(
+				'type'    => 'select',
+				'label'   => __( 'Choose Widget Area', 'stag' ),
+				'desc'    => __( 'Choose which sidebar area you want to display.', 'stag' ),
+				'options' => $sidebars
+			),
+			'class' => array(
+				'std'   => '',
+				'type'  => 'text',
+				'label' => __( 'Class', 'stag' ),
+				'desc'  => __( 'Enter Class name, if you want to use one on frontend.', 'stag' )
+			)
+		),
+		'shortcode' => '[stag_sidebar id="{{id}}" class="{{class}}"]',
+		'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
+	);
+}

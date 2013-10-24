@@ -11,7 +11,9 @@
 		},
 		
 		createControl: function( d, e ){
-			var ed = tinymce.activeEditor;
+			var ed = tinymce.activeEditor,
+				IsSCSActive = (StagShortcodes.is_scs_active === "1") ? true : false;
+
 			if( d === "stag_shortcodes_button" ){
 				d = e.createMenuButton( "stag_shortcodes_button", {
 					title: ed.getLang('stag.insert'),
@@ -24,6 +26,10 @@
 					c = b.addMenu( { title:ed.getLang('stag.media_elements') } );
 						a.addWithPopup( c, ed.getLang('stag.image'), "image" );
 						a.addWithPopup( c, ed.getLang('stag.video'), "video" );
+
+					if(IsSCSActive){
+						a.addWithPopup( b, ed.getLang('stag.widget_area'), "widget_area" );
+					}
 
 					b.addSeparator();
 

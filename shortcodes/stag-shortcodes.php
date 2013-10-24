@@ -18,7 +18,10 @@ class StagShortcodes {
 			wp_enqueue_style( 'stag_admin_menu_font_styles', $stagtools->plugin_url() . '/assets/css/font-awesome.css' );
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins.js', false, $stagtools->version, false );
-			wp_localize_script( 'jquery', 'StagShortcodes', array('plugin_folder' => WP_PLUGIN_URL .'/shortcodes') );
+			wp_localize_script( 'jquery', 'StagShortcodes', array(
+				'plugin_folder' => WP_PLUGIN_URL .'/shortcodes',
+				'is_scs_active' => $stagtools->is_scs_active()
+			) );
 		}
 	}
 

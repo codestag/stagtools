@@ -14,6 +14,7 @@ $strings = 'tinyMCE.addI18n({' . _WP_Editors::$mce_locale . ':{
         icon: "' . esc_js( __( 'Font Icon', 'stag' ) ) . '",
         
         media_elements: "' . esc_js( __( 'Media Elements', 'stag' ) ) . '",
+        widget_area: "' . esc_js( __( 'Widget Area', 'stag' ) ) . '",
         image: "' . esc_js( __( 'Image', 'stag' ) ) . '",
         video: "' . esc_js( __( 'Video', 'stag' ) ) . '",
         map: "' . esc_js( __( 'Google Map', 'stag' ) ) . '",
