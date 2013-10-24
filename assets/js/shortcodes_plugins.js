@@ -252,7 +252,9 @@ jQuery(document).ready(function($) {
             tbWindow.css({
                 height: stagPopup.outerHeight(),
                 width: stagPopup.outerWidth(),
-                marginLeft: -(stagPopup.outerWidth()/2)
+                marginLeft: -(stagPopup.outerWidth()/2),
+                maxHeight: "85%",
+                overflowY: "scroll"
             });
 
             ajaxCont.css({
