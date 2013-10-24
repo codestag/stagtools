@@ -2,7 +2,7 @@
 
 Contributors: mauryaratan
 Donate link: http://codest.ag/st-donate
-Tags: widgets, icons, retina, codestag, shortcodes, themeforest, font-icons
+Tags: widgets, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebars, codestag, mauryaratan
 Requires at least: 3.5
 Tested up to: 3.6
 Stable tag: 1.0.8
@@ -24,6 +24,8 @@ StagTools powers your WordPress website with some regularly needed shortcodes in
 = Get Involved =
 If you are a developer, you can contribute to the source code on [StagTools Github Repository](https://github.com/mauryaratan/stagtools)
 
+*Checkout our finely tuned WordPress themes over at [Codestag](http://codestag.com).*
+
 == Frequently Asked Questions ==
 
 = What is this plugin and why do I need it? =
@@ -39,7 +41,7 @@ Yes; although we have a shortcode builder you can also see a list of [all availa
 The StagTools was developed to work with any WordPress theme as it includes default styling. However, we provide our extra bit of styling to all of our [themes](http://codestag.com) at Codestag.
 
 = Why shortcodes are prefixed with stag_ ? =
-Simply to avoid any conflict with other shortcodes on your site enabled via any plugin or theme.
+Simply to avoid any conflict with other shortcodes on your site enabled via any third-party plugin or theme.
 
 = I love this plugin! Can I contribute? =
 Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagtools/) :)
