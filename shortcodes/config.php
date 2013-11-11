@@ -416,9 +416,11 @@ if ( $stagtools->is_scs_active() ) {
 
 	$sidebars = array();
 
+	if ( $option ) : // if there is more than one sidebar
 	foreach ( $option as $key => $val ) {
 		$sidebars[sanitize_html_class( sanitize_title_with_dashes( $val ) )] = $val;
 	}
+	endif;
 
 	$stag_shortcodes['widget_area'] = array(
 		'no_preview' => true,
