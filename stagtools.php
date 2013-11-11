@@ -77,6 +77,8 @@ class StagTools {
 	/**
 	 * action_links function.
 	 *
+	 * Adds custom links on plugins page.
+	 *
 	 * @access public
 	 * @param mixed $links
 	 * @return void
@@ -89,6 +91,11 @@ class StagTools {
 		return array_merge( $plugin_links, $links );
 	}
 
+	/**
+	 * Initiate all the stuff.
+	 * 
+	 * @return void
+	 */
 	function init() {
 		$this->stag_load_textdomain();
 
@@ -96,35 +103,55 @@ class StagTools {
 		add_filter( 'body_class', array( &$this, 'body_class' ) );
 
 
-		if( current_theme_supports( 'stag-portfolio' ) ) include_once( 'cpt/cpt-portfolio.php' );
-		if( current_theme_supports( 'stag-slides' ) ) include_once( 'cpt/cpt-slides.php' );
-		if( current_theme_supports( 'stag-team' ) ) include_once( 'cpt/cpt-team.php' );
+		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'cpt/cpt-portfolio.php' );
+		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'cpt/cpt-slides.php' );
+		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'cpt/cpt-team.php' );
 		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'cpt/cpt-testimonials.php' );
 	}
 
+	/**
+	 * Register settings for admin options.
+	 * 
+	 * @return void
+	 */
 	function admin_init() {
 		register_setting( 'stag_plugin_options', 'stag_options', array($this, 'stag_validate_options') );
 	}
 
+	/**
+	 * Add StagTools admin options.
+	 *
+	 * @global string $stag_options One true options page
+	 * @return void
+	 */
 	function stag_add_options_page() {
 		global $stag_options;
 		$stag_options = add_options_page('StagTools Options', 'StagTools', 'manage_options', 'stagtools', array($this, 'settings_page') );
 	}
 
+	/**
+	 * Setup localisation.
+	 * 
+	 * @return void
+	 */
 	function stag_load_textdomain() {
 		load_plugin_textdomain( 'stag', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
+	/**
+	 * Include admin and frontend files.
+	 *
+	 * @uses StagTools::admin_includes() Includes admin files
+	 * @uses StagTools::frontend_includes() Includes frontend files
+	 * @return void
+	 */
 	public function includes() {
 		if ( is_admin() ){
 			$this->admin_includes();
 		}
 		if( !is_admin() ){
 			$this->frontend_includes();
-		}
-
-		// Other includes
-		
+		}		
 
 		// Widgets
 		include_once( 'widgets/widget-dribbble.php' );
@@ -133,16 +160,28 @@ class StagTools {
 	}
 
 	/**
-	* Admin Includes
+	* Include admin Includes.
+	*
+	* @return void
 	*/
 	public function admin_includes(){
 		include_once( 'shortcodes/stag-shortcodes.php' );
 	}
 
+	/**
+	 * Include frontend files.
+	 * 
+	 * @return void
+	 */
 	public function frontend_includes(){
 		include_once( plugin_dir_path( __FILE__ ) .'shortcodes/shortcodes.php' );
 	}
 
+	/**
+	 * Add frontend scripts and styles.
+	 * 
+	 * @return void
+	 */
 	public function frontend_style() {
 		wp_register_style( 'stag-shortcode-styles', plugin_dir_url( __FILE__ )  . 'assets/css/stag-shortcodes.css' , '', $this->version, 'all' );
 		wp_register_style( 'font-awesome', plugin_dir_url( __FILE__ )  . 'assets/css/font-awesome.css' , '', '3.2.1', 'all' );
@@ -157,6 +196,11 @@ class StagTools {
 		wp_enqueue_script( 'stag-shortcode-scripts' );
 	}
 
+	/**
+	 * Enqueue styles for admin options.
+	 * @param  string $hook Container current page name
+	 * @return void
+	 */
 	public function admin_menu_styles( $hook ) {
 		global $stag_options;
 
@@ -165,19 +209,29 @@ class StagTools {
 		wp_enqueue_style( 'stag-admin-options-styles', plugin_dir_url( __FILE__ ) . 'assets/css/stag-admin-options.css', false, $this->version );
 	}
 
+	/**
+	 * Plugin path.
+	 * 
+	 * @return string Plugin path
+	 */
 	public function plugin_path() {
 		if ( $this->plugin_path ) return $this->plugin_path;
 
 		return $this->plugin_path = untrailingslashit( plugin_dir_path( __FILE__ ) );
 	}
 
+	/**
+	 * Plugin url.
+	 * 
+	 * @return string Plugin url
+	 */
 	public function plugin_url() {
 		if ( $this->plugin_url ) return $this->plugin_url;
 		return $this->plugin_url = untrailingslashit( plugins_url( '/', __FILE__ ) );
 	}
 
 	/**
-	 * Add stagtools to body class for use on frontend to check if plugin is active
+	 * Add stagtools to body class for use on frontend to check if plugin is active.
 	 * 
 	 * @since 1.0.0
 	 * @return array $classes List of classes
@@ -187,12 +241,18 @@ class StagTools {
 		return $classes;
 	}
 
+	/**
+	 * Validate admin option settings.
+	 * 
+	 * @param  array $input Array containing admin options before saving them
+	 * @return array $input Filtered admin options
+	 */
 	public function stag_validate_options( $input ) {
 		return $input;
 	}
 
 	/**
-	* StagTools Settings Page
+	* StagTools Settings Page.
 	*
 	* @return void
 	*/
@@ -209,6 +269,7 @@ class StagTools {
 			
 			<table class="form-table">
 				<tbody>
+
 					<tr valign="top">
 						<th scope="row"><label for="twitter-api-consumer-key"><?php _e( 'OAuth Consumer Key', 'stag' ); ?></label></th>
 						<td>
