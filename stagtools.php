@@ -160,7 +160,7 @@ class StagTools {
 	}
 
 	/**
-	* Include admin Includes.
+	* Include admin files.
 	*
 	* @return void
 	*/
@@ -198,6 +198,7 @@ class StagTools {
 
 	/**
 	 * Enqueue styles for admin options.
+	 * 
 	 * @param  string $hook Container current page name
 	 * @return void
 	 */
@@ -330,7 +331,7 @@ class StagTools {
 	}
 
 	/**
-	* Widget styles
+	* Widget styles.
 	* 
 	* @access public 
 	* @return void 
@@ -359,7 +360,7 @@ class StagTools {
 	}
 
 	/**
-	 * Check if the plugin Stag Custom Sidebars is active
+	 * Check if the plugin Stag Custom Sidebars is active.
 	 *
 	 * @since 1.1
 	 * @link http://wordpress.org/plugins/stag-custom-sidebars
