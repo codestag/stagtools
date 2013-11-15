@@ -66,7 +66,6 @@ class StagTools {
 		add_action( 'init', array( &$this, 'init' ) );
 		add_action( 'admin_init', array( &$this, 'admin_init' ) );
 		add_action( 'admin_menu', array( &$this, 'stag_add_options_page' ) );
-		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_menu_styles' ) );
 		add_action( 'admin_head', array( &$this, 'widget_styles' ) );
 
 		// Include required files
@@ -102,6 +101,7 @@ class StagTools {
 		add_action( 'wp_enqueue_scripts', array( &$this, 'frontend_style' ), 0 );
 		add_filter( 'body_class', array( &$this, 'body_class' ) );
 
+		add_filter( 'contextual_help', array( &$this, 'contextual_help' ), 10, 3 );
 
 		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'cpt/cpt-portfolio.php' );
 		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'cpt/cpt-slides.php' );
@@ -208,20 +208,6 @@ class StagTools {
 	}
 
 	/**
-	 * Enqueue styles for admin options.
-	 * 
-	 * @param  string $hook Container current page name
-	 * @return void
-	 */
-	public function admin_menu_styles( $hook ) {
-		global $stag_options;
-
-		if( $hook != $stag_options ) return;
-
-		wp_enqueue_style( 'stag-admin-options-styles', plugin_dir_url( __FILE__ ) . 'assets/css/stag-admin-options.css', false, $this->version );
-	}
-
-	/**
 	 * Plugin path.
 	 * 
 	 * @return string Plugin path
@@ -271,92 +257,77 @@ class StagTools {
 	public function settings_page(){
 	?>
 
-	<div class="wrap">
-		<?php echo screen_icon('tools'); ?>
-		<h2><?php _e( 'StagTools', 'okay' ); ?></h2>
-
-		<form method="post" action="options.php">
-			<?php settings_fields('stag_plugin_options'); ?>
-			<?php $stag_options = get_option('stag_options'); ?>
+		<div class="wrap">
+			<?php echo screen_icon('tools'); ?>
+			<h2><?php _e( 'StagTools', 'okay' ); ?></h2>
 			
-			<table class="form-table">
-				<tbody>
+			<form method="post" action="options.php">
+				<?php settings_fields('stag_plugin_options'); ?>
+				<?php $stag_options = get_option('stag_options'); ?>
 
-					<tr valign="top">
-						<th scope="row"><label for="twitter-api-consumer-key"><?php _e( 'OAuth Consumer Key', 'stag' ); ?></label></th>
-						<td>
-							<input type="text" class="regular-text" name="stag_options[consumer_key]" id="twitter-api-consumer-key" value="<?php echo esc_html($stag_options['consumer_key']); ?>" />
-						</td>
-					</tr>
+				<h3 class="title"><?php _e( 'Twitter Settings', 'stag' ); ?></h3>
+				
+				<table class="form-table">
+					<tbody>
 
-					<tr valign="top">
-						<th scope="row"><label for="twitter-api-consumer-secret"><?php _e( 'OAuth Consumer Secret', 'stag' ); ?></label></th>
-						<td>
-							<input type="text" class="regular-text" name="stag_options[consumer_secret]" id="twitter-api-consumer-secret" value="<?php echo esc_html($stag_options['consumer_secret']); ?>" />
-						</td>
-					</tr>
+						<tr valign="top">
+							<th scope="row"><label for="twitter-api-consumer-key"><?php _e( 'OAuth Consumer Key', 'stag' ); ?></label></th>
+							<td>
+								<input type="text" class="regular-text" name="stag_options[consumer_key]" id="twitter-api-consumer-key" value="<?php echo esc_html($stag_options['consumer_key']); ?>" />
+							</td>
+						</tr>
 
-					<tr valign="top">
-						<th scope="row"><label for="twitter-api-access-key"><?php _e( 'OAuth Access Token', 'stag' ); ?></label></th>
-						<td>
-							<input type="text" class="regular-text" name="stag_options[access_key]" id="twitter-api-access-key" value="<?php echo esc_html($stag_options['access_key']); ?>" />
-						</td>
-					</tr>
+						<tr valign="top">
+							<th scope="row"><label for="twitter-api-consumer-secret"><?php _e( 'OAuth Consumer Secret', 'stag' ); ?></label></th>
+							<td>
+								<input type="text" class="regular-text" name="stag_options[consumer_secret]" id="twitter-api-consumer-secret" value="<?php echo esc_html($stag_options['consumer_secret']); ?>" />
+							</td>
+						</tr>
 
-					<tr valign="top">
-						<th scope="row"><label for="twitter-api-access-secret"><?php _e( 'OAuth Access Secret', 'stag' ); ?></label></th>
-						<td>
-							<input type="text" class="regular-text" name="stag_options[access_secret]" id="twitter-api-access-secret" value="<?php echo esc_html($stag_options['access_secret']); ?>" />
-						</td>
-					</tr>
+						<tr valign="top">
+							<th scope="row"><label for="twitter-api-access-key"><?php _e( 'OAuth Access Token', 'stag' ); ?></label></th>
+							<td>
+								<input type="text" class="regular-text" name="stag_options[access_key]" id="twitter-api-access-key" value="<?php echo esc_html($stag_options['access_key']); ?>" />
+							</td>
+						</tr>
 
-					<tr valign="top">
-						<th scope="row"><h3><?php _e( 'Portfolio Settings', 'stag' ); ?></h3></th>
-					</tr>
+						<tr valign="top">
+							<th scope="row"><label for="twitter-api-access-secret"><?php _e( 'OAuth Access Secret', 'stag' ); ?></label></th>
+							<td>
+								<input type="text" class="regular-text" name="stag_options[access_secret]" id="twitter-api-access-secret" value="<?php echo esc_html($stag_options['access_secret']); ?>" />
+							</td>
+						</tr>
 
-					<tr valign="top">
-						<th scope="row"><label for="portfolio-slug"><?php _e( 'Portfolio Slug', 'stag' ); ?></label></th>
-						<td>
-							<?php $portfolio_slug = ( isset( $stag_options['portfolio_slug'] ) ) ? esc_html($stag_options['portfolio_slug']) : 'portfolio'; ?>
-							<input type="text" class="regular-text" name="stag_options[portfolio_slug]" id="portfolio-slug" value="<?php echo $portfolio_slug; ?>" />
-						</td>
-					</tr>
+					</tbody>
+				</table>
 
-					<tr valign="top">
-						<th scope="row"><label for="skills-slug"><?php _e( 'Skills Slug', 'stag' ); ?></label></th>
-						<td>
-							<?php $skills_slug = ( isset( $stag_options['skills_slug'] ) ) ? esc_html($stag_options['skills_slug']) : 'skill'; ?>
-							<input type="text" class="regular-text" name="stag_options[skills_slug]" id="skills-slug" value="<?php echo $skills_slug; ?>" />
-						</td>
-					</tr>
+				<h3><?php _e( 'Portfolio Settings', 'stag' ); ?></h3>
+				
+				<table class="form-table">
+					<tbody>
 
-				</tbody>
-			</table>
+						<tr valign="top">
+							<th scope="row"><label for="portfolio-slug"><?php _e( 'Portfolio Slug', 'stag' ); ?></label></th>
+							<td>
+								<?php $portfolio_slug = ( isset( $stag_options['portfolio_slug'] ) ) ? esc_html($stag_options['portfolio_slug']) : 'portfolio'; ?>
+								<input type="text" class="regular-text" name="stag_options[portfolio_slug]" id="portfolio-slug" value="<?php echo $portfolio_slug; ?>" />
+							</td>
+						</tr>
 
-			<?php echo submit_button('Save Changes'); ?>
-		</form>
+						<tr valign="top">
+							<th scope="row"><label for="skills-slug"><?php _e( 'Skills Slug', 'stag' ); ?></label></th>
+							<td>
+								<?php $skills_slug = ( isset( $stag_options['skills_slug'] ) ) ? esc_html($stag_options['skills_slug']) : 'skill'; ?>
+								<input type="text" class="regular-text" name="stag_options[skills_slug]" id="skills-slug" value="<?php echo $skills_slug; ?>" />
+							</td>
+						</tr>
 
-		<div class="stag-help">
-			<h2><?php _e( 'FAQ', 'stag' ); ?></h2>
-			<p><?php _e( 'Few resources to help you getting started.', 'stag' ); ?></p>
+					</tbody>
+				</table>
 
-			<div class="s-help-row">
-				<h3><?php _e( 'Where do I find these keys?', 'stag' ); ?></h3>
-				<p><?php echo sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by %s to the Twitter developer dashboard.', 'stag' ), '<a target="_blank" href="//dev.twitter.com/apps">signing-in</a>' ); ?></p>
-			</div>
-
-			<div class="s-help-row">
-				<h3><?php _e( 'Where are my widgets?', 'stag' ); ?></h3>
-				<p><?php echo sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by %s to the Twitter developer dashboard.', 'stag' ), '<a target="_blank" href="//cl.ly/image/1H1U1i1T3u0h">creating a new application</a>' ); ?></p>
-			</div>
-
-			<div class="s-help-row">
-				<h3><?php _e( 'Can I insert shortcodes manually instead of using shortcode generator?', 'stag' ); ?></h3>
-				<p><?php echo sprintf( __( 'Yes; although we have a shortcode builder you can also see a list of %s and use it manually in any supported area.', 'stag' ), '<a target="_blank" href="//gist.github.com/mauryaratan/6071262">all available shortcodes</a>' ); ?></p>
-			</div>
-		</div>
-
-	</div>
+				<?php echo submit_button('Save Changes'); ?>
+			</form>
+		</div><!-- .wrap -->
 
 	<?php
 	}
@@ -401,6 +372,52 @@ class StagTools {
 		include_once(ABSPATH .'wp-admin/includes/plugin.php');
 		if( is_plugin_active('stag-custom-sidebars/stag-custom-sidebars.php') ) return true;
 		return false;
+	}
+
+	/**
+	 * Add help screen for StagTools settings page.
+	 * 
+	 * @param  string $contextual_help
+	 * @param  string $screen_id       String of the settings page
+	 * @param  object $screen          Current screen object containing all details
+	 * @since  1.1
+	 * @return object Help object
+	 */
+	function contextual_help( $contextual_help, $screen_id, $screen ) {
+		if ( "settings_page_stagtools" != $screen_id )
+			return;
+
+		$screen->set_help_sidebar(
+			'<p><strong>' . sprintf( __( 'For more information:', 'stag' ) . '</strong></p>' .
+			'<p>' . sprintf( __( 'Visit the <a href="%s" target="_blank">documentation</a> on the Github.', 'stag' ), esc_url( 'https://github.com/mauryaratan/stagtools/wiki' ) ) ) . '</p>' .
+			'<p>' . sprintf(
+						__( '<a href="%s" target="_blank">Post an issue</a> on <a href="%s" target="_blank">GitHub</a>.', 'stag' ),
+						esc_url( 'https://github.com/mauryaratan/stagtools/issues' ),
+						esc_url( 'https://github.com/mauryaratan/stagtools' )
+					) . '</p>'
+		);
+
+		$screen->add_help_tab( array(
+			'id'	    => 'stagtools-help-oauth',
+			'title'	    => __( 'Twitter oAuth Settings', 'stag' ),
+			'content'	=>  '<p>' . __( 'Here you can find how to add twitter oAuth keys to get Twitter widget working.', 'stag' ) . '</p>'.
+							'<h5>' . __( 'Where do I find these keys?', 'stag' ) . '</h5>'.
+							'<p>' . sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by <a href="%s" target="_blank">signing-in</a> to the Twitter developer dashboard.', 'stag' ), esc_url( 'http://dev.twitter.com/apps' ) ) . '</p>'.
+							'<h5>' . __( 'Where are my widgets?', 'stag' ) . '</h5>'.
+							'<p>' . sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by <a href="%s" target="_blank">creating a new application</a> to the Twitter developer dashboard.', 'stag' ), esc_url( 'http://cl.ly/image/1H1U1i1T3u0h' ) ) . '</p>'.
+							'<h5>' . __( 'Can I insert shortcodes manually instead of using shortcode generator?', 'stag' ) . '</h5>'.
+							'<p>' . sprintf( __( 'Yes; although we have a shortcode builder you can also see a list of <a href="%s" target="_blank">all available shortcodes</a> and use it manually in any supported area.', 'stag' ), esc_url( 'http://gist.github.com/mauryaratan/6071262' ) ) . '</p>'
+		) );
+
+		$screen->add_help_tab( array(
+			'id'	    => 'stagtools-help-portfolio',
+			'title'	    => __( 'Portfolio Settings', 'stag' ),
+			'content'	=>  '<p>'. __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) .'</p>'.
+							'<p>'. __( '<strong>Portfolio Slug</strong> - This settings is used to set the slug of custom post type &lsquo;portfolio&rsquo;.', 'stag' ) .'</p>'.
+							'<p>'. __( '<strong>Skills Slug</strong> - This settings is used to set the slug of custom post taxonomy &lsquo;skill&rsquo;.', 'stag' ) .'</p>'
+		) );
+
+		return $contextual_help;
 	}
 
 }
