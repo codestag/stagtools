@@ -8,7 +8,7 @@
  * Author URI: http://mauryaratan.me
  * License: GPL2
  * Requires at least: 3.5
- * Tested up to: 3.6.1
+ * Tested up to: 3.8
  * 
  * Text Domain: stag
  * Domain Path: /languages/
@@ -22,7 +22,7 @@ if ( ! class_exists( 'StagTools' ) ) {
  * Main StagTools Class
  *
  * @package StagTools
- * @version 1.0
+ * @version 1.1
  * @author Ram Ratan Maurya (Codestag)
  * @link http://mauryaratan.me
  * @link http://codestag.com
@@ -116,6 +116,17 @@ class StagTools {
 	 */
 	function admin_init() {
 		register_setting( 'stag_plugin_options', 'stag_options', array($this, 'stag_validate_options') );
+
+		/**
+		 * Flush rewrite rules on settings change.
+		 *
+		 * It's the best way to flush rewrite rules when there is a change in 'portfolio' or 'skills' slug.
+		 * 
+		 * @since 1.1
+		 */
+		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == "true" ) {
+			flush_rewrite_rules();
+		}
 	}
 
 	/**
@@ -296,6 +307,26 @@ class StagTools {
 						<th scope="row"><label for="twitter-api-access-secret"><?php _e( 'OAuth Access Secret', 'stag' ); ?></label></th>
 						<td>
 							<input type="text" class="regular-text" name="stag_options[access_secret]" id="twitter-api-access-secret" value="<?php echo esc_html($stag_options['access_secret']); ?>" />
+						</td>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row"><h3><?php _e( 'Portfolio Settings', 'stag' ); ?></h3></th>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row"><label for="portfolio-slug"><?php _e( 'Portfolio Slug', 'stag' ); ?></label></th>
+						<td>
+							<?php $portfolio_slug = ( isset( $stag_options['portfolio_slug'] ) ) ? esc_html($stag_options['portfolio_slug']) : 'portfolio'; ?>
+							<input type="text" class="regular-text" name="stag_options[portfolio_slug]" id="portfolio-slug" value="<?php echo $portfolio_slug; ?>" />
+						</td>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row"><label for="skills-slug"><?php _e( 'Skills Slug', 'stag' ); ?></label></th>
+						<td>
+							<?php $skills_slug = ( isset( $stag_options['skills_slug'] ) ) ? esc_html($stag_options['skills_slug']) : 'skill'; ?>
+							<input type="text" class="regular-text" name="stag_options[skills_slug]" id="skills-slug" value="<?php echo $skills_slug; ?>" />
 						</td>
 					</tr>
 
