@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-24 22:15+0530\n"
-"PO-Revision-Date: 2013-10-24 22:15+0530\n"
+"POT-Creation-Date: 2013-11-15 20:51+0530\n"
+"PO-Revision-Date: 2013-11-15 20:51+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -16,63 +16,126 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../stagtools.php:86
+#: ../stagtools.php:87
 msgid "Settings"
 msgstr ""
 
-#: ../stagtools.php:204
+#: ../stagtools.php:263
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:213
+#: ../stagtools.php:273
+msgid "Twitter Settings"
+msgstr ""
+
+#: ../stagtools.php:277
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: ../stagtools.php:220
+#: ../stagtools.php:284
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: ../stagtools.php:227
+#: ../stagtools.php:291
 msgid "OAuth Access Token"
 msgstr ""
 
-#: ../stagtools.php:234
+#: ../stagtools.php:298
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: ../stagtools.php:247
-msgid "FAQ"
+#: ../stagtools.php:305 ../stagtools.php:414
+msgid "Portfolio Settings"
 msgstr ""
 
-#: ../stagtools.php:248
-msgid "Few resources to help you getting started."
+#: ../stagtools.php:309
+msgid "Portfolio Slug"
 msgstr ""
 
-#: ../stagtools.php:251
+#: ../stagtools.php:317
+msgid "Skills Slug"
+msgstr ""
+
+#: ../stagtools.php:391
+msgid "For more information:"
+msgstr ""
+
+#: ../stagtools.php:392
+#, php-format
+msgid ""
+"Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
+msgstr ""
+
+#: ../stagtools.php:394
+#, php-format
+msgid ""
+"<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
+"\"_blank\">GitHub</a>."
+msgstr ""
+
+#: ../stagtools.php:402
+msgid "Twitter oAuth Settings"
+msgstr ""
+
+#: ../stagtools.php:403
+msgid ""
+"Here you can find how to add twitter oAuth keys to get Twitter widget "
+"working."
+msgstr ""
+
+#: ../stagtools.php:404
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:252 ../stagtools.php:257
+#: ../stagtools.php:405
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by %s to the "
-"Twitter developer dashboard."
+"app, which will provide you with the keys you see above. Start by <a href="
+"\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:256
+#: ../stagtools.php:406
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:261
+#: ../stagtools.php:407
+#, php-format
+msgid ""
+"In order to use the new Twitter widget, you must first register a Twitter "
+"app, which will provide you with the keys you see above. Start by <a href="
+"\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
+"developer dashboard."
+msgstr ""
+
+#: ../stagtools.php:408
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:262
+#: ../stagtools.php:409
 #, php-format
 msgid ""
-"Yes; although we have a shortcode builder you can also see a list of %s and "
-"use it manually in any supported area."
+"Yes; although we have a shortcode builder you can also see a list of <a href="
+"\"%s\" target=\"_blank\">all available shortcodes</a> and use it manually in "
+"any supported area."
+msgstr ""
+
+#: ../stagtools.php:415
+msgid ""
+"You can use the following settigns to control the slug/taxonomies for custom "
+"post type portfolio and skills."
+msgstr ""
+
+#: ../stagtools.php:416
+msgid ""
+"<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
+"custom post type &lsquo;portfolio&rsquo;."
+msgstr ""
+
+#: ../stagtools.php:417
+msgid ""
+"<strong>Skills Slug</strong> - This settings is used to set the slug of "
+"custom post taxonomy &lsquo;skill&rsquo;."
 msgstr ""
 
 #: ../assets/js/plugin-lang.php:5
@@ -172,19 +235,19 @@ msgstr ""
 msgid "No Portfolios found in trash"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:35 ../cpt/cpt-portfolio.php:50
+#: ../cpt/cpt-portfolio.php:36 ../cpt/cpt-portfolio.php:51
 msgid "Skills"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:36
+#: ../cpt/cpt-portfolio.php:37
 msgid "Skill"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:49
+#: ../cpt/cpt-portfolio.php:50
 msgid "Portfolio Title"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:51 ../cpt/cpt-slides.php:38 ../cpt/cpt-team.php:39
+#: ../cpt/cpt-portfolio.php:52 ../cpt/cpt-slides.php:38 ../cpt/cpt-team.php:39
 #: ../cpt/cpt-testimonials.php:38
 msgid "Date"
 msgstr ""
@@ -877,23 +940,23 @@ msgstr ""
 msgid "Enter Google Map URL"
 msgstr ""
 
-#: ../shortcodes/config.php:405 ../shortcodes/config.php:440
+#: ../shortcodes/config.php:405 ../shortcodes/config.php:442
 msgid "Insert Google Map Shortcode"
 msgstr ""
 
-#: ../shortcodes/config.php:428
+#: ../shortcodes/config.php:430
 msgid "Choose Widget Area"
 msgstr ""
 
-#: ../shortcodes/config.php:429
+#: ../shortcodes/config.php:431
 msgid "Choose which sidebar area you want to display."
 msgstr ""
 
-#: ../shortcodes/config.php:435
+#: ../shortcodes/config.php:437
 msgid "Class"
 msgstr ""
 
-#: ../shortcodes/config.php:436
+#: ../shortcodes/config.php:438
 msgid "Enter Class name, if you want to use one on frontend."
 msgstr ""
 
@@ -905,15 +968,15 @@ msgstr ""
 msgid "Choose Image"
 msgstr ""
 
-#: ../shortcodes/stag-shortcodes.php:24
+#: ../shortcodes/stag-shortcodes.php:28
 msgid "Upload or Choose Your Custom Video File"
 msgstr ""
 
-#: ../shortcodes/stag-shortcodes.php:25
+#: ../shortcodes/stag-shortcodes.php:29
 msgid "Upload or Choose Your Custom Image File"
 msgstr ""
 
-#: ../shortcodes/stag-shortcodes.php:91
+#: ../shortcodes/stag-shortcodes.php:95
 msgid "Insert Shortcode"
 msgstr ""
 

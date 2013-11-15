@@ -14,9 +14,10 @@ $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 	'parent_item_colon'  => ''
 ) );
 
-
-$slug     = defined( 'STAG_PORTFOLIO_SLUG' ) ? STAG_PORTFOLIO_SLUG : 'portfolio';
-$rewrite  = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array('slug' => $slug, 'with_front' => false);
+$stag_options    = get_option('stag_options');
+@$portfolio_slug = $stag_options['portfolio_slug'];
+@$skills_slug    = $stag_options['skills_slug'];
+$rewrite         = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array('slug' => $portfolio_slug, 'with_front' => false);
 
 $portfolio_args = array(
 	'labels'            => $portfolio_labels,
@@ -40,7 +41,7 @@ register_taxonomy( 'skill', 'portfolio', array(
 	'show_in_nav_menus' => false,
 	'args'              => array( 'orderby' => 'term_order' ),
 	'query_var'         => true,
-	'rewrite'           => array( 'slug' => 'skill', 'hierarchical' => true)
+	'rewrite'           => array( 'slug' => $skills_slug, 'hierarchical' => true)
 ) );
 
 function stag_portfolio_edit_columns( $columns ) {
