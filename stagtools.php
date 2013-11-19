@@ -137,7 +137,7 @@ class StagTools {
 	 */
 	function stag_add_options_page() {
 		global $stag_options;
-		$stag_options = add_options_page('StagTools Options', 'StagTools', 'manage_options', 'stagtools', array($this, 'settings_page') );
+		$stag_options = add_options_page( 'StagTools Options', 'StagTools', 'manage_options', 'stagtools', array($this, 'settings_page') );
 	}
 
 	/**
