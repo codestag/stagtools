@@ -272,7 +272,7 @@ endif;
 if( ! function_exists( 'stag_tab' ) ) :
 function stag_tab( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'title' => 'Tab'
+		'title' => __( 'Tab', 'stag' )
 	), $atts ) );
 	return '<div id="stag-tab-'. sanitize_title( $title ) .'" class="stag-tab">'. do_shortcode( $content ) .'</div>';
 }
@@ -283,7 +283,7 @@ endif;
 if( ! function_exists( 'stag_toggle' ) ) :
 function stag_toggle( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'title' => 'Title Goes Here',
+		'title' => __( 'Title Goes Here', 'stag' ),
 		'state' => 'open',
 		'style' => 'normal'
 	), $atts ) );

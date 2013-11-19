@@ -5,7 +5,7 @@ Donate link: http://codest.ag/st-donate
 Tags: widgets, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebars, codestag, mauryaratan
 Requires at least: 3.5
 Tested up to: 3.8
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 ==Changelog==
 
+= 1.1.1 - 11/20/2013 =
+* Fix - FontAwesome icon missing class names after upgrading to latest version
+
 = 1.1 - 11/15/2013 =
 * New - Compatibility with FontAwesome 4
 * New - Insert font icons in buttons
@@ -88,7 +91,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Fix - Properly resize shortcode modal window width
 * Fix - Image/Video Media frame title
 * Fix - Check if there are no sidebar created via Stag Custom Sidebars
-* Improve - Compatibility with the plugin [Stag Custom Sidebars][http://wordpress.org/plugins/stag-custom-sidebars/]
+* Improve - Compatibility with the plugin [Stag Custom Sidebars](http://wordpress.org/plugins/stag-custom-sidebars/)
 * Improve - Refractored code
 * Improve - Inline plugin documentation
 
