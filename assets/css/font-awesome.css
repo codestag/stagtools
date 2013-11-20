@@ -256,7 +256,7 @@
 .icon-cog:before {
   content: "\f013";
 }
-.icon-trash-o:before
+.icon-trash-o:before,
 .icon-trash:before {
   content: "\f014";
 }
