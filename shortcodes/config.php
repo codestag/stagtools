@@ -394,14 +394,52 @@ $stag_shortcodes['icon'] = array(
 $stag_shortcodes['map'] = array(
 	'no_preview' => true,
 	'params' => array(
-		'url' => array(
+		'lat' => array(
 			'std' => '',
 			'type' => 'text',
-			'label' => __( 'Enter URL', 'stag' ),
-			'desc' => __( 'Enter Google Map URL', 'stag' )
-		)
+			'label' => __( 'Latitude', 'stag' ),
+			'desc' => __( 'Enter the place latitude coordinate. E.g.: 37.42200', 'stag' )
+		),
+		'long' => array(
+			'std' => '',
+			'type' => 'text',
+			'label' => __( 'Longitude', 'stag' ),
+			'desc' => __( 'Enter the place longitude coordinate. E.g.: -122.08395', 'stag' )
+		),
+		'width' => array(
+			'std' => '100%',
+			'type' => 'text',
+			'label' => __( 'Width', 'stag' ),
+			'desc' => __( 'Enter the map width.', 'stag' )
+		),
+		'height' => array(
+			'std' => '350px',
+			'type' => 'text',
+			'label' => __( 'Height', 'stag' ),
+			'desc' => __( 'Enter the map height.', 'stag' )
+		),
+		'zoom' => array(
+			'std' => '15',
+			'type' => 'text',
+			'label' => __( 'Zoom Level', 'stag' ),
+			'desc' => __( 'Enter the map zoom level between 0-21. Highest value zooms in and lowest zooms out.', 'stag' )
+		),
+		'style' => array(
+			'std' => 'none',
+			'type' => 'select',
+			'label' => __( 'Map Style', 'stag' ),
+			'desc' => __( 'Select from a list of predefined map styles.', 'stag' ),
+			'options' => array(
+				'none' => __( 'None', 'stag' ),
+				'pale_dawn' => __( 'Pale Dawn', 'stag' ),
+				'subtle_grayscale' => __( 'Subtle Grayscale', 'stag' ),
+				'bright_bubbly' => __( 'Bright & Bubbly', 'stag' ),
+				'greyscale' => __( 'Greyscale', 'stag' ),
+				'mixed' => __( 'Mixed', 'stag' )
+			)
+		),
 	),
-	'shortcode' => '[stag_map url="{{url}}"]',
+	'shortcode' => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}"]',
 	'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
 );
 

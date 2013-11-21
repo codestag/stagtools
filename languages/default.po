@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-20 01:07+0530\n"
-"PO-Revision-Date: 2013-11-20 01:07+0530\n"
+"POT-Creation-Date: 2013-11-22 01:50+0530\n"
+"PO-Revision-Date: 2013-11-22 01:50+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -855,7 +855,7 @@ msgstr ""
 msgid "Choose Image Alignment"
 msgstr ""
 
-#: ../shortcodes/config.php:326
+#: ../shortcodes/config.php:326 ../shortcodes/config.php:433
 msgid "None"
 msgstr ""
 
@@ -935,30 +935,92 @@ msgid "Insert Icon Shortcode"
 msgstr ""
 
 #: ../shortcodes/config.php:400
-msgid "Enter URL"
+msgid "Latitude"
 msgstr ""
 
 #: ../shortcodes/config.php:401
-msgid "Enter Google Map URL"
+msgid "Enter the place latitude coordinate. E.g.: 37.42200"
 msgstr ""
 
-#: ../shortcodes/config.php:405 ../shortcodes/config.php:442
-msgid "Insert Google Map Shortcode"
+#: ../shortcodes/config.php:406
+msgid "Longitude"
+msgstr ""
+
+#: ../shortcodes/config.php:407
+msgid "Enter the place longitude coordinate. E.g.: -122.08395"
+msgstr ""
+
+#: ../shortcodes/config.php:412
+msgid "Width"
+msgstr ""
+
+#: ../shortcodes/config.php:413
+msgid "Enter the map width."
+msgstr ""
+
+#: ../shortcodes/config.php:418
+msgid "Height"
+msgstr ""
+
+#: ../shortcodes/config.php:419
+msgid "Enter the map height."
+msgstr ""
+
+#: ../shortcodes/config.php:424
+msgid "Zoom Level"
+msgstr ""
+
+#: ../shortcodes/config.php:425
+msgid ""
+"Enter the map zoom level between 0-21. Highest value zooms in and lowest "
+"zooms out."
 msgstr ""
 
 #: ../shortcodes/config.php:430
-msgid "Choose Widget Area"
+msgid "Map Style"
 msgstr ""
 
 #: ../shortcodes/config.php:431
-msgid "Choose which sidebar area you want to display."
+msgid "Select from a list of predefined map styles."
+msgstr ""
+
+#: ../shortcodes/config.php:434
+msgid "Pale Dawn"
+msgstr ""
+
+#: ../shortcodes/config.php:435
+msgid "Subtle Grayscale"
+msgstr ""
+
+#: ../shortcodes/config.php:436
+msgid "Bright & Bubbly"
 msgstr ""
 
 #: ../shortcodes/config.php:437
-msgid "Class"
+msgid "Greyscale"
 msgstr ""
 
 #: ../shortcodes/config.php:438
+msgid "Mixed"
+msgstr ""
+
+#: ../shortcodes/config.php:443 ../shortcodes/config.php:480
+msgid "Insert Google Map Shortcode"
+msgstr ""
+
+#: ../shortcodes/config.php:468
+msgid "Choose Widget Area"
+msgstr ""
+
+#: ../shortcodes/config.php:469
+msgid "Choose which sidebar area you want to display."
+msgstr ""
+
+#: ../shortcodes/config.php:475
+msgid "Class"
+msgstr ""
+
+#: ../shortcodes/config.php:476
 msgid "Enter Class name, if you want to use one on frontend."
 msgstr ""
 
