@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 01:50+0530\n"
-"PO-Revision-Date: 2013-11-22 01:50+0530\n"
+"POT-Creation-Date: 2013-12-02 23:25+0530\n"
+"PO-Revision-Date: 2013-12-02 23:25+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -22,74 +22,78 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../stagtools.php:262
+#: ../stagtools.php:141
+msgid "StagTools Options"
+msgstr ""
+
+#: ../stagtools.php:141 ../stagtools.php:269
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:268
+#: ../stagtools.php:275
 msgid "Twitter Settings"
 msgstr ""
 
-#: ../stagtools.php:274
+#: ../stagtools.php:281 ../settings/settings.php:172
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: ../stagtools.php:281
+#: ../stagtools.php:288 ../settings/settings.php:178
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: ../stagtools.php:288
+#: ../stagtools.php:295 ../settings/settings.php:184
 msgid "OAuth Access Token"
 msgstr ""
 
-#: ../stagtools.php:295
+#: ../stagtools.php:302 ../settings/settings.php:190
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: ../stagtools.php:304 ../stagtools.php:414
+#: ../stagtools.php:313 ../stagtools.php:425
 msgid "Portfolio Settings"
 msgstr ""
 
-#: ../stagtools.php:310
+#: ../stagtools.php:319 ../settings/settings.php:228
 msgid "Portfolio Slug"
 msgstr ""
 
-#: ../stagtools.php:318
+#: ../stagtools.php:327 ../settings/settings.php:234
 msgid "Skills Slug"
 msgstr ""
 
-#: ../stagtools.php:391
+#: ../stagtools.php:402
 msgid "For more information:"
 msgstr ""
 
-#: ../stagtools.php:392
+#: ../stagtools.php:403
 #, php-format
 msgid ""
 "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#: ../stagtools.php:394
+#: ../stagtools.php:405
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
 "\"_blank\">GitHub</a>."
 msgstr ""
 
-#: ../stagtools.php:402
+#: ../stagtools.php:413
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: ../stagtools.php:403
+#: ../stagtools.php:414
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: ../stagtools.php:404
+#: ../stagtools.php:415
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:405
+#: ../stagtools.php:416
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -97,11 +101,11 @@ msgid ""
 "\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:406
+#: ../stagtools.php:417
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:407
+#: ../stagtools.php:418
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -110,11 +114,11 @@ msgid ""
 "developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:408
+#: ../stagtools.php:419
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:409
+#: ../stagtools.php:420
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of <a href="
@@ -122,19 +126,19 @@ msgid ""
 "any supported area."
 msgstr ""
 
-#: ../stagtools.php:415
+#: ../stagtools.php:426
 msgid ""
 "You can use the following settigns to control the slug/taxonomies for custom "
 "post type portfolio and skills."
 msgstr ""
 
-#: ../stagtools.php:416
+#: ../stagtools.php:427
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: ../stagtools.php:417
+#: ../stagtools.php:428
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
@@ -201,6 +205,7 @@ msgid "Google Map"
 msgstr ""
 
 #: ../cpt/cpt-portfolio.php:4 ../cpt/cpt-portfolio.php:5
+#: ../settings/settings.php:71
 msgid "Portfolio"
 msgstr ""
 
@@ -372,6 +377,80 @@ msgstr ""
 
 #: ../cpt/cpt-testimonials.php:37
 msgid "Testimonial Title"
+msgstr ""
+
+#: ../settings/settings.php:69
+msgid "General"
+msgstr ""
+
+#: ../settings/settings.php:70
+msgid "Social"
+msgstr ""
+
+#: ../settings/settings.php:123
+msgid "Settings Updated"
+msgstr ""
+
+#: ../settings/settings.php:173
+msgid "Enter twitter OAuth Consumer Key"
+msgstr ""
+
+#: ../settings/settings.php:179
+msgid "Enter twitter OAuth Consumer Secret"
+msgstr ""
+
+#: ../settings/settings.php:185
+msgid "Enter twitter OAuth Access Token"
+msgstr ""
+
+#: ../settings/settings.php:191
+msgid "Enter twitter OAuth Access Secret"
+msgstr ""
+
+#: ../settings/settings.php:200
+msgid "Facebook URL"
+msgstr ""
+
+#: ../settings/settings.php:201
+msgid "Enter your facebook profile/page URL"
+msgstr ""
+
+#: ../settings/settings.php:206
+msgid "Twitter Username"
+msgstr ""
+
+#: ../settings/settings.php:207
+msgid "Enter your twitter profile username"
+msgstr ""
+
+#: ../settings/settings.php:212
+msgid "YouTube"
+msgstr ""
+
+#: ../settings/settings.php:213
+msgid "Enter your YouTube channel URL"
+msgstr ""
+
+#: ../settings/settings.php:218
+msgid "Instagram"
+msgstr ""
+
+#: ../settings/settings.php:219
+msgid "Enter your Instagram profile username"
+msgstr ""
+
+#: ../settings/settings.php:229
+msgid "Enter the slug of custom post type <strong>portfolio</strong>."
+msgstr ""
+
+#: ../settings/settings.php:235
+msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
+msgstr ""
+
+#: ../settings/settings.php:246
+#, php-format
+msgid ""
+"The callback function used for the <strong>%s</strong> setting is missing."
 msgstr ""
 
 #: ../shortcodes/config.php:11

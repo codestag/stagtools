@@ -136,8 +136,9 @@ class StagTools {
 	 * @return void
 	 */
 	function stag_add_options_page() {
-		global $stag_options;
-		$stag_options = add_options_page( 'StagTools Options', 'StagTools', 'manage_options', 'stagtools', array($this, 'settings_page') );
+		// global $stag_options;
+		// $stag_options = add_options_page( __( 'StagTools Options', 'stag' ), __( 'StagTools', 'stag' ), 'manage_options', 'stagtools', array( $this, 'settings_page' ) );
+		add_options_page( __( 'StagTools Options', 'stag' ), __( 'StagTools', 'stag' ), 'manage_options', 'stagtools', 'stagtools_options_page' );
 	}
 
 	/**
@@ -157,6 +158,11 @@ class StagTools {
 	 * @return void
 	 */
 	public function includes() {
+		global $stag_options;
+
+		require_once('settings/settings.php');
+		$stag_options = stagtools_get_settings();
+
 		if ( is_admin() ){
 			$this->admin_includes();
 		}
@@ -177,6 +183,7 @@ class StagTools {
 	*/
 	public function admin_includes(){
 		include_once( 'shortcodes/stag-shortcodes.php' );
+		include_once( 'settings/settings.php' );
 	}
 
 	/**
@@ -301,6 +308,8 @@ class StagTools {
 					</tbody>
 				</table>
 
+				<?php if( current_theme_supports( 'stag-portfolio' ) ) : ?>
+
 				<h3><?php _e( 'Portfolio Settings', 'stag' ); ?></h3>
 				
 				<table class="form-table">
@@ -324,6 +333,8 @@ class StagTools {
 
 					</tbody>
 				</table>
+
+				<?php endif; ?>
 
 				<?php echo submit_button('Save Changes'); ?>
 			</form>
