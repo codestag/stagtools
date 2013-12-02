@@ -64,7 +64,6 @@ class StagTools {
 		// Hooks
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
 		add_action( 'init', array( &$this, 'init' ) );
-		add_action( 'admin_init', array( &$this, 'admin_init' ) );
 		add_action( 'admin_menu', array( &$this, 'stag_add_options_page' ) );
 		add_action( 'admin_head', array( &$this, 'widget_styles' ) );
 
@@ -110,34 +109,12 @@ class StagTools {
 	}
 
 	/**
-	 * Register settings for admin options.
-	 * 
-	 * @return void
-	 */
-	function admin_init() {
-		register_setting( 'stag_plugin_options', 'stag_options', array($this, 'stag_validate_options') );
-
-		/**
-		 * Flush rewrite rules on settings change.
-		 *
-		 * It's the best way to flush rewrite rules when there is a change in 'portfolio' or 'skills' slug.
-		 * 
-		 * @since 1.1
-		 */
-		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == "true" ) {
-			flush_rewrite_rules();
-		}
-	}
-
-	/**
 	 * Add StagTools admin options.
 	 *
 	 * @global string $stag_options One true options page
 	 * @return void
 	 */
 	function stag_add_options_page() {
-		// global $stag_options;
-		// $stag_options = add_options_page( __( 'StagTools Options', 'stag' ), __( 'StagTools', 'stag' ), 'manage_options', 'stagtools', array( $this, 'settings_page' ) );
 		add_options_page( __( 'StagTools Options', 'stag' ), __( 'StagTools', 'stag' ), 'manage_options', 'stagtools', 'stagtools_options_page' );
 	}
 
@@ -244,103 +221,6 @@ class StagTools {
 	public function body_class( $classes ) {
 		$classes[] = 'stagtools';
 		return $classes;
-	}
-
-	/**
-	 * Validate admin option settings.
-	 * 
-	 * @param  array $input Array containing admin options before saving them
-	 * @return array $input Filtered admin options
-	 */
-	public function stag_validate_options( $input ) {
-		return $input;
-	}
-
-	/**
-	* StagTools Settings Page.
-	*
-	* @return void
-	*/
-	public function settings_page(){
-	?>
-
-		<div class="wrap">
-			<?php echo screen_icon('tools'); ?>
-			<h2><?php _e( 'StagTools', 'okay' ); ?></h2>
-			
-			<form method="post" action="options.php">
-				<?php settings_fields('stag_plugin_options'); ?>
-				<?php $stag_options = get_option('stag_options'); ?>
-
-				<h3 class="title"><?php _e( 'Twitter Settings', 'stag' ); ?></h3>
-				
-				<table class="form-table">
-					<tbody>
-
-						<tr valign="top">
-							<th scope="row"><label for="twitter-api-consumer-key"><?php _e( 'OAuth Consumer Key', 'stag' ); ?></label></th>
-							<td>
-								<input type="text" class="regular-text" name="stag_options[consumer_key]" id="twitter-api-consumer-key" value="<?php echo esc_html($stag_options['consumer_key']); ?>" />
-							</td>
-						</tr>
-
-						<tr valign="top">
-							<th scope="row"><label for="twitter-api-consumer-secret"><?php _e( 'OAuth Consumer Secret', 'stag' ); ?></label></th>
-							<td>
-								<input type="text" class="regular-text" name="stag_options[consumer_secret]" id="twitter-api-consumer-secret" value="<?php echo esc_html($stag_options['consumer_secret']); ?>" />
-							</td>
-						</tr>
-
-						<tr valign="top">
-							<th scope="row"><label for="twitter-api-access-key"><?php _e( 'OAuth Access Token', 'stag' ); ?></label></th>
-							<td>
-								<input type="text" class="regular-text" name="stag_options[access_key]" id="twitter-api-access-key" value="<?php echo esc_html($stag_options['access_key']); ?>" />
-							</td>
-						</tr>
-
-						<tr valign="top">
-							<th scope="row"><label for="twitter-api-access-secret"><?php _e( 'OAuth Access Secret', 'stag' ); ?></label></th>
-							<td>
-								<input type="text" class="regular-text" name="stag_options[access_secret]" id="twitter-api-access-secret" value="<?php echo esc_html($stag_options['access_secret']); ?>" />
-							</td>
-						</tr>
-
-					</tbody>
-				</table>
-
-				<?php if( current_theme_supports( 'stag-portfolio' ) ) : ?>
-
-				<h3><?php _e( 'Portfolio Settings', 'stag' ); ?></h3>
-				
-				<table class="form-table">
-					<tbody>
-
-						<tr valign="top">
-							<th scope="row"><label for="portfolio-slug"><?php _e( 'Portfolio Slug', 'stag' ); ?></label></th>
-							<td>
-								<?php $portfolio_slug = ( isset( $stag_options['portfolio_slug'] ) ) ? esc_html($stag_options['portfolio_slug']) : 'portfolio'; ?>
-								<input type="text" class="regular-text" name="stag_options[portfolio_slug]" id="portfolio-slug" value="<?php echo $portfolio_slug; ?>" />
-							</td>
-						</tr>
-
-						<tr valign="top">
-							<th scope="row"><label for="skills-slug"><?php _e( 'Skills Slug', 'stag' ); ?></label></th>
-							<td>
-								<?php $skills_slug = ( isset( $stag_options['skills_slug'] ) ) ? esc_html($stag_options['skills_slug']) : 'skill'; ?>
-								<input type="text" class="regular-text" name="stag_options[skills_slug]" id="skills-slug" value="<?php echo $skills_slug; ?>" />
-							</td>
-						</tr>
-
-					</tbody>
-				</table>
-
-				<?php endif; ?>
-
-				<?php echo submit_button('Save Changes'); ?>
-			</form>
-		</div><!-- .wrap -->
-
-	<?php
 	}
 
 	/**
