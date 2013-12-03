@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-03 11:03+0530\n"
-"PO-Revision-Date: 2013-12-03 11:03+0530\n"
+"POT-Creation-Date: 2013-12-03 18:34+0530\n"
+"PO-Revision-Date: 2013-12-03 18:34+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -30,38 +30,38 @@ msgstr ""
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:282
+#: ../stagtools.php:283
 msgid "For more information:"
 msgstr ""
 
-#: ../stagtools.php:283
+#: ../stagtools.php:284
 #, php-format
 msgid ""
 "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#: ../stagtools.php:285
+#: ../stagtools.php:286
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
 "\"_blank\">GitHub</a>."
 msgstr ""
 
-#: ../stagtools.php:293
+#: ../stagtools.php:294
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: ../stagtools.php:294
+#: ../stagtools.php:295
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: ../stagtools.php:295
+#: ../stagtools.php:296
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:296
+#: ../stagtools.php:297
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -69,11 +69,11 @@ msgid ""
 "\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:297
+#: ../stagtools.php:298
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:298
+#: ../stagtools.php:299
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -82,11 +82,11 @@ msgid ""
 "developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:299
+#: ../stagtools.php:300
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:300
+#: ../stagtools.php:301
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of <a href="
@@ -94,23 +94,23 @@ msgid ""
 "any supported area."
 msgstr ""
 
-#: ../stagtools.php:305
+#: ../stagtools.php:306
 msgid "Portfolio Settings"
 msgstr ""
 
-#: ../stagtools.php:306
+#: ../stagtools.php:307
 msgid ""
 "You can use the following settigns to control the slug/taxonomies for custom "
 "post type portfolio and skills."
 msgstr ""
 
-#: ../stagtools.php:307
+#: ../stagtools.php:308
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: ../stagtools.php:308
+#: ../stagtools.php:309
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
@@ -177,7 +177,7 @@ msgid "Google Map"
 msgstr ""
 
 #: ../cpt/cpt-portfolio.php:4 ../cpt/cpt-portfolio.php:5
-#: ../settings/settings.php:73
+#: ../settings/settings.php:83
 msgid "Portfolio"
 msgstr ""
 
@@ -351,75 +351,75 @@ msgstr ""
 msgid "Testimonial Title"
 msgstr ""
 
-#: ../settings/settings.php:71
+#: ../settings/settings.php:81
 msgid "General"
 msgstr ""
 
-#: ../settings/settings.php:72
+#: ../settings/settings.php:82
 msgid "Social"
 msgstr ""
 
-#: ../settings/settings.php:128
+#: ../settings/settings.php:144
 msgid "Settings Updated"
 msgstr ""
 
-#: ../settings/settings.php:177
+#: ../settings/settings.php:205
 msgid "Twitter Settings"
 msgstr ""
 
-#: ../settings/settings.php:178
+#: ../settings/settings.php:206
 msgid "Configure the twitter settings"
 msgstr ""
 
-#: ../settings/settings.php:183
+#: ../settings/settings.php:211
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: ../settings/settings.php:184
+#: ../settings/settings.php:212
 msgid "Enter twitter OAuth Consumer Key"
 msgstr ""
 
-#: ../settings/settings.php:189
+#: ../settings/settings.php:217
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: ../settings/settings.php:190
+#: ../settings/settings.php:218
 msgid "Enter twitter OAuth Consumer Secret"
 msgstr ""
 
-#: ../settings/settings.php:195
+#: ../settings/settings.php:223
 msgid "OAuth Access Token"
 msgstr ""
 
-#: ../settings/settings.php:196
+#: ../settings/settings.php:224
 msgid "Enter twitter OAuth Access Token"
 msgstr ""
 
-#: ../settings/settings.php:201
+#: ../settings/settings.php:229
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: ../settings/settings.php:202
+#: ../settings/settings.php:230
 msgid "Enter twitter OAuth Access Secret"
 msgstr ""
 
-#: ../settings/settings.php:432
+#: ../settings/settings.php:460
 msgid "Portfolio Slug"
 msgstr ""
 
-#: ../settings/settings.php:433
+#: ../settings/settings.php:461
 msgid "Enter the slug of custom post type <strong>portfolio</strong>."
 msgstr ""
 
-#: ../settings/settings.php:438
+#: ../settings/settings.php:466
 msgid "Skills Slug"
 msgstr ""
 
-#: ../settings/settings.php:439
+#: ../settings/settings.php:467
 msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
 msgstr ""
 
-#: ../settings/settings.php:450
+#: ../settings/settings.php:479
 #, php-format
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."
@@ -1147,24 +1147,28 @@ msgstr ""
 msgid "Stag Dribbble Shots"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:53
+#: ../widgets/widget-dribbble.php:55
 msgid "Please check your dribbble username"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:84 ../widgets/widget-flickr.php:79
-#: ../widgets/widget-twitter.php:152
+#: ../widgets/widget-dribbble.php:77
+msgid "Dribbble Shots"
+msgstr ""
+
+#: ../widgets/widget-dribbble.php:88 ../widgets/widget-flickr.php:80
+#: ../widgets/widget-instagram.php:245 ../widgets/widget-twitter.php:152
 msgid "Title:"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:89
+#: ../widgets/widget-dribbble.php:93
 msgid "Username:"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:94
+#: ../widgets/widget-dribbble.php:98
 msgid "Number of shots to show:"
 msgstr ""
 
-#: ../widgets/widget-dribbble.php:100
+#: ../widgets/widget-dribbble.php:104
 msgid "Open links in new window?"
 msgstr ""
 
@@ -1176,17 +1180,123 @@ msgstr ""
 msgid "Stag Flickr Photos"
 msgstr ""
 
-#: ../widgets/widget-flickr.php:84
+#: ../widgets/widget-flickr.php:70
+msgid "Flickr Photos"
+msgstr ""
+
+#: ../widgets/widget-flickr.php:85
 msgid "Your Flickr User ID:"
 msgstr ""
 
-#: ../widgets/widget-flickr.php:86
+#: ../widgets/widget-flickr.php:87
 #, php-format
 msgid "Head over to %s to find your Flickr user ID."
 msgstr ""
 
-#: ../widgets/widget-flickr.php:90
+#: ../widgets/widget-flickr.php:91
 msgid "Number of photos to show:"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:8
+msgid "A widget that displays your Instagram feed, posts, or likes."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:10
+msgid "Stag Instagram Photos"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:26
+msgid ""
+"<strong>Please fill all the widget settings and request an access token.</"
+"strong>"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:106
+msgid "An undefined error occurred while contacting the Instagram API."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:110
+msgid "The access token seems to be invalid or has expired."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:145
+msgid "<strong>Could not retrieve Instagram posts."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:181
+msgid "Instagram Photos"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:234
+#, php-format
+msgid ""
+"This widget requires that you register an application on the <a href=\"%s\" "
+"target=\"_blank\">Instagram Developer</a> page in order to access feed."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:239
+msgid "Redirect URI:"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:240
+#, php-format
+msgid ""
+"When registering your app, set the Redirect URI field to the following: "
+"&lsquo;%swidgets.php&rsquo;"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:250
+msgid "Client ID:"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:255
+msgid "Client Secret:"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:260
+msgid "Access Token:"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:264
+msgid "Not available."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:270
+msgid ""
+"Please set the \"Client ID\" and \"Client Secret\" fields and press save to "
+"retrieve the access token."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:277
+msgid "Get Access Token"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:279
+msgid "Click to retrieve your access token."
+msgstr ""
+
+#: ../widgets/widget-instagram.php:285
+msgid "Available"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:294
+msgid "Show:"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:296
+msgid "Recent Uploads"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:297
+msgid "Following"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:298
+msgid "Liked Posts"
+msgstr ""
+
+#: ../widgets/widget-instagram.php:303
+msgid "Cache every:"
 msgstr ""
 
 #: ../widgets/widget-twitter.php:8
@@ -1208,6 +1318,10 @@ msgstr ""
 #: ../widgets/widget-twitter.php:66
 msgid ""
 "You will need to regenerate it <a href=\"//dev.twitter.com/apps\">here</a>."
+msgstr ""
+
+#: ../widgets/widget-twitter.php:136
+msgid "Tweets"
 msgstr ""
 
 #: ../widgets/widget-twitter.php:148
