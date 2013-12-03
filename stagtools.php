@@ -150,6 +150,7 @@ class StagTools {
 		// Widgets
 		include_once( 'widgets/widget-dribbble.php' );
 		include_once( 'widgets/widget-flickr.php' );
+		include_once( 'widgets/widget-instagram.php' );
 		include_once( 'widgets/widget-twitter.php' );
 	}
 
@@ -234,7 +235,7 @@ class StagTools {
 		if( $pagenow != 'widgets.php' ) return;
 		?>
 		<style type="text/css">
-		div[id*="stag"] .widget-top{
+		div[id*="_stag"] .widget-top{
 		  background: #C8E5F3 !important;
 		  border-color: #B4D0DD !important;
 		  box-shadow: inset 0 1px 0 white !important;
