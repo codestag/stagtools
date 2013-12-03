@@ -172,6 +172,12 @@ function stagtools_get_registered_settings() {
 	$stag_settings = array(
 		'general' => apply_filters( 'stagtools_general_settings',
 			array(
+				'twitter_settings' => array(
+					'id'   => 'twitter_settings',
+					'name' => '<strong>' . __( 'Twitter Settings', 'stag' ) . '</strong>',
+					'desc' => __( 'Configure the twitter settings', 'stag' ),
+					'type' => 'header'
+				),
 				'consumer_key' => array(
 					'id'   => 'consumer_key',
 					'name' => __( 'OAuth Consumer Key', 'stag' ),
@@ -200,30 +206,223 @@ function stagtools_get_registered_settings() {
 		),
 		'social' => apply_filters( 'stagtools_social_settings',
 			array(
+				'500px' => array(
+					'id'   => '500px',
+					'name' => '500px',
+					'desc' => 'e.g. http://500px.com/username',
+					'type' => 'url'
+				),
+				'addthis' => array(
+					'id'   => 'addthis',
+					'name' => 'AddThis',
+					'desc' => 'e.g. http://www.addthis.com',
+					'type' => 'url'
+				),
+				'blogger' => array(
+					'id'   => 'Blogger',
+					'name' => 'Blogger',
+					'desc' => 'e.g. http://username.blogspot.com',
+					'type' => 'url'
+				),
+				'delicious' => array(
+					'id'   => 'delicious',
+					'name' => 'Delicious',
+					'desc' => 'e.g. http://delicious.com/username',
+					'type' => 'url'
+				),
+				'deviantart' => array(
+					'id'   => 'deviantart',
+					'name' => 'DeviantART',
+					'desc' => 'e.g. http://username.deviantart.com/',
+					'type' => 'url'
+				),
+				'digg' => array(
+					'id'   => 'digg',
+					'name' => 'Digg',
+					'desc' => 'e.g. http://digg.com/username',
+					'type' => 'url'
+				),
+				'dopplr' => array(
+					'id'   => 'Dopplr',
+					'name' => 'Dopplr',
+					'desc' => 'e.g. http://www.dopplr.com/traveller/username',
+					'type' => 'url'
+				),
+				'dribbble' => array(
+					'id'   => 'dribbble',
+					'name' => 'Dribbble',
+					'desc' => 'e.g. http://dribbble.com/username',
+					'type' => 'url'
+				),
+				'evernote' => array(
+					'id'   => 'evernote',
+					'name' => 'Evernote',
+					'desc' => 'e.g. http://evernote.com/username',
+					'type' => 'url'
+				),
 				'facebook' => array(
 					'id'   => 'facebook',
-					'name' => __( 'Facebook URL', 'stag' ),
-					'desc' => __( 'Enter your facebook profile/page URL', 'stag' ),
-					'type' => 'text'
+					'name' => 'Facebook',
+					'desc' => 'e.g. http://www.facebook.com/username',
+					'type' => 'url'
 				),
-				'twitter' => array(
-					'id'   => 'twitter',
-					'name' => __( 'Twitter Username', 'stag' ),
-					'desc' => __( 'Enter your twitter profile username', 'stag' ),
-					'type' => 'text'
+				'flickr' => array(
+					'id'   => 'flickr',
+					'name' => 'Flickr',
+					'desc' => 'e.g. http://www.flickr.com/photos/username',
+					'type' => 'url'
 				),
-				'youtube' => array(
-					'id'   => 'youtube',
-					'name' => __( 'YouTube', 'stag' ),
-					'desc' => __( 'Enter your YouTube channel URL', 'stag' ),
-					'type' => 'text'
+				'forrst' => array(
+					'id'   => 'forrst',
+					'name' => 'Forrst',
+					'desc' => 'e.g. http://forrst.me/username',
+					'type' => 'url'
+				),
+				'github' => array(
+					'id'   => 'github',
+					'name' => 'GitHub',
+					'desc' => 'e.g. https://github.com/username',
+					'type' => 'url'
+				),
+				'google+' => array(
+					'id'   => 'google+',
+					'name' => 'Google+',
+					'desc' => 'e.g. http://plus.google.com/userID',
+					'type' => 'url'
 				),
 				'instagram' => array(
 					'id'   => 'instagram',
-					'name' => __( 'Instagram', 'stag' ),
-					'desc' => __( 'Enter your Instagram profile username', 'stag' ),
-					'type' => 'text'
+					'name' => 'Instagram',
+					'desc' => 'e.g. http://instagram.com/username',
+					'type' => 'url'
 				),
+				'lastfm' => array(
+					'id'   => 'lastfm',
+					'name' => 'Lastfm',
+					'desc' => 'e.g. http://www.last.fm/user/username',
+					'type' => 'url'
+				),
+				'linkedin' => array(
+					'id'   => 'linkedin',
+					'name' => 'LinkedIn',
+					'desc' => 'e.g. http://www.linkedin.com/in/username',
+					'type' => 'url'
+				),
+				'mail' => array(
+					'id'   => 'mail',
+					'name' => 'Mail',
+					'desc' => 'e.g. mailto:user@name.com',
+					'type' => 'url'
+				),
+				'path' => array(
+					'id'   => 'path',
+					'name' => 'Path',
+					'desc' => 'e.g. https://path.com/p/picID',
+					'type' => 'url'
+				),
+				'paypal' => array(
+					'id'   => 'paypal',
+					'name' => 'PayPal',
+					'desc' => 'e.g. mailto:email@address',
+					'type' => 'url'
+				),
+				'picasa' => array(
+					'id'   => 'picasa',
+					'name' => 'Picasa',
+					'desc' => 'e.g. https://picasaweb.google.com/userID',
+					'type' => 'url'
+				),
+				'pinterest' => array(
+					'id'   => 'pinterest',
+					'name' => 'Pinterest',
+					'desc' => 'e.g. http://pinterest.com/username',
+					'type' => 'url'
+				),
+				'posterous' => array(
+					'id'   => 'posterous',
+					'name' => 'Posterous',
+					'desc' => 'e.g. http://username.posterous.com',
+					'type' => 'url'
+				),
+				'reddit' => array(
+					'id'   => 'reddit',
+					'name' => 'Reddit',
+					'desc' => 'e.g. http://www.reddit.com/user/username',
+					'type' => 'url'
+				),
+				'rss' => array(
+					'id'   => 'rss',
+					'name' => 'RSS',
+					'desc' => 'e.g. http://example.com/feed',
+					'type' => 'url',
+					'std'  => get_bloginfo('rss2_url')
+				),
+				'skype' => array(
+					'id'   => 'skype',
+					'name' => 'Skype',
+					'desc' => 'e.g. skype:username',
+					'type' => 'url'
+				),
+				'spotify' => array(
+					'id'   => 'spotify',
+					'name' => 'Spotify',
+					'desc' => 'e.g. http://open.spotify.com/user/username',
+					'type' => 'url'
+				),
+				'stumbleupon' => array(
+					'id'   => 'stumbleupon',
+					'name' => 'StumbleUpon',
+					'desc' => 'e.g. http://www.stumbleupon.com/stumbler/username',
+					'type' => 'url'
+				),
+				'tumblr' => array(
+					'id'   => 'tumblr',
+					'name' => 'Tumblr',
+					'desc' => 'e.g. http://username.tumblr.com',
+					'type' => 'url'
+				),
+				'twitter' => array(
+					'id'   => 'twitter',
+					'name' => 'Twitter',
+					'desc' => 'e.g. http://twitter.com/username',
+					'type' => 'url'
+				),
+				'viddler' => array(
+					'id'   => 'viddler',
+					'name' => 'Viddler',
+					'desc' => 'e.g. http://www.viddler.com/explore/username',
+					'type' => 'url'
+				),
+				'vimeo' => array(
+					'id'   => 'vimeo',
+					'name' => 'Vimeo',
+					'desc' => 'e.g. http://vimeo.com/username',
+					'type' => 'url'
+				),
+				'virb' => array(
+					'id'   => 'virb',
+					'name' => 'Virb',
+					'desc' => 'e.g. http://username.virb.com',
+					'type' => 'url'
+				),
+				'wordpress' => array(
+					'id'   => 'wordpress',
+					'name' => 'WordPress',
+					'desc' => 'e.g. http://username.wordpress.com',
+					'type' => 'url'
+				),
+				'youtube' => array(
+					'id'   => 'youtube',
+					'name' => 'YouTube',
+					'desc' => 'e.g. http://www.youtube.com/user/username',
+					'type' => 'url'
+				),
+				'zerply' => array(
+					'id'   => 'zerply',
+					'name' => 'Zerply',
+					'desc' => 'e.g. http://zerply.com/username',
+					'type' => 'url'
+				)
 			)
 		),
 		'portfolio' => apply_filters( 'stagtools_portfolio_settings',
@@ -267,6 +466,22 @@ function stagtools_text_callback( $args ) {
 	echo $html;
 }
 
+function stagtools_url_callback( $args ) {
+	global $stag_options;
+
+	if ( isset( $stag_options[ $args['id'] ] ) )
+		$value = $stag_options[ $args['id'] ];
+	else
+		$value = isset( $args['std'] ) ? $args['std'] : '';
+
+	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
+
+	$html = '<input type="text" class="' . $size . '-text" id="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" name="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_url( $value ) . '"/>';
+	$html .= '<label for="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+
+	echo $html;
+}
+
 function stagtools_select_callback( $args ) {
 	global $stag_options;
 
@@ -286,4 +501,8 @@ function stagtools_select_callback( $args ) {
 	$html .= '<label for="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
+}
+
+function stagtools_header_callback( $args ) {
+	echo '';
 }
