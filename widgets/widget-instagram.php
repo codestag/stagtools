@@ -181,8 +181,8 @@ class stag_instagram_widget extends WP_Widget{
 			'title'        => __( 'Instagram Photos', 'stag' ),
 			'clientid'     => '',
 			'clientsecret' => '',
-			'cachetime'    => '',
-			'show'         => '5',
+			'cachetime'    => '5',
+			'show'         => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -233,12 +233,11 @@ class stag_instagram_widget extends WP_Widget{
 			<span class="description">
 				<?php echo sprintf( __( 'This widget requires that you register an application on the <a href="%s" target="_blank">Instagram Developer</a> page in order to access feed.', 'stag' ), 'http://instagram.com/developer' ) ?>
 
-			</span>
 				<?php if ( !isset( $accesstoken ) || empty( $accesstoken ) ) : ?>
 					<br><br>
-					<?php _e( 'Redirect URI:', 'stag' ); ?><br>
 					<span style="color: #797979;"><?php echo sprintf( __( 'When registering your app, set the Redirect URI field to the following: &lsquo;%swidgets.php&rsquo;', 'stag' ), get_admin_url() ) ?></span>
 				<?php endif; ?>
+			</span>
 		</p>
 
 		<p>
@@ -268,7 +267,6 @@ class stag_instagram_widget extends WP_Widget{
 				if ( empty($instance['clientid']) || empty($instance['clientsecret'] ) ) {
 					?>
 					<span style="color: #797979;"><?php _e( 'Please set the "Client ID" and "Client Secret" fields and press save to retrieve the access token.', 'stag' ); ?></span>
-					<br><br>
 					<?php
 				} else {
 					
