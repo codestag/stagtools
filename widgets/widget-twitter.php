@@ -13,12 +13,12 @@ class stag_twitter_widget extends WP_Widget{
 	function widget( $args, $instance ) {
 		extract($args);
 
-		$title = apply_filters('widget_title', $instance['title'] );
-		$cache_time = $instance['cache_time'];
+		$title            = apply_filters('widget_title', $instance['title'] );
+		$cache_time       = $instance['cache_time'];
 		$twitter_username = $instance['twitter_username'];
-		$tweet_count = $instance['tweet_count'];
-		$show_retweets = $instance['show_retweets'];
-		$show_replies = $instance['show_replies'];
+		$tweet_count      = $instance['tweet_count'];
+		$show_retweets    = $instance['show_retweets'];
+		$show_replies     = $instance['show_replies'];
 
 		echo $before_widget;
 
@@ -120,25 +120,25 @@ class stag_twitter_widget extends WP_Widget{
 	}
 
 	function update( $new_instance, $old_instance) {
-		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['cache_time'] = strip_tags( $new_instance['cache_time'] );
+		$instance                     = $old_instance;
+		$instance['title']            = strip_tags( $new_instance['title'] );
+		$instance['cache_time']       = strip_tags( $new_instance['cache_time'] );
 		$instance['twitter_username'] = strip_tags( $new_instance['twitter_username'] );
-		$instance['tweet_count'] = strip_tags( $new_instance['tweet_count'] );
-		$instance['show_retweets'] = strip_tags( $new_instance['show_retweets'] );
-		$instance['show_replies'] = strip_tags( $new_instance['show_replies'] );
+		$instance['tweet_count']      = strip_tags( $new_instance['tweet_count'] );
+		$instance['show_retweets']    = strip_tags( $new_instance['show_retweets'] );
+		$instance['show_replies']     = strip_tags( $new_instance['show_replies'] );
 
 		return $instance;
 	}
 
 	function form( $instance ) {
 		$defaults = array(
-			'title' => 'Tweets',
-			'cache_time' => 1,
+			'title'            => __( 'Tweets', 'stag' ),
+			'cache_time'       => 1,
 			'twitter_username' => '',
-			'tweet_count' => 3,
-			'show_retweets' => '',
-			'show_replies' => ''
+			'tweet_count'      => 3,
+			'show_retweets'    => '',
+			'show_replies'     => ''
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -184,5 +184,3 @@ class stag_twitter_widget extends WP_Widget{
 }
 
 include_once('twitteroauth.php');
-
-?>

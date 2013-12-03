@@ -24,10 +24,12 @@ class stag_dribbble_widget extends WP_Widget{
 		}
 
 		extract( $args );
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		$dribbble_name = $instance['dribbble_name'];
+
+		$title          = apply_filters( 'widget_title', $instance['title'] );
+		$dribbble_name  = $instance['dribbble_name'];
 		$dribbble_shots = $instance['dribbble_shots'];
-		$new_window = $instance['new_window'];
+		$new_window     = $instance['new_window'];
+		
 		echo $before_widget;
 
 ?>
@@ -61,16 +63,18 @@ class stag_dribbble_widget extends WP_Widget{
 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['dribbble_name'] = strip_tags( $new_instance['dribbble_name'] );
+		
+		$instance['title']          = strip_tags( $new_instance['title'] );
+		$instance['dribbble_name']  = strip_tags( $new_instance['dribbble_name'] );
 		$instance['dribbble_shots'] = strip_tags( $new_instance['dribbble_shots'] );
-		$instance['new_window'] = $new_instance['new_window'];
+		$instance['new_window']     = $new_instance['new_window'];
+		
 		return $instance;
 	}
 
 	function form( $instance ){
 		$defaults = array(
-			'title' => 'Dribbble Shots',
+			'title' => __( 'Dribbble Shots', 'stag' ),
 			'dribbble_name' => 'codestag',
 			'dribbble_shots' => 4,
 			'new_window' => ''

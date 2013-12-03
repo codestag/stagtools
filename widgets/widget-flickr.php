@@ -12,11 +12,10 @@ class stag_flickr_widget extends WP_Widget{
 
 	function widget( $args, $instance ) {
 		extract( $args );
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		$flickr_id = $instance['flickr_id'];
-		$flickr_count = $instance['flickr_count'];
 		
-
+		$title        = apply_filters( 'widget_title', $instance['title'] );
+		$flickr_id    = $instance['flickr_id'];
+		$flickr_count = $instance['flickr_count'];
 		
 		include_once(ABSPATH . WPINC . '/feed.php');
 		if( $flickr_count == '') $flickr_count = 5;
@@ -58,16 +57,18 @@ class stag_flickr_widget extends WP_Widget{
 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['flickr_id'] = strip_tags( $new_instance['flickr_id'] );
+		
+		$instance['title']        = strip_tags( $new_instance['title'] );
+		$instance['flickr_id']    = strip_tags( $new_instance['flickr_id'] );
 		$instance['flickr_count'] = strip_tags( $new_instance['flickr_count'] );
+
 		return $instance;
 	}
 
 	function form( $instance ){
 		$defaults = array(
-			'title' => 'Flickr Photos',
-			'flickr_id' => '',
+			'title'        => __( 'Flickr Photos', 'stag' ),
+			'flickr_id'    => '',
 			'flickr_count' => 4,
 		);
 
@@ -96,5 +97,3 @@ class stag_flickr_widget extends WP_Widget{
 	}
 
 }
-
-?>
