@@ -15,9 +15,22 @@ StagTools is a powerful plugin to extend functionality to your WordPress themes 
 
 StagTools powers your WordPress website with some regularly needed shortcodes including buttons, columns, alerts, font icons etc. It also includes several widgets and custom post types (only for Codestag Themes).
 
-**Shortcodes:** Alerts, Buttons, Columns, Divider / Horizontal Ruler, Dropcaps, Intro Text, Tabs, Toggle, Font Icons by [Font Awesome](http://fortawesome.github.io/Font-Awesome/), Image with CSS3 filters, Videos ( supports [oEmbeds](http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
+**Shortcodes:**
+* Alerts
+* Buttons ( optionally with font icons )
+* Columns
+* Divider / Horizontal Ruler
+* Dropcaps
+* Intro Text
+* Tabs
+* Toggle
+* Font Icons by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+* Google Maps with 5 predefined styles
+* Custom Sidebars Area ( requires [Stag Custom Sidebars](http://wordpress.org/plugins/stag-custom-sidebars/) plugin )
+* Image with CSS3 filters
+* Videos ( supports [oEmbeds](http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
 
-**Widgets:** Twitter, Dribbble, Flickr
+**Widgets:** Twitter, Dribbble, Flickr, Instagram
 
 **Custom Post Types:** Portfolio, Slides, Team, Testimonials
 
