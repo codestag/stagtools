@@ -8,6 +8,11 @@
  * @return void
  */
 
+/**
+ * Get all settings.
+ * 
+ * @return arran An array containing settings.
+ */
 function stagtools_get_settings() {
 	$settings = get_option( 'stag_options' );
 
@@ -66,6 +71,11 @@ function stagtools_options_page() {
 	echo ob_get_clean();
 }
 
+/**
+ * Get settings tabs.
+ * 
+ * @return array An array containing tab names.
+ */
 function stagtools_get_settings_tabs() {
 	$tabs              = array();
 	$tabs['general']   = __( 'General', 'stag' );
@@ -75,6 +85,12 @@ function stagtools_get_settings_tabs() {
 	return apply_filters( 'stagtools_settings_tabs', $tabs );
 }
 
+/**
+ * Validate user inputs upon save.
+ * 
+ * @param  array  $input An array containing values to filter
+ * @return array         Filtered values array
+ */
 function stagtools_settings_sanitize( $input = array() ) {
 	global $stag_options;
 
@@ -130,6 +146,13 @@ function stagtools_settings_sanitize( $input = array() ) {
 	return $output;
 }
 
+/**
+ * Register settings fields.
+ *
+ * Fires upon admin_init.
+ * 
+ * @return void
+ */
 function stagtools_register_settings() {
 	if ( false == get_option( 'stag_options' ) ) {
 		add_option( 'stag_options' );
@@ -168,6 +191,11 @@ function stagtools_register_settings() {
 }
 add_action( 'admin_init', 'stagtools_register_settings' );
 
+/**
+ * Register all settings.
+ * 
+ * @return array An array containing all settings.
+ */
 function stagtools_get_registered_settings() {
 	$stag_settings = array(
 		'general' => apply_filters( 'stagtools_general_settings',
@@ -446,10 +474,20 @@ function stagtools_get_registered_settings() {
 	return $stag_settings;
 }
 
+
 function stagtools_missing_callback( $args ) {
 	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'stag' ), $args['id'] );
 }
 
+/**
+ * Text callback.
+ *
+ * Renders text fields.
+ * 
+ * @param  array $args Arguments passed by the setting
+ * @global $stag_options Array of all StagTools options
+ * @return void
+ */
 function stagtools_text_callback( $args ) {
 	global $stag_options;
 
@@ -466,6 +504,15 @@ function stagtools_text_callback( $args ) {
 	echo $html;
 }
 
+/**
+ * URL callback.
+ *
+ * Renders URL fields.
+ * 
+ * @param  array $args Arguments passed by the setting
+ * @global $stag_options Array of all StagTools options
+ * @return void
+ */
 function stagtools_url_callback( $args ) {
 	global $stag_options;
 
@@ -482,6 +529,15 @@ function stagtools_url_callback( $args ) {
 	echo $html;
 }
 
+/**
+ * Select callback.
+ *
+ * Renders select fields.
+ * 
+ * @param  array $args Arguments passed by the setting
+ * @global $stag_options Array of all StagTools options
+ * @return void
+ */
 function stagtools_select_callback( $args ) {
 	global $stag_options;
 
@@ -503,6 +559,14 @@ function stagtools_select_callback( $args ) {
 	echo $html;
 }
 
+/**
+ * Header callback.
+ *
+ * Renders the header.
+ * 
+ * @param  array $args Arguments passed by the setting
+ * @return void
+ */
 function stagtools_header_callback( $args ) {
 	echo '';
 }
