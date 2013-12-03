@@ -1,8 +1,9 @@
 <?php
 /**
- * Uninstall StagTools
+ * Uninstall StagTools.
  *
  * @package StagTools
+ * @since  1.0.3
  * @author Ram Ratan Maurya
  */
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) exit;
