@@ -16,8 +16,9 @@ StagTools is a powerful plugin to extend functionality to your WordPress themes 
 StagTools powers your WordPress website with some regularly needed shortcodes including buttons, columns, alerts, font icons etc. It also includes several widgets and custom post types (only for Codestag Themes).
 
 **Shortcodes:**
+
 * Alerts
-* Buttons ( optionally with font icons )
+* Buttons ( optionally, with font icons )
 * Columns
 * Divider / Horizontal Ruler
 * Dropcaps
