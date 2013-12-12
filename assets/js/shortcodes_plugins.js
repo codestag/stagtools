@@ -367,7 +367,7 @@ jQuery(document).ready(function($) {
             $('.stag-insert', form).click(function() {
                 if(window.tinyMCE)
                 {
-                    window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, $('#_stag_ushortcode', form).html());
+                    window.tinyMCE.execInstanceCommand( window.tinyMCE.activeEditor.id, 'mceInsertContent', false, $('#_stag_ushortcode', form).html());
                     tb_remove();
                 }
             });
