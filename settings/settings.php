@@ -40,10 +40,10 @@ function stagtools_options_page() {
 
 				$tab_url = add_query_arg( array(
 					'settings-updated' => false,
-					'tab' => $tab_id
+					'tab'              => $tab_id
 				) );
 
-				if ( ! current_theme_supports('stag-portfolio') && $tab_id == 'portfolio' ) continue;
+				if ( ! current_theme_supports( 'post-type',  array( 'portfolio' ) ) && $tab_id == 'portfolio' ) continue;
 
 				$active = $active_tab == $tab_id ? ' nav-tab-active' : '';
 
@@ -80,7 +80,7 @@ function stagtools_get_settings_tabs() {
 	$tabs              = array();
 	$tabs['general']   = __( 'General', 'stag' );
 	$tabs['social']    = __( 'Social', 'stag' );
-	$tabs['portfolio']    = __( 'Portfolio', 'stag' );
+	$tabs['portfolio'] = __( 'Portfolio', 'stag' );
 
 	return apply_filters( 'stagtools_settings_tabs', $tabs );
 }
