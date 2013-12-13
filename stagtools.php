@@ -199,9 +199,7 @@ class StagTools {
 
 		wp_enqueue_style( 'stag-shortcode-styles' );
 		wp_enqueue_style( 'font-awesome' );
-
-		wp_enqueue_script( 'jquery-ui-accordion' );
-		wp_enqueue_script( 'jquery-ui-tabs' );
+		
 		wp_enqueue_script( 'stag-shortcode-scripts' );
 	}
 
