@@ -105,17 +105,17 @@ class StagTools {
 		/**
 		 * @deprecated 1.1.2
 		 */
-		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'cpt/cpt-portfolio.php' );
-		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'cpt/cpt-slides.php' );
-		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'cpt/cpt-team.php' );
-		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'cpt/cpt-testimonials.php' );
+		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'post-type/portfolio.php' );
+		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'post-type/slides.php' );
+		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'post-type/team.php' );
+		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'post-type/testimonials.php' );
 		
 		/** @since 1.1.2 */
 		if ( current_theme_supports( 'post-type' ) ) {
 			$theme_supports = get_theme_support( 'post-type' )[0];
 
 			foreach ( $theme_supports as $support ) {
-				include_once( "cpt/cpt-{$support}.php" );
+				include_once( "post-type/{$support}.php" );
 			}
 		}
 
