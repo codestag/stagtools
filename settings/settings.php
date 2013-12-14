@@ -94,7 +94,6 @@ function stagtools_get_settings_tabs() {
 function stagtools_settings_sanitize( $input = array() ) {
 	global $stag_options;
 
-
 	if ( isset( $_POST['stagtools_settings_portfolio'] ) ){
 		flush_rewrite_rules();
 	}
