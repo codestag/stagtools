@@ -312,6 +312,7 @@ class StagTools {
 							'<p>' . sprintf( __( 'Yes; although we have a shortcode builder you can also see a list of <a href="%s" target="_blank">all available shortcodes</a> and use it manually in any supported area.', 'stag' ), esc_url( 'http://gist.github.com/mauryaratan/6071262' ) ) . '</p>'
 		) );
 
+		if ( current_theme_supports( 'post-type',  array( 'portfolio' ) ) ) :
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-portfolio',
 			'title'	    => __( 'Portfolio Settings', 'stag' ),
@@ -319,6 +320,7 @@ class StagTools {
 							'<p>'. __( '<strong>Portfolio Slug</strong> - This settings is used to set the slug of custom post type &lsquo;portfolio&rsquo;.', 'stag' ) .'</p>'.
 							'<p>'. __( '<strong>Skills Slug</strong> - This settings is used to set the slug of custom post taxonomy &lsquo;skill&rsquo;.', 'stag' ) .'</p>'
 		) );
+		endif;
 
 		return $contextual_help;
 	}
