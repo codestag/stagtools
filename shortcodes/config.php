@@ -42,7 +42,7 @@ $stag_shortcodes['button'] = array(
 			'desc' => __( 'Select the button\'s type', 'stag' ),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
-				'stroke' => __( 'stroke', 'stag' )
+				'stroke' => __( 'Stroke', 'stag' )
 			)
 		),
 		'icon' => array(
