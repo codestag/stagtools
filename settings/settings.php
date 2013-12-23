@@ -69,6 +69,11 @@ function stagtools_options_page() {
 			<form method="post" action="options.php">
 				<table class="form-table">
 				<?php
+
+				if ( $_GET['page'] == 'stagtools' && isset($_GET['settings-updated']) && $_GET['settings-updated'] == "true" ) {
+					flush_rewrite_rules();
+				}
+
 				settings_fields( 'stag_options' );
 				do_settings_fields( 'stagtools_settings_' . $active_tab, 'stagtools_settings_' . $active_tab );
 				?>
@@ -104,10 +109,6 @@ function stagtools_get_settings_tabs() {
  */
 function stagtools_settings_sanitize( $input = array() ) {
 	global $stag_options;
-
-	if ( isset( $_POST['stagtools_settings_portfolio'] ) ){
-		flush_rewrite_rules();
-	}
 
 	parse_str( $_POST['_wp_http_referer'], $referrer );
 
