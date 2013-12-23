@@ -43,13 +43,24 @@ function stagtools_options_page() {
 					'tab'              => $tab_id
 				) );
 
-				if ( ! current_theme_supports( 'post-type',  array( 'portfolio' ) ) && $tab_id == 'portfolio' ) continue;
+				$is_showing = true;
+
+				if ( 'portfolio' == $tab_id ) {
+					$is_showing = false;
+					if ( current_theme_supports( 'post-type',  array( 'portfolio' ) ) || current_theme_supports( 'stag-portfolio' ) ) {
+						$is_showing = true;
+					}
+				}
+
+				if( $is_showing ) :
 
 				$active = $active_tab == $tab_id ? ' nav-tab-active' : '';
 
 				echo '<a href="' . esc_url( $tab_url ) . '" title="' . esc_attr( $tab_name ) . '" class="nav-tab' . $active . '">';
 					echo esc_html( $tab_name );
 				echo '</a>';
+
+				endif;
 			}
 			?>
 		</h2>
