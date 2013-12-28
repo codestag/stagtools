@@ -93,6 +93,20 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 ==Changelog==
 
+= 1.2 = 01/XX/2014 =
+* New - Settins Page UI
+* New - Instagram Widget
+* Fix - Flush rewrite rules on saving settings
+* Fix - Make StagTools shortcode window insert content in active editor instead of post editor
+* Improve - Use ``add_theme_support( 'post-type', array( 'portfolio' ) )`` instead of separate theme support check. Where ``portfolio`` is the custom post type
+* Improve - Google Maps Shortcode. Now accepts ``lat``, ``long``, ``width``, ``height``, ``zoom``, ``style`` as arguments.
+* Improve - Added optional follow button in twitter widget
+* Improve - Inline documentation
+* Improve - Dribbble shot markup
+* Improve - Backwards compatbility for Portfolio settings
+* Improve - Replace help under settings tab with Contextual help
+* And several bug fixes and improvements
+
 = 1.1.1 - 11/20/2013 =
 * Fix - FontAwesome icon missing class names after upgrading to latest version
 
