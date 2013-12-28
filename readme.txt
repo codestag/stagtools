@@ -93,18 +93,18 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 ==Changelog==
 
-= 1.2 = 01/XX/2014 =
+= 1.2 - 01/XX/2014 =
 * New - Settins Page UI
 * New - Instagram Widget
 * Fix - Flush rewrite rules on saving settings
 * Fix - Make StagTools shortcode window insert content in active editor instead of post editor
-* Improve - Use ``add_theme_support( 'post-type', array( 'portfolio' ) )`` instead of separate theme support check. Where ``portfolio`` is the custom post type
-* Improve - Google Maps Shortcode. Now accepts ``lat``, ``long``, ``width``, ``height``, ``zoom``, ``style`` as arguments.
-* Improve - Added optional follow button in twitter widget
-* Improve - Inline documentation
-* Improve - Dribbble shot markup
-* Improve - Backwards compatbility for Portfolio settings
-* Improve - Replace help under settings tab with Contextual help
+* Tweak - Use ``add_theme_support( 'post-type', array( 'portfolio' ) )`` instead of separate theme support check. Where ``portfolio`` is the custom post type
+* Tweak - Google Maps Shortcode. Now accepts ``lat``, ``long``, ``width``, ``height``, ``zoom``, ``style`` as arguments.
+* Tweak - Added optional follow button in twitter widget
+* Tweak - Inline documentation
+* Tweak - Dribbble shot markup
+* Tweak - Backwards compatbility for Portfolio settings
+* Tweak - Replace help under settings tab with Contextual help
 * And several bug fixes and improvements
 
 = 1.1.1 - 11/20/2013 =
@@ -119,9 +119,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Fix - Properly resize shortcode modal window width
 * Fix - Image/Video Media frame title
 * Fix - Check if there are no sidebar created via Stag Custom Sidebars
-* Improve - Compatibility with the plugin [Stag Custom Sidebars](http://wordpress.org/plugins/stag-custom-sidebars/)
-* Improve - Refractored code
-* Improve - Inline plugin documentation
+* Tweak - Compatibility with the plugin [Stag Custom Sidebars](http://wordpress.org/plugins/stag-custom-sidebars/)
+* Tweak - Refractored code
+* Tweak - Inline plugin documentation
 
 = 1.0.8 - 10/02/2013 =
 * Fix - Twitter widget incorrect links
