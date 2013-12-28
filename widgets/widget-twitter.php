@@ -13,12 +13,13 @@ class stag_twitter_widget extends WP_Widget{
 	function widget( $args, $instance ) {
 		extract($args);
 
-		$title            = apply_filters('widget_title', $instance['title'] );
-		$cache_time       = $instance['cache_time'];
-		$twitter_username = $instance['twitter_username'];
-		$tweet_count      = $instance['tweet_count'];
-		$show_retweets    = $instance['show_retweets'];
-		$show_replies     = $instance['show_replies'];
+		$title              = apply_filters('widget_title', $instance['title'] );
+		$cache_time         = $instance['cache_time'];
+		$twitter_username   = $instance['twitter_username'];
+		$tweet_count        = $instance['tweet_count'];
+		$show_retweets      = $instance['show_retweets'];
+		$show_replies       = $instance['show_replies'];
+		$show_follow_button = $instance['show_follow_button'];
 
 		echo $before_widget;
 
@@ -104,6 +105,10 @@ class stag_twitter_widget extends WP_Widget{
 
 			$output .= '</ul>';			
 
+			if ( $show_follow_button == 1 ) {
+				$output .= "<a class='button' href='". esc_url( 'https://twitter.com/'. $twitter_username ) ."'>". __( 'Follow', 'stag' ) ."</a>";
+			}
+
 			echo $output;
 		}
 
@@ -120,30 +125,32 @@ class stag_twitter_widget extends WP_Widget{
 	}
 
 	function update( $new_instance, $old_instance) {
-		$instance                     = $old_instance;
-		$instance['title']            = strip_tags( $new_instance['title'] );
-		$instance['cache_time']       = strip_tags( $new_instance['cache_time'] );
-		$instance['twitter_username'] = strip_tags( $new_instance['twitter_username'] );
-		$instance['tweet_count']      = strip_tags( $new_instance['tweet_count'] );
-		$instance['show_retweets']    = strip_tags( $new_instance['show_retweets'] );
-		$instance['show_replies']     = strip_tags( $new_instance['show_replies'] );
+		$instance                       = $old_instance;
+		$instance['title']              = strip_tags( $new_instance['title'] );
+		$instance['cache_time']         = strip_tags( $new_instance['cache_time'] );
+		$instance['twitter_username']   = strip_tags( $new_instance['twitter_username'] );
+		$instance['tweet_count']        = strip_tags( $new_instance['tweet_count'] );
+		$instance['show_retweets']      = strip_tags( $new_instance['show_retweets'] );
+		$instance['show_replies']       = strip_tags( $new_instance['show_replies'] );
+		$instance['show_follow_button'] = strip_tags( $new_instance['show_follow_button'] );
 
 		return $instance;
 	}
 
 	function form( $instance ) {
 		$defaults = array(
-			'title'            => __( 'Tweets', 'stag' ),
-			'cache_time'       => 1,
-			'twitter_username' => '',
-			'tweet_count'      => 3,
-			'show_retweets'    => '',
-			'show_replies'     => ''
+			'title'              => __( 'Tweets', 'stag' ),
+			'cache_time'         => 1,
+			'twitter_username'   => '',
+			'tweet_count'        => 3,
+			'show_retweets'      => '',
+			'show_replies'       => '',
+			'show_follow_button' => ''
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		?>
-
+		<br>
 		<p class="description">
 			<?php echo sprintf( __( 'Make sure you have filled your twitter oAuth keys under %s.', 'stag' ), '<a href="'.admin_url( 'options-general.php?page=stagtools' ).'">settings</a>' ); ?>
 		</p>
@@ -177,6 +184,11 @@ class stag_twitter_widget extends WP_Widget{
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_replies'); ?>" name="<?php echo $this->get_field_name('show_replies'); ?>" value="1" <?php checked( $instance['show_replies'], 1); ?>>
 			<label for="<?php echo $this->get_field_id('show_replies'); ?>"><?php _e( 'Show replies?', 'stag' ); ?></label>
+		</p>
+
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_follow_button'); ?>" name="<?php echo $this->get_field_name('show_follow_button'); ?>" value="1" <?php checked( $instance['show_follow_button'], 1); ?>>
+			<label for="<?php echo $this->get_field_id('show_follow_button'); ?>"><?php _e( 'Show Follow Button?', 'stag' ); ?></label>
 		</p>
 
 		<?php

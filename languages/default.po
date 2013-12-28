@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-03 18:34+0530\n"
-"PO-Revision-Date: 2013-12-03 18:34+0530\n"
+"POT-Creation-Date: 2013-12-28 19:25+0530\n"
+"PO-Revision-Date: 2013-12-28 19:25+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -14,7 +14,7 @@ msgstr ""
 "__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;"
 "esc_html__;esc_html_e;esc_html_x;_c;_nc()\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -22,46 +22,46 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../stagtools.php:118
+#: ../stagtools.php:131
 msgid "StagTools Options"
 msgstr ""
 
-#: ../stagtools.php:118
+#: ../stagtools.php:131
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:283
+#: ../stagtools.php:294
 msgid "For more information:"
 msgstr ""
 
-#: ../stagtools.php:284
+#: ../stagtools.php:295
 #, php-format
 msgid ""
 "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#: ../stagtools.php:286
+#: ../stagtools.php:297
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
 "\"_blank\">GitHub</a>."
 msgstr ""
 
-#: ../stagtools.php:294
+#: ../stagtools.php:305
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: ../stagtools.php:295
+#: ../stagtools.php:306
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: ../stagtools.php:296
+#: ../stagtools.php:307
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:297
+#: ../stagtools.php:308
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -69,11 +69,11 @@ msgid ""
 "\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:298
+#: ../stagtools.php:309
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:299
+#: ../stagtools.php:310
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -82,11 +82,11 @@ msgid ""
 "developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:300
+#: ../stagtools.php:311
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:301
+#: ../stagtools.php:312
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of <a href="
@@ -94,23 +94,23 @@ msgid ""
 "any supported area."
 msgstr ""
 
-#: ../stagtools.php:306
+#: ../stagtools.php:318
 msgid "Portfolio Settings"
 msgstr ""
 
-#: ../stagtools.php:307
+#: ../stagtools.php:319
 msgid ""
 "You can use the following settigns to control the slug/taxonomies for custom "
 "post type portfolio and skills."
 msgstr ""
 
-#: ../stagtools.php:308
+#: ../stagtools.php:320
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: ../stagtools.php:309
+#: ../stagtools.php:321
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
@@ -176,250 +176,250 @@ msgstr ""
 msgid "Google Map"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:4 ../cpt/cpt-portfolio.php:5
-#: ../settings/settings.php:83
+#: ../post-type/portfolio.php:4 ../post-type/portfolio.php:5
+#: ../settings/settings.php:99
 msgid "Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:6 ../cpt/cpt-slides.php:6 ../cpt/cpt-team.php:6
-#: ../cpt/cpt-testimonials.php:6
+#: ../post-type/portfolio.php:6 ../post-type/slides.php:6
+#: ../post-type/team.php:6 ../post-type/testimonials.php:6
 msgid "Add New"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:7
+#: ../post-type/portfolio.php:7
 msgid "Add New Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:8
+#: ../post-type/portfolio.php:8
 msgid "Edit Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:9
+#: ../post-type/portfolio.php:9
 msgid "New Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:10
+#: ../post-type/portfolio.php:10
 msgid "View Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:11
+#: ../post-type/portfolio.php:11
 msgid "Search Portfolio"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:12
+#: ../post-type/portfolio.php:12
 msgid "No Portfolios found"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:13
+#: ../post-type/portfolio.php:13
 msgid "No Portfolios found in trash"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:36 ../cpt/cpt-portfolio.php:51
+#: ../post-type/portfolio.php:36 ../post-type/portfolio.php:51
 msgid "Skills"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:37
+#: ../post-type/portfolio.php:37
 msgid "Skill"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:50
+#: ../post-type/portfolio.php:50
 msgid "Portfolio Title"
 msgstr ""
 
-#: ../cpt/cpt-portfolio.php:52 ../cpt/cpt-slides.php:38 ../cpt/cpt-team.php:39
-#: ../cpt/cpt-testimonials.php:38
+#: ../post-type/portfolio.php:52 ../post-type/slides.php:38
+#: ../post-type/team.php:39 ../post-type/testimonials.php:38
 msgid "Date"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:4
+#: ../post-type/slides.php:4
 msgid "Slides"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:5
+#: ../post-type/slides.php:5
 msgid "Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:7
+#: ../post-type/slides.php:7
 msgid "Add New Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:8
+#: ../post-type/slides.php:8
 msgid "Edit Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:9
+#: ../post-type/slides.php:9
 msgid "New Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:10
+#: ../post-type/slides.php:10
 msgid "View Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:11
+#: ../post-type/slides.php:11
 msgid "Search Slide"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:12
+#: ../post-type/slides.php:12
 msgid "No Slides found"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:13
+#: ../post-type/slides.php:13
 msgid "No Slides found in trash"
 msgstr ""
 
-#: ../cpt/cpt-slides.php:37
+#: ../post-type/slides.php:37
 msgid "Slide Title"
 msgstr ""
 
-#: ../cpt/cpt-team.php:4 ../cpt/cpt-team.php:5
+#: ../post-type/team.php:4 ../post-type/team.php:5
 msgid "Team"
 msgstr ""
 
-#: ../cpt/cpt-team.php:7
+#: ../post-type/team.php:7
 msgid "Add New Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:8
+#: ../post-type/team.php:8
 msgid "Edit Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:9
+#: ../post-type/team.php:9
 msgid "New Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:10
+#: ../post-type/team.php:10
 msgid "View Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:11
+#: ../post-type/team.php:11
 msgid "Search Team Member"
 msgstr ""
 
-#: ../cpt/cpt-team.php:12
+#: ../post-type/team.php:12
 msgid "No Team Member found"
 msgstr ""
 
-#: ../cpt/cpt-team.php:13
+#: ../post-type/team.php:13
 msgid "No Team Member in trash"
 msgstr ""
 
-#: ../cpt/cpt-team.php:37
+#: ../post-type/team.php:37
 msgid "Team Member Title"
 msgstr ""
 
-#: ../cpt/cpt-team.php:38
+#: ../post-type/team.php:38
 msgid "Member Info"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:4
+#: ../post-type/testimonials.php:4
 msgid "Testimonials"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:5
+#: ../post-type/testimonials.php:5
 msgid "Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:7
+#: ../post-type/testimonials.php:7
 msgid "Add New Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:8
+#: ../post-type/testimonials.php:8
 msgid "Edit Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:9
+#: ../post-type/testimonials.php:9
 msgid "New Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:10
+#: ../post-type/testimonials.php:10
 msgid "View Testimonial"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:11
+#: ../post-type/testimonials.php:11
 msgid "Search Testimonials"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:12
+#: ../post-type/testimonials.php:12
 msgid "No Testimonials found"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:13
+#: ../post-type/testimonials.php:13
 msgid "No Testimonials in trash"
 msgstr ""
 
-#: ../cpt/cpt-testimonials.php:37
+#: ../post-type/testimonials.php:37
 msgid "Testimonial Title"
 msgstr ""
 
-#: ../settings/settings.php:81
+#: ../settings/settings.php:97
 msgid "General"
 msgstr ""
 
-#: ../settings/settings.php:82
+#: ../settings/settings.php:98
 msgid "Social"
 msgstr ""
 
-#: ../settings/settings.php:144
+#: ../settings/settings.php:155
 msgid "Settings Updated"
 msgstr ""
 
-#: ../settings/settings.php:205
+#: ../settings/settings.php:216
 msgid "Twitter Settings"
 msgstr ""
 
-#: ../settings/settings.php:206
+#: ../settings/settings.php:217
 msgid "Configure the twitter settings"
 msgstr ""
 
-#: ../settings/settings.php:211
+#: ../settings/settings.php:222
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: ../settings/settings.php:212
+#: ../settings/settings.php:223
 msgid "Enter twitter OAuth Consumer Key"
 msgstr ""
 
-#: ../settings/settings.php:217
+#: ../settings/settings.php:228
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: ../settings/settings.php:218
+#: ../settings/settings.php:229
 msgid "Enter twitter OAuth Consumer Secret"
 msgstr ""
 
-#: ../settings/settings.php:223
+#: ../settings/settings.php:234
 msgid "OAuth Access Token"
 msgstr ""
 
-#: ../settings/settings.php:224
+#: ../settings/settings.php:235
 msgid "Enter twitter OAuth Access Token"
 msgstr ""
 
-#: ../settings/settings.php:229
+#: ../settings/settings.php:240
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: ../settings/settings.php:230
+#: ../settings/settings.php:241
 msgid "Enter twitter OAuth Access Secret"
 msgstr ""
 
-#: ../settings/settings.php:460
+#: ../settings/settings.php:471
 msgid "Portfolio Slug"
 msgstr ""
 
-#: ../settings/settings.php:461
+#: ../settings/settings.php:472
 msgid "Enter the slug of custom post type <strong>portfolio</strong>."
 msgstr ""
 
-#: ../settings/settings.php:466
+#: ../settings/settings.php:477
 msgid "Skills Slug"
 msgstr ""
 
-#: ../settings/settings.php:467
+#: ../settings/settings.php:478
 msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
 msgstr ""
 
-#: ../settings/settings.php:479
+#: ../settings/settings.php:490
 #, php-format
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."
@@ -506,8 +506,9 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: ../shortcodes/config.php:45
-msgid "stroke"
+#: ../shortcodes/config.php:45 ../shortcodes/config.php:120
+#: ../shortcodes/config.php:241
+msgid "Stroke"
 msgstr ""
 
 #: ../shortcodes/config.php:51
@@ -596,10 +597,6 @@ msgstr ""
 
 #: ../shortcodes/config.php:117
 msgid "Select the toggle's style"
-msgstr ""
-
-#: ../shortcodes/config.php:120 ../shortcodes/config.php:241
-msgid "Stroke"
 msgstr ""
 
 #: ../shortcodes/config.php:125
@@ -1156,7 +1153,7 @@ msgid "Dribbble Shots"
 msgstr ""
 
 #: ../widgets/widget-dribbble.php:88 ../widgets/widget-flickr.php:80
-#: ../widgets/widget-instagram.php:245 ../widgets/widget-twitter.php:152
+#: ../widgets/widget-instagram.php:244 ../widgets/widget-twitter.php:159
 msgid "Title:"
 msgstr ""
 
@@ -1234,68 +1231,64 @@ msgid ""
 "target=\"_blank\">Instagram Developer</a> page in order to access feed."
 msgstr ""
 
-#: ../widgets/widget-instagram.php:239
-msgid "Redirect URI:"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:240
+#: ../widgets/widget-instagram.php:238
 #, php-format
 msgid ""
 "When registering your app, set the Redirect URI field to the following: "
 "&lsquo;%swidgets.php&rsquo;"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:250
+#: ../widgets/widget-instagram.php:249
 msgid "Client ID:"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:255
+#: ../widgets/widget-instagram.php:254
 msgid "Client Secret:"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:260
+#: ../widgets/widget-instagram.php:259
 msgid "Access Token:"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:264
+#: ../widgets/widget-instagram.php:263
 msgid "Not available."
 msgstr ""
 
-#: ../widgets/widget-instagram.php:270
+#: ../widgets/widget-instagram.php:269
 msgid ""
 "Please set the \"Client ID\" and \"Client Secret\" fields and press save to "
 "retrieve the access token."
 msgstr ""
 
-#: ../widgets/widget-instagram.php:277
+#: ../widgets/widget-instagram.php:275
 msgid "Get Access Token"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:279
+#: ../widgets/widget-instagram.php:277
 msgid "Click to retrieve your access token."
 msgstr ""
 
-#: ../widgets/widget-instagram.php:285
+#: ../widgets/widget-instagram.php:283
 msgid "Available"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:294
+#: ../widgets/widget-instagram.php:292
 msgid "Show:"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:296
+#: ../widgets/widget-instagram.php:294
 msgid "Recent Uploads"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:297
+#: ../widgets/widget-instagram.php:295
 msgid "Following"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:298
+#: ../widgets/widget-instagram.php:296
 msgid "Liked Posts"
 msgstr ""
 
-#: ../widgets/widget-instagram.php:303
+#: ../widgets/widget-instagram.php:301
 msgid "Cache every:"
 msgstr ""
 
@@ -1307,48 +1300,56 @@ msgstr ""
 msgid "Stag Twitter Feed"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:35
+#: ../widgets/widget-twitter.php:36
 msgid "Please fill all widget settings."
 msgstr ""
 
-#: ../widgets/widget-twitter.php:62
+#: ../widgets/widget-twitter.php:63
 msgid "Couldn't retrieve tweets! Wrong username!"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:66
+#: ../widgets/widget-twitter.php:67
 msgid ""
 "You will need to regenerate it <a href=\"//dev.twitter.com/apps\">here</a>."
 msgstr ""
 
-#: ../widgets/widget-twitter.php:136
+#: ../widgets/widget-twitter.php:109
+msgid "Follow"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:142
 msgid "Tweets"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:148
+#: ../widgets/widget-twitter.php:155
 #, php-format
 msgid "Make sure you have filled your twitter oAuth keys under %s."
 msgstr ""
 
-#: ../widgets/widget-twitter.php:157
+#: ../widgets/widget-twitter.php:164
 msgid "Twitter Handle:"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:162
+#: ../widgets/widget-twitter.php:169
 msgid "Cache tweets in every "
 msgstr ""
 
-#: ../widgets/widget-twitter.php:164
+#: ../widgets/widget-twitter.php:171
 msgid "hours"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:168
+#: ../widgets/widget-twitter.php:175
 msgid "Number of tweets to show:"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:174
+#: ../widgets/widget-twitter.php:181
 msgid "Show retweets?"
 msgstr ""
 
-#: ../widgets/widget-twitter.php:179
+#: ../widgets/widget-twitter.php:186
 msgid "Show replies?"
+msgstr ""
+
+#: ../widgets/widget-twitter.php:191
+msgid "Show Follow Button?"
 msgstr ""
