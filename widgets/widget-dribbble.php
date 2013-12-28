@@ -48,7 +48,7 @@ class stag_dribbble_widget extends WP_Widget{
 				$shot_image = $shot_image_url[1];
 			?>
 			<li class="dribbble-shot">
-				<a href="<?php echo esc_url( $shot_link ); ?>" class="dribbble-link" <?php if( $new_window == 1) echo 'target="_blank"'; ?>><img src="<?php echo $shot_image; ?>" alt="<?php echo $shot_title; ?>"></a>
+				<a href="<?php echo esc_url( $shot_link ); ?>" class="dribbble-link" title="<?php echo $shot_title; ?>" <?php if( $new_window == 1) echo 'target="_blank"'; ?>><img src="<?php echo $shot_image; ?>" alt="<?php echo $shot_title; ?>"></a>
 			</li>
 			<?php endforeach; ?>
 			<?php else: ?>
