@@ -1,12 +1,12 @@
-.stag-help{
+.stag-help {
 	max-width: 540px;
 }
 
-.stag-help > p{
+.stag-help > p {
 	margin-bottom: 20px;
 }
 
-.stag-help .s-help-row{
+.stag-help .s-help-row {
 	padding: 20px 15px;
 	border-top: 1px solid #eaeaea;
 }
