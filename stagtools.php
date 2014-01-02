@@ -322,6 +322,17 @@ class StagTools {
 		) );
 		endif;
 
+		$screen->add_help_tab( array(
+			'id'	    => 'stagtools-help-social',
+			'title'	    => __( 'Using Social Icons', 'stag' ),
+			'content'	=>  '<h5>'. __( 'Using Social Icons Shortcode' ) .'</h5>'.
+							'<p>' . __( 'To use the social icon use the following shortcode:', 'stag' ) . '</p>'.
+							'<pre>[stag_social id="all"] // '. __( 'passing "all" in id would display all social icons with filled settings.', 'stag' ) .'</pre>'.
+							'<pre>[stag_social id="facebook,twitter,google-plus"] // '. __( 'or you can pass specific ids.', 'stag' ) .'</pre>'.
+							'<h5>'. __( 'Using Different Styled Icons' ) .'</h5>'.
+							'<p>'. __( 'You can use the social icons in two different styles: normal and squared. Just pass the <code>style</code> argument in sidebar.<br>E.g.: <code>[stag_social id="twitter,facebook" style="squared"]</code>.' ) .'</p>'
+		) );
+
 		return $contextual_help;
 	}
 
