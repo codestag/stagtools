@@ -340,7 +340,9 @@ add_shortcode( 'stag_video', 'stag_video' );
 endif;
 
 if( ! function_exists( 'stag_icon') ) :
-
+/**
+ * FontAwesome Icon shortcode.
+ */
 function stag_icon( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'icon'       => '',
@@ -379,7 +381,7 @@ if( ! function_exists( 'stag_map') ) :
  * 
  * @since 1.0.4
  */
-function stag_map($atts){
+function stag_map( $atts ) {
 	extract( shortcode_atts( array(
 		'lat'    => '37.42200',
 		'long'   => '-122.08395',
@@ -440,4 +442,39 @@ function stag_map($atts){
 	return "<div id='{$map_id}' style='width:{$width};height:{$height};'></div>";
 }
 add_shortcode( 'stag_map', 'stag_map' );
+endif;
+
+if ( ! function_exists( 'stag_social' ) ) :
+/**
+ * Social shortcode.
+ *
+ * Display links to social profiles.
+ */
+function stag_social( $atts ) {
+	extract( shortcode_atts( array(
+		'id'    => 'all',
+		'style' => 'normal'
+	), $atts ) );
+
+	$social_urls = array_keys(stagtools_get_registered_settings()['social']);
+	$settings = get_option('stag_options');
+
+	$output = '<div class="stag-social-icons">';
+
+	foreach( $social_urls as $slug ) {
+		if( isset( $settings[$slug] ) && $settings[$slug] != '' ) {
+			$class = $slug;
+
+			if( 'mail'  == $slug ) $class = 'envelope';
+			if( 'vimeo' == $slug ) $class = 'vimeo-square';
+
+			$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='stag-icon icon-{$class}'></i></a>";
+		}
+	}
+	$output .= "</div>";
+
+	return $output;
+
+}
+add_shortcode( 'stag_social', 'stag_social' );
 endif;
