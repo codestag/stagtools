@@ -137,7 +137,30 @@ class StagTools {
 	 * @return void
 	 */
 	function stag_load_textdomain() {
-		load_plugin_textdomain( 'stag', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+		// Set filter for plugin's languages directory
+		$stagtools_lang_dir = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
+		$stagtools_lang_dir = apply_filters( 'stagtools_languages_directory', $stagtools_lang_dir );
+
+		// Traditional WordPress plugin locale filter
+		$locale        = apply_filters( 'plugin_locale',  get_locale(), 'stag' );
+		$mofile        = sprintf( '%1$s-%2$s.mo', 'stag', $locale );
+
+		// Setup paths to current locale file
+		$mofile_local  = $stagtools_lang_dir . $mofile;
+		$mofile_global = WP_LANG_DIR . '/stagtools/' . $mofile;
+
+		if ( file_exists( $mofile_global ) ) {
+			// Look in global /wp-content/languages/stagtools folder
+			load_textdomain( 'stag', $mofile_global );
+		} elseif ( file_exists( $mofile_local ) ) {
+			// Look in local /wp-content/plugins/stagtools/languages/ folder
+			load_textdomain( 'stag', $mofile_local );
+		} else {
+			// Load the default language files
+			load_plugin_textdomain( 'stag', false, $stagtools_lang_dir );
+		}
+
 	}
 
 	/**
