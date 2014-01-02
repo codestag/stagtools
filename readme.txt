@@ -96,6 +96,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 = 1.2 - 01/XX/2014 =
 * New - Settins Page UI
 * New - Instagram Widget
+* New - Social Icons Shortcode
 * Fix - Flush rewrite rules on saving settings
 * Fix - Make StagTools shortcode window insert content in active editor instead of post editor
 * Tweak - Use ``add_theme_support( 'post-type', array( 'portfolio' ) )`` instead of separate theme support check. Where ``portfolio`` is the custom post type
@@ -131,7 +132,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Fix - Disable Portfolio Archives
 
 = 1.0.6 - 09/11/2013 =
-* New - [Modify Portfolio post type label, slug and rewrites](https://github.com/mauryaratan/stagtools/wiki/Constants-and-Filters)
+* New - Modify Portfolio post type label, slug and rewrites
 * New - Attach ``stagtools`` body class to frontend
 * Fix - Frontend shortcode stylesheet on the top of theme stylesheet
 * Fix - Minor issues with intro and button shortcode styling

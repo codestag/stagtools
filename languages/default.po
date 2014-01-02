@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-28 19:25+0530\n"
-"PO-Revision-Date: 2013-12-28 19:25+0530\n"
+"POT-Creation-Date: 2014-01-02 19:48+0530\n"
+"PO-Revision-Date: 2014-01-02 19:48+0530\n"
 "Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
 "Language-Team:  <support@codestag.com>\n"
 "Language: en\n"
@@ -114,6 +114,38 @@ msgstr ""
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
+msgstr ""
+
+#: ../stagtools.php:327
+msgid "Using Social Icons"
+msgstr ""
+
+#: ../stagtools.php:328
+msgid "Using Social Icons Shortcode"
+msgstr ""
+
+#: ../stagtools.php:329
+msgid "To use the social icon use the following shortcode:"
+msgstr ""
+
+#: ../stagtools.php:330
+msgid ""
+"passing \"all\" in id would display all social icons with filled settings."
+msgstr ""
+
+#: ../stagtools.php:331
+msgid "or you can pass specific ids."
+msgstr ""
+
+#: ../stagtools.php:332
+msgid "Using Different Styled Icons"
+msgstr ""
+
+#: ../stagtools.php:333
+msgid ""
+"You can use the social icons in two different styles: normal and squared. "
+"Just pass the <code>style</code> argument in sidebar.<br>E.g.: "
+"<code>[stag_social id=\"twitter,facebook\" style=\"squared\"]</code>."
 msgstr ""
 
 #: ../assets/js/plugin-lang.php:5
@@ -403,23 +435,23 @@ msgstr ""
 msgid "Enter twitter OAuth Access Secret"
 msgstr ""
 
-#: ../settings/settings.php:471
+#: ../settings/settings.php:405
 msgid "Portfolio Slug"
 msgstr ""
 
-#: ../settings/settings.php:472
+#: ../settings/settings.php:406
 msgid "Enter the slug of custom post type <strong>portfolio</strong>."
 msgstr ""
 
-#: ../settings/settings.php:477
+#: ../settings/settings.php:411
 msgid "Skills Slug"
 msgstr ""
 
-#: ../settings/settings.php:478
+#: ../settings/settings.php:412
 msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
 msgstr ""
 
-#: ../settings/settings.php:490
+#: ../settings/settings.php:424
 #, php-format
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."
