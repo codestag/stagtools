@@ -449,6 +449,8 @@ if ( ! function_exists( 'stag_social' ) ) :
  * Social shortcode.
  *
  * Display links to social profiles.
+ *
+ * @since 1.2
  */
 function stag_social( $atts ) {
 	extract( shortcode_atts( array(

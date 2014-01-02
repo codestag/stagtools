@@ -3,7 +3,7 @@
  * Admin Options Page.
  *
  * @package StagTools
- * @since 1.1.2
+ * @since 1.2
  * @access private
  * @return void
  */

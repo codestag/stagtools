@@ -103,14 +103,14 @@ class StagTools {
 		add_filter( 'contextual_help', array( &$this, 'contextual_help' ), 10, 3 );
 
 		/**
-		 * @deprecated 1.1.2
+		 * @deprecated 1.2
 		 */
 		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'post-type/portfolio.php' );
 		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'post-type/slides.php' );
 		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'post-type/team.php' );
 		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'post-type/testimonials.php' );
 		
-		/** @since 1.1.2 */
+		/** @since 1.2 */
 		if ( current_theme_supports( 'post-type' ) ) {
 			$theme_supports = get_theme_support( 'post-type' )[0];
 
