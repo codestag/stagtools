@@ -57,7 +57,6 @@ class StagTools {
 	 * @return void
 	 */
 	public function __construct() {
-
 		// Define version constant
 		define( 'STAGTOOLS_VERSION', $this->version );
 
@@ -69,13 +68,10 @@ class StagTools {
 
 		// Include required files
 		$this->includes();
-
 	}
 
 	/**
-	 * action_links function.
-	 *
-	 * Adds custom links on plugins page.
+	 * Add custom links on plugins page.
 	 *
 	 * @access public
 	 * @param mixed $links
@@ -110,7 +106,11 @@ class StagTools {
 		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'post-type/team.php' );
 		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'post-type/testimonials.php' );
 		
-		/** @since 1.2 */
+		/**
+		 * Include custom post type files, depending on which are supported.
+		 * 
+		 * @since 1.2
+		 */
 		if ( current_theme_supports( 'post-type' ) ) {
 			$theme_supports = get_theme_support( 'post-type' )[0];
 
@@ -118,7 +118,6 @@ class StagTools {
 				include_once( "post-type/{$support}.php" );
 			}
 		}
-
 	}
 
 	/**
@@ -137,7 +136,6 @@ class StagTools {
 	 * @return void
 	 */
 	function stag_load_textdomain() {
-
 		// Set filter for plugin's languages directory
 		$stagtools_lang_dir = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
 		$stagtools_lang_dir = apply_filters( 'stagtools_languages_directory', $stagtools_lang_dir );
@@ -160,7 +158,6 @@ class StagTools {
 			// Load the default language files
 			load_plugin_textdomain( 'stag', false, $stagtools_lang_dir );
 		}
-
 	}
 
 	/**
@@ -248,7 +245,7 @@ class StagTools {
 	}
 
 	/**
-	 * Add stagtools to body class for use on frontend to check if plugin is active.
+	 * Add stagtools to body class for use on frontend.
 	 * 
 	 * @since 1.0.0
 	 * @return array $classes List of classes
@@ -259,11 +256,10 @@ class StagTools {
 	}
 
 	/**
-	* Widget styles.
-	* 
-	* @access public 
-	* @return void 
-	*/
+	 * Widget styles.
+	 * 
+	 * @return void
+	 */
 	public function widget_styles() {
 		global $pagenow;
 		if( $pagenow != 'widgets.php' ) return;
@@ -292,7 +288,7 @@ class StagTools {
 	 *
 	 * @since 1.1
 	 * @link http://wordpress.org/plugins/stag-custom-sidebars
-	 * @return boolean
+	 * @return boolean True if plugin is active or false.
 	 */
 	public function is_scs_active(){
 		include_once(ABSPATH .'wp-admin/includes/plugin.php');
