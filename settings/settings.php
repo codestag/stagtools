@@ -245,46 +245,22 @@ function stagtools_get_registered_settings() {
 		),
 		'social' => apply_filters( 'stagtools_social_settings',
 			array(
-				'500px' => array(
-					'id'   => '500px',
-					'name' => '500px',
-					'desc' => 'e.g. http://500px.com/username',
+				'android' => array(
+					'id'   => 'android',
+					'name' => 'Android',
+					'desc' => '',
 					'type' => 'url'
 				),
-				'addthis' => array(
-					'id'   => 'addthis',
-					'name' => 'AddThis',
-					'desc' => 'e.g. http://www.addthis.com',
+				'apple' => array(
+					'id'   => 'apple',
+					'name' => 'Apple',
+					'desc' => '',
 					'type' => 'url'
 				),
-				'blogger' => array(
-					'id'   => 'Blogger',
-					'name' => 'Blogger',
-					'desc' => 'e.g. http://username.blogspot.com',
-					'type' => 'url'
-				),
-				'delicious' => array(
-					'id'   => 'delicious',
-					'name' => 'Delicious',
-					'desc' => 'e.g. http://delicious.com/username',
-					'type' => 'url'
-				),
-				'deviantart' => array(
-					'id'   => 'deviantart',
-					'name' => 'DeviantART',
-					'desc' => 'e.g. http://username.deviantart.com/',
-					'type' => 'url'
-				),
-				'digg' => array(
-					'id'   => 'digg',
-					'name' => 'Digg',
-					'desc' => 'e.g. http://digg.com/username',
-					'type' => 'url'
-				),
-				'dopplr' => array(
-					'id'   => 'Dopplr',
-					'name' => 'Dopplr',
-					'desc' => 'e.g. http://www.dopplr.com/traveller/username',
+				'bitbucket' => array(
+					'id'   => 'bitbucket',
+					'name' => 'Bitbucket',
+					'desc' => 'e.g. https://bitbucket.org/username',
 					'type' => 'url'
 				),
 				'dribbble' => array(
@@ -293,10 +269,10 @@ function stagtools_get_registered_settings() {
 					'desc' => 'e.g. http://dribbble.com/username',
 					'type' => 'url'
 				),
-				'evernote' => array(
-					'id'   => 'evernote',
-					'name' => 'Evernote',
-					'desc' => 'e.g. http://evernote.com/username',
+				'dropbox' => array(
+					'id'   => 'dropbox',
+					'name' => 'Dropbox',
+					'desc' => '',
 					'type' => 'url'
 				),
 				'facebook' => array(
@@ -311,10 +287,10 @@ function stagtools_get_registered_settings() {
 					'desc' => 'e.g. http://www.flickr.com/photos/username',
 					'type' => 'url'
 				),
-				'forrst' => array(
-					'id'   => 'forrst',
-					'name' => 'Forrst',
-					'desc' => 'e.g. http://forrst.me/username',
+				'foursquare' => array(
+					'id'   => 'foursquare',
+					'name' => 'Foursquare',
+					'desc' => 'e.g. https://foursquare.com/username',
 					'type' => 'url'
 				),
 				'github' => array(
@@ -323,8 +299,8 @@ function stagtools_get_registered_settings() {
 					'desc' => 'e.g. https://github.com/username',
 					'type' => 'url'
 				),
-				'google+' => array(
-					'id'   => 'google+',
+				'google-plus' => array(
+					'id'   => 'google-plus',
 					'name' => 'Google+',
 					'desc' => 'e.g. http://plus.google.com/userID',
 					'type' => 'url'
@@ -333,12 +309,6 @@ function stagtools_get_registered_settings() {
 					'id'   => 'instagram',
 					'name' => 'Instagram',
 					'desc' => 'e.g. http://instagram.com/username',
-					'type' => 'url'
-				),
-				'lastfm' => array(
-					'id'   => 'lastfm',
-					'name' => 'Lastfm',
-					'desc' => 'e.g. http://www.last.fm/user/username',
 					'type' => 'url'
 				),
 				'linkedin' => array(
@@ -353,40 +323,10 @@ function stagtools_get_registered_settings() {
 					'desc' => 'e.g. mailto:user@name.com',
 					'type' => 'url'
 				),
-				'path' => array(
-					'id'   => 'path',
-					'name' => 'Path',
-					'desc' => 'e.g. https://path.com/p/picID',
-					'type' => 'url'
-				),
-				'paypal' => array(
-					'id'   => 'paypal',
-					'name' => 'PayPal',
-					'desc' => 'e.g. mailto:email@address',
-					'type' => 'url'
-				),
-				'picasa' => array(
-					'id'   => 'picasa',
-					'name' => 'Picasa',
-					'desc' => 'e.g. https://picasaweb.google.com/userID',
-					'type' => 'url'
-				),
 				'pinterest' => array(
 					'id'   => 'pinterest',
 					'name' => 'Pinterest',
 					'desc' => 'e.g. http://pinterest.com/username',
-					'type' => 'url'
-				),
-				'posterous' => array(
-					'id'   => 'posterous',
-					'name' => 'Posterous',
-					'desc' => 'e.g. http://username.posterous.com',
-					'type' => 'url'
-				),
-				'reddit' => array(
-					'id'   => 'reddit',
-					'name' => 'Reddit',
-					'desc' => 'e.g. http://www.reddit.com/user/username',
 					'type' => 'url'
 				),
 				'rss' => array(
@@ -399,19 +339,25 @@ function stagtools_get_registered_settings() {
 				'skype' => array(
 					'id'   => 'skype',
 					'name' => 'Skype',
-					'desc' => 'e.g. skype:username',
+					'desc' => '',
 					'type' => 'url'
 				),
-				'spotify' => array(
-					'id'   => 'spotify',
-					'name' => 'Spotify',
-					'desc' => 'e.g. http://open.spotify.com/user/username',
+				'stack-exchange' => array(
+					'id'   => 'stack-exchange',
+					'name' => 'Stack Exchange',
+					'desc' => 'http://stackexchange.com/users/userID',
 					'type' => 'url'
 				),
-				'stumbleupon' => array(
-					'id'   => 'stumbleupon',
-					'name' => 'StumbleUpon',
-					'desc' => 'e.g. http://www.stumbleupon.com/stumbler/username',
+				'stack-overflow' => array(
+					'id'   => 'stack-overflow',
+					'name' => 'Stack Overflow',
+					'desc' => 'e.g. http://stackoverflow.com/users/userID',
+					'type' => 'url'
+				),
+				'trello' => array(
+					'id'   => 'trello',
+					'name' => 'Trello',
+					'desc' => 'e.g. https://trello.com/username',
 					'type' => 'url'
 				),
 				'tumblr' => array(
@@ -426,28 +372,22 @@ function stagtools_get_registered_settings() {
 					'desc' => 'e.g. http://twitter.com/username',
 					'type' => 'url'
 				),
-				'viddler' => array(
-					'id'   => 'viddler',
-					'name' => 'Viddler',
-					'desc' => 'e.g. http://www.viddler.com/explore/username',
-					'type' => 'url'
-				),
 				'vimeo' => array(
 					'id'   => 'vimeo',
 					'name' => 'Vimeo',
 					'desc' => 'e.g. http://vimeo.com/username',
 					'type' => 'url'
 				),
-				'virb' => array(
-					'id'   => 'virb',
-					'name' => 'Virb',
-					'desc' => 'e.g. http://username.virb.com',
+				'windows' => array(
+					'id'   => 'windows',
+					'name' => 'Windows',
+					'desc' => '',
 					'type' => 'url'
 				),
-				'wordpress' => array(
-					'id'   => 'wordpress',
-					'name' => 'WordPress',
-					'desc' => 'e.g. http://username.wordpress.com',
+				'xing' => array(
+					'id'   => 'xing',
+					'name' => 'Xing',
+					'desc' => '',
 					'type' => 'url'
 				),
 				'youtube' => array(
@@ -456,12 +396,6 @@ function stagtools_get_registered_settings() {
 					'desc' => 'e.g. http://www.youtube.com/user/username',
 					'type' => 'url'
 				),
-				'zerply' => array(
-					'id'   => 'zerply',
-					'name' => 'Zerply',
-					'desc' => 'e.g. http://zerply.com/username',
-					'type' => 'url'
-				)
 			)
 		),
 		'portfolio' => apply_filters( 'stagtools_portfolio_settings',
