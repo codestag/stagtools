@@ -459,11 +459,18 @@ function stag_social( $atts ) {
 	), $atts ) );
 
 	$social_urls = array_keys(stagtools_get_registered_settings()['social']);
-	$settings = get_option('stag_options');
+	$settings    = get_option('stag_options');
+	
+	$output      = '<div class="stag-social-icons">';
 
-	$output = '<div class="stag-social-icons">';
+	if ( $id == '' || $id == "all" ) {
+		$id = $social_urls;
+	} else {
+		$id = explode(',', $id);
+	}
 
-	foreach( $social_urls as $slug ) {
+	foreach( $id as $slug ) {
+		$slug = trim($slug);
 		if( isset( $settings[$slug] ) && $settings[$slug] != '' ) {
 			$class = $slug;
 
