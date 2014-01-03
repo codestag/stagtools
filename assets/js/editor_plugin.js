@@ -12,7 +12,7 @@
 		
 		createControl: function( d, e ){
 			var ed = tinymce.activeEditor,
-				IsSCSActive = (StagShortcodes.is_scs_active === "1") ? true : false;
+				IsSCSActive = ( typeof StagShortcodes !== 'undefined' && StagShortcodes.is_scs_active === "1") ? true : false;
 
 			if( d === "stag_shortcodes_button" ){
 				d = e.createMenuButton( "stag_shortcodes_button", {
