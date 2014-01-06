@@ -349,7 +349,7 @@ class StagTools {
 							'<pre>[stag_social id="all"] // '. __( 'passing "all" in id would display all social icons with filled settings.', 'stag' ) .'</pre>'.
 							'<pre>[stag_social id="facebook,twitter,google-plus"] // '. __( 'or you can pass specific ids.', 'stag' ) .'</pre>'.
 							'<h5>'. __( 'Using Different Styled Icons' ) .'</h5>'.
-							'<p>'. __( 'You can use the social icons in two different styles: normal and squared. Just pass the <code>style</code> argument in sidebar.<br>E.g.: <code>[stag_social id="twitter,facebook" style="squared"]</code>.' ) .'</p>'
+							'<p>'. __( 'You can use the social icons in two different styles: normal and square. Just pass the <code>style</code> argument in sidebar.<br>E.g.: <code>[stag_social id="twitter,facebook" style="square"]</code>.' ) .'</p>'
 		) );
 
 		return $contextual_help;

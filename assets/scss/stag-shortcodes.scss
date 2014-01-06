@@ -537,3 +537,30 @@
     height: auto;
   }
 }
+
+.stag-social-icons {
+  font-size: 45px;
+  .stag-icon {
+    line-height: 72px;
+  }
+  a {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 10px 10px 0;
+  }
+
+  &.normal{
+    a{
+      color: #2f322b;
+    }
+  }
+  &.square{
+    a{
+      background: #2f322b;
+      color: #fff;
+    }
+  }
+}
