@@ -2,7 +2,7 @@
 
 Contributors: mauryaratan
 Donate link: http://codest.ag/st-donate
-Tags: widgets, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebars, codestag, mauryaratan
+Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
 Tested up to: 3.8
 Stable tag: 1.1.1
