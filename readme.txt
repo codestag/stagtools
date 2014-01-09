@@ -1,6 +1,6 @@
 === StagTools ===
 
-Contributors: mauryaratan
+Contributors: codestag, mauryaratan
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
@@ -67,7 +67,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 2. All widgets added by StagTools are highlighted.
 3. Settings panel for adding twitter oAuth keys.
 
-==Installation==
+== Installation ==
 
 = Minimum Requirements =
 
@@ -78,42 +78,41 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 = Automatic Installation =
 
 1. Log in and navigate to Plugins &rarr; Add New.
-2. Type "StagTools" into the Search input and click the "Search Widgets" button.
-3. Locate the StagTools in the list of search results and click "Install Now".
-4. Click the "Activate Plugin" link at the bottom of the install screen.
-5. Navigate to Settings &rarr; StagTools to modify the plugin's settings. The widgets will be available in Appearance &rarr; Widgets.
+2. Type “StagTools” into the Search input and click the “Search Widgets” button.
+3. Locate the “StagTools” in the list of search results and click “Install Now”.
+4. Click the “Activate Plugin” link at the bottom of the install screen.
+5. Navigate to Settings &rarr; StagTools to modify the plugin’s settings. The widgets will be available in Appearance &rarr; Widgets.
 
 = Manual Installation =
 
-1. Download the "StagTools" plugin from WordPress.org.
+1. Download the “StagTools” plugin from WordPress.org.
 2. Unzip the package and move to your plugins directory.
-3. Log into WordPress and navigate to the "Plugins" screen.
-4. Locate "StagTools" in the list and click the "Activate" link.
+3. Log into WordPress and navigate to the “Plugins” screen.
+4. Locate “StagTools” in the list and click the “Activate” link.
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
-==Changelog==
+== Changelog ==
 
-= 1.2 - 01/XX/2014 =
-* New - Settins Page UI
+= 1.2 - 01/09/2014 =
+* New - Settings Page UI
 * New - Instagram Widget
 * New - Social Icons Shortcode
-* Fix - Flush rewrite rules on saving settings
-* Fix - Make StagTools shortcode window insert content in active editor instead of post editor
+* Fix - Flush rewrite rules on saving settings, when required
+* Fix - Make StagTools shortcode window insert content in active editor instead of main editor
 * Tweak - Use ``add_theme_support( 'post-type', array( 'portfolio' ) )`` instead of separate theme support check. Where ``portfolio`` is the custom post type
-* Tweak - Google Maps Shortcode. Now accepts ``lat``, ``long``, ``width``, ``height``, ``zoom``, ``style`` as arguments.
+* Tweak - Google Maps Shortcode. Now accepts ``lat``, ``long``, ``width``, ``height``, ``zoom``, ``style`` as arguments
 * Tweak - Added optional follow button in twitter widget
 * Tweak - Inline documentation
 * Tweak - Dribbble shot markup
 * Tweak - Backwards compatbility for Portfolio settings
 * Tweak - Replace help under settings tab with Contextual help
-* And several bug fixes and improvements
+* And several bug fixes, documentation enhancement and improvements
 
 = 1.1.1 - 11/20/2013 =
 * Fix - FontAwesome icon missing class names after upgrading to latest version
 
 = 1.1 - 11/15/2013 =
 * New - Compatibility with FontAwesome 4
-* New - Insert font icons in buttons
 * New - Insert font icons in buttons
 * New - Settings for changing slugs for custom post type ‘portfolio’ and taxonomy ‘skill’
 * New - Contextual help screen on settings page
