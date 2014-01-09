@@ -404,13 +404,15 @@ function stagtools_get_registered_settings() {
 					'id'   => 'portfolio_slug',
 					'name' => __( 'Portfolio Slug', 'stag' ),
 					'desc' => __( 'Enter the slug of custom post type <strong>portfolio</strong>.', 'stag' ),
-					'type' => 'text'
+					'type' => 'text',
+					'std'  => 'portfolio'
 				),
 				'skills_slug' => array(
 					'id'   => 'skills_slug',
 					'name' => __( 'Skills Slug', 'stag' ),
 					'desc' => __( 'Enter the slug of custom post taxonomy <strong>skill</strong>.', 'stag' ),
-					'type' => 'text'
+					'type' => 'text',
+					'std'  => 'skill',
 				)
 			)
 		)
