@@ -404,7 +404,7 @@ $stag_shortcodes['map'] = array(
 			'std' => '',
 			'type' => 'text',
 			'label' => __( 'Longitude', 'stag' ),
-			'desc' => __( 'Enter the place longitude coordinate. E.g.: -122.08395', 'stag' )
+			'desc' => sprintf( __( 'Enter the place longitude coordinate. E.g.: -122.08395. You may find longitude and latitude <a href="%1$s" target="_blank">here</a>.', 'stag' ), esc_url('http://universimmedia.pagesperso-orange.fr/geo/loc.htm') )
 		),
 		'width' => array(
 			'std' => '100%',
