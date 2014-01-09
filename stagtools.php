@@ -112,9 +112,9 @@ class StagTools {
 		 * @since 1.2
 		 */
 		if ( current_theme_supports( 'post-type' ) ) {
-			$theme_supports = get_theme_support( 'post-type' )[0];
+			$theme_supports = get_theme_support( 'post-type' );
 
-			foreach ( $theme_supports as $support ) {
+			foreach ( $theme_supports[0] as $support ) {
 				include_once( "post-type/{$support}.php" );
 			}
 		}
