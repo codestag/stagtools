@@ -19,7 +19,7 @@ $args = array(
 	'public'              => true,
 	'exclude_from_search' => true,
 	'publicly_queryable'  => true,
-	'rewrite'             => array('slug' => 'testimonials'),
+	'rewrite'             => array( 'slug' => 'testimonials' ),
 	'show_ui'             => true,
 	'query_var'           => true,
 	'capability_type'     => 'post',
@@ -40,4 +40,4 @@ function stag_testimonials_edit_columns( $columns ) {
 	return $columns;
 }
 
-add_filter('manage_edit-team_columns', 'stag_testimonials_edit_columns');
+add_filter('manage_edit-testimonials_columns', 'stag_testimonials_edit_columns');
