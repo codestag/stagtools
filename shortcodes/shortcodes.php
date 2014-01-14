@@ -421,6 +421,7 @@ function stag_map( $atts ) {
 	        var mapOptions = {
 	            zoom: <?php echo $zoom; ?>,
 	            center: userLatLang,
+	            scrollwheel: false,
 	            styles: mapStyle
 	        };
 
