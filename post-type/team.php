@@ -24,7 +24,8 @@ $args = array(
 	'query_var'           => true,
 	'capability_type'     => 'post',
 	'hierarchical'        => false,
-	'menu_position'       => null,
+	'menu_position'       => 34,
+	'menu_icon'           => 'dashicons-groups',
 	'has_archive'         => false,
 	'supports'            => array( 'title', 'thumbnail' )
 );
