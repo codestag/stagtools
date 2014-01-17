@@ -440,7 +440,7 @@ function stag_map( $atts ) {
 
 	<?php
 
-	return "<div id='{$map_id}' style='width:{$width};height:{$height};'></div>";
+	return "<div id='{$map_id}' class='google-map' style='width:{$width};height:{$height};'></div>";
 }
 add_shortcode( 'stag_map', 'stag_map' );
 endif;
