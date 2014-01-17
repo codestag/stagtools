@@ -40,7 +40,7 @@ register_taxonomy( 'skill', 'portfolio', array(
 	'public'            => true,
 	'hierarchical'      => true,
 	'show_ui'           => true,
-	'show_in_nav_menus' => false,
+	'show_in_nav_menus' => true,
 	'args'              => array( 'orderby' => 'term_order' ),
 	'query_var'         => true,
 	'rewrite'           => array( 'slug' => $skills_slug, 'hierarchical' => true)

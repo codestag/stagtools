@@ -16,9 +16,9 @@ $labels = array(
 
 $args = array(
 	'labels'              => $labels,
-	'public'              => true,
+	'public'              => false,
 	'exclude_from_search' => true,
-	'publicly_queryable'  => true,
+	'publicly_queryable'  => false,
 	'rewrite'             => array( 'slug' => 'testimonials' ),
 	'show_ui'             => true,
 	'query_var'           => true,
