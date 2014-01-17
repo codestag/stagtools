@@ -439,7 +439,7 @@ $stag_shortcodes['map'] = array(
 			)
 		),
 	),
-	'shortcode' => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}"]',
+	'shortcode' => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}" zoom="{{zoom}}"]',
 	'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
 );
 
