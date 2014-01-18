@@ -156,3 +156,6 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.2 =
+This update requires update to all Google Map shortcodes.
