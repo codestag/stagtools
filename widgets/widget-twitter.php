@@ -23,7 +23,7 @@ class stag_twitter_widget extends WP_Widget{
 
 		echo $before_widget;
 
-?>
+	?>
 
 	<div class="stag-twitter-widget">
 		<?php
@@ -33,7 +33,7 @@ class stag_twitter_widget extends WP_Widget{
 		$stag_options = get_option( 'stag_options' );
 
 		if( empty($stag_options['consumer_key']) || empty($stag_options['consumer_secret']) || empty($stag_options['access_key']) || empty($stag_options['access_secret']) ) {
-			echo '<strong>' . __( 'Please fill all widget settings.', 'stag' ) . '</strong>' . $after_widget;
+			echo '<strong>' . __( 'Please fill all widget settings.', 'stag' ) . '</strong></div>' . $after_widget;
 			return;
 		}
 
@@ -46,21 +46,28 @@ class stag_twitter_widget extends WP_Widget{
 		if( $diff >= $crt || empty($last_cache) ) {
 			$connection = $tw_helper->getConnectionWithAccessToken( $stag_options['consumer_key'], $stag_options['consumer_secret'], $stag_options['access_key'], $stag_options['access_secret'] );
 
-			$query_string = '';
+			$url = add_query_arg( array( 'screen_name' => $instance['twitter_username'], 'count' => $instance['tweet_count'] ), 'https://api.twitter.com/1.1/statuses/user_timeline.json' );
 
 			if( $instance['show_replies'] == 1 ) {
-				$query_string .= '&exclude_replies=false';
+				$url = add_query_arg( array( 'exclude_replies' => "false" ), $url );
 			} else {
-				$query_string .= '&exclude_replies=true';
+				$url = add_query_arg( array( 'exclude_replies' => "true" ), $url );
 			}
 
 			if( $instance['show_retweets'] == 1) {
-				$query_string .= '&include_rts=true';
+				$url = add_query_arg( array( 'include_rts' => "true" ), $url );
 			} else {
-				$query_string .= '&include_rts=false';
+				$url = add_query_arg( array( 'include_rts' => "false" ), $url );
 			}
 
-			$tweets = $connection->get( "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" . $instance['twitter_username'] . "&count=". $instance['tweet_count'] . $query_string ) or die( __( "Couldn't retrieve tweets! Wrong username!", "stag" ) );
+			$tweets = $connection->get( $url );
+
+			if( !$tweets ) {
+				_e( "Couldn't retrieve tweets! Wrong username!", "stag" );
+				echo '</div>' . $after_widget;
+				return;
+			}
+
 
 			if( !empty( $tweets->errors ) ) {
 				if( $tweets->errors[0]->message == 'Invalid or expired token' ) {
@@ -74,8 +81,8 @@ class stag_twitter_widget extends WP_Widget{
 			for( $i = 0; $i <= count($tweets); $i++) {
 				if( !empty($tweets[$i]) ) {
 					$tweets_array[$i]['created_at'] = $tweets[$i]->created_at;
-					$tweets_array[$i]['text'] = $tweets[$i]->text;
-					$tweets_array[$i]['status_id'] = $tweets[$i]->id_str;
+					$tweets_array[$i]['text']       = $tweets[$i]->text;
+					$tweets_array[$i]['status_id']  = $tweets[$i]->id_str;
 				}
 			}
 
@@ -105,20 +112,18 @@ class stag_twitter_widget extends WP_Widget{
 
 			$output .= '</ul>';			
 
-			if ( $show_follow_button == 1 ) {
-				$output .= "<a class='button' href='". esc_url( 'https://twitter.com/'. $twitter_username ) ."'>". __( 'Follow', 'stag' ) ."</a>";
+			if ( (bool) $show_follow_button == 1 ) {
+				$output .= "<a class='button twitter-follow-button' href='". esc_url( 'https://twitter.com/'. $twitter_username ) ."'>". __( 'Follow', 'stag' ) ."</a>";
 			}
 
 			echo $output;
 		}
 
 		?>
-	
-
 
 	</div>
 
-<?php
+	<?php
 	
 	echo $after_widget;
 
