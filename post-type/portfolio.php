@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Portfolio post type functions.
+ * 
+ * @package StagTools
+ */
 $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 	'name'               => __( 'Portfolio', 'stag' ),
 	'singular_name'      => __( 'Portfolio', 'stag' ),
@@ -46,6 +50,12 @@ register_taxonomy( 'skill', 'portfolio', array(
 	'rewrite'           => array( 'slug' => $skills_slug, 'hierarchical' => true)
 ) );
 
+/**
+ * Modify Portfolio columns
+ *
+ * @param  array $old_columns Old columns
+ * @return $columns Return new columns
+ */
 function stag_portfolio_edit_columns( $columns ) {
 	$columns = array(
 		"cb"    => "<input type=\"checkbox\">",
@@ -55,7 +65,14 @@ function stag_portfolio_edit_columns( $columns ) {
 	);
 	return $columns;
 }
+add_filter("manage_edit-portfolio_columns", "stag_portfolio_edit_columns");
 
+/**
+ * Custom post type Portfolio column.
+ *
+ * @param array $column
+ * @return void
+ */
 function stag_portfolio_custom_column( $column ) {
 	global $post;
 	switch ( $column ) {
@@ -72,6 +89,4 @@ function stag_portfolio_custom_column( $column ) {
 		break;
 	}
 }
-
-add_filter("manage_edit-portfolio_columns", "stag_portfolio_edit_columns");
 add_action("manage_posts_custom_column",  "stag_portfolio_custom_column");
