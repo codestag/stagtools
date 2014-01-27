@@ -94,11 +94,11 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 == Changelog ==
 
 = 1.2.1 - 01/25/2014 =
-* Tweak: Performance tweaks for Google Maps
-* Tweak: Twitter widget, fixed an issue with page break when tweets are not retrieved
-* Tweak: Added custom post type menu positions and icons
-* Tweak: Disable scroll wheel zoom on Google Map
-* Tweak: Add default options for portfolio and skills slugs
+* Tweak - Performance tweaks for Google Maps
+* Tweak - Twitter widget, fixed an issue with page break when tweets are not retrieved
+* Tweak - Added custom post type menu positions and icons
+* Tweak - Disable scroll wheel zoom on Google Map
+* Tweak - Add default options for portfolio and skills slugs
 * Improved - Added inline docs for Portfolio post type
 * Improved - Make skill terms filter portfolio items based on skills when clicked
 * Fix - Added missing zoom parameter in Google Maps shortcode
