@@ -1,6 +1,6 @@
 (function($){
 	
-	"use strict"
+	"use strict";
 
 	$(document).ready(function(){
 		$(".stag-tabs").tabs({
@@ -10,9 +10,9 @@
 
 		$(".stag-toggle").each( function () {
 			if($(this).attr('data-id') == 'closed') {
-				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, heightStyle: "content", active: false  });
+				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, heightStyle: "content", active: false });
 			} else {
-				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, heightStyle: "content"});
+				$(this).accordion({ header: '.stag-toggle-title', collapsible: true, heightStyle: "content" });
 			}
 		});
 	});
@@ -23,17 +23,21 @@ var Stagtools = {};
 
 Stagtools.Map = ( function($) {
 	function setupMap(options) {
-		var mapOptions = {
+		var mapOptions, mapElement, map, marker;
+
+		if( typeof google === 'undefined' ) return;
+
+		mapOptions = {
 			zoom: parseFloat(options.zoom),
 			center: new google.maps.LatLng(options.center.lat, options.center.long),
 			scrollwheel: false,
 			styles: options.styles
 		};
 
-		var mapElement = document.getElementById(options.id);
-		 	map = new google.maps.Map(mapElement, mapOptions);
+		mapElement = document.getElementById(options.id);
+	 	map = new google.maps.Map(mapElement, mapOptions);
 
-		var marker = new google.maps.Marker({
+		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(options.center.lat, options.center.long),
 			map: map
 		});
