@@ -130,7 +130,7 @@ class stag_instagram_widget extends WP_Widget{
 				foreach ( $instagram_posts as $post ) { ?>
 					
 				<a href="<?php echo $post['link']; ?>" target="_blank" id="instagram_badge_image_<?php echo $i; ?>" class="instagram_badge_image">
-					<img src="<?php echo $post['image'] ?>" alt="<?php echo $post['caption']; ?>" />
+					<img src="<?php echo str_replace( 'http:', '', $post['image'] ); ?>" alt="<?php echo $post['caption']; ?>" />
 				</a>
 
 				<?php
