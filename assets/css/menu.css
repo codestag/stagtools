@@ -196,7 +196,6 @@
 	}
 }
 
-
 .stag-all-icons{
 	height: 175px;
 	overflow: auto;
@@ -219,10 +218,10 @@
 	border: 1px solid #E1E1E1;
 	margin-left: -1px;
 	margin-top: -1px;
-	transition: all 0.1s ease-out;
-	-moz-transition: all 0.1s ease-out;
-	-webkit-transition: all 0.1s ease-out;
-	-o-transition: all 0.1s ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+	transition: all 150ms ease-out;
 	cursor: pointer;
 }
 
@@ -232,4 +231,11 @@
 
 .stag-all-icons i:hover{
 	color: #278AB7;
+	background: #fff;
+	z-index: 10;
+	-webkit-transform: scale(1.3);
+	-moz-webkit-transform: scale(1.3);
+	-ms-webkit-transform: scale(1.3);
+	-o-webkit-transform: scale(1.3);
+	transform: scale(1.3);
 }
