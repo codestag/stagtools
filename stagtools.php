@@ -101,10 +101,10 @@ class StagTools {
 		/**
 		 * @deprecated 1.2
 		 */
-		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'post-type/portfolio.php' );
-		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'post-type/slides.php' );
-		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'post-type/team.php' );
-		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'post-type/testimonials.php' );
+		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'includes/post-type/portfolio.php' );
+		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'includes/post-type/slides.php' );
+		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'includes/post-type/team.php' );
+		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'includes/post-type/testimonials.php' );
 		
 		/**
 		 * Include custom post type files, depending on which are supported.
@@ -115,7 +115,7 @@ class StagTools {
 			$theme_supports = get_theme_support( 'post-type' );
 
 			foreach ( $theme_supports[0] as $support ) {
-				include_once( "post-type/{$support}.php" );
+				include_once( "includes/post-type/{$support}.php" );
 			}
 		}
 	}
@@ -170,7 +170,7 @@ class StagTools {
 	public function includes() {
 		global $stag_options;
 
-		require_once('settings/settings.php');
+		require_once('includes/settings/settings.php');
 		$stag_options = stagtools_get_settings();
 
 		if ( is_admin() ){
@@ -181,10 +181,10 @@ class StagTools {
 		}		
 
 		// Widgets
-		include_once( 'widgets/widget-dribbble.php' );
-		include_once( 'widgets/widget-flickr.php' );
-		include_once( 'widgets/widget-instagram.php' );
-		include_once( 'widgets/widget-twitter.php' );
+		include_once( 'includes/widgets/widget-dribbble.php' );
+		include_once( 'includes/widgets/widget-flickr.php' );
+		include_once( 'includes/widgets/widget-instagram.php' );
+		include_once( 'includes/widgets/widget-twitter.php' );
 	}
 
 	/**
@@ -194,7 +194,7 @@ class StagTools {
 	*/
 	public function admin_includes(){
 		include_once( 'shortcodes/stag-shortcodes.php' );
-		include_once( 'settings/settings.php' );
+		include_once( 'includes/settings/settings.php' );
 	}
 
 	/**
