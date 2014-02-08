@@ -307,13 +307,13 @@ endif;
 if( ! function_exists( 'stag_image' ) ) :
 function stag_image( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'style' => 'grayscale',
+		'style'     => 'grayscale',
 		'alignment' => 'none',
-		'src' => '',
-		'url' => ''
+		'src'       => '',
+		'url'       => ''
 	), $atts ) );
 
-	$output = "<div class=\"stag-image stag-image--$style stag-image--$alignment\" >";
+	$output = "<figure class=\"stag-image stag-image--$style stag-image--$alignment\" >";
 
 	if($url != ''){
 		$output .= "<a href=\"". esc_url($url) ."\"><img src=\"$src\" alt=\"\"></a>";
@@ -321,7 +321,7 @@ function stag_image( $atts, $content = null ) {
 		$output .= "<img src=\"". esc_url($src) ."\" alt=\"\">";
 	}
 
-	$output .= "</div>";
+	$output .= "</figure>";
 
 	return $output;
 }
