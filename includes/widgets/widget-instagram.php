@@ -89,8 +89,8 @@ class stag_instagram_widget extends WP_Widget{
 		<p>
 			<label for="<?php echo $this->get_field_id('size'); ?>"><?php _e( 'Photo Size:', 'stag' ); ?></label>
 			<select id="<?php echo $this->get_field_id('size'); ?>" name="<?php echo $this->get_field_name('size'); ?>" class="widefat">
-				<option value="thumbnail" <?php selected('thumbnail', $size) ?>><?php _e('Thumbnail', 'stag'); ?></option>
-				<option value="large" <?php selected('large', $size) ?>><?php _e('Large', 'stag'); ?></option>
+				<option value="thumbnail" <?php selected('thumbnail', $instance['size']) ?>><?php _e('Thumbnail', 'stag'); ?></option>
+				<option value="large" <?php selected('large', $instance['size']) ?>><?php _e('Large', 'stag'); ?></option>
 			</select>
 		</p>
 
