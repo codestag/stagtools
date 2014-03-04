@@ -1,11 +1,11 @@
 === StagTools ===
 
-Contributors: codestag, mauryaratan
+Contributors: mauryaratan, codestag
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 3.8
-Stable tag: 1.2.1
+Tested up to: 3.9
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
+= 1.2.2 - 03/04/2014 =
+* Improved: Instagram Widget, rewritten from base
+
 = 1.2.1 - 01/25/2014 =
 * Tweak - Performance tweaks for Google Maps
 * Tweak - Twitter widget, fixed an issue with page break when tweets are not retrieved
@@ -169,6 +172,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+If you're using instagram widget, it's required to update widget settings.
 
 = 1.2 =
 This update requires update to all Google Map shortcodes.
