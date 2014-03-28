@@ -1,6 +1,6 @@
 (function(){
 	tinymce.create( "tinymce.plugins.stagShortcodes", {
-		
+
 		init: function ( d, e ) {
 			d.addCommand("stagPopup", function( a, params){
 				var popup = params.identifier;
@@ -9,13 +9,13 @@
 				tb_show("Insert Stag Shortcode", ajaxurl + "?action=popup&popup=" + popup + "&width=" + 670 );
 			});
 		},
-		
+
 		createControl: function( d, e ){
 			var ed = tinymce.activeEditor,
 				IsSCSActive = ( typeof StagShortcodes !== 'undefined' && StagShortcodes.is_scs_active === "1") ? true : false;
 
-			if( d === "stag_shortcodes_button" ){
-				d = e.createMenuButton( "stag_shortcodes_button", {
+			if( d === "stagShortcodes" ){
+				d = e.createMenuButton( "stagShortcodes", {
 					title: ed.getLang('stag.insert'),
 					icons: false
 				});
@@ -43,7 +43,7 @@
 					a.addWithPopup( b, ed.getLang('stag.toggle'), "toggle" );
 					a.addWithPopup( b, ed.getLang('stag.icon'), "icon" );
 					a.addWithPopup( b, ed.getLang('stag.map'), "map" );
-					
+
 				});
 
 				return d;
@@ -51,7 +51,7 @@
 			}
 			return null;
 		},
-	
+
 		addWithPopup: function (d, e, a){
 			d.add({
 				title: e,
@@ -63,7 +63,7 @@
 				}
 			});
 		},
-	
+
 		addImmediate:function(d,e,a){
 			d.add({
 				title:e,

@@ -1,5 +1,5 @@
 /* Menu */
-.mceIcon.mce_stag_shortcodes_button{
+.mceIcon.mce_stagShortcodes {
 	background: url('../img/stag.png') no-repeat center !important;
 }
 
@@ -182,10 +182,10 @@
 
 /* Retina Queries */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
-	.mceIcon.mce_stag_shortcodes_button{
+	.mceIcon.mce_stagShortcodes{
 		background-image: url('../img/stag-2x.png') !important;
 		background-size: 18px 17px !important;
-	}	
+	}
 	#close-popup{
 		background-size: 22px 105px;
 		background-position-y: -49px;
