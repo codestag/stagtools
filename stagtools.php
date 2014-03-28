@@ -292,7 +292,17 @@ class StagTools {
 	 */
 	public function is_scs_active(){
 		include_once(ABSPATH .'wp-admin/includes/plugin.php');
-		if( is_plugin_active('stag-custom-sidebars/stag-custom-sidebars.php') ) return true;
+
+		$is_scs_active = ( is_plugin_active('stag-custom-sidebars/stag-custom-sidebars.php') ) ? true : false;
+
+		if( $is_scs_active ) {
+			$custom_sidebars = get_option( 'stag_custom_sidebars' );
+
+			if( $custom_sidebars && count($custom_sidebars) ) {
+				return true;
+			}
+		}
+
 		return false;
 	}
 
