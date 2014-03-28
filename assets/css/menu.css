@@ -1,5 +1,6 @@
 /* Menu */
-.mceIcon.mce_stagShortcodes {
+.mceIcon.mce_stagShortcodes,
+.mce-i-stagtools {
 	background: url('../img/stag.png') no-repeat center !important;
 }
 
@@ -182,7 +183,8 @@
 
 /* Retina Queries */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
-	.mceIcon.mce_stagShortcodes{
+	.mceIcon.mce_stagShortcodes,
+	.mce-i-stagtools {
 		background-image: url('../img/stag-2x.png') !important;
 		background-size: 18px 17px !important;
 	}
@@ -203,6 +205,7 @@
 	border: 1px solid #AAA;
 	overflow-x: hidden;
 	max-width: 484px;
+	background: #fff;
 }
 
 .stag-all-icons i{

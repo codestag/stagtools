@@ -8,8 +8,8 @@ tinymce.PluginManager.add('stagShortcodes', function(editor, url) {
 	});
 
     editor.addButton('stagShortcodes', {
-		icon: false,
-		text: 'StagTools',
+		icon: 'stagtools',
+		text: false,
 		tooltip: editor.getLang('stag.insert'),
 		type: 'menubutton',
 		menu: [
