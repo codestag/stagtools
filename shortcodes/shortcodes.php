@@ -177,7 +177,7 @@ function stag_button( $atts, $content = null ) {
 		'icon'       => '',
 		'icon_order' => 'before'
 	), $atts ) );
-	
+
 	$button_icon = '';
 	$class       = " stag-button--{$size}";
 	$class       .= " stag-button--{$style}";
@@ -229,7 +229,7 @@ endif;
 
 if( ! function_exists( 'stag_intro' ) ):
 function stag_intro( $atts, $content = null ) {
-	return '<span class="stag-intro-text">' . do_shortcode($content) . '</span>';
+	return '<section class="stag-intro-text">' . wpautop( do_shortcode( $content ) ) . '</section>';
 }
 add_shortcode( 'stag_intro', 'stag_intro' );
 endif;
@@ -378,7 +378,7 @@ endif;
 if( ! function_exists( 'stag_map') ) :
 /**
  * Google Map Shortcode
- * 
+ *
  * @since 1.0.4
  */
 function stag_map( $atts ) {
@@ -403,9 +403,9 @@ function stag_map( $atts ) {
 	$map_id = 'map'. rand(0, 99);
 
 	wp_enqueue_script( 'google-maps', ( is_ssl() ? 'https' : 'http' ) . '://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
-  	
+
 	?>
-	
+
 	<script type="text/javascript">
 	    jQuery(window).load(function(){
     	    var options = {
@@ -445,7 +445,7 @@ function stag_social( $atts ) {
 	$registered_settings = stagtools_get_registered_settings();
 	$social_urls         = array_keys($registered_settings['social']);
 	$settings            = get_option('stag_options');
-	
+
 	$output              = '<div class="stag-social-icons '. $style .'">';
 
 	if ( $id == '' || $id == "all" ) {
