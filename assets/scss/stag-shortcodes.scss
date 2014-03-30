@@ -1,5 +1,3 @@
-@import "compass/css3";
-@import "compass/utilities";
 @import "preboot";
 
 .stag-tabs,
@@ -400,7 +398,7 @@
 
 .stag-image--contrast { @include filter(contrast(15%)); }
 
-.stag-image--brightness { @include filter(brightness(200%)); }
+.stag-image--brightness {  @include filter(#{"brightness(2)"}); }
 
 .stag-image--invert { @include filter(invert(100%)); }
 
@@ -558,6 +556,6 @@
 	margin: 2em 0;
 }
 
-.gm-style img { 
+.gm-style img {
 	max-width: none;
 }
