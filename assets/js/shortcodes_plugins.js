@@ -129,10 +129,10 @@ jQuery.appendo = function() {
         // Handles a click event on the remove button
         function clicked_del(e)
         {
-            if (rows > 1) del_row(); 
+            if (rows > 1) del_row();
             return nothing(e);
         };
-    
+
         // Add the buttons after the table instance
         /*
         jQuery('<div />')
@@ -365,10 +365,17 @@ jQuery(document).ready(function($) {
 
             // when insert is clicked
             $('.stag-insert', form).click(function() {
-                if(window.tinyMCE)
-                {
-                    window.tinyMCE.execInstanceCommand( window.tinyMCE.activeEditor.id, 'mceInsertContent', false, $('#_stag_ushortcode', form).html());
-                    tb_remove();
+                if(window.tinyMCE) {
+                    var version = tinyMCE.majorVersion;
+
+                    if ( version === '3' ) {
+                        window.tinyMCE.execInstanceCommand( window.tinyMCE.activeEditor.id, 'mceInsertContent', false, $('#_stag_ushortcode', form).html());
+                        tb_remove();
+                    } else if ( version === '4' ) {
+                        window.tinyMCE.activeEditor.insertContent( $('#_stag_ushortcode', form).html() );
+                        tb_remove();
+                    }
+
                 }
             });
         }
