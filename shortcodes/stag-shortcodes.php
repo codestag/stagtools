@@ -20,7 +20,7 @@ class StagShortcodes {
 
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins.js', false, $stagtools->version, false );
-			
+
 			wp_localize_script( 'jquery', 'StagShortcodes', array(
 				'plugin_folder'           => WP_PLUGIN_URL .'/shortcodes',
 				/** Check if Stag Custom Sidebars plugin is active {@link http://wordpress.org/plugins/stag-custom-sidebars/} */
@@ -45,13 +45,19 @@ class StagShortcodes {
 	}
 
 	public function add_rich_plugins( $plugin_array ) {
-		global $stagtools;
-		$plugin_array['stagShortcodes'] = $stagtools->plugin_url() . '/assets/js/editor_plugin.js';
+		global $stagtools, $tinymce_version;
+
+		if( version_compare( $tinymce_version , '400', '<' ) ) {
+			$plugin_array['stagShortcodes'] = $stagtools->plugin_url() . '/assets/js/editor_plugin.js';
+		} else {
+			$plugin_array['stagShortcodes'] = $stagtools->plugin_url() . '/assets/js/plugin.js';
+		}
+
 		return $plugin_array;
 	}
 
 	public function register_rich_buttons( $buttons ) {
-		array_push( $buttons, "|", 'stag_shortcodes_button' );
+		array_push( $buttons, 'stagShortcodes' );
 		return $buttons;
 	}
 
@@ -68,7 +74,7 @@ class StagShortcodes {
 		<div id="stag-popup">
 
 			<div id="stag-sc-wrap">
-				
+
 				<div id="stag-sc-form-wrap">
 					<h2 id="stag-sc-form-head"><?php echo $shortcode->popup_title; ?></h2>
 					<span id="close-popup"></span>
@@ -84,11 +90,11 @@ class StagShortcodes {
 							<tr class="form-row">
 								<?php if( ! $shortcode->has_child ) : ?><td class="label">&nbsp;</td><?php endif; ?>
 								<!-- <td class="field insert-field"> -->
-									
+
 								<!-- </td> -->
 							</tr>
 						</tbody>
-						
+
 					</table><!-- /#stag-sc-form-table -->
 
 					<div class="insert-field">
