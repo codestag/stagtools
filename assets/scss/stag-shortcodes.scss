@@ -506,6 +506,7 @@
 .stag-icon {
 	display: inline-block;
 	text-align: center;
+	vertical-align: middle;
 	@include transition(all .2s);
 }
 .stag-icon:hover {
