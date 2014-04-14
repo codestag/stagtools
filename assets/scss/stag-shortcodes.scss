@@ -352,9 +352,12 @@
 		@include filter(.75);
 	}
 
-	&--before &,
-	&--after &{
+	&--before &{
 		margin-right: 0.7em;
+	}
+
+	&--after &{
+		margin-left: 0.7em;
 	}
 }
 
