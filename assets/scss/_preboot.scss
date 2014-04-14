@@ -1,8 +1,29 @@
 @import "compass/css3";
-@import "compass/utilities";
 
 // Vars
 $accent: #363f48;
+
+$button-map: (
+	black: #000,
+	blue: #1b93c7,
+	green: #84c333,
+	grey: #979797,
+	light-blue: #56c3f2,
+	orange: #fc901d,
+	red: #d15858,
+	purple: #c16ad7,
+	white: #fff,
+	dark: $accent
+);
+
+$alert-map: (
+	white: #f5f5f5,
+	grey: #979797,
+	red: #d15858,
+	yellow: #ffd164,
+	green: #84c333,
+	blue: #1b93c7,
+);
 
 // Mixin to quickly include font style
 @mixin iconify( $code: null ){
@@ -18,4 +39,16 @@ $accent: #363f48;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+%cf {
+	zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
 }
