@@ -23,7 +23,8 @@ $stag_shortcodes['button'] = array(
 				'blue'       => __( 'Blue', 'stag' ),
 				'red'        => __( 'Red', 'stag' ),
 				'orange'     => __( 'Orange', 'stag' ),
-				'purple'     => __( 'Purple', 'stag' )
+				'purple'     => __( 'Purple', 'stag' ),
+				'white'      => __( 'White', 'stag' )
 			)
 		),
 		'size' => array(
