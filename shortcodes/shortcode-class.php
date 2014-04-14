@@ -69,11 +69,11 @@ class stag_shortcodes {
 
 				$row_end	= '<span class="stag-form-desc">' . $param['desc'] . '</span>' . "\n";
 				$row_end   .= '</td>' . "\n";
-				$row_end   .= '</tr>' . "\n";					
+				$row_end   .= '</tr>' . "\n";
 				$row_end   .= '</tbody>' . "\n";
 
 				switch( $param['type'] ) {
-					
+
 					case 'text' :
 						$output = $row_start;
 						$output .= '<input type="text" class="stag-form-text stag-input" name="' . $pkey . '" id="' . $pkey . '" value="' . $param['std'] . '" />'."\n";
@@ -91,6 +91,8 @@ class stag_shortcodes {
 					case 'select' :
 						$output = $row_start;
 						$output .= '<select name="' . $pkey . '" id="' . $pkey . '" class="stag-form-select stag-input">' . "\n";
+
+						ksort($param['options']);
 
 						foreach( $param['options'] as $value => $option ) {
 							$output .= '<option value="' . $value . '">' . $option . '</option>' . "\n";
@@ -164,10 +166,10 @@ class stag_shortcodes {
 				$prow_start .= '<tr class="form-row has-child">' . "\n";
 				$prow_start .= '<td><a href="#" id="form-child-add" class="button-secondary">' . $stag_shortcodes[$this->popup]['child_shortcode']['clone_button'] . '</a>' . "\n";
 				$prow_start .= '<div class="child-clone-rows">' . "\n";
-				
+
 				// for js use
 				$prow_start .= '<div id="_stag_cshortcode" class="hidden">' . $this->cshortcode . '</div>' . "\n";
-				
+
 				// start the default row
 				$prow_start .= '<div class="child-clone-row">' . "\n";
 				$prow_start .= '<ul class="child-clone-row-form">' . "\n";
@@ -182,7 +184,7 @@ class stag_shortcodes {
 					$crow_start .= '<label>' . $cparam['label'] . '</label>' . "\n";
 					$crow_start .= '</div>' . "\n";
 					$crow_start .= '<div class="child-clone-row-field">' . "\n";
-					
+
 					$crow_end	  = '<span class="child-clone-row-desc">' . $cparam['desc'] . '</span>' . "\n";
 					$crow_end   .= '</div>' . "\n";
 					$crow_end   .= '</li>' . "\n";
@@ -251,5 +253,3 @@ class stag_shortcodes {
 	}
 
 }
-
-?>
