@@ -5,7 +5,7 @@ Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
 Tested up to: 3.9
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,9 +27,9 @@ StagTools powers your WordPress website with some regularly needed shortcodes in
 * Toggle
 * Font Icons by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * Google Maps with 5 predefined styles
-* Custom Sidebars Area ( requires [Stag Custom Sidebars](http://wordpress.org/plugins/stag-custom-sidebars/) plugin )
+* Custom Sidebars Area ( requires [Stag Custom Sidebars](https://wordpress.org/plugins/stag-custom-sidebars/) plugin )
 * Image with CSS3 filters
-* Videos ( supports [oEmbeds](http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
+* Videos ( supports [oEmbeds](https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
 
 **Widgets:** Twitter, Dribbble, Flickr, Instagram
 
@@ -92,6 +92,13 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 1.2.3 - 04/16/2014 =
+* New - Added Compatibility with WordPress 3.9
+* Fix - Invalid variables under instagram widget
+* Fix - Icon shortcode, vertical alignment
+* Tweak - Shortcode generator styles for WordPress 3.9
+* Improved - Intro text shortcode
 
 = 1.2.2 - 03/04/2014 =
 * Improved: Instagram Widget, rewritten from base
@@ -172,6 +179,8 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+= 1.2.3 =
+Adds compatbility with WordPress 3.9. 1 beta tester was killed during this update.
 
 = 1.2.2 =
 If you're using instagram widget, it's required to update widget settings.
