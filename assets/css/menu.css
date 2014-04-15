@@ -5,10 +5,10 @@
 }
 
 .wp-core-ui .stag-insert{
-	color: white;
+	color: white !important;
 	margin-top: 3px;
 	margin-right: 10px;
-	background: #1b93c7;
+	background: #1b93c7 !important;
 	border: none;
 	border-radius: 0;
 	-webkit-box-shadow: none;

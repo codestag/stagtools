@@ -47,6 +47,12 @@
 @each $button, $color in $button-map {
 	.stag-button--#{$button} {
 		background: #{$color};
+		@if $button == white {
+			color: black;
+			&:hover {
+				color: black;
+			}
+		}
 	}
 
 	.stag-button--stroke.stag-button--#{$button} {
@@ -54,8 +60,13 @@
 		color: #{$color};
 		border-color: #{$color};
 		&:hover {
-			background: #{$color};
-			color: white;
+			@if $button != white {
+				background: #{$color};
+				color: white;
+			} @else {
+				background: white;
+				color: black;
+			}
 		}
 	}
 }
@@ -351,7 +362,6 @@
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	@include transition(all 200ms);
 	&:hover {
 		@include filter(.75);
 	}

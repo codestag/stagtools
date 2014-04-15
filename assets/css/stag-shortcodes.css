@@ -172,6 +172,10 @@
 
 .stag-button--white {
   background: white;
+  color: black;
+}
+.stag-button--white:hover {
+  color: black;
 }
 
 .stag-button--stroke.stag-button--white {
@@ -181,7 +185,7 @@
 }
 .stag-button--stroke.stag-button--white:hover {
   background: white;
-  color: white;
+  color: black;
 }
 
 .stag-button--dark {
@@ -526,10 +530,6 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  -moz-transition: all 200ms;
-  -o-transition: all 200ms;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
 }
 .stag-icon:hover {
   -webkit-filter: 0.75;
