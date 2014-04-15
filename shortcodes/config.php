@@ -58,6 +58,7 @@ $stag_shortcodes['button'] = array(
 			'type'    => 'select',
 			'label'   => __( 'Font Order', 'stag' ),
 			'desc'    => __( 'Select if the icon should display before text or after text.', 'stag' ),
+			'std'     => 'before',
 			'options' => array(
 				'before' => __( 'Before Text', 'stag' ),
 				'after'  => __( 'After Text', 'stag' )
@@ -67,6 +68,7 @@ $stag_shortcodes['button'] = array(
 			'type'    => 'select',
 			'label'   => __( 'Button Target', 'stag' ),
 			'desc'    => __( '_self = open in same window. _blank = open in new window', 'stag' ),
+			'std'     => '_self',
 			'options' => array(
 				'_self'  => __( '_self', 'stag' ),
 				'_blank' => __( '_blank', 'stag' )
