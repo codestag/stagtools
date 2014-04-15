@@ -9,12 +9,13 @@ $stag_shortcodes['button'] = array(
 			'std'   => '',
 			'type'  => 'text',
 			'label' => __( 'Button URL', 'stag' ),
-			'desc'  => __( 'Add the button\'s url e.g. http://example.com', 'stag' )
+			'desc'  => __( 'Add the button&lsquo;s url e.g. http://example.com', 'stag' )
 		),
 		'style' => array(
 			'type'    => 'select',
 			'label'   => __( 'Button Style', 'stag' ),
-			'desc'    => __( 'Select the button\'s style, ie the button\'s colour', 'stag' ),
+			'desc'    => __( 'Select the button&lsquo;s style, ie the button&lsquo;s colour', 'stag' ),
+			'std'     => 'black',
 			'options' => array(
 				'grey'       => __( 'Grey', 'stag' ),
 				'black'      => __( 'Black', 'stag' ),
@@ -30,7 +31,8 @@ $stag_shortcodes['button'] = array(
 		'size' => array(
 			'type'    => 'select',
 			'label'   => __( 'Button Size', 'stag' ),
-			'desc'    => __( 'Select the button\'s size', 'stag' ),
+			'desc'    => __( 'Select the button&lsquo;s size', 'stag' ),
+			'std'     => 'small',
 			'options' => array(
 				'small'  => __( 'Small', 'stag' ),
 				'medium' => __( 'Medium', 'stag' ),
@@ -40,7 +42,7 @@ $stag_shortcodes['button'] = array(
 		'type' => array(
 			'type'    => 'select',
 			'label'   => __( 'Button Type', 'stag' ),
-			'desc'    => __( 'Select the button\'s type', 'stag' ),
+			'desc'    => __( 'Select the button&lsquo;s type', 'stag' ),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' )
@@ -73,8 +75,8 @@ $stag_shortcodes['button'] = array(
 		'content' => array(
 			'std'   => 'Button Text',
 			'type'  => 'text',
-			'label' => __( 'Button\'s Text', 'stag' ),
-			'desc'  => __( 'Add the button\'s text', 'stag' ),
+			'label' => __( 'Button&lsquo;s Text', 'stag' ),
+			'desc'  => __( 'Add the button&lsquo;s text', 'stag' ),
 		)
 	),
 	'shortcode'   => '[stag_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}" icon="{{icon}}" icon_order="{{icon_order}}"]{{content}}[/stag_button]',
@@ -88,7 +90,8 @@ $stag_shortcodes['alert'] = array(
 		'style' => array(
 			'type'    => 'select',
 			'label'   => __('Alert Style', 'stag'),
-			'desc'    => __('Select the alert\'s style, ie the alert colour', 'stag'),
+			'desc'    => __('Select the alert&lsquo;s style, i.e. the alert colour', 'stag'),
+			'std'     => 'red',
 			'options' => array(
 				'white'  => __( 'White', 'stag' ),
 				'grey'   => __( 'Grey', 'stag' ),
@@ -101,8 +104,8 @@ $stag_shortcodes['alert'] = array(
 		'content' => array(
 			'std'   => 'Your Alert!',
 			'type'  => 'textarea',
-			'label' => __('Alert Text', 'stag'),
-			'desc'  => __('Add the alert\'s text', 'stag')
+			'label' => __( 'Alert Text', 'stag' ),
+			'desc'  => __( 'Add the alert&lsquo;s text', 'stag' )
 		)
 	),
 	'shortcode' => '[stag_alert style="{{style}}"]{{content}}[/stag_alert]',
@@ -115,7 +118,7 @@ $stag_shortcodes['toggle'] = array(
 		'style' => array(
 			'type'    => 'select',
 			'label'   => __('Toggle Style', 'stag'),
-			'desc'    => __('Select the toggle\'s style', 'stag'),
+			'desc'    => __('Select the toggle&lsquo;s style', 'stag'),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' ),
@@ -210,9 +213,9 @@ $stag_shortcodes['divider'] = array(
 				'double' => __( 'Double', 'stag' ),
 				'dashed' => __( 'Dashed', 'stag' ),
 				'dotted' => __( 'Dotted', 'stag' )
-				)
-			),
+			)
 		),
+	),
 	'shortcode'   => '[stag_divider style="{{style}}"]',
 	'popup_title' => __( 'Insert Divider', 'stag' )
 );
@@ -236,7 +239,7 @@ $stag_shortcodes['tabs'] = array(
 		'style' => array(
 			'type'    => 'select',
 			'label'   => __('Tabs Style', 'stag'),
-			'desc'    => __('Select the tabs\'s style', 'stag'),
+			'desc'    => __('Select the tabs&lsquo;s style', 'stag'),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' ),
@@ -255,10 +258,10 @@ $stag_shortcodes['tabs'] = array(
 				'desc'  => __( 'Title of the tab', 'stag' ),
 			),
 			'content' => array(
-			'std'     => 'Tab Content',
-			'type'    => 'textarea',
-			'label'   => __( 'Tab Content', 'stag' ),
-			'desc'    => __( 'Add the tabs content', 'stag' )
+				'std'     => 'Tab Content',
+				'type'    => 'textarea',
+				'label'   => __( 'Tab Content', 'stag' ),
+				'desc'    => __( 'Add the tabs content', 'stag' )
 			)
 		),
 		'shortcode'    => '[stag_tab title="{{title}}"]{{content}}[/stag_tab]',
@@ -272,7 +275,7 @@ $stag_shortcodes['dropcap'] = array(
 		'style' => array(
 			'type'    => 'select',
 			'label'   => __('Dropcap Style', 'stag'),
-			'desc'    => __('Select the dropcap\'s style', 'stag'),
+			'desc'    => __('Select the dropcap&lsquo;s style', 'stag'),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'squared' => __( 'Squared', 'stag' ),
@@ -282,13 +285,13 @@ $stag_shortcodes['dropcap'] = array(
 			'std'   => 'D',
 			'type'  => 'text',
 			'label' => __( 'Dropcap Text', 'stag' ),
-			'desc'  => __( 'Enter the dropcap\'s text', 'stag' )
+			'desc'  => __( 'Enter the dropcap&lsquo;s text', 'stag' )
 		),
 		'size' => array(
 			'std'   => '50px',
 			'type'  => 'text',
 			'label' => __( 'Font Size', 'stag' ),
-			'desc'  => __( 'Enter the font\'s size in px, em or %', 'stag' ),
+			'desc'  => __( 'Enter the font&lsquo;s size in px, em or %', 'stag' ),
 		),
 	),
 	'shortcode'   => '[stag_dropcap font_size="{{size}}" style="{{style}}"]{{content}}[/stag_dropcap]',
@@ -308,6 +311,7 @@ $stag_shortcodes['image'] = array(
 			'type'    => 'select',
 			'label'   => __('Image Filter', 'stag'),
 			'desc'    => __('Select the CSS3 image filter style', 'stag'),
+			'std'     => 'no-filter',
 			'options' => array(
 				'no-filter'  => __( 'No Filter', 'stag' ),
 				'grayscale'  => __( 'Grayscale', 'stag' ),
@@ -323,6 +327,7 @@ $stag_shortcodes['image'] = array(
 			'type'    => 'select',
 			'label'   => __('Alignment', 'stag'),
 			'desc'    => __('Choose Image Alignment', 'stag'),
+			'std'     => 'none',
 			'options' => array(
 				'none'   => __( 'None', 'stag' ),
 				'left'   => __( 'Left', 'stag' ),
@@ -335,7 +340,7 @@ $stag_shortcodes['image'] = array(
 			'type' => 'text',
 			'label' => __( 'URL', 'stag' ),
 			'desc' => __( 'Enter the URL where image should be linked (optional)', 'stag' )
-			)
+		)
 	),
 	'shortcode'   => '[stag_image style="{{style}}" src="{{src}}" alignment="{{alignment}}" url="{{url}}"]',
 	'popup_title' => __( 'Insert Image Shortcode', 'stag' )
@@ -384,7 +389,7 @@ $stag_shortcodes['icon'] = array(
 			'std' => '50px',
 			'type' => 'text',
 			'label' => __( 'Font Size', 'stag' ),
-			'desc' => __( 'Enter the icon\'s font size in px, em or %', 'stag' ),
+			'desc' => __( 'Enter the icon&lsquo;s font size in px, em or %', 'stag' ),
 		)
 	),
 	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{new_window}}"]',
