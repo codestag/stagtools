@@ -93,17 +93,19 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
-= 1.2.3 - 04/16/2014 =
+= 1.2.3 - April 16, 2014 =
 * New - Added Compatibility with WordPress 3.9
+* New - White color option for button
 * Fix - Invalid variables under instagram widget
 * Fix - Icon shortcode, vertical alignment
 * Tweak - Shortcode generator styles for WordPress 3.9
 * Improved - Intro text shortcode
+* Improved - Shortcode styles
 
-= 1.2.2 - 03/04/2014 =
+= 1.2.2 - March 04, 2014 =
 * Improved: Instagram Widget, rewritten from base
 
-= 1.2.1 - 01/25/2014 =
+= 1.2.1 - January 25, 2014 =
 * Tweak - Performance tweaks for Google Maps
 * Tweak - Twitter widget, fixed an issue with page break when tweets are not retrieved
 * Tweak - Added custom post type menu positions and icons
@@ -116,7 +118,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Fix - Add *google-map* class on Google maps shortcode
 * Fix - Fix Team post type title
 
-= 1.2 - 01/09/2014 =
+= 1.2 - January 09, 2014 =
 * New - Settings Page UI
 * New - Instagram Widget
 * New - Social Icons Shortcode
@@ -131,10 +133,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Tweak - Replace help under settings tab with Contextual help
 * And several bug fixes, documentation enhancement and improvements
 
-= 1.1.1 - 11/20/2013 =
+= 1.1.1 - November 20, 2013 =
 * Fix - FontAwesome icon missing class names after upgrading to latest version
 
-= 1.1 - 11/15/2013 =
+= 1.1 - November 15, 2013 =
 * New - Compatibility with FontAwesome 4
 * New - Insert font icons in buttons
 * New - Settings for changing slugs for custom post type ‘portfolio’ and taxonomy ‘skill’
@@ -142,40 +144,40 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Fix - Properly resize shortcode modal window width
 * Fix - Image/Video Media frame title
 * Fix - Check if there are no sidebar created via Stag Custom Sidebars
-* Tweak - Compatibility with the plugin [Stag Custom Sidebars](http://wordpress.org/plugins/stag-custom-sidebars/)
+* Tweak - Compatibility with the plugin [Stag Custom Sidebars](https://wordpress.org/plugins/stag-custom-sidebars/)
 * Tweak - Refractored code
 * Tweak - Inline plugin documentation
 
-= 1.0.8 - 10/02/2013 =
+= 1.0.8 - October 02, 2013 =
 * Fix - Twitter widget incorrect links
 * New - Revisions support for portfolio
 
-= 1.0.7 - 09/14/2013 =
+= 1.0.7 - September 14, 2013 =
 * Fix - Disable Portfolio Archives
 
-= 1.0.6 - 09/11/2013 =
+= 1.0.6 - September 11, 2013 =
 * New - Modify Portfolio post type label, slug and rewrites
 * New - Attach ``stagtools`` body class to frontend
 * Fix - Frontend shortcode stylesheet on the top of theme stylesheet
 * Fix - Minor issues with intro and button shortcode styling
 
-= 1.0.5 - 09/08/2013 =
+= 1.0.5 - September 08, 2013 =
 * Fix - Portfolio taxonomy skills archives
 
-= 1.0.4 - 09/07/2013 =
+= 1.0.4 - September 07, 2013 =
 * New - Google Map Shortcode
 * Fix - Flickr Widget disabled wrapper warnings
 
-= 1.0.3 - 09/01/2013 =
+= 1.0.3 - September 01, 2013 =
 * Fix - Admin font icon rendering issue
 
-= 1.0.2 - 09/01/2013 =
+= 1.0.2 - September 01, 2013 =
 * Fix - FontAwesome conflict with other classes using icon-
 
-= 1.0.1 - 08/16/2013 =
+= 1.0.1 - Auguest 16, 2013 =
 * Fix - Theme support check
 
-= 1.0 - 07/27/2013 =
+= 1.0 - July 27, 2013 =
 * Initial Release
 
 == Upgrade Notice ==
