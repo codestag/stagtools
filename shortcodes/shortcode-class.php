@@ -95,7 +95,7 @@ class stag_shortcodes {
 						ksort($param['options']);
 
 						foreach( $param['options'] as $value => $option ) {
-							$output .= '<option value="' . $value . '">' . $option . '</option>' . "\n";
+							$output .= "<option value='$value' ". selected( $value, $param['std'], false ) .">$option</option>";
 						}
 
 						$output .= '</select>' . "\n";
