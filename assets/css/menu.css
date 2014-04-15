@@ -4,27 +4,24 @@
 	background: url('../img/stag.png') no-repeat center !important;
 }
 
-#stag-popup{
-  -webkit-font-smoothing: antialiased;
-}
-
-.stag-insert{
-	color: white !important;
+.wp-core-ui .stag-insert{
+	color: white;
 	margin-top: 3px;
 	margin-right: 10px;
-	background: #1b93c7 !important;
-	border: none !important;
-	border-radius: 0 !important;
-	-webkit-box-shadow: none !important;
+	background: #1b93c7;
+	border: none;
+	border-radius: 0;
+	-webkit-box-shadow: none;
 	box-shadow: none;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 1 !important;
 	height: auto !important;
 	padding: 10px 14px !important;
 }
 
-.stag-insert:hover{
-	text-shadow: none !important;
+.wp-core-ui .stag-insert:hover{
+	text-shadow: none;
+	box-shadow: none;
 }
 
 .stag-open-media{
@@ -105,7 +102,6 @@
 	border-radius: 2px !important;
 	border-color: #e7e7e7 !important;
 	padding: 13px 10px !important;
-	-webkit-font-smoothing: antialiased;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 	font-size: 14px;
