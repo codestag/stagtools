@@ -472,3 +472,15 @@ function stag_social( $atts ) {
 }
 add_shortcode( 'stag_social', 'stag_social' );
 endif;
+
+if ( ! function_exists( 'stag_columns' ) ) :
+function stag_columns( $atts, $content = null ) {
+	$defaults = array(
+		'style' => 'normal'
+	);
+	extract( shortcode_atts( $defaults, $atts ) );
+
+    return "<section class='stag-section stag-columns'>". do_shortcode( $content ) ."</section>";
+}
+endif;
+add_shortcode( 'stag_columns', 'stag_columns' );
