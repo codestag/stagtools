@@ -154,7 +154,7 @@ $stag_shortcodes['toggle'] = array(
 
 $stag_shortcodes['columns'] = array(
 	'params'      => array(),
-	'shortcode'   => ' {{child_shortcode}} ', // as there is no wrapper shortcode
+	'shortcode'   => '[stag_columns]{{child_shortcode}}[/stag_columns]', // as there is no wrapper shortcode
 	'popup_title' => __('Insert Columns Shortcode', 'stag'),
 	'no_preview'  => true,
 
