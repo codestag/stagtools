@@ -474,12 +474,19 @@ endif;
 add_shortcode( 'stag_social', 'stag_social' );
 
 if ( ! function_exists( 'stag_columns' ) ) :
+/**
+ * Stag Columns shortcodes.
+ *
+ * Wrapper for stag_column shortcodes.
+ *
+ * @since 1.2.4
+ *
+ * @param  array $atts Shortcode attributes.
+ * @param  string $content Shortcode content.
+ *
+ * @return mixed
+ */
 function stag_columns( $atts, $content = null ) {
-	$defaults = array(
-		'style' => 'normal'
-	);
-	extract( shortcode_atts( $defaults, $atts ) );
-
     return "<section class='stag-section stag-columns'>". do_shortcode( $content ) ."</section>";
 }
 endif;
