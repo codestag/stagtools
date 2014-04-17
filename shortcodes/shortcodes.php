@@ -210,7 +210,7 @@ function stag_alert( $atts, $content = null ) {
 	extract(shortcode_atts(array(
 		'style' => 'white'
     ), $atts));
-	return '<div class="stag-alert stag-alert--'.$style.'">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-section stag-alert stag-alert--'.$style.'">' . do_shortcode($content) . '</div>';
 }
 add_shortcode( 'stag_alert', 'stag_alert' );
 endif;
@@ -221,7 +221,7 @@ function stag_divider( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'style' => 'plain'
 	), $atts ) );
-	return '<hr class="stag-divider stag-divider--'.$style.'">';
+	return '<hr class="stag-section stag-divider stag-divider--'.$style.'">';
 }
 add_shortcode( 'stag_divider', 'stag_divider' );
 endif;
@@ -229,7 +229,7 @@ endif;
 
 if( ! function_exists( 'stag_intro' ) ):
 function stag_intro( $atts, $content = null ) {
-	return '<section class="stag-intro-text">' . wpautop( do_shortcode( $content ) ) . '</section>';
+	return '<section class="stag-section stag-intro-text">' . wpautop( do_shortcode( $content ) ) . '</section>';
 }
 add_shortcode( 'stag_intro', 'stag_intro' );
 endif;
@@ -250,7 +250,7 @@ function stag_tabs( $atts, $content = null ) {
     $output = '';
 
     if( count( $tab_titles ) ) {
-    	$output .= '<div id="stag-tabs-'. rand(1, 100) .'" class="stag-tabs stag-tabs--'. $style .'"><div class="stag-tab-inner">';
+    	$output .= '<section id="stag-tabs-'. rand(1, 100) .'" class="stag-section stag-tabs stag-tabs--'. $style .'"><div class="stag-tab-inner">';
     	$output .= '<ul class="stag-nav stag-clearfix">';
 
     	foreach( $tab_titles as $tab ) {
@@ -259,7 +259,7 @@ function stag_tabs( $atts, $content = null ) {
 
     	$output .= '</ul>';
     	$output .= do_shortcode( $content );
-    	$output .= '</div></div>';
+    	$output .= '</div></section>';
     } else {
     	$output .= do_shortcode( $content );
     }
@@ -287,7 +287,7 @@ function stag_toggle( $atts, $content = null ) {
 		'state' => 'open',
 		'style' => 'normal'
 	), $atts ) );
-	return "<div data-id='".$state."' class=\"stag-toggle stag-toggle--". $style ."\"><span class=\"stag-toggle-title\">". $title ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
+	return "<div data-id='".$state."' class=\"stag-section stag-toggle stag-toggle--". $style ."\"><span class=\"stag-toggle-title\">". $title ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
 }
 add_shortcode( 'stag_toggle', 'stag_toggle' );
 endif;
@@ -313,7 +313,7 @@ function stag_image( $atts, $content = null ) {
 		'url'       => ''
 	), $atts ) );
 
-	$output = "<figure class=\"stag-image stag-image--$style stag-image--$alignment\" >";
+	$output = "<figure class=\"stag-section stag-image stag-image--$style stag-image--$alignment\" >";
 
 	if($url != ''){
 		$output .= "<a href=\"". esc_url($url) ."\"><img src=\"$src\" alt=\"\"></a>";
@@ -334,7 +334,7 @@ function stag_video( $atts, $content = null ) {
 		'src' => ''
 	), $atts ) );
 
-	return "<div class=\"stag-video\" >". $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $src ) .'[/embed]' ) ."</div>";
+	return "<div class=\"stag-section stag-video\" >". $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $src ) .'[/embed]' ) ."</div>";
 }
 add_shortcode( 'stag_video', 'stag_video' );
 endif;
@@ -423,10 +423,10 @@ function stag_map( $atts ) {
 
 	<?php
 
-	return "<div id='{$map_id}' class='google-map' style='width:{$width};height:{$height};'></div>";
+	return "<section id='{$map_id}' class='stag-section google-map' style='width:{$width};height:{$height};'></section>";
 }
-add_shortcode( 'stag_map', 'stag_map' );
 endif;
+add_shortcode( 'stag_map', 'stag_map' );
 
 if ( ! function_exists( 'stag_social' ) ) :
 /**
@@ -470,8 +470,8 @@ function stag_social( $atts ) {
 	return $output;
 
 }
-add_shortcode( 'stag_social', 'stag_social' );
 endif;
+add_shortcode( 'stag_social', 'stag_social' );
 
 if ( ! function_exists( 'stag_columns' ) ) :
 function stag_columns( $atts, $content = null ) {
