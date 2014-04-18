@@ -76,7 +76,7 @@ function stag_portfolio_columns( $old_columns ) {
 	$columns = array();
 
 	$columns["cb"]                  = "<input type=\"checkbox\" />";
-	$columns["thumbnail"]           = '';
+	$columns["thumbnail"]           = '<i class="dashicons dashicons-format-image"></i>';
 	$columns["title"]               = __( "Project", 'stag' );
 	$columns["stag-portfolio-type"] = __( "Project Types", 'stag' );
 	$columns["stag-portfolio-tag"]  = __( "Project Tags", 'stag' );
@@ -125,7 +125,7 @@ function stag_portfolio_admin_css() {
 	?>
 
 	<style type="text/css">
-		.manage-column.column-thumbnail { width: 50px; }
+		.manage-column.column-thumbnail { width: 50px; text-align: center; color: #bbb; }
 		.column-thumbnail img { max-width: 50px; height: auto; }
 	</style>
 
