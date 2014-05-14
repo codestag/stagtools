@@ -32,7 +32,7 @@ $portfolio_args = array(
 	'menu_position'      => 100,
 	'menu_icon'          => 'dashicons-portfolio',
 	'query_var'          => true,
-	'rewrite'            => array( 'slug' => 'project' ),
+	'rewrite'            => array( 'slug' => 'portfolio' ),
 	'capability_type'    => 'post',
 	'has_archive'        => true,
 	'hierarchical'       => false,
