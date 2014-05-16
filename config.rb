@@ -25,3 +25,12 @@ color_output = false
 # and then run:
 # sass-convert -R --from scss --to sass assets/scss scss && rm -rf sass && mv scss sass
 preferred_syntax = :scss
+
+
+require 'fileutils'
+on_stylesheet_saved do |file|
+  if File.exists?(file) && File.basename(file) == "font-awesome.css"
+    puts "Moving: #{file}"
+    FileUtils.mv(file, File.dirname(file) + "/../" + File.basename(file))
+  end
+end

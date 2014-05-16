@@ -356,16 +356,13 @@
 
 .stag-icon-link {
 	text-decoration: none;
+	@include transition(color 150ms);
 }
 
+.fa,
 .stag-icon {
-	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	&:hover {
-		@include filter(.75);
-	}
-
 	&--before &{
 		margin-right: 0.7em;
 	}

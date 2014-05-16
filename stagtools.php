@@ -213,7 +213,7 @@ class StagTools {
 	 */
 	public function frontend_style() {
 		wp_register_style( 'stag-shortcode-styles', plugin_dir_url( __FILE__ )  . 'assets/css/stag-shortcodes.css' , '', $this->version, 'all' );
-		wp_register_style( 'font-awesome', plugin_dir_url( __FILE__ )  . 'assets/css/font-awesome.css' , '', '4.0.3', 'all' );
+		wp_register_style( 'font-awesome', plugin_dir_url( __FILE__ )  . 'assets/css/font-awesome.css' , '', '4.1.0', 'all' );
 
 		wp_enqueue_style( 'stag-shortcode-styles' );
 		wp_enqueue_style( 'font-awesome' );

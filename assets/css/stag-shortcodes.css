@@ -524,21 +524,29 @@
 }
 .stag-icon-link {
   text-decoration: none;
+  -moz-transition: color 150ms;
+  -o-transition: color 150ms;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
 }
 
+.fa,
 .stag-icon {
-  display: inline-block;
   text-align: center;
   vertical-align: middle;
 }
-.stag-icon:hover {
-  -webkit-filter: 0.75;
-  filter: 0.75;
-}
-.stag-icon--before .stag-icon {
+.fa--before .fa,
+.stag-icon--before .fa, .fa--before
+.stag-icon,
+.stag-icon--before
+.stag-icon {
   margin-right: 0.7em;
 }
-.stag-icon--after .stag-icon {
+.fa--after .fa,
+.stag-icon--after .fa, .fa--after
+.stag-icon,
+.stag-icon--after
+.stag-icon {
   margin-left: 0.7em;
 }
 
