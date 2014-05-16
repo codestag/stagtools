@@ -262,7 +262,7 @@ jQuery(document).ready(function($) {
                 paddingLeft: 0,
                 paddingRight: 0,
                 paddingBottom: 0,
-                height: (tbWindow.outerHeight() - 2),
+                height: (tbWindow.outerHeight()),
                 overflow: 'auto', // IMPORTANT
                 width: stagPopup.outerWidth(),
             });
