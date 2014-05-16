@@ -10,7 +10,7 @@
 
 /**
  * Get all settings.
- * 
+ *
  * @return arran An array containing settings.
  */
 function stagtools_get_settings() {
@@ -89,7 +89,7 @@ function stagtools_options_page() {
 
 /**
  * Get settings tabs.
- * 
+ *
  * @return array An array containing tab names.
  */
 function stagtools_get_settings_tabs() {
@@ -103,7 +103,7 @@ function stagtools_get_settings_tabs() {
 
 /**
  * Validate user inputs upon save.
- * 
+ *
  * @param  array  $input An array containing values to filter
  * @return array         Filtered values array
  */
@@ -161,7 +161,7 @@ function stagtools_settings_sanitize( $input = array() ) {
  * Register settings fields.
  *
  * Fires upon admin_init.
- * 
+ *
  * @return void
  */
 function stagtools_register_settings() {
@@ -204,7 +204,7 @@ add_action( 'admin_init', 'stagtools_register_settings' );
 
 /**
  * Register all settings.
- * 
+ *
  * @return array An array containing all settings.
  */
 function stagtools_get_registered_settings() {
@@ -257,10 +257,28 @@ function stagtools_get_registered_settings() {
 					'desc' => '',
 					'type' => 'url'
 				),
+				'behance' => array(
+					'id'   => 'behance',
+					'name' => 'Behance',
+					'desc' => 'e.g. https://www.behance.net/username',
+					'type' => 'url'
+				),
 				'bitbucket' => array(
 					'id'   => 'bitbucket',
 					'name' => 'Bitbucket',
 					'desc' => 'e.g. https://bitbucket.org/username',
+					'type' => 'url'
+				),
+				'codepen' => array(
+					'id'   => 'codepen',
+					'name' => 'CodePen',
+					'desc' => 'e.g. http://codepen.io/username',
+					'type' => 'url'
+				),
+				'deviantart' => array(
+					'id'   => 'deviantart',
+					'name' => 'Deviant Art',
+					'desc' => 'e.g. http://username.deviantart.com',
 					'type' => 'url'
 				),
 				'dribbble' => array(
@@ -302,7 +320,7 @@ function stagtools_get_registered_settings() {
 				'google-plus' => array(
 					'id'   => 'google-plus',
 					'name' => 'Google+',
-					'desc' => 'e.g. http://plus.google.com/userID',
+					'desc' => 'e.g. https://plus.google.com/userID',
 					'type' => 'url'
 				),
 				'instagram' => array(
@@ -375,13 +393,25 @@ function stagtools_get_registered_settings() {
 				'vimeo' => array(
 					'id'   => 'vimeo',
 					'name' => 'Vimeo',
-					'desc' => 'e.g. http://vimeo.com/username',
+					'desc' => 'e.g. https://vimeo.com/username',
+					'type' => 'url'
+				),
+				'vine' => array(
+					'id'   => 'vine',
+					'name' => 'Vine',
+					'desc' => 'e.g. https://vine.co/username',
 					'type' => 'url'
 				),
 				'windows' => array(
 					'id'   => 'windows',
 					'name' => 'Windows',
 					'desc' => '',
+					'type' => 'url'
+				),
+				'wordpress' => array(
+					'id'   => 'wordpress',
+					'name' => 'WordPress',
+					'desc' => 'e.g. https://profiles.wordpress.org/username',
 					'type' => 'url'
 				),
 				'xing' => array(
@@ -430,7 +460,7 @@ function stagtools_missing_callback( $args ) {
  * Text callback.
  *
  * Renders text fields.
- * 
+ *
  * @param  array $args Arguments passed by the setting
  * @global $stag_options Array of all StagTools options
  * @return void
@@ -455,7 +485,7 @@ function stagtools_text_callback( $args ) {
  * URL callback.
  *
  * Renders URL fields.
- * 
+ *
  * @param  array $args Arguments passed by the setting
  * @global $stag_options Array of all StagTools options
  * @return void
@@ -480,7 +510,7 @@ function stagtools_url_callback( $args ) {
  * Select callback.
  *
  * Renders select fields.
- * 
+ *
  * @param  array $args Arguments passed by the setting
  * @global $stag_options Array of all StagTools options
  * @return void
@@ -510,7 +540,7 @@ function stagtools_select_callback( $args ) {
  * Header callback.
  *
  * Renders the header.
- * 
+ *
  * @param  array $args Arguments passed by the setting
  * @return void
  */
