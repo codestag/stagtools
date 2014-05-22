@@ -1,7 +1,8 @@
 <?php
-
 /**
  * All Plugin Shortcodes
+ *
+ * @package StagTools
  */
 
 

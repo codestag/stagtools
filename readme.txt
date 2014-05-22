@@ -97,7 +97,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * New - ``[stag_column]`` shortcode for wrapping the columns
 * New - Added ``stag-section`` class to all block level shortcodes
 * New - Custom post type "Project" added, better version of portfolios
-* Updated FontAwesome to v4.1.0
+* Fix - Minor issue with popup modal not resizing properly
+* Tweak - Enqeueu FontAwesome stylesheet before StagTools' shortcode styles
+* Update - FontAwesome icons updated to v4.1.0, includes 71 new icons
 * Improved - FontAwesome icons now use default FontAwesome classes instead of custom
 * Improved - Removed redundant code
 
