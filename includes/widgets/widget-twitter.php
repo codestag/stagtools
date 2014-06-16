@@ -38,12 +38,10 @@ class stag_twitter_widget extends WP_Widget{
 		}
 
 		$tw_helper = new StagTWHelper();
+		$transient = 'stag_twitter_widget_' . $twitter_username;
+		$timeout = $cache_time * HOUR_IN_SECONDS;
 
-		$last_cache = get_option('stag_twitter_widget_last_cache');
-		$diff = time() - $last_cache;
-		$crt = $instance['cache_time'] * 3600;
-
-		if( $diff >= $crt || empty($last_cache) ) {
+		if ( false === get_transient( $transient ) ) {
 			$connection = $tw_helper->getConnectionWithAccessToken( $stag_options['consumer_key'], $stag_options['consumer_secret'], $stag_options['access_key'], $stag_options['access_secret'] );
 
 			$url = add_query_arg( array( 'screen_name' => $instance['twitter_username'], 'count' => $instance['tweet_count'] ), 'https://api.twitter.com/1.1/statuses/user_timeline.json' );
@@ -86,16 +84,13 @@ class stag_twitter_widget extends WP_Widget{
 				}
 			}
 
-			update_option( 'stag_twitter_widget_tweets', serialize($tweets_array) );
-			update_option( 'stag_twitter_widget_last_cache', time() );
-
-			echo '<!-- twitter cache has been updated! -->';
+			set_transient( $transient, serialize($tweets_array), $timeout );
 		}
 
-		$widget_tweets = maybe_unserialize( get_option( 'stag_twitter_widget_tweets' ) );
+		$widget_tweets = maybe_unserialize( get_transient( $transient ) );
 
 		if( !empty( $widget_tweets ) ) {
-			$output = '<ul>';			
+			$output = '<ul>';
 			$count = 1;
 			$protocol = is_ssl() ? 'https:' : 'http:';
 
@@ -105,12 +100,12 @@ class stag_twitter_widget extends WP_Widget{
 				$output .= '</p>';
 				$output .= '<p><time datetime="'. $tweet['created_at'] .'" class="time"><a href="'. $protocol .'//twitter.com/'. $twitter_username .'/statuses/'. $tweet['status_id'] .'" target="_blank">'. $tw_helper->twitter_widget_relative_time( $tweet['created_at'] ) .'</a></time></p>';
 				$output .= '</li>';
-				
+
 				if( $count == $instance['tweet_count'] ) { break; }
 				$count++;
 			}
 
-			$output .= '</ul>';			
+			$output .= '</ul>';
 
 			if ( (bool) $show_follow_button == 1 ) {
 				$output .= "<a class='button twitter-follow-button' href='". esc_url( 'https://twitter.com/'. $twitter_username ) ."'>". __( 'Follow', 'stag' ) ."</a>";
@@ -124,7 +119,7 @@ class stag_twitter_widget extends WP_Widget{
 	</div>
 
 	<?php
-	
+
 	echo $after_widget;
 
 	}
