@@ -140,7 +140,7 @@ class stag_twitter_widget extends WP_Widget{
 	function form( $instance ) {
 		$defaults = array(
 			'title'              => __( 'Tweets', 'stag' ),
-			'cache_time'         => 1,
+			'cache_time'         => 2,
 			'twitter_username'   => '',
 			'tweet_count'        => 3,
 			'show_retweets'      => '',
