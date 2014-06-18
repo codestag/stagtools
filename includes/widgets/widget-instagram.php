@@ -16,7 +16,7 @@ class stag_instagram_widget extends WP_Widget{
 		echo $before_widget;
 
 		$title     = apply_filters( 'widget_title', $instance['title'] );
-		$username  = $instance['username'];
+		$username  = strtolower( $instance['username'] );
 		$cachetime = empty($instance['cachetime']) ? 9 : $instance['cachetime'];
 		$count     = empty($instance['count']) ? 9 : $instance['count'];
 		$size      = empty($instance['size']) ? 'thumbnail' : $instance['size'];
@@ -31,7 +31,7 @@ class stag_instagram_widget extends WP_Widget{
 			} else {
 				?>
 
-				<div class="instragram-widget-wrapper">
+				<div class="instragram-widget-wrapper size-<?php echo $size; ?>">
 					<?php foreach( $images as $image ) : ?>
 					<a href="<?php echo esc_url( $image['link'] ); ?>" title="<?php echo esc_attr( $image['description'] ); ?>" class="instagram_badge_image">
 						<img src="<?php echo esc_url( str_replace( 'http:', '', $image[$size]['url']) ); ?>" alt="<?php echo esc_attr( $image['description'] ); ?>">
@@ -134,14 +134,11 @@ class stag_instagram_widget extends WP_Widget{
 			$instagram = array();
 			foreach ($images as $image) {
 
-				if ($image['type'] == 'image' && $image['user']['username'] == $username) {
+				if ( $image['type'] == 'image' || $image['type'] == 'video' && $image['user']['username'] == $username ) {
 
 					$instagram[] = array(
 						'description' 	=> $image['caption']['text'],
 						'link' 			=> $image['link'],
-						'time'			=> $image['created_time'],
-						'comments' 		=> $image['comments']['count'],
-						'likes' 		=> $image['likes']['count'],
 						'thumbnail' 	=> $image['images']['thumbnail'],
 						'large' 		=> $image['images']['standard_resolution']
 					);
