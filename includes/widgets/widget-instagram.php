@@ -31,7 +31,7 @@ class stag_instagram_widget extends WP_Widget{
 			} else {
 				?>
 
-				<div class="instragram-widget-wrapper">
+				<div class="instragram-widget-wrapper size-<?php echo $size; ?>">
 					<?php foreach( $images as $image ) : ?>
 					<a href="<?php echo esc_url( $image['link'] ); ?>" title="<?php echo esc_attr( $image['description'] ); ?>" class="instagram_badge_image">
 						<img src="<?php echo esc_url( str_replace( 'http:', '', $image[$size]['url']) ); ?>" alt="<?php echo esc_attr( $image['description'] ); ?>">

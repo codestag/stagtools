@@ -555,7 +555,7 @@
   float: left;
   margin: 0px 0px 5px 5px;
 }
-.instragram-widget-wrapper img {
+.instragram-widget-wrapper img .size-thumbnail {
   max-width: 75px;
   height: auto;
 }
