@@ -134,7 +134,7 @@ class stag_instagram_widget extends WP_Widget{
 			$instagram = array();
 			foreach ($images as $image) {
 
-				if ($image['type'] == 'image' && $image['user']['username'] == $username) {
+				if ( $image['type'] == 'image' || $image['type'] == 'video' && $image['user']['username'] == $username ) {
 
 					$instagram[] = array(
 						'description' 	=> $image['caption']['text'],
