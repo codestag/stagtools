@@ -139,9 +139,6 @@ class stag_instagram_widget extends WP_Widget{
 					$instagram[] = array(
 						'description' 	=> $image['caption']['text'],
 						'link' 			=> $image['link'],
-						'time'			=> $image['created_time'],
-						'comments' 		=> $image['comments']['count'],
-						'likes' 		=> $image['likes']['count'],
 						'thumbnail' 	=> $image['images']['thumbnail'],
 						'large' 		=> $image['images']['standard_resolution']
 					);
