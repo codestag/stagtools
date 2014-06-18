@@ -16,7 +16,7 @@ class stag_instagram_widget extends WP_Widget{
 		echo $before_widget;
 
 		$title     = apply_filters( 'widget_title', $instance['title'] );
-		$username  = $instance['username'];
+		$username  = strtolower( $instance['username'] );
 		$cachetime = empty($instance['cachetime']) ? 9 : $instance['cachetime'];
 		$count     = empty($instance['count']) ? 9 : $instance['count'];
 		$size      = empty($instance['size']) ? 'thumbnail' : $instance['size'];
