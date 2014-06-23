@@ -5,7 +5,7 @@ Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 1.2.6 - June 23, 2014 =
+* Fix - Issue with buttons shortcode generator when no link provided
 
 = 1.2.5 - June 18, 2014 =
 * Fix - Twitter widget option storage, works flawlessly
@@ -197,6 +200,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.2.6 =
+Fixes an issue with buttons shortcodes not showing icons in some cases.
+
 = 1.2.5 =
 Includes fixes and improvements for Twitter and Instagram widget.
 
