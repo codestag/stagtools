@@ -385,7 +385,7 @@ function stag_icon( $atts, $content = null ) {
 	if( $url != '' ){
 		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
 	}else{
-		$output .= '<i class="stag-icon icon-'. esc_attr($icon) .'" '. $attrs .'></i>';
+		$output .= '<i class="fa fa-'. esc_attr($icon) .'" '. $attrs .'></i>';
 	}
 
 	return $output;
