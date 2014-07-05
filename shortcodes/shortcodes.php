@@ -32,7 +32,7 @@ add_shortcode( 'stag_two_third', 'stag_two_third' );
 
 if( ! function_exists( 'stag_two_third_last' ) ) :
 function stag_two_third_last( $atts, $content = null) {
-	return '<div class="stag-column stag-two-third stag-column-last">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-two-third stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_two_third_last', 'stag_two_third_last' );
