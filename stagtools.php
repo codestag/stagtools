@@ -16,7 +16,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'StagTools' ) ) {
+if ( ! class_exists( 'StagTools' ) ) :
 
 /**
  * Main StagTools Class
@@ -36,6 +36,12 @@ class StagTools {
 	public $version = '1.2.6';
 
 	/**
+	 * @var WooCommerce The single instance of the class
+	 * @since 2.1
+	 */
+	protected static $_instance = null;
+
+	/**
 	* @var string
 	*/
 	public $plugin_url;
@@ -49,6 +55,23 @@ class StagTools {
 	* @var string
 	*/
 	public $template_url;
+
+	/**
+	 * Main StagTools Instance
+	 *
+	 * Ensures only one instance of StagTools is loaded or can be loaded.
+	 *
+	 * @since 2.0.0
+	 * @static
+	 * @see StagTools()
+	 * @return StagTools - Main instance
+	 */
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
 
 	/**
 	 * StagTools Constructor.
@@ -366,10 +389,20 @@ class StagTools {
 
 }
 
-$GLOBALS['stagtools'] = new StagTools();
+endif;
 
+/**
+ * Returns the main instance of WC to prevent the need to use globals.
+ *
+ * @since  2.0.0
+ * @return StagTools
+ */
+function ST() {
+	return StagTools::instance();
 }
 
+// Global for backwards compatibility.
+$GLOBALS['stagtools'] = ST();
 
 /**
  * Flush the rewrite rules on activation
