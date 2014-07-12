@@ -169,7 +169,7 @@ if( ! function_exists( 'stag_button' ) ) :
  * Buttons
  */
 function stag_button( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'url'        => '#',
 		'target'     => '_self',
 		'style'      => 'grey',
@@ -177,27 +177,27 @@ function stag_button( $atts, $content = null ) {
 		'type'       => 'round',
 		'icon'       => '',
 		'icon_order' => 'before'
-	), $atts ) );
+	), $atts, 'purchase_link' );
 
 	$button_icon = '';
-	$class       = " stag-button--{$size}";
-	$class       .= " stag-button--{$style}";
-	$class       .= " stag-button--{$type}";
+	$class       = " stag-button--{$args['size']}";
+	$class       .= " stag-button--{$args['style']}";
+	$class       .= " stag-button--{$args['type']}";
 
-	if( ! empty($icon) ) {
-		if ( $icon_order == 'before' ) {
-			$button_content = stag_icon( array( 'icon' => $icon ) );
+	if( ! empty( $args['icon'] ) ) {
+		if ( $args['icon_order'] == 'before' ) {
+			$button_content = stag_icon( array( 'icon' => $args['icon'] ) );
 			$button_content .= do_shortcode($content);
 		} else {
 			$button_content = do_shortcode($content);
-			$button_content .= stag_icon( array( 'icon' => $icon ) );
+			$button_content .= stag_icon( array( 'icon' => $args['icon'] ) );
 		}
-		$class .= " stag-icon--{$icon_order}";
+		$class .= " stag-icon--{$args['icon_order']}";
 	} else {
 		$button_content = do_shortcode($content);
 	}
 
-	return '<a target="'.$target.'" href="'.$url.'" class="stag-button'. $class .'">'. $button_content .'</a>';
+	return '<a target="'. $args['target'] .'" href="'. $args['url'] .'" class="stag-button'. $class .'">'. $button_content .'</a>';
 }
 endif;
 
