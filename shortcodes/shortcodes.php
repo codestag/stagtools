@@ -219,13 +219,20 @@ endif;
 
 add_shortcode( 'stag_alert', 'stag_alert' );
 
-
 if( ! function_exists( 'stag_divider' ) ) :
+/**
+ * Horizontal divider shortcode.
+ *
+ * @param  array  $atts Shortcode attributes.
+ * @param  string $content
+ * @return string Custom Horizontal divider HTML.
+ */
 function stag_divider( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'style' => 'plain'
-	), $atts ) );
-	return '<hr class="stag-section stag-divider stag-divider--'.$style.'">';
+	), $atts, 'stag_divider' );
+
+	return '<hr class="stag-section stag-divider stag-divider--'. esc_attr( $args['style'] ) .'">';
 }
 endif;
 
