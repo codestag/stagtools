@@ -588,5 +588,5 @@
 }
 
 .gm-style img {
-  max-width: none;
+  max-width: none !important;
 }
