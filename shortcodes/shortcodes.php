@@ -304,12 +304,13 @@ add_shortcode( 'stag_tab', 'stag_tab' );
 
 if( ! function_exists( 'stag_toggle' ) ) :
 function stag_toggle( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'title' => __( 'Title Goes Here', 'stag' ),
 		'state' => 'open',
 		'style' => 'normal'
-	), $atts ) );
-	return "<div data-id='".$state."' class=\"stag-section stag-toggle stag-toggle--". $style ."\"><span class=\"stag-toggle-title\">". $title ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
+	), $atts, 'stag_toggle' );
+
+	return "<div data-id='". esc_attr( $args['state'] ) ."' class=\"stag-section stag-toggle stag-toggle--". esc_attr( $args['style'] ) ."\"><span class=\"stag-toggle-title\">". esc_html( $args['title'] ) ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
 }
 endif;
 
@@ -317,12 +318,12 @@ add_shortcode( 'stag_toggle', 'stag_toggle' );
 
 if( ! function_exists( 'stag_dropcap' ) ) :
 function stag_dropcap( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'style'     => 'normal',
 		'font_size' => '50px'
-	), $atts ) );
+	), $atts, 'stag_dropcap' );
 
-	return "<span class=\"stag-dropcap stag-dropcap--$style\" style=\"font-size: $font_size; line-height: $font_size; width: $font_size; height: $font_size;\">". do_shortcode( $content ) ."</span>";
+	return "<span class=\"stag-dropcap stag-dropcap--". esc_attr( $args['style'] ) ."\" style=\"font-size: ". esc_attr( $args['font_size'] ) ."; line-height: ". esc_attr( $args['font_size'] ) ."; width: ". esc_attr( $args['font_size'] ) ."; height: ". esc_attr( $args['font_size'] ) .";\">". do_shortcode( $content ) ."</span>";
 }
 endif;
 
@@ -330,19 +331,19 @@ add_shortcode( 'stag_dropcap', 'stag_dropcap' );
 
 if( ! function_exists( 'stag_image' ) ) :
 function stag_image( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'style'     => 'grayscale',
 		'alignment' => 'none',
 		'src'       => '',
 		'url'       => ''
-	), $atts ) );
+	), $atts, 'stag_image' );
 
-	$output = "<figure class=\"stag-section stag-image stag-image--$style stag-image--$alignment\" >";
+	$output = "<figure class=\"stag-section stag-image stag-image--". esc_attr( $args['style'] ) ." stag-image--". esc_attr( $args['alignment'] ) ."\" >";
 
 	if($url != ''){
-		$output .= "<a href=\"". esc_url($url) ."\"><img src=\"$src\" alt=\"\"></a>";
+		$output .= "<a href=\"". esc_url($args['url']) ."\"><img src=\"". esc_url( $args['src'] ) ."\" alt=\"\"></a>";
 	}else{
-		$output .= "<img src=\"". esc_url($src) ."\" alt=\"\">";
+		$output .= "<img src=\"". esc_url($args['src']) ."\" alt=\"\">";
 	}
 
 	$output .= "</figure>";
@@ -355,11 +356,11 @@ add_shortcode( 'stag_image', 'stag_image' );
 
 if( ! function_exists( 'stag_video' ) ) :
 function stag_video( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'src' => ''
-	), $atts ) );
+	), $atts, 'stag_video' );
 
-	return "<div class=\"stag-section stag-video\" >". $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $src ) .'[/embed]' ) ."</div>";
+	return "<div class=\"stag-section stag-video\" >". $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $args['src'] ) .'[/embed]' ) ."</div>";
 }
 endif;
 
@@ -370,32 +371,32 @@ if( ! function_exists( 'stag_icon') ) :
  * FontAwesome Icon shortcode.
  */
 function stag_icon( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'icon'       => '',
 		'url'        => '',
 		'size'       => '',
 		'new_window' => 'no'
-	), $atts ) );
+	), $atts, 'stag_icon' );
 
-	$new_window = ( $new_window == "no") ? '_self' : '_blank';
+	$new_window = ( $args['new_window'] == "no") ? '_self' : '_blank';
 
-	$size = esc_attr( $size );
+	$size = esc_attr( $args['size'] );
 
 	$output = '';
 	$attrs  = '';
 
-	if( ! empty($url) ){
-		$a_attrs = ' href="'. esc_url($url) .'" target="'. esc_attr($new_window) .'"';
+	if ( ! empty( $args['url'] ) ) {
+		$a_attrs = ' href="'. esc_url( $args['url'] ) .'" target="'. esc_attr( $new_window ) .'"';
 	}
 
-	if( !empty($size) ) {
+	if ( !empty( $size ) ) {
 		$attrs .= ' style="font-size:'. $size .';line-height:'. $size .'"';
 	}
 
-	if( $url != '' ){
-		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. $icon .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
+	if ( $args['url'] != '' ){
+		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. esc_attr( $args['icon'] ) .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
 	}else{
-		$output .= '<i class="fa fa-'. esc_attr($icon) .'" '. $attrs .'></i>';
+		$output .= '<i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. esc_attr( $attrs ) .'></i>';
 	}
 
 	return $output;
