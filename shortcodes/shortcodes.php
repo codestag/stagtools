@@ -255,20 +255,21 @@ if( ! function_exists( 'stag_tabs' ) ) :
  * @return void
  */
 function stag_tabs( $atts, $content = null ) {
-	$defaults = array(
+	$args = shortcode_atts( array(
 		'style' => 'normal'
-	);
-	extract( shortcode_atts( $defaults, $atts ) );
+	), $atts, 'stag_tabs' );
 
 	preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
 
 	$tab_titles = array();
-    if( isset($matches[1]) ){ $tab_titles = $matches[1]; }
+    if ( isset($matches[1]) ) {
+    	$tab_titles = $matches[1];
+    }
 
     $output = '';
 
     if( count( $tab_titles ) ) {
-    	$output .= '<section id="stag-tabs-'. rand(1, 100) .'" class="stag-section stag-tabs stag-tabs--'. $style .'"><div class="stag-tab-inner">';
+    	$output .= '<section id="stag-tabs-'. rand(1, 100) .'" class="stag-section stag-tabs stag-tabs--'. esc_attr( $args['style'] ) .'"><div class="stag-tab-inner">';
     	$output .= '<ul class="stag-nav stag-clearfix">';
 
     	foreach( $tab_titles as $tab ) {
@@ -290,10 +291,11 @@ add_shortcode( 'stag_tabs', 'stag_tabs' );
 
 if( ! function_exists( 'stag_tab' ) ) :
 function stag_tab( $atts, $content = null ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'title' => __( 'Tab', 'stag' )
-	), $atts ) );
-	return '<div id="stag-tab-'. sanitize_title( $title ) .'" class="stag-tab">'. do_shortcode( $content ) .'</div>';
+	), $atts, 'stag_tab' );
+
+	return '<div id="stag-tab-'. sanitize_title( $args['title'] ) .'" class="stag-tab">'. do_shortcode( $content ) .'</div>';
 }
 endif;
 
