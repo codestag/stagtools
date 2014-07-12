@@ -438,6 +438,36 @@ function stag_map( $atts ) {
 
 	<script type="text/javascript">
 	    jQuery(window).load(function(){
+	    	var Stagtools = {};
+
+	    	Stagtools.Map = ( function($) {
+	    		function setupMap(options) {
+	    			var mapOptions, mapElement, map, marker;
+
+	    			if( typeof google === 'undefined' ) return;
+
+	    			mapOptions = {
+	    				zoom: parseFloat(options.zoom),
+	    				center: new google.maps.LatLng(options.center.lat, options.center.long),
+	    				scrollwheel: false,
+	    				styles: options.styles
+	    			};
+
+	    			mapElement = document.getElementById(options.id);
+	    		 	map = new google.maps.Map(mapElement, mapOptions);
+
+	    			marker = new google.maps.Marker({
+	    				position: new google.maps.LatLng(options.center.lat, options.center.long),
+	    				map: map
+	    			});
+	    		}
+	    		return {
+	    			init: function(options) {
+	    				setupMap(options);
+	    			}
+	    		}
+	    	} )(jQuery);
+
     	    var options = {
     	    	id: "<?php echo esc_js( $map_id ); ?>",
     	    	styles: <?php echo $map_styles[$args['style']]; ?>,
@@ -447,6 +477,7 @@ function stag_map( $atts ) {
     	    		long: "<?php echo esc_js( $args['long'] ); ?>"
     	    	}
     	    };
+
     	    Stagtools.Map.init(options);
 	    });
 	</script>
