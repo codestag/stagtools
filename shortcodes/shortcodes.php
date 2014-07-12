@@ -197,7 +197,7 @@ function stag_button( $atts, $content = null ) {
 		$button_content = do_shortcode($content);
 	}
 
-	return '<a target="'. $args['target'] .'" href="'. $args['url'] .'" class="stag-button'. $class .'">'. $button_content .'</a>';
+	return '<a target="'. esc_attr( $args['target'] ) .'" href="'. esc_url( $args['url'] ) .'" class="stag-button'. esc_attr( $class ) .'">'. $button_content .'</a>';
 }
 endif;
 
