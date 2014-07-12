@@ -259,6 +259,8 @@ function stag_tabs( $atts, $content = null ) {
 		'style' => 'normal'
 	), $atts, 'stag_tabs' );
 
+	wp_enqueue_script( 'stag-shortcode-scripts' );
+
 	preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
 
 	$tab_titles = array();
@@ -309,6 +311,8 @@ function stag_toggle( $atts, $content = null ) {
 		'state' => 'open',
 		'style' => 'normal'
 	), $atts, 'stag_toggle' );
+
+	wp_enqueue_script( 'stag-shortcode-scripts' );
 
 	return "<div data-id='". esc_attr( $args['state'] ) ."' class=\"stag-section stag-toggle stag-toggle--". esc_attr( $args['style'] ) ."\"><span class=\"stag-toggle-title\">". esc_html( $args['title'] ) ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
 }

@@ -242,7 +242,6 @@ class StagTools {
 		wp_enqueue_style( 'stag-shortcode-styles' );
 
 		wp_register_script( 'stag-shortcode-scripts', $this->plugin_url(). '/assets/js/stag-shortcode-scripts.js', array( 'jquery', 'jquery-ui-accordion', 'jquery-ui-tabs' ), $this->version, true );
-		wp_enqueue_script( 'stag-shortcode-scripts' );
 	}
 
 	/**
