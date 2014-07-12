@@ -209,10 +209,11 @@ if( ! function_exists( 'stag_alert') ) :
  * Alerts
  */
 function stag_alert( $atts, $content = null ) {
-	extract(shortcode_atts(array(
-		'style' => 'white'
-    ), $atts));
-	return '<div class="stag-section stag-alert stag-alert--'.$style.'">' . do_shortcode($content) . '</div>';
+    $args = shortcode_atts( array(
+    	'style' => 'white'
+    ), $atts, 'stag_alert' );
+
+	return '<div class="stag-section stag-alert stag-alert--'. esc_attr( $args['style'] ) .'">' . do_shortcode($content) . '</div>';
 }
 endif;
 
