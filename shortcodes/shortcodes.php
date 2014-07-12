@@ -468,32 +468,32 @@ if ( ! function_exists( 'stag_social' ) ) :
  * @since 1.2
  */
 function stag_social( $atts ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'id'    => 'all',
 		'style' => 'normal'
-	), $atts ) );
+	), $atts, 'stag_social' );
 
 	$registered_settings = stagtools_get_registered_settings();
-	$social_urls         = array_keys($registered_settings['social']);
+	$social_urls         = array_keys( $registered_settings['social'] );
 	$settings            = get_option('stag_options');
 
-	$output              = '<div class="stag-social-icons '. $style .'">';
+	$output              = '<div class="stag-social-icons '. esc_attr( $args['style'] ) .'">';
 
-	if ( $id == '' || $id == "all" ) {
-		$id = $social_urls;
+	if ( $args['id'] == '' || $args['id'] == "all" ) {
+		$social_ids = $social_urls;
 	} else {
-		$id = explode(',', $id);
+		$social_ids = explode( ',', $args['id'] );
 	}
 
-	foreach( $id as $slug ) {
-		$slug = trim($slug);
-		if( isset( $settings[$slug] ) && $settings[$slug] != '' ) {
+	foreach ( $social_ids as $slug ) {
+		$slug = trim( $slug );
+		if ( isset( $settings[$slug] ) && $settings[$slug] != '' ) {
 			$class = $slug;
 
-			if( 'mail'  == $slug ) $class = 'envelope';
-			if( 'vimeo' == $slug ) $class = 'vimeo-square';
+			if ( 'mail'  == $slug ) $class = 'envelope';
+			if ( 'vimeo' == $slug ) $class = 'vimeo-square';
 
-			$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='fa fa-{$class}'></i></a>";
+			$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
 		}
 	}
 	$output .= "</div>";
