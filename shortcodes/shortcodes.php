@@ -412,14 +412,14 @@ if( ! function_exists( 'stag_map') ) :
  * @since 1.0.4
  */
 function stag_map( $atts ) {
-	extract( shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'lat'    => '37.42200',
 		'long'   => '-122.08395',
 		'width'  => '100%',
 		'height' => '350px',
 		'zoom'   => 15,
 		'style'  => 'none'
-	), $atts ) );
+	), $atts, 'stag_map' );
 
 	$map_styles = array(
 		'none'             => '[]',
@@ -430,7 +430,7 @@ function stag_map( $atts ) {
 		'subtle_grayscale' => '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]'
 	);
 
-	$map_id = 'map'. rand(0, 99);
+	$map_id = 'map-'. rand(0, 99);
 
 	wp_enqueue_script( 'google-maps', ( is_ssl() ? 'https' : 'http' ) . '://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
 
@@ -439,12 +439,12 @@ function stag_map( $atts ) {
 	<script type="text/javascript">
 	    jQuery(window).load(function(){
     	    var options = {
-    	    	id: "<?php echo $map_id; ?>",
-    	    	styles: <?php echo $map_styles[$style]; ?>,
-    	    	zoom: <?php echo $zoom; ?>,
+    	    	id: "<?php echo esc_js( $map_id ); ?>",
+    	    	styles: <?php echo $map_styles[$args['style']]; ?>,
+    	    	zoom: <?php echo esc_js( $args['zoom'] ); ?>,
     	    	center: {
-    	    		lat: "<?php echo $lat; ?>",
-    	    		long: "<?php echo $long; ?>"
+    	    		lat: "<?php echo esc_js( $args['lat'] ); ?>",
+    	    		long: "<?php echo esc_js( $args['long'] ); ?>"
     	    	}
     	    };
     	    Stagtools.Map.init(options);
@@ -453,7 +453,7 @@ function stag_map( $atts ) {
 
 	<?php
 
-	return "<section id='{$map_id}' class='stag-section google-map' style='width:{$width};height:{$height};'></section>";
+	return "<section id='". esc_attr( $map_id ) ."' class='stag-section google-map' style='width:". esc_attr( $args['width'] ) .";height:". esc_attr( $args['height'] ) .";'></section>";
 }
 endif;
 
