@@ -394,9 +394,9 @@ function stag_icon( $atts, $content = null ) {
 	}
 
 	if ( $args['url'] != '' ){
-		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. esc_attr( $args['icon'] ) .'" style="font-size: '. $size .'; line-height: '. $size .';"></i></a>';
+		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
 	}else{
-		$output .= '<i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. esc_attr( $attrs ) .'></i>';
+		$output .= '<i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
 	}
 
 	return $output;
