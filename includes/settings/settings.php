@@ -181,7 +181,7 @@ function stagtools_register_settings() {
 
 			add_settings_field(
 				'stagtools_settings[' . $option['id'] . ']',
-				$option['name'],
+				'<label for="stagtools_settings_' . $tab . '[' . $option['id'] . ']">'. $option['name'] .'</label>',
 				function_exists( 'stagtools_' . $option['type'] . '_callback' ) ? 'stagtools_' . $option['type'] . '_callback' : 'stagtools_missing_callback',
 				'stagtools_settings_' . $tab,
 				'stagtools_settings_' . $tab,
@@ -476,7 +476,7 @@ function stagtools_text_callback( $args ) {
 	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
 
 	$html = '<input type="text" class="' . $size . '-text" id="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" name="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>';
-	$html .= '<label for="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 	echo $html;
 }
@@ -501,7 +501,7 @@ function stagtools_url_callback( $args ) {
 	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
 
 	$html = '<input type="text" class="' . $size . '-text" id="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" name="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_url( $value ) . '"/>';
-	$html .= '<label for="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 	echo $html;
 }
@@ -531,7 +531,7 @@ function stagtools_select_callback( $args ) {
 	endforeach;
 
 	$html .= '</select>';
-	$html .= '<label for="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<p class="description">'  . $args['desc'] . '</p>';
 
 	echo $html;
 }
