@@ -204,6 +204,7 @@ class StagTools {
 		}
 
 		// Widgets
+		include_once( 'includes/widgets/stagtools-widget.php' );
 		include_once( 'includes/widgets/widget-dribbble.php' );
 		include_once( 'includes/widgets/widget-flickr.php' );
 		include_once( 'includes/widgets/widget-instagram.php' );
