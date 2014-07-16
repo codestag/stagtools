@@ -43,6 +43,8 @@ class Stag_Dribbble extends ST_Widget {
 
 		extract( $args );
 
+		echo $before_widget;
+
 		$title         = apply_filters( 'widget_title', $instance['title'] );
 		$dribbble_name = esc_html( $instance['dribbble_name'] );
 		$count         = absint( $instance['count'] );
@@ -84,6 +86,8 @@ class Stag_Dribbble extends ST_Widget {
 		</div>
 
 		<?php
+		echo $after_widget;
+
 		$content = ob_get_clean();
 
 		echo $content;
