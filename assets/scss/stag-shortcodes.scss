@@ -372,13 +372,22 @@
 	}
 }
 
-.instragram-widget-wrapper{
-	@extend %cf;
-	a{
-		display: inline-block;
-		float: left;
-		margin: 0px 0px 5px 5px;
+// Instagram Widget
+.instagram-widget {
+	&.thumbnail {
+		li {
+			display: inline-block;
+			margin: 0 5px 5px 0;
+		}
+		img {
+			max-width: 75px;
+		}
 	}
+}
+
+.instagram-follow-link {
+	display: block;
+	margin-top: 10px;
 }
 
 .size-thumbnail {

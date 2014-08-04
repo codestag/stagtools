@@ -1,11 +1,11 @@
-.stag-clearfix, .instragram-widget-wrapper {
+.stag-clearfix {
   zoom: 1;
 }
-.stag-clearfix:before, .instragram-widget-wrapper:before, .stag-clearfix:after, .instragram-widget-wrapper:after {
+.stag-clearfix:before, .stag-clearfix:after {
   display: table;
   content: "";
 }
-.stag-clearfix:after, .instragram-widget-wrapper:after {
+.stag-clearfix:after {
   clear: both;
 }
 
@@ -550,10 +550,17 @@
   margin-left: 0.7em;
 }
 
-.instragram-widget-wrapper a {
+.instagram-widget.thumbnail li {
   display: inline-block;
-  float: left;
-  margin: 0px 0px 5px 5px;
+  margin: 0 5px 5px 0;
+}
+.instagram-widget.thumbnail img {
+  max-width: 75px;
+}
+
+.instagram-follow-link {
+  display: block;
+  margin-top: 10px;
 }
 
 .size-thumbnail img {
@@ -588,5 +595,5 @@
 }
 
 .gm-style img {
-  max-width: none !important;
+  max-width: none;
 }
