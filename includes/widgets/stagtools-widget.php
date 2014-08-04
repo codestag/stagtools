@@ -99,7 +99,7 @@ class ST_Widget extends WP_Widget {
 					?>
 					<p>
 						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting[ 'label' ]; ?></label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
+						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" <?php if ( isset( $setting['placeholder'] ) ) echo 'placeholder="'. $setting['placeholder'] .'"'; ?> />
 					</p>
 					<?php
 				break;
