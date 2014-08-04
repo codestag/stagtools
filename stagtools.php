@@ -287,7 +287,7 @@ class StagTools {
 		if( $pagenow != 'widgets.php' ) return;
 		?>
 		<style type="text/css">
-		div[id*="_stag"] .widget-top{
+		div[id*="_stag"] .widget-top {
 		  background: #C8E5F3 !important;
 		  border-color: #B4D0DD !important;
 		  box-shadow: inset 0 1px 0 white !important;
@@ -300,6 +300,11 @@ class StagTools {
 		  background: linear-gradient(to bottom, #EAF8FF 0%,#C8E5F3 100%) !important;
 		  border-bottom: 1px solid #98B3C0 !important;
 		  margin-top: 0px;
+		}
+		div[id*="_stag"] .description {
+			padding-bottom: 0;
+			padding-left: 0 !important;
+			font-style: italic;
 		}
 		</style>
 		<?php
