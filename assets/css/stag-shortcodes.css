@@ -550,6 +550,9 @@
   margin-left: 0.7em;
 }
 
+.instagram-widget li {
+  margin-bottom: 10px;
+}
 .instagram-widget.thumbnail li {
   display: inline-block;
   margin: 0 5px 5px 0;

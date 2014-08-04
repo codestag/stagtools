@@ -374,6 +374,9 @@
 
 // Instagram Widget
 .instagram-widget {
+	li {
+		margin-bottom: 10px;
+	}
 	&.thumbnail {
 		li {
 			display: inline-block;

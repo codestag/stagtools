@@ -122,7 +122,7 @@ class Stag_Instagram extends ST_Widget {
 					foreach( $instagram['data'] as $key => $image ) {
 						echo apply_filters( 'st_instagram_widget_image_html', sprintf( '<li><a href="%1$s"><img class="instagram-image" src="%2$s" alt="%3$s" title="%3$s" /></a></li>',
 							$image['link'],
-							@$image['images'][ $image_res ]['url'],
+							str_replace( 'http:', '', $image['images'][ $image_res ]['url'] ),
 							$image['caption']['text']
 						), $image );
 					}
@@ -156,14 +156,14 @@ class Stag_Instagram extends ST_Widget {
 		$user_id   = ( ! empty( $args['user_id'] ) ) ? $args['user_id'] : '';
 		$client_id = ( ! empty( $args['client_id'] ) ) ? $args['client_id'] : '';
 		$count     = ( ! empty( $args['count'] ) ) ? $args['count'] : 9;
-		$cachetime = ( ! empty( $args['cachetime'] ) ) ? $args['cachetime'] : 9;
+		$cachetime = ( ! empty( $args['cachetime'] ) ) ? $args['cachetime'] : 2;
 
 		// If no client id or user id, bail
 		if ( empty( $client_id ) || empty( $user_id ) ) {
 			return false;
 		}
 
-		$key = 'st_instagram_widget' . md5( $this->id, $args['count'] );
+		$key = 'st_instagram_widget_' . $user_id;
 
 		if ( false === ( $instagrams = get_transient( $key ) ) ) {
 			// Ping Instragram's API
@@ -189,7 +189,7 @@ class Stag_Instagram extends ST_Widget {
 			$instagrams = maybe_unserialize( $instagrams );
 
 			// Store Instagrams in a transient, and expire every hour
-			set_transient( $key, $instagrams, apply_filters( 'st_instagram_widget_cache_lifetime', $args['cachetime'] * HOUR_IN_SECONDS ) );
+			set_transient( $key, $instagrams, $cachetime * HOUR_IN_SECONDS );
 		}
 
 		return $instagrams;
