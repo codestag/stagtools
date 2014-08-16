@@ -15,7 +15,6 @@ tinymce.PluginManager.add('stagShortcodes', function(editor, url) {
         { onclick: function(e){ addPopup('widget_area') }, text: editor.getLang('stag.widget_area') },
         { onclick: function(e){ addPopup('button') }, text: editor.getLang('stag.button') },
         { onclick: function(e){ addPopup('columns') }, text: editor.getLang('stag.columns') },
-        { onclick: function(e){ addPopup('divider') }, text: editor.getLang('stag.divider') },
         { onclick: function(e){ addPopup('dropcap') }, text: editor.getLang('stag.dropcap') },
         { onclick: function(e){ addPopup('tabs') }, text: editor.getLang('stag.tabs') },
         { onclick: function(e){ addPopup('toggle') }, text: editor.getLang('stag.toggle') },

@@ -35,7 +35,6 @@
 
 					a.addWithPopup( b, ed.getLang('stag.button'), "button" );
 					a.addWithPopup( b, ed.getLang('stag.columns'), "columns" );
-					a.addWithPopup( b, ed.getLang('stag.divider'), "divider" );
 					a.addWithPopup( b, ed.getLang('stag.dropcap'), "dropcap" );
 					a.addWithPopup( b, ed.getLang('stag.tabs'), "tabs" );
 					a.addWithPopup( b, ed.getLang('stag.toggle'), "toggle" );

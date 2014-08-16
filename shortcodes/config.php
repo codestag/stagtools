@@ -173,26 +173,6 @@ $stag_shortcodes['columns'] = array(
 	)
 );
 
-$stag_shortcodes['divider'] = array(
-	'no_preview' => true,
-	'params'     => array(
-		'style' => array(
-			'type'    => 'select',
-			'label'   => __( 'Divider', 'stag' ),
-			'desc'    => __( 'Select the style of the Divider', 'stag' ),
-			'options' => array(
-				'plain'  => __( 'Plain', 'stag' ),
-				'strong' => __( 'Strong', 'stag' ),
-				'double' => __( 'Double', 'stag' ),
-				'dashed' => __( 'Dashed', 'stag' ),
-				'dotted' => __( 'Dotted', 'stag' )
-			)
-		),
-	),
-	'shortcode'   => '[stag_divider style="{{style}}"]',
-	'popup_title' => __( 'Insert Divider', 'stag' )
-);
-
 $stag_shortcodes['tabs'] = array(
 	'params' => array(
 		'style' => array(

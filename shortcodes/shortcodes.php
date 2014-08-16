@@ -225,6 +225,8 @@ if ( ! function_exists( 'stag_divider' ) ) :
 /**
  * Horizontal divider shortcode.
  *
+ * @deprecated 2.0.0.
+ *
  * @param  array  $atts Shortcode attributes.
  * @param  string $content
  * @return string Custom Horizontal divider HTML.
