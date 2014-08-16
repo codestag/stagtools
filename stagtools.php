@@ -89,8 +89,15 @@ class StagTools {
 		add_action( 'admin_menu', array( &$this, 'stag_add_options_page' ) );
 		add_action( 'admin_head', array( &$this, 'widget_styles' ) );
 
+		add_action( 'after_setup_theme', array( &$this, 'editor_styles' ) );
+
 		// Include required files
 		$this->includes();
+	}
+
+	public function editor_styles() {
+		$shortcode_styles = $this->plugin_url() . '/assets/css/stag-shortcodes.css';
+		add_editor_style( $shortcode_styles );
 	}
 
 	/**
@@ -219,6 +226,7 @@ class StagTools {
 	public function admin_includes(){
 		include_once( 'shortcodes/stag-shortcodes.php' );
 		include_once( 'includes/settings/settings.php' );
+		include_once( 'includes/tinymce.php' );
 	}
 
 	/**
