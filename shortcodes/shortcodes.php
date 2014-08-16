@@ -9,28 +9,28 @@
 /**
  * Columns
  */
-if( ! function_exists('stag_one_third' ) ) :
+if ( ! function_exists('stag_one_third' ) ) :
 function stag_one_third( $atts, $content = null ) {
 	return '<div class="stag-column stag-one-third">' . do_shortcode($content) . '</div>';
 }
 endif;
 add_shortcode('stag_one_third', 'stag_one_third');
 
-if( ! function_exists('stag_one_third_last' ) ) :
+if ( ! function_exists('stag_one_third_last' ) ) :
 function stag_one_third_last( $atts, $content = null ) {
 	return '<div class="stag-column stag-one-third stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode('stag_one_third_last', 'stag_one_third_last');
 
-if( ! function_exists( 'stag_two_third' ) ) :
+if ( ! function_exists( 'stag_two_third' ) ) :
 function stag_two_third( $atts, $content = null) {
 	return '<div class="stag-column stag-two-third">' . do_shortcode($content) . '</div>';
 }
 endif;
 add_shortcode( 'stag_two_third', 'stag_two_third' );
 
-if( ! function_exists( 'stag_two_third_last' ) ) :
+if ( ! function_exists( 'stag_two_third_last' ) ) :
 function stag_two_third_last( $atts, $content = null) {
 	return '<div class="stag-column stag-two-third stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
 }
@@ -164,7 +164,7 @@ endif;
 add_shortcode( 'stag_five_sixth_last', 'stag_five_sixth_last' );
 
 
-if( ! function_exists( 'stag_button' ) ) :
+if ( ! function_exists( 'stag_button' ) ) :
 /**
  * Buttons
  */
@@ -184,7 +184,7 @@ function stag_button( $atts, $content = null ) {
 	$class       .= " stag-button--{$args['style']}";
 	$class       .= " stag-button--{$args['type']}";
 
-	if( ! empty( $args['icon'] ) ) {
+	if ( ! empty( $args['icon'] ) ) {
 		if ( $args['icon_order'] == 'before' ) {
 			$button_content = stag_icon( array( 'icon' => $args['icon'] ) );
 			$button_content .= do_shortcode($content);
@@ -204,7 +204,7 @@ endif;
 add_shortcode( 'stag_button', 'stag_button' );
 
 
-if( ! function_exists( 'stag_alert') ) :
+if ( ! function_exists( 'stag_alert') ) :
 /**
  * Alerts
  *
@@ -221,7 +221,7 @@ endif;
 
 add_shortcode( 'stag_alert', 'stag_alert' );
 
-if( ! function_exists( 'stag_divider' ) ) :
+if ( ! function_exists( 'stag_divider' ) ) :
 /**
  * Horizontal divider shortcode.
  *
@@ -240,7 +240,7 @@ endif;
 
 add_shortcode( 'stag_divider', 'stag_divider' );
 
-if( ! function_exists( 'stag_intro' ) ):
+if ( ! function_exists( 'stag_intro' ) ):
 /**
  * Intro Text shortcode.
  *
@@ -253,7 +253,7 @@ endif;
 add_shortcode( 'stag_intro', 'stag_intro' );
 
 
-if( ! function_exists( 'stag_tabs' ) ) :
+if ( ! function_exists( 'stag_tabs' ) ) :
 /**
  * Shortcode for tabs.
  *
@@ -275,7 +275,7 @@ function stag_tabs( $atts, $content = null ) {
 
     $output = '';
 
-    if( count( $tab_titles ) ) {
+    if ( count( $tab_titles ) ) {
     	$output .= '<section id="stag-tabs-'. rand(1, 100) .'" class="stag-section stag-tabs stag-tabs--'. esc_attr( $args['style'] ) .'"><div class="stag-tab-inner">';
     	$output .= '<ul class="stag-nav stag-clearfix">';
 
@@ -296,7 +296,7 @@ endif;
 add_shortcode( 'stag_tabs', 'stag_tabs' );
 
 
-if( ! function_exists( 'stag_tab' ) ) :
+if ( ! function_exists( 'stag_tab' ) ) :
 function stag_tab( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'title' => __( 'Tab', 'stag' )
@@ -309,7 +309,7 @@ endif;
 add_shortcode( 'stag_tab', 'stag_tab' );
 
 
-if( ! function_exists( 'stag_toggle' ) ) :
+if ( ! function_exists( 'stag_toggle' ) ) :
 function stag_toggle( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'title' => __( 'Title Goes Here', 'stag' ),
@@ -325,7 +325,7 @@ endif;
 
 add_shortcode( 'stag_toggle', 'stag_toggle' );
 
-if( ! function_exists( 'stag_dropcap' ) ) :
+if ( ! function_exists( 'stag_dropcap' ) ) :
 function stag_dropcap( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'style'     => 'normal',
@@ -338,7 +338,7 @@ endif;
 
 add_shortcode( 'stag_dropcap', 'stag_dropcap' );
 
-if( ! function_exists( 'stag_image' ) ) :
+if ( ! function_exists( 'stag_image' ) ) :
 function stag_image( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'style'     => 'grayscale',
@@ -349,7 +349,7 @@ function stag_image( $atts, $content = null ) {
 
 	$output = "<figure class=\"stag-section stag-image stag-image--". esc_attr( $args['style'] ) ." stag-image--". esc_attr( $args['alignment'] ) ."\" >";
 
-	if($url != ''){
+	if ($url != ''){
 		$output .= "<a href=\"". esc_url($args['url']) ."\"><img src=\"". esc_url( $args['src'] ) ."\" alt=\"\"></a>";
 	}else{
 		$output .= "<img src=\"". esc_url($args['src']) ."\" alt=\"\">";
@@ -363,7 +363,7 @@ endif;
 
 add_shortcode( 'stag_image', 'stag_image' );
 
-if( ! function_exists( 'stag_video' ) ) :
+if ( ! function_exists( 'stag_video' ) ) :
 function stag_video( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'src' => ''
@@ -375,7 +375,7 @@ endif;
 
 add_shortcode( 'stag_video', 'stag_video' );
 
-if( ! function_exists( 'stag_icon') ) :
+if ( ! function_exists( 'stag_icon') ) :
 /**
  * FontAwesome Icon shortcode.
  */
@@ -414,7 +414,7 @@ endif;
 
 add_shortcode( 'stag_icon', 'stag_icon' );
 
-if( ! function_exists( 'stag_map') ) :
+if ( ! function_exists( 'stag_map') ) :
 /**
  * Google Map Shortcode
  *
@@ -453,7 +453,7 @@ function stag_map( $atts ) {
 	    		function setupMap(options) {
 	    			var mapOptions, mapElement, map, marker;
 
-	    			if( typeof google === 'undefined' ) return;
+	    			if ( typeof google === 'undefined' ) return;
 
 	    			mapOptions = {
 	    				zoom: parseFloat(options.zoom),
