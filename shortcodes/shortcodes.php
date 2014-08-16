@@ -207,6 +207,8 @@ add_shortcode( 'stag_button', 'stag_button' );
 if( ! function_exists( 'stag_alert') ) :
 /**
  * Alerts
+ *
+ * @deprecated 2.0.0.
  */
 function stag_alert( $atts, $content = null ) {
     $args = shortcode_atts( array(
@@ -238,13 +240,16 @@ endif;
 
 add_shortcode( 'stag_divider', 'stag_divider' );
 
-
 if( ! function_exists( 'stag_intro' ) ):
+/**
+ * Intro Text shortcode.
+ *
+ * @deprecated 2.0.0.
+ */
 function stag_intro( $atts, $content = null ) {
 	return '<section class="stag-section stag-intro-text">' . wpautop( do_shortcode( $content ) ) . '</section>';
 }
 endif;
-
 add_shortcode( 'stag_intro', 'stag_intro' );
 
 
