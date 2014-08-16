@@ -85,35 +85,6 @@ $stag_shortcodes['button'] = array(
 	'popup_title' => __('Insert Button Shortcode', 'stag')
 );
 
-
-$stag_shortcodes['alert'] = array(
-	'no_preview' => true,
-	'params' => array(
-		'style' => array(
-			'type'    => 'select',
-			'label'   => __('Alert Style', 'stag'),
-			'desc'    => __('Select the alert&lsquo;s style, i.e. the alert colour', 'stag'),
-			'std'     => 'red',
-			'options' => array(
-				'white'  => __( 'White', 'stag' ),
-				'grey'   => __( 'Grey', 'stag' ),
-				'red'    => __( 'Red', 'stag' ),
-				'yellow' => __( 'Yellow', 'stag' ),
-				'green'  => __( 'Green', 'stag' ),
-				'blue'   => __( 'Blue', 'stag' )
-			)
-		),
-		'content' => array(
-			'std'   => 'Your Alert!',
-			'type'  => 'textarea',
-			'label' => __( 'Alert Text', 'stag' ),
-			'desc'  => __( 'Add the alert&lsquo;s text', 'stag' )
-		)
-	),
-	'shortcode' => '[stag_alert style="{{style}}"]{{content}}[/stag_alert]',
-	'popup_title' => __('Insert Alert Shortcode', 'stag')
-);
-
 $stag_shortcodes['toggle'] = array(
 	'no_preview' => true,
 	'params' => array(
@@ -220,20 +191,6 @@ $stag_shortcodes['divider'] = array(
 	),
 	'shortcode'   => '[stag_divider style="{{style}}"]',
 	'popup_title' => __( 'Insert Divider', 'stag' )
-);
-
-$stag_shortcodes['intro'] = array(
-	'no_preview' => true,
-	'params'     => array(
-		'content' => array(
-			'type'  => 'textarea',
-			'label' => __( 'Intro Text', 'stag' ),
-			'desc'  => __( 'Enter the intro text.', 'stag' ),
-			'std'   => 'Intro Text'
-		),
-	),
-	'shortcode'   => '[stag_intro]{{content}}[/stag_intro]',
-	'popup_title' => __( 'Insert Author Shortcode', 'stag' )
 );
 
 $stag_shortcodes['tabs'] = array(
