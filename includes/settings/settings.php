@@ -16,7 +16,7 @@
 function stagtools_get_settings() {
 	$settings = get_option( 'stag_options' );
 
-	if( empty( $settings ) ) {
+	if ( empty( $settings ) ) {
 		$general_settings = is_array( get_option( 'stagtools_settings_general' ) ) ? get_option( 'stagtools_settings_general' ) : array();
 		$social_settings  = is_array( get_option( 'stagtools_settings_social' ) ) ? get_option( 'stagtools_settings_social' ) : array();
 
@@ -36,11 +36,11 @@ function stagtools_options_page() {
 	<div class="wrap">
 		<h2 class="nav-tab-wrapper">
 			<?php
-			foreach( stagtools_get_settings_tabs() as $tab_id => $tab_name ) {
+			foreach ( stagtools_get_settings_tabs() as $tab_id => $tab_name ) {
 
 				$tab_url = add_query_arg( array(
 					'settings-updated' => false,
-					'tab'              => $tab_id
+					'tab'              => $tab_id,
 				) );
 
 				$is_showing = true;
@@ -52,7 +52,7 @@ function stagtools_options_page() {
 					}
 				}
 
-				if( $is_showing ) :
+				if ( $is_showing ) :
 
 				$active = $active_tab == $tab_id ? ' nav-tab-active' : '';
 
@@ -70,7 +70,7 @@ function stagtools_options_page() {
 				<table class="form-table">
 				<?php
 
-				if ( $_GET['page'] == 'stagtools' && isset($_GET['settings-updated']) && $_GET['settings-updated'] == "true" ) {
+				if ( $_GET['page'] == 'stagtools' && isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == 'true' ) {
 					flush_rewrite_rules();
 				}
 
@@ -120,11 +120,11 @@ function stagtools_settings_sanitize( $input = array() ) {
 	$input = apply_filters( 'stagtools_settings_' . $tab . '_sanitize', $post_data );
 
 	// Loop through each setting being saved and pass it through a sanitization filter
-	foreach( $input as $key => $value ) {
+	foreach ( $input as $key => $value ) {
 		// Get the setting type (checkbox, select, etc)
 		$type = isset( $settings[ $key ][ 'type' ] ) ? $settings[ $key ][ 'type' ] : false;
 
-		if( $type ) {
+		if ( $type ) {
 			// Field type specific filter
 			$output[ $key ] = apply_filters( 'stagtools_settings_sanitize_' . $type, $value, $key );
 		}
@@ -134,18 +134,17 @@ function stagtools_settings_sanitize( $input = array() ) {
 	}
 
 	// Loop through the whitelist and unset any that are empty for the tab being saved
-	if( ! empty( $settings[ $tab ] ) ) {
-		foreach( $settings[ $tab ] as $key => $value ) {
+	if ( ! empty( $settings[ $tab ] ) ) {
+		foreach ( $settings[ $tab ] as $key => $value ) {
 
 			// settings used to have numeric keys, now they have keys that match the option ID. This ensures both methods work
-			if( is_numeric( $key ) ) {
+			if ( is_numeric( $key ) ) {
 				$key = $value['id'];
 			}
 
-			if( empty( $_POST[ 'stagtools_settings_' . $tab ][ $key ] ) ) {
+			if ( empty( $_POST[ 'stagtools_settings_' . $tab ][ $key ] ) ) {
 				unset( $stag_options[ $key ] );
 			}
-
 		}
 	}
 
@@ -215,31 +214,31 @@ function stagtools_get_registered_settings() {
 					'id'   => 'twitter_settings',
 					'name' => '<strong>' . __( 'Twitter Settings', 'stag' ) . '</strong>',
 					'desc' => __( 'Configure the twitter settings', 'stag' ),
-					'type' => 'header'
+					'type' => 'header',
 				),
 				'consumer_key' => array(
 					'id'   => 'consumer_key',
 					'name' => __( 'OAuth Consumer Key', 'stag' ),
 					'desc' => __( 'Enter twitter OAuth Consumer Key', 'stag' ),
-					'type' => 'text'
+					'type' => 'text',
 				),
 				'consumer_secret' => array(
 					'id'   => 'consumer_secret',
 					'name' => __( 'OAuth Consumer Secret', 'stag' ),
 					'desc' => __( 'Enter twitter OAuth Consumer Secret', 'stag' ),
-					'type' => 'text'
+					'type' => 'text',
 				),
 				'access_key' => array(
 					'id'   => 'access_key',
 					'name' => __( 'OAuth Access Token', 'stag' ),
 					'desc' => __( 'Enter twitter OAuth Access Token', 'stag' ),
-					'type' => 'text'
+					'type' => 'text',
 				),
 				'access_secret' => array(
 					'id'   => 'access_secret',
 					'name' => __( 'OAuth Access Secret', 'stag' ),
 					'desc' => __( 'Enter twitter OAuth Access Secret', 'stag' ),
-					'type' => 'text'
+					'type' => 'text',
 				),
 			)
 		),
@@ -249,182 +248,182 @@ function stagtools_get_registered_settings() {
 					'id'   => 'android',
 					'name' => 'Android',
 					'desc' => '',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'apple' => array(
 					'id'   => 'apple',
 					'name' => 'Apple',
 					'desc' => '',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'behance' => array(
 					'id'   => 'behance',
 					'name' => 'Behance',
 					'desc' => 'e.g. https://www.behance.net/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'bitbucket' => array(
 					'id'   => 'bitbucket',
 					'name' => 'Bitbucket',
 					'desc' => 'e.g. https://bitbucket.org/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'codepen' => array(
 					'id'   => 'codepen',
 					'name' => 'CodePen',
 					'desc' => 'e.g. http://codepen.io/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'deviantart' => array(
 					'id'   => 'deviantart',
 					'name' => 'Deviant Art',
 					'desc' => 'e.g. http://username.deviantart.com',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'dribbble' => array(
 					'id'   => 'dribbble',
 					'name' => 'Dribbble',
 					'desc' => 'e.g. http://dribbble.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'dropbox' => array(
 					'id'   => 'dropbox',
 					'name' => 'Dropbox',
 					'desc' => '',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'facebook' => array(
 					'id'   => 'facebook',
 					'name' => 'Facebook',
 					'desc' => 'e.g. http://www.facebook.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'flickr' => array(
 					'id'   => 'flickr',
 					'name' => 'Flickr',
 					'desc' => 'e.g. http://www.flickr.com/photos/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'foursquare' => array(
 					'id'   => 'foursquare',
 					'name' => 'Foursquare',
 					'desc' => 'e.g. https://foursquare.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'github' => array(
 					'id'   => 'github',
 					'name' => 'GitHub',
 					'desc' => 'e.g. https://github.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'google-plus' => array(
 					'id'   => 'google-plus',
 					'name' => 'Google+',
 					'desc' => 'e.g. https://plus.google.com/userID',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'instagram' => array(
 					'id'   => 'instagram',
 					'name' => 'Instagram',
 					'desc' => 'e.g. http://instagram.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'linkedin' => array(
 					'id'   => 'linkedin',
 					'name' => 'LinkedIn',
 					'desc' => 'e.g. http://www.linkedin.com/in/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'mail' => array(
 					'id'   => 'mail',
 					'name' => 'Mail',
 					'desc' => 'e.g. mailto:user@name.com',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'pinterest' => array(
 					'id'   => 'pinterest',
 					'name' => 'Pinterest',
 					'desc' => 'e.g. http://pinterest.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'rss' => array(
 					'id'   => 'rss',
 					'name' => 'RSS',
 					'desc' => 'e.g. http://example.com/feed',
 					'type' => 'url',
-					'std'  => get_bloginfo('rss2_url')
+					'std'  => get_bloginfo( 'rss2_url' ),
 				),
 				'skype' => array(
 					'id'   => 'skype',
 					'name' => 'Skype',
 					'desc' => '',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'stack-exchange' => array(
 					'id'   => 'stack-exchange',
 					'name' => 'Stack Exchange',
 					'desc' => 'http://stackexchange.com/users/userID',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'stack-overflow' => array(
 					'id'   => 'stack-overflow',
 					'name' => 'Stack Overflow',
 					'desc' => 'e.g. http://stackoverflow.com/users/userID',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'trello' => array(
 					'id'   => 'trello',
 					'name' => 'Trello',
 					'desc' => 'e.g. https://trello.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'tumblr' => array(
 					'id'   => 'tumblr',
 					'name' => 'Tumblr',
 					'desc' => 'e.g. http://username.tumblr.com',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'twitter' => array(
 					'id'   => 'twitter',
 					'name' => 'Twitter',
 					'desc' => 'e.g. http://twitter.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'vimeo' => array(
 					'id'   => 'vimeo',
 					'name' => 'Vimeo',
 					'desc' => 'e.g. https://vimeo.com/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'vine' => array(
 					'id'   => 'vine',
 					'name' => 'Vine',
 					'desc' => 'e.g. https://vine.co/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'windows' => array(
 					'id'   => 'windows',
 					'name' => 'Windows',
 					'desc' => '',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'wordpress' => array(
 					'id'   => 'wordpress',
 					'name' => 'WordPress',
 					'desc' => 'e.g. https://profiles.wordpress.org/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'xing' => array(
 					'id'   => 'xing',
 					'name' => 'Xing',
 					'desc' => '',
-					'type' => 'url'
+					'type' => 'url',
 				),
 				'youtube' => array(
 					'id'   => 'youtube',
 					'name' => 'YouTube',
 					'desc' => 'e.g. http://www.youtube.com/user/username',
-					'type' => 'url'
+					'type' => 'url',
 				),
 			)
 		),
@@ -435,7 +434,7 @@ function stagtools_get_registered_settings() {
 					'name' => __( 'Portfolio Slug', 'stag' ),
 					'desc' => __( 'Enter the slug of custom post type <strong>portfolio</strong>.', 'stag' ),
 					'type' => 'text',
-					'std'  => 'portfolio'
+					'std'  => 'portfolio',
 				),
 				'skills_slug' => array(
 					'id'   => 'skills_slug',
@@ -473,7 +472,7 @@ function stagtools_text_callback( $args ) {
 	else
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
-	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
+	$size = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 
 	$html = '<input type="text" class="' . $size . '-text" id="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" name="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>';
 	$html .= '<p class="description">'  . $args['desc'] . '</p>';
@@ -498,7 +497,7 @@ function stagtools_url_callback( $args ) {
 	else
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
-	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
+	$size = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 
 	$html = '<input type="text" class="' . $size . '-text" id="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" name="stagtools_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_url( $value ) . '"/>';
 	$html .= '<p class="description">'  . $args['desc'] . '</p>';

@@ -12,7 +12,7 @@ class StagShortcodes {
 	}
 
 	public function admin_menu_styles( $hook ) {
-		if( $hook == 'post.php' || $hook == 'post-new.php' ) {
+		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
 			global $stagtools;
 
 			wp_enqueue_style( 'stag_admin_menu_styles', $stagtools->plugin_url() . '/assets/css/menu.css' );
@@ -33,7 +33,7 @@ class StagShortcodes {
 	}
 
 	public function shortcodes_init() {
-		if( ( current_user_can('edit_posts') || current_user_can('edit_pages') ) && get_user_option('rich_editing') ){
+		if ( ( current_user_can( 'edit_posts' ) || current_user_can( 'edit_pages' ) ) && get_user_option( 'rich_editing' ) ) {
 			add_filter( 'mce_external_plugins', array( &$this, 'add_rich_plugins' ) );
 			add_filter( 'mce_buttons', array( &$this, 'register_rich_buttons' ) );
 		}
@@ -48,7 +48,7 @@ class StagShortcodes {
 	public function add_rich_plugins( $plugin_array ) {
 		global $stagtools, $tinymce_version;
 
-		if( version_compare( $tinymce_version , '400', '<' ) ) {
+		if ( version_compare( $tinymce_version , '400', '<' ) ) {
 			$plugin_array['stagShortcodes'] = $stagtools->plugin_url() . '/assets/js/editor_plugin.js';
 		} else {
 			$plugin_array['stagShortcodes'] = $stagtools->plugin_url() . '/assets/js/plugin.js';
@@ -64,7 +64,7 @@ class StagShortcodes {
 
 	public function shortcode_popup_callback(){
 		require_once( 'shortcode-class.php' );
-		$shortcode = new stag_shortcodes( $_REQUEST['popup'] );
+		$shortcode = new Stag_Shortcodes( $_REQUEST['popup'] );
 
 		?>
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -89,7 +89,7 @@ class StagShortcodes {
 
 						<tbody>
 							<tr class="form-row">
-								<?php if( ! $shortcode->has_child ) : ?><td class="label">&nbsp;</td><?php endif; ?>
+								<?php if ( ! $shortcode->has_child ) : ?><td class="label">&nbsp;</td><?php endif; ?>
 								<!-- <td class="field insert-field"> -->
 
 								<!-- </td> -->
@@ -99,7 +99,7 @@ class StagShortcodes {
 					</table><!-- /#stag-sc-form-table -->
 
 					<div class="insert-field">
-						<a href="#" class="button button-primary button-large stag-insert"><?php _e('Insert Shortcode', 'stag'); ?></a>
+						<a href="#" class="button button-primary button-large stag-insert"><?php _e( 'Insert Shortcode', 'stag' ); ?></a>
 					</div>
 
 				</form><!-- /#stag-sc-form -->

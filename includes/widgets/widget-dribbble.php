@@ -28,7 +28,7 @@ class Stag_Dribbble extends ST_Widget {
 				'label' => __( 'Number of shots to show:', 'stag' ),
 				'step'  => 1,
 				'min'   => 1,
-				'max'   => 10
+				'max'   => 10,
 			),
 		);
 
@@ -69,17 +69,17 @@ class Stag_Dribbble extends ST_Widget {
 				<?php foreach ( $items as $item ) :
 					$shot_title       = $item->get_title();
 					$shot_link        = $item->get_permalink();
-					$shot_date        = $item->get_date('F d, Y');
+					$shot_date        = $item->get_date( 'F d, Y' );
 					$shot_description = $item->get_description();
 
-					preg_match("/src=\"(http.*(jpg|jpeg|gif|png))/", $shot_description, $shot_image_url);
+					preg_match( '/src=\"(http.*(jpg|jpeg|gif|png))/', $shot_description, $shot_image_url );
 					$shot_image = $shot_image_url[1];
 				?>
 				<li class="dribbble-shot">
 					<a href="<?php echo esc_url( $shot_link ); ?>" class="dribbble-link" title="<?php echo $shot_title; ?>"><img src="<?php echo esc_url( $shot_image ); ?>" alt="<?php echo esc_attr( $shot_title ); ?>"></a>
 				</li>
 				<?php endforeach; ?>
-				<?php else: ?>
+				<?php else : ?>
 				<?php _x( 'Please check your dribbble username', 'Dribbble username error message', 'stag' ); ?>
 				<?php endif; ?>
 			</ul>

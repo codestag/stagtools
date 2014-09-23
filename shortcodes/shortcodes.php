@@ -9,156 +9,156 @@
 /**
  * Columns
  */
-if ( ! function_exists('stag_one_third' ) ) :
+if ( ! function_exists( 'stag_one_third' ) ) :
 function stag_one_third( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-third">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-one-third">' . do_shortcode( $content ) . '</div>';
 }
 endif;
-add_shortcode('stag_one_third', 'stag_one_third');
+add_shortcode( 'stag_one_third', 'stag_one_third' );
 
-if ( ! function_exists('stag_one_third_last' ) ) :
+if ( ! function_exists( 'stag_one_third_last' ) ) :
 function stag_one_third_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-third stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-one-third stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
-add_shortcode('stag_one_third_last', 'stag_one_third_last');
+add_shortcode( 'stag_one_third_last', 'stag_one_third_last' );
 
 if ( ! function_exists( 'stag_two_third' ) ) :
-function stag_two_third( $atts, $content = null) {
-	return '<div class="stag-column stag-two-third">' . do_shortcode($content) . '</div>';
+function stag_two_third( $atts, $content = null ) {
+	return '<div class="stag-column stag-two-third">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_two_third', 'stag_two_third' );
 
 if ( ! function_exists( 'stag_two_third_last' ) ) :
-function stag_two_third_last( $atts, $content = null) {
-	return '<div class="stag-column stag-two-third stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+function stag_two_third_last( $atts, $content = null ) {
+	return '<div class="stag-column stag-two-third stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_two_third_last', 'stag_two_third_last' );
 
-if (!function_exists( 'stag_one_half' ) ) :
+if ( ! function_exists( 'stag_one_half' ) ) :
 function stag_one_half( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-half">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-one-half">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_one_half', 'stag_one_half' );
 
 if ( ! function_exists( 'stag_one_half_last' ) ) :
 function stag_one_half_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-half stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-one-half stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_one_half_last', 'stag_one_half_last' );
 
 if ( ! function_exists( 'stag_one_fourth' ) ) :
 function stag_one_fourth( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-fourth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-one-fourth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_one_fourth', 'stag_one_fourth' );
 
-if ( ! function_exists('stag_one_fourth_last' ) ) :
+if ( ! function_exists( 'stag_one_fourth_last' ) ) :
 function stag_one_fourth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-fourth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-one-fourth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_one_fourth_last', 'stag_one_fourth_last' );
 
-if ( ! function_exists('stag_three_fourth' ) ) :
+if ( ! function_exists( 'stag_three_fourth' ) ) :
 function stag_three_fourth( $atts, $content = null ) {
-	return '<div class="stag-column stag-three-fourth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-three-fourth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_three_fourth', 'stag_three_fourth' );
 
-if ( ! function_exists('stag_three_fourth_last' ) ) :
+if ( ! function_exists( 'stag_three_fourth_last' ) ) :
 function stag_three_fourth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-three-fourth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-three-fourth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_three_fourth_last', 'stag_three_fourth_last' );
 
-if ( ! function_exists('stag_one_fifth' ) ) :
+if ( ! function_exists( 'stag_one_fifth' ) ) :
 function stag_one_fifth( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-fifth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-one-fifth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_one_fifth', 'stag_one_fifth' );
 
-if ( ! function_exists('stag_one_fifth_last' ) ) :
+if ( ! function_exists( 'stag_one_fifth_last' ) ) :
 function stag_one_fifth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-fifth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-one-fifth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 add_shortcode( 'stag_one_fifth_last', 'stag_one_fifth_last' );
 endif;
 
-if ( ! function_exists('stag_two_fifth' ) ) :
+if ( ! function_exists( 'stag_two_fifth' ) ) :
 function stag_two_fifth( $atts, $content = null ) {
-	return '<div class="stag-column stag-two-fifth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-two-fifth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_two_fifth', 'stag_two_fifth' );
 
-if ( ! function_exists('stag_two_fifth_last' ) ) :
+if ( ! function_exists( 'stag_two_fifth_last' ) ) :
 function stag_two_fifth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-two-fifth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-two-fifth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_two_fifth_last', 'stag_two_fifth_last' );
 
-if ( ! function_exists('stag_three_fifth' ) ) :
+if ( ! function_exists( 'stag_three_fifth' ) ) :
 function stag_three_fifth( $atts, $content = null ) {
-	return '<div class="stag-column stag-three-fifth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-three-fifth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_three_fifth', 'stag_three_fifth' );
 
-if ( ! function_exists('stag_three_fifth_last' ) ) :
+if ( ! function_exists( 'stag_three_fifth_last' ) ) :
 function stag_three_fifth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-three-fifth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-three-fifth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_three_fifth_last', 'stag_three_fifth_last' );
 
-if ( ! function_exists('stag_four_fifth' ) ) :
+if ( ! function_exists( 'stag_four_fifth' ) ) :
 function stag_four_fifth( $atts, $content = null ) {
-	return '<div class="stag-column stag-four-fifth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-four-fifth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_four_fifth', 'stag_four_fifth' );
 
 if ( ! function_exists( 'stag_four_fifth_last' ) ) :
 function stag_four_fifth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-four-fifth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-four-fifth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_four_fifth_last', 'stag_four_fifth_last' );
 
 if ( ! function_exists( 'stag_one_sixth' ) ) :
 function stag_one_sixth( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-sixth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-one-sixth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_one_sixth', 'stag_one_sixth' );
 
 if ( ! function_exists( 'stag_one_sixth_last' ) ) :
 function stag_one_sixth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-one-sixth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-one-sixth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_one_sixth_last', 'stag_one_sixth_last' );
 
 if ( ! function_exists( 'stag_five_sixth' ) ) :
 function stag_five_sixth( $atts, $content = null ) {
-	return '<div class="stag-column stag-five-sixth">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-column stag-five-sixth">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 add_shortcode( 'stag_five_sixth', 'stag_five_sixth' );
 
 if ( ! function_exists( 'stag_five_sixth_last' ) ) :
 function stag_five_sixth_last( $atts, $content = null ) {
-	return '<div class="stag-column stag-five-sixth stag-column-last">' . do_shortcode($content) . '</div><div class="clear"></div>';
+	return '<div class="stag-column stag-five-sixth stag-column-last">' . do_shortcode( $content ) . '</div><div class="clear"></div>';
 }
 endif;
 add_shortcode( 'stag_five_sixth_last', 'stag_five_sixth_last' );
@@ -176,7 +176,7 @@ function stag_button( $atts, $content = null ) {
 		'size'       => 'small',
 		'type'       => 'round',
 		'icon'       => '',
-		'icon_order' => 'before'
+		'icon_order' => 'before',
 	), $atts, 'purchase_link' );
 
 	$button_icon = '';
@@ -187,14 +187,14 @@ function stag_button( $atts, $content = null ) {
 	if ( ! empty( $args['icon'] ) ) {
 		if ( $args['icon_order'] == 'before' ) {
 			$button_content = stag_icon( array( 'icon' => $args['icon'] ) );
-			$button_content .= do_shortcode($content);
+			$button_content .= do_shortcode( $content );
 		} else {
-			$button_content = do_shortcode($content);
+			$button_content = do_shortcode( $content );
 			$button_content .= stag_icon( array( 'icon' => $args['icon'] ) );
 		}
 		$class .= " stag-icon--{$args['icon_order']}";
 	} else {
-		$button_content = do_shortcode($content);
+		$button_content = do_shortcode( $content );
 	}
 
 	return '<a target="'. esc_attr( $args['target'] ) .'" href="'. esc_url( $args['url'] ) .'" class="stag-button'. esc_attr( $class ) .'">'. $button_content .'</a>';
@@ -204,7 +204,7 @@ endif;
 add_shortcode( 'stag_button', 'stag_button' );
 
 
-if ( ! function_exists( 'stag_alert') ) :
+if ( ! function_exists( 'stag_alert' ) ) :
 /**
  * Alerts
  *
@@ -212,10 +212,10 @@ if ( ! function_exists( 'stag_alert') ) :
  */
 function stag_alert( $atts, $content = null ) {
     $args = shortcode_atts( array(
-    	'style' => 'white'
+    	'style' => 'white',
     ), $atts, 'stag_alert' );
 
-	return '<div class="stag-section stag-alert stag-alert--'. esc_attr( $args['style'] ) .'">' . do_shortcode($content) . '</div>';
+	return '<div class="stag-section stag-alert stag-alert--'. esc_attr( $args['style'] ) .'">' . do_shortcode( $content ) . '</div>';
 }
 endif;
 
@@ -233,7 +233,7 @@ if ( ! function_exists( 'stag_divider' ) ) :
  */
 function stag_divider( $atts, $content = null ) {
 	$args = shortcode_atts( array(
-		'style' => 'plain'
+		'style' => 'plain',
 	), $atts, 'stag_divider' );
 
 	return '<hr class="stag-section stag-divider stag-divider--'. esc_attr( $args['style'] ) .'">';
@@ -263,7 +263,7 @@ if ( ! function_exists( 'stag_tabs' ) ) :
  */
 function stag_tabs( $atts, $content = null ) {
 	$args = shortcode_atts( array(
-		'style' => 'normal'
+		'style' => 'normal',
 	), $atts, 'stag_tabs' );
 
 	wp_enqueue_script( 'stag-shortcode-scripts' );
@@ -278,10 +278,10 @@ function stag_tabs( $atts, $content = null ) {
     $output = '';
 
     if ( count( $tab_titles ) ) {
-    	$output .= '<section id="stag-tabs-'. rand(1, 100) .'" class="stag-section stag-tabs stag-tabs--'. esc_attr( $args['style'] ) .'"><div class="stag-tab-inner">';
+    	$output .= '<section id="stag-tabs-'. rand( 1, 100 ) .'" class="stag-section stag-tabs stag-tabs--'. esc_attr( $args['style'] ) .'"><div class="stag-tab-inner">';
     	$output .= '<ul class="stag-nav stag-clearfix">';
 
-    	foreach( $tab_titles as $tab ) {
+    	foreach ( $tab_titles as $tab ) {
     		$output .= '<li><a href="#stag-tab-'. sanitize_title( $tab[0] ) .'">' . $tab[0] . '</a></li>';
     	}
 
@@ -316,12 +316,12 @@ function stag_toggle( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'title' => __( 'Title Goes Here', 'stag' ),
 		'state' => 'open',
-		'style' => 'normal'
+		'style' => 'normal',
 	), $atts, 'stag_toggle' );
 
 	wp_enqueue_script( 'stag-shortcode-scripts' );
 
-	return "<div data-id='". esc_attr( $args['state'] ) ."' class=\"stag-section stag-toggle stag-toggle--". esc_attr( $args['style'] ) ."\"><span class=\"stag-toggle-title\">". esc_html( $args['title'] ) ."</span><div class=\"stag-toggle-inner\"><div class=\"stag-toggle-content\">". do_shortcode($content) ."</div></div></div>";
+	return '<div data-id="' . esc_attr( $args['state'] ) . '" class="stag-section stag-toggle stag-toggle--' . esc_attr( $args['style'] ) . '"><span class="stag-toggle-title">' . esc_html( $args['title'] ) . '</span><div class="stag-toggle-inner"><div class="stag-toggle-content">' . do_shortcode( $content ) . '</div></div></div>';
 }
 endif;
 
@@ -331,10 +331,10 @@ if ( ! function_exists( 'stag_dropcap' ) ) :
 function stag_dropcap( $atts, $content = null ) {
 	$args = shortcode_atts( array(
 		'style'     => 'normal',
-		'font_size' => '50px'
+		'font_size' => '50px',
 	), $atts, 'stag_dropcap' );
 
-	return "<span class=\"stag-dropcap stag-dropcap--". esc_attr( $args['style'] ) ."\" style=\"font-size: ". esc_attr( $args['font_size'] ) ."; line-height: ". esc_attr( $args['font_size'] ) ."; width: ". esc_attr( $args['font_size'] ) ."; height: ". esc_attr( $args['font_size'] ) .";\">". do_shortcode( $content ) ."</span>";
+	return '<span class="stag-dropcap stag-dropcap--' . esc_attr( $args['style'] ) . '" style="font-size:' . esc_attr( $args['font_size'] ) . ';line-height:' . esc_attr( $args['font_size'] ) . ';width:' . esc_attr( $args['font_size'] ) . ';height:' . esc_attr( $args['font_size'] ) . ';">' . do_shortcode( $content ) . '</span>';
 }
 endif;
 
@@ -346,18 +346,18 @@ function stag_image( $atts, $content = null ) {
 		'style'     => 'grayscale',
 		'alignment' => 'none',
 		'src'       => '',
-		'url'       => ''
+		'url'       => '',
 	), $atts, 'stag_image' );
 
-	$output = "<figure class=\"stag-section stag-image stag-image--". esc_attr( $args['style'] ) ." stag-image--". esc_attr( $args['alignment'] ) ."\" >";
+	$output = '<figure class="stag-section stag-image stag-image--' . esc_attr( $args['style'] ) . ' stag-image--' . esc_attr( $args['alignment'] ) . '">';
 
-	if ($url != ''){
-		$output .= "<a href=\"". esc_url($args['url']) ."\"><img src=\"". esc_url( $args['src'] ) ."\" alt=\"\"></a>";
-	}else{
-		$output .= "<img src=\"". esc_url($args['src']) ."\" alt=\"\">";
+	if ( $args['url'] != '' ) {
+		$output .= '<a href="' . esc_url( $args['url'] ) . '"><img src="' . esc_url( $args['src'] ) . '" alt=""></a>';
+	} else {
+		$output .= '<img src="' . esc_url( $args['src'] ) . '" alt="">';
 	}
 
-	$output .= "</figure>";
+	$output .= '</figure>';
 
 	return $output;
 }
@@ -368,16 +368,16 @@ add_shortcode( 'stag_image', 'stag_image' );
 if ( ! function_exists( 'stag_video' ) ) :
 function stag_video( $atts, $content = null ) {
 	$args = shortcode_atts( array(
-		'src' => ''
+		'src' => '',
 	), $atts, 'stag_video' );
 
-	return "<div class=\"stag-section stag-video\" >". $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $args['src'] ) .'[/embed]' ) ."</div>";
+	return '<div class="stag-section stag-video">' . $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $args['src'] ) .'[/embed]' ) . '</div>';
 }
 endif;
 
 add_shortcode( 'stag_video', 'stag_video' );
 
-if ( ! function_exists( 'stag_icon') ) :
+if ( ! function_exists( 'stag_icon' ) ) :
 /**
  * FontAwesome Icon shortcode.
  */
@@ -386,10 +386,10 @@ function stag_icon( $atts, $content = null ) {
 		'icon'       => '',
 		'url'        => '',
 		'size'       => '',
-		'new_window' => 'no'
+		'new_window' => 'no',
 	), $atts, 'stag_icon' );
 
-	$new_window = ( $args['new_window'] == "no") ? '_self' : '_blank';
+	$new_window = ( $args['new_window'] == 'no' ) ? '_self' : '_blank';
 
 	$size = esc_attr( $args['size'] );
 
@@ -400,13 +400,13 @@ function stag_icon( $atts, $content = null ) {
 		$a_attrs = ' href="'. esc_url( $args['url'] ) .'" target="'. esc_attr( $new_window ) .'"';
 	}
 
-	if ( !empty( $size ) ) {
+	if ( ! empty( $size ) ) {
 		$attrs .= ' style="font-size:'. $size .';line-height:'. $size .'"';
 	}
 
 	if ( $args['url'] != '' ){
 		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
-	}else{
+	} else {
 		$output .= '<i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
 	}
 
@@ -416,7 +416,7 @@ endif;
 
 add_shortcode( 'stag_icon', 'stag_icon' );
 
-if ( ! function_exists( 'stag_map') ) :
+if ( ! function_exists( 'stag_map' ) ) :
 /**
  * Google Map Shortcode
  *
@@ -429,7 +429,7 @@ function stag_map( $atts ) {
 		'width'  => '100%',
 		'height' => '350px',
 		'zoom'   => 15,
-		'style'  => 'none'
+		'style'  => 'none',
 	), $atts, 'stag_map' );
 
 	$map_styles = array(
@@ -438,10 +438,10 @@ function stag_map( $atts ) {
 		'pale_dawn'        => '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]',
 		'greyscale'        => '[{"featureType":"all","stylers":[{"saturation":-100},{"gamma":0.5}]}]',
 		'bright_bubbly'    => '[{"featureType":"water","stylers":[{"color":"#19a0d8"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"},{"weight":6}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#e85113"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efe9e4"},{"lightness":-40}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#efe9e4"},{"lightness":-20}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"lightness":100}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"lightness":-100}]},{"featureType":"road.highway","elementType":"labels.icon"},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","stylers":[{"lightness":20},{"color":"#efe9e4"}]},{"featureType":"landscape.man_made","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"lightness":100}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"lightness":-100}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"hue":"#11ff00"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"lightness":100}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"hue":"#4cff00"},{"saturation":58}]},{"featureType":"poi","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#f0e4d3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#efe9e4"},{"lightness":-25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#efe9e4"},{"lightness":-10}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"simplified"}]}]',
-		'subtle_grayscale' => '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]'
+		'subtle_grayscale' => '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]',
 	);
 
-	$map_id = 'map-'. rand(0, 99);
+	$map_id = 'map-'. rand( 0, 99 );
 
 	wp_enqueue_script( 'google-maps', ( is_ssl() ? 'https' : 'http' ) . '://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
 
@@ -495,7 +495,7 @@ function stag_map( $atts ) {
 
 	<?php
 
-	return "<section id='". esc_attr( $map_id ) ."' class='stag-section google-map' style='width:". esc_attr( $args['width'] ) .";height:". esc_attr( $args['height'] ) .";'></section>";
+	return '<section id="'. esc_attr( $map_id ) .'" class="stag-section google-map" style="width:'. esc_attr( $args['width'] ) .';height:'. esc_attr( $args['height'] ) .'"></section>';
 }
 endif;
 
@@ -512,16 +512,15 @@ if ( ! function_exists( 'stag_social' ) ) :
 function stag_social( $atts ) {
 	$args = shortcode_atts( array(
 		'id'    => 'all',
-		'style' => 'normal'
+		'style' => 'normal',
 	), $atts, 'stag_social' );
 
 	$registered_settings = stagtools_get_registered_settings();
 	$social_urls         = array_keys( $registered_settings['social'] );
-	$settings            = get_option('stag_options');
-
+	$settings            = get_option( 'stag_options' );
 	$output              = '<div class="stag-social-icons '. esc_attr( $args['style'] ) .'">';
 
-	if ( $args['id'] == '' || $args['id'] == "all" ) {
+	if ( $args['id'] == '' || $args['id'] == 'all' ) {
 		$social_ids = $social_urls;
 	} else {
 		$social_ids = explode( ',', $args['id'] );
@@ -532,13 +531,13 @@ function stag_social( $atts ) {
 		if ( isset( $settings[$slug] ) && $settings[$slug] != '' ) {
 			$class = $slug;
 
-			if ( 'mail'  == $slug ) $class = 'envelope';
+			if ( 'mail' == $slug ) $class = 'envelope';
 			if ( 'vimeo' == $slug ) $class = 'vimeo-square';
 
 			$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
 		}
 	}
-	$output .= "</div>";
+	$output .= '</div>';
 
 	return $output;
 
@@ -560,7 +559,7 @@ if ( ! function_exists( 'stag_columns' ) ) :
  * @return mixed
  */
 function stag_columns( $atts, $content = null ) {
-    return "<section class='stag-section stag-columns'>". do_shortcode( $content ) ."</section>";
+    return '<section class="stag-section stag-columns">' . do_shortcode( $content ) . '</section>';
 }
 endif;
 add_shortcode( 'stag_columns', 'stag_columns' );

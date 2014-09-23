@@ -11,7 +11,7 @@ $labels = array(
 	'search_items'       => __( 'Search Team Member', 'stag' ),
 	'not_found'          => __( 'No Team Member found', 'stag' ),
 	'not_found_in_trash' => __( 'No Team Member in trash', 'stag' ),
-	'parent_item_colon'  => ''
+	'parent_item_colon'  => '',
 );
 
 $args = array(
@@ -27,17 +27,17 @@ $args = array(
 	'menu_position'       => 34,
 	'menu_icon'           => 'dashicons-groups',
 	'has_archive'         => false,
-	'supports'            => array( 'title', 'thumbnail' )
+	'supports'            => array( 'title', 'thumbnail' ),
 );
 
 register_post_type( 'team', $args );
 
 function stag_team_edit_columns( $columns ) {
 	$columns = array(
-		"cb" => "<input type=\"checkbox\" />",
-		"title" => __( 'Team Member Title', 'stag' ),
-		"member_info" => __('Member Info', 'stag'),
-		"date" => __( 'Date', 'stag' )
+		'cb'          => '<input type="checkbox" />',
+		'title'       => __( 'Team Member Title', 'stag' ),
+		'member_info' => __( 'Member Info', 'stag' ),
+		'date'        => __( 'Date', 'stag' ),
 	);
 	return $columns;
 }
@@ -51,5 +51,5 @@ function stag_team_custom_column( $columns ) {
 	}
 }
 
-add_filter('manage_edit-team_columns', 'stag_team_edit_columns');
-add_action('manage_posts_custom_column',  'stag_team_custom_column');
+add_filter( 'manage_edit-team_columns', 'stag_team_edit_columns' );
+add_action( 'manage_posts_custom_column',  'stag_team_custom_column' );

@@ -82,7 +82,7 @@ $stag_shortcodes['button'] = array(
 		)
 	),
 	'shortcode'   => '[stag_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}" icon="{{icon}}" icon_order="{{icon_order}}"]{{content}}[/stag_button]',
-	'popup_title' => __('Insert Button Shortcode', 'stag')
+	'popup_title' => __( 'Insert Button Shortcode', 'stag' )
 );
 
 $stag_shortcodes['toggle'] = array(
@@ -90,8 +90,8 @@ $stag_shortcodes['toggle'] = array(
 	'params' => array(
 		'style' => array(
 			'type'    => 'select',
-			'label'   => __('Toggle Style', 'stag'),
-			'desc'    => __('Select the toggle&lsquo;s style', 'stag'),
+			'label'   => __( 'Toggle Style', 'stag' ),
+			'desc'    => __( 'Select the toggle&lsquo;s style', 'stag' ),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' ),
@@ -99,20 +99,20 @@ $stag_shortcodes['toggle'] = array(
 		),
 		'title' => array(
 			'type'  => 'text',
-			'label' => __('Toggle Content Title', 'stag'),
-			'desc'  => __('Add the title that will go above the toggle content', 'stag'),
-			'std'   => 'Title'
+			'label' => __( 'Toggle Content Title', 'stag' ),
+			'desc'  => __( 'Add the title that will go above the toggle content', 'stag' ),
+			'std'   => 'Title',
 		),
 		'content' => array(
 			'std'   => 'Content',
 			'type'  => 'textarea',
-			'label' => __('Toggle Content', 'stag'),
-			'desc'  => __('Add the toggle content. Will accept HTML', 'stag'),
+			'label' => __( 'Toggle Content', 'stag' ),
+			'desc'  => __( 'Add the toggle content. Will accept HTML', 'stag' ),
 		),
 		'state' => array(
 			'type'    => 'select',
-			'label'   => __('Toggle State', 'stag'),
-			'desc'    => __('Select the state of the toggle on page load', 'stag'),
+			'label'   => __( 'Toggle State', 'stag' ),
+			'desc'    => __( 'Select the state of the toggle on page load', 'stag' ),
 			'options' => array(
 				'open'   => __( 'Open', 'stag' ),
 				'closed' => __( 'Closed', 'stag' )
@@ -120,13 +120,13 @@ $stag_shortcodes['toggle'] = array(
 		),
 	),
 	'shortcode'   => '[stag_toggle style="{{style}}" title="{{title}}" state="{{state}}"]{{content}}[/stag_toggle]',
-	'popup_title' => __('Insert Toggle Content Shortcode', 'stag')
+	'popup_title' => __( 'Insert Toggle Content Shortcode', 'stag' )
 );
 
 $stag_shortcodes['columns'] = array(
 	'params'      => array(),
 	'shortcode'   => '[stag_columns]{{child_shortcode}}[/stag_columns]', // as there is no wrapper shortcode
-	'popup_title' => __('Insert Columns Shortcode', 'stag'),
+	'popup_title' => __( 'Insert Columns Shortcode', 'stag' ),
 	'no_preview'  => true,
 
 	// child shortcode is clonable & sortable
@@ -134,8 +134,8 @@ $stag_shortcodes['columns'] = array(
 		'params' => array(
 			'column' => array(
 				'type'    => 'select',
-				'label'   => __('Column Type', 'stag'),
-				'desc'    => __('Select the type, ie width of the column.', 'stag'),
+				'label'   => __( 'Column Type', 'stag' ),
+				'desc'    => __( 'Select the type, ie width of the column.', 'stag' ),
 				'options' => array(
 					'stag_one_third'         => __( 'One Third', 'stag' ),
 					'stag_one_third_last'    => __( 'One Third Last', 'stag' ),
@@ -164,12 +164,12 @@ $stag_shortcodes['columns'] = array(
 			'content' => array(
 				'std'   => '',
 				'type'  => 'textarea',
-				'label' => __('Column Content', 'stag'),
-				'desc'  => __('Add the column content.', 'stag'),
+				'label' => __( 'Column Content', 'stag' ),
+				'desc'  => __( 'Add the column content.', 'stag' ),
 			)
 		),
 		'shortcode'    => '[{{column}}]{{content}}[/{{column}}] ',
-		'clone_button' => __('Add Column', 'stag')
+		'clone_button' => __( 'Add Column', 'stag' )
 	)
 );
 
@@ -177,8 +177,8 @@ $stag_shortcodes['tabs'] = array(
 	'params' => array(
 		'style' => array(
 			'type'    => 'select',
-			'label'   => __('Tabs Style', 'stag'),
-			'desc'    => __('Select the tabs&lsquo;s style', 'stag'),
+			'label'   => __( 'Tabs Style', 'stag' ),
+			'desc'    => __( 'Select the tabs&lsquo;s style', 'stag' ),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' ),
@@ -213,8 +213,8 @@ $stag_shortcodes['dropcap'] = array(
 	'params' => array(
 		'style' => array(
 			'type'    => 'select',
-			'label'   => __('Dropcap Style', 'stag'),
-			'desc'    => __('Select the dropcap&lsquo;s style', 'stag'),
+			'label'   => __( 'Dropcap Style', 'stag' ),
+			'desc'    => __( 'Select the dropcap&lsquo;s style', 'stag' ),
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'squared' => __( 'Squared', 'stag' ),
@@ -248,8 +248,8 @@ $stag_shortcodes['image'] = array(
 		),
 		'style' => array(
 			'type'    => 'select',
-			'label'   => __('Image Filter', 'stag'),
-			'desc'    => __('Select the CSS3 image filter style', 'stag'),
+			'label'   => __( 'Image Filter', 'stag' ),
+			'desc'    => __( 'Select the CSS3 image filter style', 'stag' ),
 			'std'     => 'no-filter',
 			'options' => array(
 				'no-filter'  => __( 'No Filter', 'stag' ),
@@ -264,8 +264,8 @@ $stag_shortcodes['image'] = array(
 		),
 		'alignment' => array(
 			'type'    => 'select',
-			'label'   => __('Alignment', 'stag'),
-			'desc'    => __('Choose Image Alignment', 'stag'),
+			'label'   => __( 'Alignment', 'stag' ),
+			'desc'    => __( 'Choose Image Alignment', 'stag' ),
 			'std'     => 'none',
 			'options' => array(
 				'none'   => __( 'None', 'stag' ),
@@ -293,7 +293,7 @@ $stag_shortcodes['video'] = array(
 			'std'   => '',
 			'type'  => 'video',
 			'label' => __( 'Choose Video', 'stag' ),
-			'desc'  => __( 'Either upload a new video, choose an existing video from your media library or link to a video by URL. <br><br>', 'stag' ) . sprintf( __('A list of all shortcode video services can be found on %s.<br>', 'stag' ), '<a target="_blank" href="//codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F">WordPress.org</a>.<br><br>Working examples, in case you want to use an external service:<br><strong>http://vimeo.com/18439821</strong><br/><strong>http://www.youtube.com/watch?v=G0k3kHtyoqc</strong>' )
+			'desc'  => __( 'Either upload a new video, choose an existing video from your media library or link to a video by URL. <br><br>', 'stag' ) . sprintf( __( 'A list of all shortcode video services can be found on %s.<br>', 'stag' ), '<a target="_blank" href="//codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F">WordPress.org</a>.<br><br>Working examples, in case you want to use an external service:<br><strong>http://vimeo.com/18439821</strong><br/><strong>http://www.youtube.com/watch?v=G0k3kHtyoqc</strong>' )
 		)
 	),
 	'shortcode' => '[stag_video src="{{src}}"]',
@@ -348,7 +348,7 @@ $stag_shortcodes['map'] = array(
 			'std'   => '',
 			'type'  => 'text',
 			'label' => __( 'Longitude', 'stag' ),
-			'desc'  => sprintf( __( 'Enter the place longitude coordinate. E.g.: -122.08395. You may find longitude and latitude <a href="%1$s" target="_blank">here</a>.', 'stag' ), esc_url('http://universimmedia.pagesperso-orange.fr/geo/loc.htm') )
+			'desc'  => sprintf( __( 'Enter the place longitude coordinate. E.g.: -122.08395. You may find longitude and latitude <a href="%1$s" target="_blank">here</a>.', 'stag' ), esc_url( 'http://universimmedia.pagesperso-orange.fr/geo/loc.htm' ) )
 		),
 		'width' => array(
 			'std'   => '100%',
@@ -394,7 +394,7 @@ $stag_shortcodes['map'] = array(
  * @link http://wordpress.org/plugins/stag-custom-sidebars
  */
 if ( $stagtools->is_scs_active() ) {
-	$option = get_option('stag_custom_sidebars');
+	$option = get_option( 'stag_custom_sidebars' );
 
 	$sidebars = array();
 
@@ -411,7 +411,7 @@ if ( $stagtools->is_scs_active() ) {
 				'type'    => 'select',
 				'label'   => __( 'Choose Widget Area', 'stag' ),
 				'desc'    => __( 'Choose which sidebar area you want to display.', 'stag' ),
-				'options' => $sidebars
+				'options' => $sidebars,
 			),
 			'class' => array(
 				'std'   => '',

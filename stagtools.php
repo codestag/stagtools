@@ -131,10 +131,10 @@ class StagTools {
 		/**
 		 * @deprecated 1.2
 		 */
-		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'includes/post-type/portfolio.php' );
-		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'includes/post-type/slides.php' );
-		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'includes/post-type/team.php' );
-		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'includes/post-type/testimonials.php' );
+		if ( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'includes/post-type/portfolio.php' );
+		if ( current_theme_supports( 'stag-slides' ) ) 		include_once( 'includes/post-type/slides.php' );
+		if ( current_theme_supports( 'stag-team' ) ) 		include_once( 'includes/post-type/team.php' );
+		if ( current_theme_supports( 'stag-testimonials' ) ) include_once( 'includes/post-type/testimonials.php' );
 
 		/**
 		 * Include custom post type files, depending on which are supported.
@@ -200,13 +200,13 @@ class StagTools {
 	public function includes() {
 		global $stag_options;
 
-		require_once('includes/settings/settings.php');
+		require_once( 'includes/settings/settings.php' );
 		$stag_options = stagtools_get_settings();
 
 		if ( is_admin() ){
 			$this->admin_includes();
 		}
-		if( !is_admin() ){
+		if ( ! is_admin() ){
 			$this->frontend_includes();
 		}
 
@@ -292,7 +292,7 @@ class StagTools {
 	 */
 	public function widget_styles() {
 		global $pagenow;
-		if( $pagenow != 'widgets.php' ) return;
+		if ( $pagenow != 'widgets.php' ) return;
 		?>
 		<style type="text/css">
 		div[id*="_stag"] .widget-top {
@@ -328,12 +328,12 @@ class StagTools {
 	public function is_scs_active(){
 		include_once(ABSPATH .'wp-admin/includes/plugin.php');
 
-		$is_scs_active = ( is_plugin_active('stag-custom-sidebars/stag-custom-sidebars.php') ) ? true : false;
+		$is_scs_active = ( is_plugin_active( 'stag-custom-sidebars/stag-custom-sidebars.php' ) ) ? true : false;
 
-		if( $is_scs_active ) {
+		if ( $is_scs_active ) {
 			$custom_sidebars = get_option( 'stag_custom_sidebars' );
 
-			if( $custom_sidebars && count($custom_sidebars) ) {
+			if ( $custom_sidebars && count( $custom_sidebars ) ) {
 				return true;
 			}
 		}
@@ -351,7 +351,7 @@ class StagTools {
 	 * @return object Help object
 	 */
 	function contextual_help( $contextual_help, $screen_id, $screen ) {
-		if ( "settings_page_stagtools" != $screen_id )
+		if ( 'settings_page_stagtools' != $screen_id )
 			return;
 
 		$screen->set_help_sidebar(
@@ -367,7 +367,7 @@ class StagTools {
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-oauth',
 			'title'	    => __( 'Twitter oAuth Settings', 'stag' ),
-			'content'	=>  '<p>' . __( 'Here you can find how to add twitter oAuth keys to get Twitter widget working.', 'stag' ) . '</p>'.
+			'content'	=> '<p>' . __( 'Here you can find how to add twitter oAuth keys to get Twitter widget working.', 'stag' ) . '</p>'.
 							'<h5>' . __( 'Where do I find these keys?', 'stag' ) . '</h5>'.
 							'<p>' . sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by <a href="%s" target="_blank">signing-in</a> to the Twitter developer dashboard.', 'stag' ), esc_url( 'http://dev.twitter.com/apps' ) ) . '</p>'.
 							'<h5>' . __( 'Where are my widgets?', 'stag' ) . '</h5>'.
@@ -380,7 +380,7 @@ class StagTools {
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-portfolio',
 			'title'	    => __( 'Portfolio Settings', 'stag' ),
-			'content'	=>  '<p>'. __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) .'</p>'.
+			'content'	=> '<p>'. __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) .'</p>'.
 							'<p>'. __( '<strong>Portfolio Slug</strong> - This settings is used to set the slug of custom post type &lsquo;portfolio&rsquo;.', 'stag' ) .'</p>'.
 							'<p>'. __( '<strong>Skills Slug</strong> - This settings is used to set the slug of custom post taxonomy &lsquo;skill&rsquo;.', 'stag' ) .'</p>'
 		) );
@@ -389,7 +389,7 @@ class StagTools {
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-social',
 			'title'	    => __( 'Using Social Icons', 'stag' ),
-			'content'	=>  '<h5>'. __( 'Using Social Icons Shortcode' ) .'</h5>'.
+			'content'	=> '<h5>'. __( 'Using Social Icons Shortcode' ) .'</h5>'.
 							'<p>' . __( 'To use the social icon use the following shortcode:', 'stag' ) . '</p>'.
 							'<pre>[stag_social] // '. __( 'It would display all social icons with non-empty profile URLs.', 'stag' ) .'</pre>'.
 							'<pre>[stag_social id="facebook,twitter,google-plus"] // '. __( 'or you can pass specific ids.', 'stag' ) .'</pre>'.
@@ -410,12 +410,12 @@ endif;
  * @since  2.0.0
  * @return StagTools
  */
-function ST() {
+function stagtools() {
 	return StagTools::instance();
 }
 
 // Global for backwards compatibility.
-$GLOBALS['stagtools'] = ST();
+$GLOBALS['stagtools'] = stagtools();
 
 /**
  * Flush the rewrite rules on activation

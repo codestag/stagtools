@@ -18,7 +18,7 @@ class ST_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname'   => $this->widget_cssclass,
-			'description' => $this->widget_description
+			'description' => $this->widget_description,
 		);
 
 		$this->WP_Widget( $this->widget_id, $this->widget_name, $widget_ops, $this->control_ops );
@@ -119,7 +119,7 @@ class ST_Widget extends WP_Widget {
 					?>
 					<p>
 						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting[ 'label' ]; ?></label>
-						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>">
+						<select id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>">
 							<?php foreach ( $setting[ 'options' ] as $key => $label ) : ?>
 							<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
 							<?php endforeach; ?>
@@ -129,13 +129,13 @@ class ST_Widget extends WP_Widget {
 				break;
 
 				case 'page':
-					$exclude_ids = implode( ',', array( get_option('page_for_posts'), get_option('page_on_front') ));
+					$exclude_ids = implode( ',', array( get_option( 'page_for_posts' ), get_option( 'page_on_front' ) ) );
 					$pages       = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish&exclude='. $exclude_ids );
 					?>
 					<p>
 						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting[ 'label' ]; ?></label>
 						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>">
-							<?php foreach( $pages as $page ) : ?>
+							<?php foreach ( $pages as $page ) : ?>
 								<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
 							<?php endforeach; ?>
 						</select>
@@ -146,7 +146,7 @@ class ST_Widget extends WP_Widget {
 				case 'categories':
 					$args = array( 'hide_empty' => 0 );
 
-					if( isset( $setting['taxonomy'] ) ) $args['taxonomy'] = $setting['taxonomy'];
+					if ( isset( $setting['taxonomy'] ) ) $args['taxonomy'] = $setting['taxonomy'];
 
 					$categories = get_categories( $args );
 					?>
@@ -154,7 +154,7 @@ class ST_Widget extends WP_Widget {
 						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting[ 'label' ]; ?></label>
 						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>">
 							<option value="-1"><?php _e( 'All', 'stag' ); ?></option>
-							<?php foreach( $categories as $cat ) : ?>
+							<?php foreach ( $categories as $cat ) : ?>
 								<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php selected( $cat->term_id, $value ); ?>><?php echo esc_attr( $cat->name ); ?></option>
 							<?php endforeach; ?>
 						</select>
@@ -163,13 +163,13 @@ class ST_Widget extends WP_Widget {
 				break;
 
 				case 'number' :
-					if( ! isset( $setting['step'] ) ) $setting['step'] = '1';
-					if( ! isset( $setting['min'] ) ) $setting['min'] = '1';
-					if( ! isset( $setting['max'] ) ) $setting['max'] = '100';
+					if ( ! isset( $setting['step'] ) ) $setting['step'] = '1';
+					if ( ! isset( $setting['min'] ) ) $setting['min'] = '1';
+					if ( ! isset( $setting['max'] ) ) $setting['max'] = '100';
 					?>
 					<p>
 						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting[ 'label' ]; ?></label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>" type="number" step="<?php echo esc_attr( $setting[ 'step' ] ); ?>" min="<?php echo esc_attr( $setting[ 'min' ] ); ?>" max="<?php echo esc_attr( $setting[ 'max' ] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+						<input id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>" type="number" step="<?php echo esc_attr( $setting[ 'step' ] ); ?>" min="<?php echo esc_attr( $setting[ 'min' ] ); ?>" max="<?php echo esc_attr( $setting[ 'max' ] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
 					</p>
 					<?php
 				break;

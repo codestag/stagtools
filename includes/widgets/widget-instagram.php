@@ -51,7 +51,7 @@ class Stag_Instagram extends ST_Widget {
 				'label' => __( 'Photo Count:', 'stag' ),
 				'step'  => 1,
 				'min'   => 1,
-				'max'   => 20
+				'max'   => 20,
 			),
 			'size' => array(
 				'type' => 'select',
@@ -69,7 +69,7 @@ class Stag_Instagram extends ST_Widget {
 				'label' => __( 'Cache time (in hours):', 'stag' ),
 				'step'  => 1,
 				'min'   => 1,
-				'max'   => 500
+				'max'   => 500,
 			)
 		);
 
@@ -107,7 +107,7 @@ class Stag_Instagram extends ST_Widget {
 			'user_id'   => $user_id,
 			'client_id' => $client_id,
 			'count'     => $count,
-			'cachetime' => $cachetime
+			'cachetime' => $cachetime,
 		) );
 
 		if ( $title ) echo $before_title . $title . $after_title;
@@ -119,7 +119,7 @@ class Stag_Instagram extends ST_Widget {
 
 			<ul class="instagram-widget <?php echo esc_attr( $image_res ); ?>">
 				<?php
-					foreach( $instagram['data'] as $key => $image ) {
+					foreach ( $instagram['data'] as $key => $image ) {
 						echo apply_filters( 'st_instagram_widget_image_html', sprintf( '<li><a href="%1$s"><img class="instagram-image" src="%2$s" alt="%3$s" title="%3$s" /></a></li>',
 							$image['link'],
 							str_replace( 'http:', '', $image['images'][ $image_res ]['url'] ),
@@ -132,7 +132,7 @@ class Stag_Instagram extends ST_Widget {
 
 			<a class="instagram-follow-link" href="https://instagram.com/<?php echo esc_html( $username ); ?>"><?php printf( __( 'Follow %1$s on Instagram', 'stag' ), esc_html( $username ) ); ?></a>
 
-		<?php elseif( ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) && ( defined( 'WP_DEBUG_DISPLAY' ) && false !== WP_DEBUG_DISPLAY ) ): ?>
+		<?php elseif ( ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) && ( defined( 'WP_DEBUG_DISPLAY' ) && false !== WP_DEBUG_DISPLAY ) ) : ?>
 			<div id="message" class="error"><p><?php _e( 'Error: We were unable to fetch your instagram feed.', 'stag' ); ?></p></div>
 		<?php endif;
 
