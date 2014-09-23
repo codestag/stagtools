@@ -1,0 +1,6 @@
+[submodule "includes/widgets/lib/TwitterWP"]
+	path = includes/widgets/lib/TwitterWP
+	url = git@github.com:jtsternberg/TwitterWP.git
+[submodule "includes/widgets/lib/TwitterText"]
+	path = includes/widgets/lib/TwitterText
+	url = git@github.com:mzsanford/twitter-text-php.git
