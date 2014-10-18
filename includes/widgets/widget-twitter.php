@@ -98,6 +98,10 @@ class Stag_Twitter extends ST_Widget {
 
 		self::tweets_list( $instance );
 
+		if ( $instance['follow_link_show'] && $instance['follow_link_text'] ) {
+			echo '<a href="' . esc_url( 'https://twitter.com/'. $instance['twitter_id'] ) .'" class="stag-button twitter-follow-button" target="_blank">'. esc_html( $instance['follow_link_text'] ) .'</a>';
+		}
+
 		echo $args['after_widget'];
 
 		$content = ob_get_clean();
@@ -234,10 +238,6 @@ class Stag_Twitter extends ST_Widget {
 
 			// Just in case
 			$tweets = array_slice( (array) $tweets, 0, $twitter_num );
-
-			if ( $settings['follow_link_show'] && $settings['follow_link_text'] ) {
-				$tweets[] = '<a href="' . esc_url( 'http://twitter.com/'. $twitter_id ) .'" target="_blank">'. esc_html( $settings['follow_link_text'] ) .'</a>';
-			}
 
 			$time = ( $twitter_duration * 60 );
 
