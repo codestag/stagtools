@@ -242,7 +242,7 @@ class Stag_Twitter extends ST_Widget {
 			$time = ( $twitter_duration * 60 );
 
 			// Save tweets to a transient
-			set_transient( 'testtst', $tweets, $time );
+			set_transient( $trans_id, $tweets, $time );
 		}
 
 		return $tweets;
