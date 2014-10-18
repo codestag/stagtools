@@ -8,19 +8,22 @@ class StagShortcodes {
 		add_action( 'init', array( &$this, 'shortcodes_init' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_menu_styles' ) );
 		add_filter( 'mce_external_languages', array( &$this, 'add_tinymce_lang' ), 10, 1 );
-		add_action( 'wp_ajax_popup', array( &$this, 'shortcode_popup_callback') );
+		add_action( 'wp_ajax_popup', array( &$this, 'shortcode_popup_callback' ) );
 	}
 
 	public function admin_menu_styles( $hook ) {
-		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
+		if ( in_array( $hook, array( 'post.php', 'post-new.php' ) ) ) {
 			global $stagtools;
 
 			wp_enqueue_style( 'stag_admin_menu_styles', $stagtools->plugin_url() . '/assets/css/menu.css' );
 
-			wp_enqueue_style( 'font-awesome', $stagtools->plugin_url() . '/assets/css/font-awesome.css', '', '4.1.0' );
+			wp_enqueue_style( 'font-awesome', $stagtools->plugin_url() . '/assets/css/font-awesome'. SCRIPT_SUFFIX .'.css', '', '4.2.0' );
+
+			wp_register_script( 'font-awesome-icons-list', $stagtools->plugin_url() . '/assets/js/icons'. SCRIPT_SUFFIX .'.js', array(), false, true );
+			wp_enqueue_script( 'font-awesome-icons-list' );
 
 			wp_enqueue_script( 'jquery-ui-sortable' );
-			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins.js', false, $stagtools->version, false );
+			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins.js', array( 'font-awesome-icons-list' ), $stagtools->version, false );
 
 			wp_localize_script( 'jquery', 'StagShortcodes', array(
 				'plugin_folder'           => WP_PLUGIN_URL .'/shortcodes',

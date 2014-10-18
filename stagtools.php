@@ -83,6 +83,12 @@ class StagTools {
 		// Define version constant
 		define( 'STAGTOOLS_VERSION', $this->version );
 
+		if ( ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ) {
+			define( 'SCRIPT_SUFFIX', '' );
+		} else {
+			define( 'SCRIPT_SUFFIX', '.min' );
+		}
+
 		// Hooks
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
 		add_action( 'init', array( &$this, 'init' ) );
@@ -244,7 +250,7 @@ class StagTools {
 	 * @return void
 	 */
 	public function frontend_style() {
-		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/font-awesome.css' , '', '4.1.0', 'all' );
+		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/font-awesome'. SCRIPT_SUFFIX .'.css' , '', '4.1.0', 'all' );
 		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css' , array( 'font-awesome' ), $this->version, 'all' );
 
 		wp_enqueue_style( 'font-awesome' );
