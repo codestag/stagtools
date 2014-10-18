@@ -218,7 +218,7 @@ class Stag_Twitter extends ST_Widget {
 					$timeago = sprintf( __( 'about %s ago', 'stag' ), human_time_diff( strtotime( $tweet->created_at ) ) );
 					$timeago_link = sprintf( '<a href="%s" rel="nofollow">%s</a>', esc_url( sprintf( 'http://twitter.com/%s/status/%s', $twitter_id, $tweet->id_str ) ), esc_html( $timeago ) );
 					// Include timestamp
-					$content .= '<span class="time-ago">'. $timeago_link .'</span>'."\n";
+					$content .= '<time class="time-ago" datetime="' . $tweet->created_at . '">'. $timeago_link .'</time>'."\n";
 				}
 
 				// Add tweet to array
