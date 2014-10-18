@@ -23,7 +23,7 @@ class StagShortcodes {
 			wp_enqueue_script( 'font-awesome-icons-list' );
 
 			wp_enqueue_script( 'jquery-ui-sortable' );
-			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins.js', array( 'font-awesome-icons-list' ), $stagtools->version, false );
+			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins'. SCRIPT_SUFFIX .'.js', array( 'font-awesome-icons-list' ), $stagtools->version, true );
 
 			wp_localize_script( 'jquery', 'StagShortcodes', array(
 				'plugin_folder'           => WP_PLUGIN_URL .'/shortcodes',
