@@ -71,6 +71,10 @@
 	}
 }
 
+.stag-button--gray {
+	background: #979797;
+}
+
 .stag-intro-text {
 	font-size: 125%;
 	margin-bottom: 2em;
@@ -89,10 +93,9 @@
 			background: #{$color};
 		}
 	}
-
-	&--grey {
-		background: #979797;
-	}
+}
+.stag-alert--gray {
+	background: #979797;
 }
 
 .stag-dropcap {
@@ -213,7 +216,9 @@
 	right: 15px;
 	font-size: 18px;
 	@include transform(translateY(-50%));
-	@include iconify("\f067");
+	@include iconify{
+		content: '\f067';
+	};
 }
 .stag-toggle-title.ui-state-active:after {
 	content: "\f068";
@@ -387,16 +392,32 @@
 		}
 	}
 }
-
 .instagram-follow-link {
 	display: block;
 	margin-top: 10px;
 }
-
 .size-thumbnail {
 	img {
 		max-width: 75px;
 		height: auto;
+	}
+}
+
+// Twitter Widget
+.stag-twitter {
+	.time-ago {
+		display: block;
+	}
+	.twitter-follow-button {
+		margin: 0;
+	}
+}
+.stag-latest-tweets {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 10px;
 	}
 }
 
