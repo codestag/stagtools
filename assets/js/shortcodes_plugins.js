@@ -120,20 +120,10 @@ jQuery.appendo = function() {
         };
 
         // Handles a click event on the remove button
-        function clicked_del(e)
-        {
+        function clicked_del(e) {
             if (rows > 1) del_row();
             return nothing(e);
         };
-
-        // Add the buttons after the table instance
-        /*
-        jQuery('<div />')
-            .addClass(options.wrapClass)
-            .css(options.wrapStyle)
-            .append( $add_btn, $del_btn )
-            .insertAfter(obj);
-        */
 
         // Update the buttons
         update_buttons();
@@ -146,76 +136,23 @@ jQuery.appendo = function() {
 function base64_decode(h){var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";var c,b,a,m,l,k,j,n,g=0,o=0,e="",f=[];if(!h){return h}h+="";do{m=d.indexOf(h.charAt(g++));l=d.indexOf(h.charAt(g++));k=d.indexOf(h.charAt(g++));j=d.indexOf(h.charAt(g++));n=m<<18|l<<12|k<<6|j;c=n>>16&255;b=n>>8&255;a=n&255;if(k==64){f[o++]=String.fromCharCode(c)}else{if(j==64){f[o++]=String.fromCharCode(c,b)}else{f[o++]=String.fromCharCode(c,b,a)}}}while(g<h.length);e=f.join("");e=this.utf8_decode(e);return e}function base64_encode(h){var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";var c,b,a,m,l,k,j,n,g=0,o=0,f="",e=[];if(!h){return h}h=this.utf8_encode(h+"");do{c=h.charCodeAt(g++);b=h.charCodeAt(g++);a=h.charCodeAt(g++);n=c<<16|b<<8|a;m=n>>18&63;l=n>>12&63;k=n>>6&63;j=n&63;e[o++]=d.charAt(m)+d.charAt(l)+d.charAt(k)+d.charAt(j)}while(g<h.length);f=e.join("");switch(h.length%3){case 1:f=f.slice(0,-2)+"==";break;case 2:f=f.slice(0,-1)+"=";break}return f}function utf8_decode(a){var c=[],e=0,g=0,f=0,d=0,b=0;a+="";while(e<a.length){f=a.charCodeAt(e);if(f<128){c[g++]=String.fromCharCode(f);e++}else{if(f>191&&f<224){d=a.charCodeAt(e+1);c[g++]=String.fromCharCode(((f&31)<<6)|(d&63));e+=2}else{d=a.charCodeAt(e+1);b=a.charCodeAt(e+2);c[g++]=String.fromCharCode(((f&15)<<12)|((d&63)<<6)|(b&63));e+=3}}}return c.join("")}function utf8_encode(a){var h=(a+"");var i="",b,e,c=0;b=e=0;c=h.length;for(var d=0;d<c;d++){var g=h.charCodeAt(d);var f=null;if(g<128){e++}else{if(g>127&&g<2048){f=String.fromCharCode((g>>6)|192)+String.fromCharCode((g&63)|128)}else{f=String.fromCharCode((g>>12)|224)+String.fromCharCode(((g>>6)&63)|128)+String.fromCharCode((g&63)|128)}}if(f!==null){if(e>b){i+=h.slice(b,e)}i+=f;b=e=d+1}}if(e>b){i+=h.slice(b,c)}return i};
 
 // 4. custom
-var stIconPicker;
+var FontAwesomeIcons;
 
 ( function( $ ) {
     'use strict';
 
-    stIconPicker = {
-        /**
-         * Construct the definitions for each icon category section.
-         *
-         * @since 2.0.0.
-         *
-         * @return {Array}
-         */
-        getIconCategories: function(){
-            var items = [],
-                category, grid;
+    FontAwesomeIcons = function() {
+        var html = '';
 
-            $.each( stIconObj['fontawesome'], function( cat, icons ) {
-                items.push( '<span class="icon-category">' + cat + '</span>' );
+        $.each( stIconObj['fontawesome'], function( cat, icons ) {
+            html += '<span class="icon-category">' + cat + '</span>';
 
-                // Icon grid container
-                grid = {
-                    items: stIconPicker.getIconGrid( icons )
-                };
-
-                items.push( grid );
-            } );
-
-            return items;
-        },
-
-        /**
-         * Construct the definitions for each icon control in a grid.
-         *
-         * @since 2.0.0.
-         *
-         * @param  icons
-         * @return {Array}
-         */
-        getIconGrid: function( icons ) {
-            var grid = [],
-                icons;
-
-            $.each( icons, function( index, data ) {
-                var icon;
-                icon = '<i class="fa ' + data.id + '" data-icon-id="' + data.id.replace( 'fa-', '' ) + '" title="' + data.name + '"></i>';
-                grid.push( icon );
+            icons.map(function(icon){
+              html += '<i class="fa ' + icon.id + '" data-icon-id="' + icon.id.replace( 'fa-', '' ) + '" title="' + icon.name + '"></i>';
             });
+        });
 
-            return grid;
-        },
-
-        getIconHtml: function() {
-            var allIcons = stIconPicker.getIconCategories();
-
-            var icons = '';
-
-            jQuery.each(allIcons, function( index, data ) {
-
-                if ( typeof data === 'object' ) {
-                    jQuery.each( data, function( i, d ) {
-                        icons += d.toString().replace( /,/g, '' );
-                    } );
-                } else {
-                    icons += data;
-                }
-            });
-
-            return icons;
-        }
+        return html;
     };
 
 })( jQuery );
@@ -289,12 +226,9 @@ jQuery(document).ready(function($) {
                 var btn = $(this),
                     row = btn.parent();
 
-                if( $('.child-clone-row').size() > 1 )
-                {
+                if( $('.child-clone-row').size() > 1 ) {
                     row.remove();
-                }
-                else
-                {
+                }else{
                     alert('You need a minimum of one row');
                 }
 
@@ -305,7 +239,6 @@ jQuery(document).ready(function($) {
             $( ".child-clone-rows" ).sortable({
                 placeholder: "sortable-placeholder",
                 items: '.child-clone-row'
-
             });
         },
 
@@ -419,12 +352,8 @@ jQuery(document).ready(function($) {
                 stags.loadVals();
             });
 
-            var IconsHTML = [];
-
-            var allIcons = stIconPicker.getIconHtml(),
-                iconContainer = $('.stag-all-icons');
-
-            iconContainer.append( allIcons );
+            var iconContainer = $('.stag-all-icons');
+            iconContainer.append( FontAwesomeIcons() );
 
             iconContainer.on( 'click', 'i', function(e) {
                 iconContainer.find('i').removeClass('active-icon');
