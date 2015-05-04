@@ -421,6 +421,6 @@ if ( $stagtools->is_scs_active() ) {
 			)
 		),
 		'shortcode' => '[stag_sidebar id="{{id}}" class="{{class}}"]',
-		'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
+		'popup_title' => __( 'Insert a custom widget area', 'stag' )
 	);
 }
