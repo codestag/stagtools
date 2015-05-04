@@ -400,7 +400,7 @@ if ( $stagtools->is_scs_active() ) {
 
 	if ( $option ) : // if there is more than one sidebar
 	foreach ( $option as $key => $val ) {
-		$sidebars[sanitize_html_class( sanitize_title_with_dashes( $val ) )] = $val;
+		$sidebars[sanitize_html_class( sanitize_title_with_dashes( $val ) )] = stripslashes( $val );
 	}
 	endif;
 
