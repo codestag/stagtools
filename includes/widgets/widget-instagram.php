@@ -34,7 +34,7 @@ class stag_instagram_widget extends WP_Widget{
 				<div class="instragram-widget-wrapper size-<?php echo $size; ?>">
 					<?php foreach( $images as $image ) : ?>
 					<a href="<?php echo esc_url( $image['link'] ); ?>" title="<?php echo esc_attr( $image['description'] ); ?>" class="instagram_badge_image">
-						<img src="<?php echo esc_url( str_replace( 'http:', '', $image[$size]['url']) ); ?>" alt="<?php echo esc_attr( $image['description'] ); ?>">
+						<img src="<?php echo esc_url( str_replace( 'http:', '', $image[$size]) ); ?>" alt="<?php echo esc_attr( $image['description'] ); ?>">
 					</a>
 					<?php endforeach; ?>
 				</div>
@@ -129,20 +129,20 @@ class stag_instagram_widget extends WP_Widget{
 	  			return new WP_Error( 'bad_json', __('Instagram has returned invalid data.', 'stag') );
 			}
 
-			$images = $insta_array['entry_data']['UserProfile'][0]['userMedia'];
+			$images = $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'];
 
 			$instagram = array();
 			foreach ($images as $image) {
 
-				if ( $image['type'] == 'image' || $image['type'] == 'video' && $image['user']['username'] == $username ) {
+				// if ( $image['type'] == 'image' || $image['type'] == 'video' && $image['user']['username'] == $username ) {
 
 					$instagram[] = array(
-						'description' 	=> $image['caption']['text'],
-						'link' 			=> $image['link'],
-						'thumbnail' 	=> $image['images']['thumbnail'],
-						'large' 		=> $image['images']['standard_resolution']
+						'description' 	=> $image['caption'],
+						'link' 		=> 'http://instagram.com/p/' . $image['code'],
+						'thumbnail' 	=> $image['display_src'],
+						'large' 	=> $image['display_src']
 					);
-				}
+				// }
 			}
 
 			$instagram = base64_encode( serialize( $instagram ) );
