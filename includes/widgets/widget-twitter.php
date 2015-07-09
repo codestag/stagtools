@@ -33,12 +33,12 @@ class Stag_Twitter extends ST_Widget {
 			),
 			'twitter_hide_replies' => array(
 				'type'  => 'checkbox',
-				'std'   => true,
+				'std'   => false,
 				'label' => __( 'Hide @ Replies', 'stag' ),
 			),
 			'twitter_hide_retweets' => array(
 				'type'  => 'checkbox',
-				'std'   => true,
+				'std'   => false,
 				'label' => __( 'Hide Retweets', 'stag' ),
 			),
 			'show_time_stamp' => array(
