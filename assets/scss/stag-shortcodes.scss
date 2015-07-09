@@ -381,6 +381,7 @@
 .instagram-widget {
 	li {
 		margin-bottom: 10px;
+		list-style: none;
 	}
 	&.thumbnail {
 		li {
@@ -407,6 +408,9 @@
 .stag-twitter {
 	.time-ago {
 		display: block;
+		font-size: .9em;
+		font-style: italic;
+		margin-top: 5px;
 	}
 	.twitter-follow-button {
 		margin: 0;
@@ -417,7 +421,7 @@
 	margin: 0;
 	padding: 0;
 	li {
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 }
 
