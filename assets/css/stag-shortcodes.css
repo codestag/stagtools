@@ -477,6 +477,11 @@
   .stag-latest-tweets li {
     margin-bottom: 15px; }
 
+.stag-flickr li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 5px 5px 0; }
+
 .stag-social-icons {
   font-size: 45px; }
   .stag-social-icons .stag-icon {
