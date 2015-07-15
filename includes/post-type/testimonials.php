@@ -11,7 +11,7 @@ $labels = array(
 	'search_items'       => __( 'Search Testimonials', 'stag' ),
 	'not_found'          => __( 'No Testimonials found', 'stag' ),
 	'not_found_in_trash' => __( 'No Testimonials in trash', 'stag' ),
-	'parent_item_colon'  => ''
+	'parent_item_colon'  => '',
 );
 
 $args = array(
@@ -27,18 +27,18 @@ $args = array(
 	'menu_position'       => 35,
 	'menu_icon'           => 'dashicons-format-chat',
 	'has_archive'         => false,
-	'supports'            => array( 'title', 'editor' )
+	'supports'            => array( 'title', 'editor' ),
 );
 
 register_post_type( 'testimonials', $args );
 
 function stag_testimonials_edit_columns( $columns ) {
 	$columns = array(
-		"cb" => "<input type=\"checkbox\" />",
-		"title" => __( 'Testimonial Title', 'stag' ),
-		"date" => __( 'Date', 'stag' )
+		'cb'    => '<input type="checkbox">',
+		'title' => __( 'Testimonial Title', 'stag' ),
+		'date'  => __( 'Date', 'stag' ),
 	);
 	return $columns;
 }
 
-add_filter('manage_edit-testimonials_columns', 'stag_testimonials_edit_columns');
+add_filter( 'manage_edit-testimonials_columns', 'stag_testimonials_edit_columns' );

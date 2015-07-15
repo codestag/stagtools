@@ -3,12 +3,12 @@
  * Plugin Name: StagTools
  * Plugin URI: https://wordpress.org/plugins/stagtools/
  * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
- * Version: 1.2.6
+ * Version: 2.0
  * Author: Ram Ratan Maurya
  * Author URI: http://mauryaratan.me
  * License: GPL2
  * Requires at least: 3.5
- * Tested up to: 4.0
+ * Tested up to: 4.2.2
  *
  * Text Domain: stag
  * Domain Path: /languages/
@@ -16,13 +16,13 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'StagTools' ) ) {
+if ( ! class_exists( 'StagTools' ) ) :
 
 /**
  * Main StagTools Class
  *
  * @package StagTools
- * @version 1.2.6
+ * @version 2.0
  * @author Ram Ratan Maurya (Codestag)
  * @link http://mauryaratan.me
  * @link http://codestag.com
@@ -33,7 +33,13 @@ class StagTools {
 	/**
 	* @var string
 	*/
-	public $version = '1.2.6';
+	public $version = '2.0';
+
+	/**
+	 * @var WooCommerce The single instance of the class
+	 * @since 2.1
+	 */
+	protected static $_instance = null;
 
 	/**
 	* @var string
@@ -51,6 +57,23 @@ class StagTools {
 	public $template_url;
 
 	/**
+	 * Main StagTools Instance
+	 *
+	 * Ensures only one instance of StagTools is loaded or can be loaded.
+	 *
+	 * @since 2.0.0
+	 * @static
+	 * @see StagTools()
+	 * @return StagTools - Main instance
+	 */
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
+
+	/**
 	 * StagTools Constructor.
 	 *
 	 * @access public
@@ -60,14 +83,27 @@ class StagTools {
 		// Define version constant
 		define( 'STAGTOOLS_VERSION', $this->version );
 
+		if ( ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ) {
+			define( 'SCRIPT_SUFFIX', '' );
+		} else {
+			define( 'SCRIPT_SUFFIX', '.min' );
+		}
+
 		// Hooks
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
 		add_action( 'init', array( &$this, 'init' ) );
 		add_action( 'admin_menu', array( &$this, 'stag_add_options_page' ) );
 		add_action( 'admin_head', array( &$this, 'widget_styles' ) );
 
+		add_action( 'after_setup_theme', array( &$this, 'editor_styles' ) );
+
 		// Include required files
 		$this->includes();
+	}
+
+	public function editor_styles() {
+		$shortcode_styles = $this->plugin_url() . '/assets/css/stag-shortcodes.css';
+		add_editor_style( $shortcode_styles );
 	}
 
 	/**
@@ -101,10 +137,10 @@ class StagTools {
 		/**
 		 * @deprecated 1.2
 		 */
-		if( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'includes/post-type/portfolio.php' );
-		if( current_theme_supports( 'stag-slides' ) ) 		include_once( 'includes/post-type/slides.php' );
-		if( current_theme_supports( 'stag-team' ) ) 		include_once( 'includes/post-type/team.php' );
-		if( current_theme_supports( 'stag-testimonials' ) ) include_once( 'includes/post-type/testimonials.php' );
+		if ( current_theme_supports( 'stag-portfolio' ) ) 	include_once( 'includes/post-type/portfolio.php' );
+		if ( current_theme_supports( 'stag-slides' ) ) 		include_once( 'includes/post-type/slides.php' );
+		if ( current_theme_supports( 'stag-team' ) ) 		include_once( 'includes/post-type/team.php' );
+		if ( current_theme_supports( 'stag-testimonials' ) ) include_once( 'includes/post-type/testimonials.php' );
 
 		/**
 		 * Include custom post type files, depending on which are supported.
@@ -170,17 +206,18 @@ class StagTools {
 	public function includes() {
 		global $stag_options;
 
-		require_once('includes/settings/settings.php');
+		require_once( 'includes/settings/settings.php' );
 		$stag_options = stagtools_get_settings();
 
 		if ( is_admin() ){
 			$this->admin_includes();
 		}
-		if( !is_admin() ){
+		if ( ! is_admin() ){
 			$this->frontend_includes();
 		}
 
 		// Widgets
+		include_once( 'includes/widgets/stagtools-widget.php' );
 		include_once( 'includes/widgets/widget-dribbble.php' );
 		include_once( 'includes/widgets/widget-flickr.php' );
 		include_once( 'includes/widgets/widget-instagram.php' );
@@ -195,6 +232,7 @@ class StagTools {
 	public function admin_includes(){
 		include_once( 'shortcodes/stag-shortcodes.php' );
 		include_once( 'includes/settings/settings.php' );
+		include_once( 'includes/tinymce.php' );
 	}
 
 	/**
@@ -212,14 +250,13 @@ class StagTools {
 	 * @return void
 	 */
 	public function frontend_style() {
-		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/font-awesome.css' , '', '4.1.0', 'all' );
+		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/font-awesome'. SCRIPT_SUFFIX .'.css' , '', '4.3.0', 'all' );
 		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css' , array( 'font-awesome' ), $this->version, 'all' );
 
 		wp_enqueue_style( 'font-awesome' );
 		wp_enqueue_style( 'stag-shortcode-styles' );
 
 		wp_register_script( 'stag-shortcode-scripts', $this->plugin_url(). '/assets/js/stag-shortcode-scripts.js', array( 'jquery', 'jquery-ui-accordion', 'jquery-ui-tabs' ), $this->version, true );
-		wp_enqueue_script( 'stag-shortcode-scripts' );
 	}
 
 	/**
@@ -261,10 +298,10 @@ class StagTools {
 	 */
 	public function widget_styles() {
 		global $pagenow;
-		if( $pagenow != 'widgets.php' ) return;
+		if ( $pagenow != 'widgets.php' ) return;
 		?>
 		<style type="text/css">
-		div[id*="_stag"] .widget-top{
+		div[id*="_stag"] .widget-top {
 		  background: #C8E5F3 !important;
 		  border-color: #B4D0DD !important;
 		  box-shadow: inset 0 1px 0 white !important;
@@ -277,6 +314,11 @@ class StagTools {
 		  background: linear-gradient(to bottom, #EAF8FF 0%,#C8E5F3 100%) !important;
 		  border-bottom: 1px solid #98B3C0 !important;
 		  margin-top: 0px;
+		}
+		div[id*="_stag"] .description {
+			padding-bottom: 0;
+			padding-left: 0 !important;
+			font-style: italic;
 		}
 		</style>
 		<?php
@@ -292,12 +334,12 @@ class StagTools {
 	public function is_scs_active(){
 		include_once(ABSPATH .'wp-admin/includes/plugin.php');
 
-		$is_scs_active = ( is_plugin_active('stag-custom-sidebars/stag-custom-sidebars.php') ) ? true : false;
+		$is_scs_active = ( is_plugin_active( 'stag-custom-sidebars/stag-custom-sidebars.php' ) ) ? true : false;
 
-		if( $is_scs_active ) {
+		if ( $is_scs_active ) {
 			$custom_sidebars = get_option( 'stag_custom_sidebars' );
 
-			if( $custom_sidebars && count($custom_sidebars) ) {
+			if ( $custom_sidebars && count( $custom_sidebars ) ) {
 				return true;
 			}
 		}
@@ -315,7 +357,7 @@ class StagTools {
 	 * @return object Help object
 	 */
 	function contextual_help( $contextual_help, $screen_id, $screen ) {
-		if ( "settings_page_stagtools" != $screen_id )
+		if ( 'settings_page_stagtools' != $screen_id )
 			return;
 
 		$screen->set_help_sidebar(
@@ -331,7 +373,7 @@ class StagTools {
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-oauth',
 			'title'	    => __( 'Twitter oAuth Settings', 'stag' ),
-			'content'	=>  '<p>' . __( 'Here you can find how to add twitter oAuth keys to get Twitter widget working.', 'stag' ) . '</p>'.
+			'content'	=> '<p>' . __( 'Here you can find how to add twitter oAuth keys to get Twitter widget working.', 'stag' ) . '</p>'.
 							'<h5>' . __( 'Where do I find these keys?', 'stag' ) . '</h5>'.
 							'<p>' . sprintf( __( 'In order to use the new Twitter widget, you must first register a Twitter app, which will provide you with the keys you see above. Start by <a href="%s" target="_blank">signing-in</a> to the Twitter developer dashboard.', 'stag' ), esc_url( 'http://dev.twitter.com/apps' ) ) . '</p>'.
 							'<h5>' . __( 'Where are my widgets?', 'stag' ) . '</h5>'.
@@ -344,7 +386,7 @@ class StagTools {
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-portfolio',
 			'title'	    => __( 'Portfolio Settings', 'stag' ),
-			'content'	=>  '<p>'. __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) .'</p>'.
+			'content'	=> '<p>'. __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) .'</p>'.
 							'<p>'. __( '<strong>Portfolio Slug</strong> - This settings is used to set the slug of custom post type &lsquo;portfolio&rsquo;.', 'stag' ) .'</p>'.
 							'<p>'. __( '<strong>Skills Slug</strong> - This settings is used to set the slug of custom post taxonomy &lsquo;skill&rsquo;.', 'stag' ) .'</p>'
 		) );
@@ -353,7 +395,7 @@ class StagTools {
 		$screen->add_help_tab( array(
 			'id'	    => 'stagtools-help-social',
 			'title'	    => __( 'Using Social Icons', 'stag' ),
-			'content'	=>  '<h5>'. __( 'Using Social Icons Shortcode' ) .'</h5>'.
+			'content'	=> '<h5>'. __( 'Using Social Icons Shortcode' ) .'</h5>'.
 							'<p>' . __( 'To use the social icon use the following shortcode:', 'stag' ) . '</p>'.
 							'<pre>[stag_social] // '. __( 'It would display all social icons with non-empty profile URLs.', 'stag' ) .'</pre>'.
 							'<pre>[stag_social id="facebook,twitter,google-plus"] // '. __( 'or you can pass specific ids.', 'stag' ) .'</pre>'.
@@ -366,10 +408,20 @@ class StagTools {
 
 }
 
-$GLOBALS['stagtools'] = new StagTools();
+endif;
 
+/**
+ * Returns the main instance of WC to prevent the need to use globals.
+ *
+ * @since  2.0.0
+ * @return StagTools
+ */
+function stagtools() {
+	return StagTools::instance();
 }
 
+// Global for backwards compatibility.
+$GLOBALS['stagtools'] = stagtools();
 
 /**
  * Flush the rewrite rules on activation

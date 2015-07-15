@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 1.2.6
+Tested up to: 4.2.2
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,17 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.0 - July 15, 2014 =
+* New - Restyled and simplified font icon selector
+* New - Rewritten Twitter widget
+* New - Rewritten Instagram widget
+* Tweak - Divider shortcode is now merged with default "Horizontal Line" editor button
+* Tweak - Intro and Alert shortcodes are now editor styles, as "Formats" in editor
+* Tweak - Better widget cache handling
+* Tweak - Enqueue styles/scripts depending on widget visibility
+* Fixed - Small CSS clearing issue with stag_two_third_last shortcode, props @egifford
+* Updated - FontAwesome library v4.3.0
 
 = 1.2.6 - June 23, 2014 =
 * Fix - Issue with buttons shortcode generator when no link provided

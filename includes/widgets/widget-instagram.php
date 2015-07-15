@@ -1,156 +1,204 @@
 <?php
+/**
+ * Display your latest Instagrams photos.
+ *
+ * @package StagTools
+ * @see ST_Widget
+ */
 
-add_action( 'widgets_init', create_function( '', 'return register_widget( "stag_instagram_widget" );' ) );
+if ( ! class_exists( 'Stag_Instagram' ) ) :
+class Stag_Instagram extends ST_Widget {
+	public function __construct() {
+		$this->widget_id          = 'stag-instagram';
+		$this->widget_cssclass    = 'stag-instagram';
+		$this->widget_description = __( 'Display your latest Instagrams photos.', 'stag' );
+		$this->widget_name        = __( 'Stag Instagram Photos', 'stag' );
+		$this->settings           = array(
+			'title' => array(
+				'type'  => 'text',
+				'std'   => __( 'Instagram Photos', 'stag' ),
+				'label' => __( 'Title:', 'stag' ),
+			),
+			'username' => array(
+				'type'        => 'text',
+				'std'         => null,
+				'placeholder' => 'myusername',
+				'label'       => __( 'Instagram Username:', 'stag' ),
+			),
+			'user_id' => array(
+				'type'        => 'text',
+				'std'         => null,
+				'placeholder' => '476220644',
+				'label'       => __( 'User ID:', 'stag' ),
+			),
+			'user_id_desc' => array(
+				'type' => 'description',
+				'std'  => sprintf( __( 'Lookup your User ID <a href="%1$s" target="_blank">here</a>', 'stag' ), 'http://jelled.com/instagram/lookup-user-id' )
+			),
+			'client_id' => array(
+				'type'        => 'text',
+				'std'         => null,
+				'placeholder' => '943c89932b2a47e6ae341d3d1943e73f',
+				'label'       => __( 'Client ID:', 'stag' ),
+			),
+			'client_id_desc' => array(
+				'type' => 'description',
+				'std'  => sprintf( __( 'Register a new client <a href="%1$s" target="_blank">here</a>', 'stag' ), 'http://instagram.com/developer/clients/manage/' )
+			),
+			'count' => array(
+				'type'  => 'number',
+				'std'   => 9,
+				'label' => __( 'Photo Count:', 'stag' ),
+				'step'  => 1,
+				'min'   => 1,
+				'max'   => 20,
+			),
+			'size' => array(
+				'type' => 'select',
+				'std' => 'thumbnail',
+				'label' => __( 'Photo Size', 'stag' ),
+				'options' => array(
+					'thumbnail'           => __( 'Thumbnail', 'stag' ),
+					'low_resolution'      => __( 'Low Resolution', 'stag' ),
+					'standard_resolution' => __( 'High Resolution', 'stag' ),
+				)
+			),
+			'cachetime' => array(
+				'type'  => 'number',
+				'std'   => 2,
+				'label' => __( 'Cache time (in hours):', 'stag' ),
+				'step'  => 1,
+				'min'   => 1,
+				'max'   => 500,
+			)
+		);
 
-class stag_instagram_widget extends WP_Widget{
-
-	function stag_instagram_widget() {
-		$widget_ops = array( 'classname' => 'stag-instagram', 'description' => __( 'A widget that displays your Instagram feed, posts, or likes.', 'stag' ) );
-		$control_ops = array( 'width' => 200, 'height' => 350, 'id_base' => 'stag-instagram' );
-		$this->WP_Widget( 'stag-instagram', __( 'Stag Instagram Photos', 'stag' ), $widget_ops, $control_ops );
+		parent::__construct();
 	}
 
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
 	function widget( $args, $instance ) {
+		if ( $this->get_cached_widget( $args ) )
+			return;
+
+		ob_start();
+
 		extract( $args );
 
 		echo $before_widget;
 
 		$title     = apply_filters( 'widget_title', $instance['title'] );
-		$username  = strtolower( $instance['username'] );
-		$cachetime = empty($instance['cachetime']) ? 9 : $instance['cachetime'];
-		$count     = empty($instance['count']) ? 9 : $instance['count'];
-		$size      = empty($instance['size']) ? 'thumbnail' : $instance['size'];
+		$username  = esc_html( $instance['username'] );
+		$user_id   = absint( $instance['user_id'] );
+		$client_id = esc_html( $instance['client_id'] );
+		$count     = absint( $instance['count'] );
+		$image_res = esc_html( $instance['size'] );
+		$cachetime = absint( $instance['cachetime'] );
+
+		// Get Instagrams
+		$instagram = $this->get_instagrams( array(
+			'user_id'   => $user_id,
+			'client_id' => $client_id,
+			'count'     => $count,
+			'cachetime' => $cachetime,
+		) );
 
 		if ( $title ) echo $before_title . $title . $after_title;
 
-		if( $username != '' ) {
-			$images = $this->scrape_instagram( $username, $count, $cachetime );
-
-			if( is_wp_error( $images ) ) {
-				echo $images->get_error_message();
-			} else {
-				?>
-
-				<div class="instragram-widget-wrapper size-<?php echo $size; ?>">
-					<?php foreach( $images as $image ) : ?>
-					<a href="<?php echo esc_url( $image['link'] ); ?>" title="<?php echo esc_attr( $image['description'] ); ?>" class="instagram_badge_image">
-						<img src="<?php echo esc_url( str_replace( 'http:', '', $image[$size]['url']) ); ?>" alt="<?php echo esc_attr( $image['description'] ); ?>">
-					</a>
-					<?php endforeach; ?>
-				</div>
-
-				<?php
-			}
-		}
-
-		echo $after_widget;
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-
-		$instance['title']     = esc_attr( $new_instance['title'] );
-		$instance['username']  = esc_attr( $new_instance['username'] );
-		$instance['size']      = esc_attr( $new_instance['size'] );
-		$instance['cachetime'] = absint( $new_instance['cachetime'] );
-		$instance['count']     = absint( $new_instance['count'] );
-
-		return $instance;
-	}
-
-	function form( $instance ){
-		$defaults = array(
-			'title'     => __( 'Instagram Photos', 'stag' ),
-			'username'  => '',
-			'cachetime' => '5',
-			'size'      => 'thumbnail',
-			'count'     => 9,
-		);
-
-		$instance = wp_parse_args( (array) $instance, $defaults );
+		// And if we have Instagrams
+		if ( false !== $instagram ) :
 
 		?>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'stag' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>">
-		</p>
+			<ul class="instagram-widget <?php echo esc_attr( $image_res ); ?>">
+				<?php
+					foreach ( $instagram['data'] as $key => $image ) {
+						echo apply_filters( 'st_instagram_widget_image_html', sprintf( '<li><a href="%1$s"><img class="instagram-image" src="%2$s" alt="%3$s" title="%3$s" /></a></li>',
+							$image['link'],
+							str_replace( 'http:', '', $image['images'][ $image_res ]['url'] ),
+							$image['caption']['text']
+						), $image );
+					}
+				?>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('username'); ?>"><?php _e( 'Username:', 'stag' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('username'); ?>" name="<?php echo $this->get_field_name('username'); ?>" value="<?php echo $instance['username']; ?>">
-		</p>
+			</ul>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('count'); ?>"><?php _e( 'Number of Photos:', 'stag' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" value="<?php echo $instance['count']; ?>">
-		</p>
+			<a class="instagram-follow-link" href="https://instagram.com/<?php echo esc_html( $username ); ?>"><?php printf( __( 'Follow %1$s on Instagram', 'stag' ), esc_html( $username ) ); ?></a>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('size'); ?>"><?php _e( 'Photo Size:', 'stag' ); ?></label>
-			<select id="<?php echo $this->get_field_id('size'); ?>" name="<?php echo $this->get_field_name('size'); ?>" class="widefat">
-				<option value="thumbnail" <?php selected('thumbnail', $instance['size']) ?>><?php _e('Thumbnail', 'stag'); ?></option>
-				<option value="large" <?php selected('large', $instance['size']) ?>><?php _e('Large', 'stag'); ?></option>
-			</select>
-		</p>
+		<?php elseif ( ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) && ( defined( 'WP_DEBUG_DISPLAY' ) && false !== WP_DEBUG_DISPLAY ) ) : ?>
+			<div id="message" class="error"><p><?php _e( 'Error: We were unable to fetch your instagram feed.', 'stag' ); ?></p></div>
+		<?php endif;
 
-		<p>
-			<label for="<?php echo $this->get_field_id('cachetime'); ?>"><?php _e( 'Cache every:', 'stag' ); ?></label>
-			<input type="text" class="small-text" id="<?php echo $this->get_field_id('cachetime'); ?>" name="<?php echo $this->get_field_name('cachetime'); ?>" value="<?php echo $instance['cachetime']; ?>"> hours
-		</p>
+		echo $after_widget;
 
-		<?php
+		$content = ob_get_clean();
+
+		echo $content;
+
+		$this->cache_widget( $args, $content );
 	}
 
 	/**
-	 * Instagram web scrape.
+	 * Get relevant data from Instagram API.
 	 *
-	 * @param  string  $username Instagram username.
-	 * @param  integer $slice    Number of photos to display.
-	 * @return array An array containing instagram photos.
+	 * @param	array $args Argument to passed to Instagram API.
+	 * @return  array 		An array returning Instagram API data.
 	 */
-	function scrape_instagram( $username, $slice = 9, $cachetime = 5 ) {
-		if ( false === ( $instagram = get_transient( 'stag-instagram-photos-' . sanitize_title_with_dashes($username) ) ) ) {
-			$remote = wp_remote_get( 'http://instagram.com/' . trim($username) );
+	public function get_instagrams( $args = array() ) {
+		// Get args
+		$user_id   = ( ! empty( $args['user_id'] ) ) ? $args['user_id'] : '';
+		$client_id = ( ! empty( $args['client_id'] ) ) ? $args['client_id'] : '';
+		$count     = ( ! empty( $args['count'] ) ) ? $args['count'] : 9;
+		$cachetime = ( ! empty( $args['cachetime'] ) ) ? $args['cachetime'] : 2;
 
-			if (is_wp_error($remote)) {
-	  			return new WP_Error( 'site_down', __('Unable to communicate with Instagram.', 'stag') );
-			}
-
-			if ( 200 != wp_remote_retrieve_response_code( $remote ) ) {
-  				return new WP_Error( 'invalid_response', __('Instagram did not return a 200.', 'stag') );
-			}
-
-			$shards      = explode('window._sharedData = ', $remote['body']);
-			$insta_json  = explode(';</script>', $shards[1]);
-			$insta_array = json_decode($insta_json[0], TRUE);
-
-			if (!$insta_array) {
-	  			return new WP_Error( 'bad_json', __('Instagram has returned invalid data.', 'stag') );
-			}
-
-			$images = $insta_array['entry_data']['UserProfile'][0]['userMedia'];
-
-			$instagram = array();
-			foreach ($images as $image) {
-
-				if ( $image['type'] == 'image' || $image['type'] == 'video' && $image['user']['username'] == $username ) {
-
-					$instagram[] = array(
-						'description' 	=> $image['caption']['text'],
-						'link' 			=> $image['link'],
-						'thumbnail' 	=> $image['images']['thumbnail'],
-						'large' 		=> $image['images']['standard_resolution']
-					);
-				}
-			}
-
-			$instagram = base64_encode( serialize( $instagram ) );
-			set_transient('stag-instagram-photos-'.sanitize_title_with_dashes($username), $instagram, apply_filters('null_instagram_cache_time', HOUR_IN_SECONDS * $cachetime ) );
+		// If no client id or user id, bail
+		if ( empty( $client_id ) || empty( $user_id ) ) {
+			return false;
 		}
 
-		$instagram = unserialize( base64_decode( $instagram ) );
+		$key = 'st_instagram_widget_' . $user_id;
 
-		return array_slice( $instagram, 0, $slice );
+		if ( false === ( $instagrams = get_transient( $key ) ) ) {
+			// Ping Instragram's API
+			$api_url = 'https://api.instagram.com/v1/users/' . esc_html( $user_id ) . '/media/recent/';
+			$response = wp_remote_get( add_query_arg( array(
+				'client_id' => esc_html( $client_id ),
+				'count'     => absint( $count )
+			), $api_url ) );
+
+			// Check if the API is up.
+			if ( ! 200 == wp_remote_retrieve_response_code( $response ) ) {
+				return false;
+			}
+
+			// Parse the API data and place into an array
+			$instagrams = json_decode( wp_remote_retrieve_body( $response ), true );
+
+			// Are the results in an array?
+			if ( ! is_array( $instagrams ) ) {
+				return false;
+			}
+
+			$instagrams = maybe_unserialize( $instagrams );
+
+			// Store Instagrams in a transient, and expire every hour
+			set_transient( $key, $instagrams, $cachetime * HOUR_IN_SECONDS );
+		}
+
+		return $instagrams;
+	}
+
+	public static function register() {
+	    register_widget( __CLASS__ );
 	}
 }
+endif;
+
+add_action( 'widgets_init', array( 'Stag_Instagram', 'register' ) );

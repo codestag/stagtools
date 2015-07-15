@@ -33,12 +33,9 @@
 
 					b.addSeparator();
 
-					a.addWithPopup( b, ed.getLang('stag.alert'), "alert" );
 					a.addWithPopup( b, ed.getLang('stag.button'), "button" );
 					a.addWithPopup( b, ed.getLang('stag.columns'), "columns" );
-					a.addWithPopup( b, ed.getLang('stag.divider'), "divider" );
 					a.addWithPopup( b, ed.getLang('stag.dropcap'), "dropcap" );
-					a.addWithPopup( b, ed.getLang('stag.intro'), "intro" );
 					a.addWithPopup( b, ed.getLang('stag.tabs'), "tabs" );
 					a.addWithPopup( b, ed.getLang('stag.toggle'), "toggle" );
 					a.addWithPopup( b, ed.getLang('stag.icon'), "icon" );

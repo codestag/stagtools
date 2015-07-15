@@ -1,7 +1,7 @@
 <?php
 /**
  * Portfolio post type functions.
- * 
+ *
  * @package StagTools
  */
 $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
@@ -15,13 +15,13 @@ $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 	'search_items'       => __( 'Search Portfolio', 'stag' ),
 	'not_found'          => __( 'No Portfolios found', 'stag' ),
 	'not_found_in_trash' => __( 'No Portfolios found in trash', 'stag' ),
-	'parent_item_colon'  => ''
+	'parent_item_colon'  => '',
 ) );
 
-$stag_options    = get_option('stag_options');
+$stag_options    = get_option( 'stag_options' );
 @$portfolio_slug = $stag_options['portfolio_slug'];
 @$skills_slug    = $stag_options['skills_slug'];
-$rewrite         = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array('slug' => $portfolio_slug, 'with_front' => false);
+$rewrite         = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array( 'slug' => $portfolio_slug, 'with_front' => false );
 
 $portfolio_args = array(
 	'labels'            => $portfolio_labels,
@@ -33,7 +33,7 @@ $portfolio_args = array(
 	'menu_icon'         => 'dashicons-portfolio',
 	'rewrite'           => $rewrite,
 	'supports'          => apply_filters( 'stag_portfolio_supports', array( 'title', 'editor', 'thumbnail', 'revisions' ) ),
-	'taxonomies'        => array( 'skill' )
+	'taxonomies'        => array( 'skill' ),
 );
 
 register_post_type( 'portfolio', apply_filters( 'stag_portfolio_post_type_args', $portfolio_args ) );
@@ -58,14 +58,15 @@ register_taxonomy( 'skill', 'portfolio', array(
  */
 function stag_portfolio_edit_columns( $columns ) {
 	$columns = array(
-		"cb"    => "<input type=\"checkbox\">",
-		"title" => __( 'Portfolio Title', 'stag' ),
-		"skill" => __( 'Skills', 'stag' ),
-		"date"  => __( 'Date', 'stag' )
+		'cb'    => '<input type="checkbox">',
+		'title' => __( 'Portfolio Title', 'stag' ),
+		'skill' => __( 'Skills', 'stag' ),
+		'date'  => __( 'Date', 'stag' )
 	);
+
 	return $columns;
 }
-add_filter("manage_edit-portfolio_columns", "stag_portfolio_edit_columns");
+add_filter( 'manage_edit-portfolio_columns', 'stag_portfolio_edit_columns' );
 
 /**
  * Custom post type Portfolio column.
@@ -89,4 +90,4 @@ function stag_portfolio_custom_column( $column ) {
 		break;
 	}
 }
-add_action("manage_posts_custom_column",  "stag_portfolio_custom_column");
+add_action( 'manage_posts_custom_column',  'stag_portfolio_custom_column' );

@@ -20,7 +20,7 @@ $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 	'search_items'       => __( 'Search Projects', 'stag' ),
 	'parent_item_colon'  => __( 'Parent Projects:', 'stag' ),
 	'not_found'          => __( 'No Projects found.', 'stag' ),
-	'not_found_in_trash' => __( 'No Projects found in Trash.', 'stag' )
+	'not_found_in_trash' => __( 'No Projects found in Trash.', 'stag' ),
 ) );
 
 $portfolio_args = array(
@@ -37,7 +37,7 @@ $portfolio_args = array(
 	'has_archive'        => true,
 	'hierarchical'       => false,
 	'menu_position'      => null,
-	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' )
+	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' ),
 );
 
 register_post_type( 'stag-portfolio', $portfolio_args );
@@ -51,7 +51,7 @@ register_taxonomy( 'stag-portfolio-type', 'stag-portfolio', array(
 	'show_in_nav_menus' => true,
 	'args'              => array( 'orderby' => 'term_order' ),
 	'query_var'         => true,
-	'rewrite'           => array( 'slug' => 'project-type' )
+	'rewrite'           => array( 'slug' => 'project-type' ),
 ) );
 
 register_taxonomy( 'stag-portfolio-tag', 'stag-portfolio', array(
@@ -63,7 +63,7 @@ register_taxonomy( 'stag-portfolio-tag', 'stag-portfolio', array(
 	'show_in_nav_menus' => true,
 	'args'              => array( 'orderby' => 'term_order' ),
 	'query_var'         => true,
-	'rewrite'           => array( 'slug' => 'project-tag' )
+	'rewrite'           => array( 'slug' => 'project-tag' ),
 ) );
 
 /**
@@ -75,12 +75,12 @@ register_taxonomy( 'stag-portfolio-tag', 'stag-portfolio', array(
 function stag_portfolio_columns( $old_columns ) {
 	$columns = array();
 
-	$columns["cb"]                  = "<input type=\"checkbox\" />";
-	$columns["thumbnail"]           = '<i class="dashicons dashicons-format-image"></i>';
-	$columns["title"]               = __( "Project", 'stag' );
-	$columns["stag-portfolio-type"] = __( "Project Types", 'stag' );
-	$columns["stag-portfolio-tag"]  = __( "Project Tags", 'stag' );
-	$columns["date"]                = __( "Date", 'stag' );
+	$columns['cb']                  = '<input type="checkbox" />';
+	$columns['thumbnail']           = '<i class="dashicons dashicons-format-image"></i>';
+	$columns['title']               = __( 'Project', 'stag' );
+	$columns['stag-portfolio-type'] = __( 'Project Types', 'stag' );
+	$columns['stag-portfolio-tag']  = __( 'Project Tags', 'stag' );
+	$columns['date']                = __( 'Date', 'stag' );
 
 	return $columns;
 }
@@ -119,7 +119,7 @@ add_action( 'manage_stag-portfolio_posts_custom_column', 'stag_portfolio_custom_
 function stag_portfolio_admin_css() {
 	global $pagenow;
 
-	if( 'edit.php' != $pagenow && 'stag-portfolio' != get_post_type() )
+	if ( 'edit.php' != $pagenow && 'stag-portfolio' != get_post_type() )
 		return;
 
 	?>
