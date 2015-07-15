@@ -3,21 +3,21 @@ StagTools is an open-source WordPress Plugin which brings the power the handy sh
 
 The purpose of StagTools is to keep your content consistent, while you want to change your themes. It could be really pain to update shortcodes everytime you change your theme, that's when StagTools comes to the rescue.
 
-### Installation 
-##### Uploading in WordPress Dashboard    
+### Installation
+##### Uploading in WordPress Dashboard
 
-1. Navigate to the 'Add New' in the plugins dashboard  
-2. Navigate to the 'Upload' area  
-3. Select `stagtools.zip` from your computer  
-4. Click 'Install Now'  
-5. Activate the plugin in the Plugin dashboard  
+1. Navigate to the 'Add New' in the plugins dashboard
+2. Navigate to the 'Upload' area
+3. Select `stagtools.zip` from your computer
+4. Click 'Install Now'
+5. Activate the plugin in the Plugin dashboard
 
-##### Using FTP  
+##### Using FTP
 
-1. Download `stagtools.zip`  
-2. Extract the `stagtools` directory to your computer  
-3. Upload the `stagtools` directory to the `/wp-content/plugins/` directory  
-4. Activate the plugin in the Plugin dashboard    
+1. Download `stagtools.zip`
+2. Extract the `stagtools` directory to your computer
+3. Upload the `stagtools` directory to the `/wp-content/plugins/` directory
+4. Activate the plugin in the Plugin dashboard
 
 ---
 
