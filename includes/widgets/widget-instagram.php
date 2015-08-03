@@ -166,7 +166,7 @@ class Stag_Instagram extends ST_Widget {
 		$key = 'st_instagram_widget_' . $user_id;
 
 		if ( false === ( $instagrams = get_transient( $key ) ) ) {
-			// Ping Instragram's API
+			// Ping Instagram's API
 			$api_url = 'https://api.instagram.com/v1/users/' . esc_html( $user_id ) . '/media/recent/';
 			$response = wp_remote_get( add_query_arg( array(
 				'client_id' => esc_html( $client_id ),
