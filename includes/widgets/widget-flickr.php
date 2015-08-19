@@ -79,8 +79,7 @@ class Stag_Flickr extends ST_Widget {
 							echo '<li><a target="_blank" href="' . esc_url( $item->get_permalink() ) . '"><img src="'. esc_url( $image['url'] ) .'" width="' . esc_attr( $image['width'] ) . '" height="' . esc_attr( $image['height'] ) . '" alt="'. esc_attr( $item->get_title() ) .'"></a></li>';
 						}
 					}
-				}
-				else {
+				} else {
 					_e('Invalid flickr ID','stag');
 				}
 
