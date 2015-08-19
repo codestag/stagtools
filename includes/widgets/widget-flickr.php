@@ -80,7 +80,7 @@ class Stag_Flickr extends ST_Widget {
 						}
 					}
 				} else {
-					_e('Invalid flickr ID','stag');
+					_e( 'Invalid flickr ID', 'stag' );
 				}
 
 				?>
