@@ -1,1391 +1,1396 @@
+# Copyright (C) 2015 Ram Ratan Maurya
+# This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: StagTools 1.2.1\n"
-"POT-Creation-Date: 2014-01-25 00:26+0530\n"
-"PO-Revision-Date: 2014-01-25 00:26+0530\n"
-"Last-Translator: Ram Ratan Maurya <support@codestag.com>\n"
-"Language-Team: Codestag <support@codestag.com>\n"
-"Language: en_US\n"
+"Project-Id-Version: StagTools 2.0.1\n"
+"Report-Msgid-Bugs-To: https://codestag.com/support/\n"
+"POT-Creation-Date: 2015-08-19 05:29:10+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
-"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
-"esc_html_x;_c;_nc()\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Codestag\n"
+"Language-Team: Codestag\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
 
-#: ../stagtools.php:82
+#: assets/js/plugin-lang.php:5
+msgid "Insert Stag Shortcode"
+msgstr ""
+
+#: assets/js/plugin-lang.php:6
+msgid "Buttons"
+msgstr ""
+
+#: assets/js/plugin-lang.php:7
+msgid "Columns"
+msgstr ""
+
+#: assets/js/plugin-lang.php:8
+msgid "Tabs"
+msgstr ""
+
+#: assets/js/plugin-lang.php:9
+msgid "Toggle"
+msgstr ""
+
+#: assets/js/plugin-lang.php:10
+msgid "Dropcap"
+msgstr ""
+
+#: assets/js/plugin-lang.php:11
+msgid "Font Icon"
+msgstr ""
+
+#: assets/js/plugin-lang.php:13
+msgid "Media Elements"
+msgstr ""
+
+#: assets/js/plugin-lang.php:14
+msgid "Widget Area"
+msgstr ""
+
+#: assets/js/plugin-lang.php:15 shortcodes/config.php:246
+msgid "Image"
+msgstr ""
+
+#: assets/js/plugin-lang.php:16
+msgid "Video"
+msgstr ""
+
+#: assets/js/plugin-lang.php:17
+msgid "Google Map"
+msgstr ""
+
+#: includes/post-type/portfolio.php:8 includes/post-type/portfolio.php:9
+#: includes/settings/settings.php:99
+msgid "Portfolio"
+msgstr ""
+
+#: includes/post-type/portfolio.php:10 includes/post-type/slides.php:6
+#: includes/post-type/team.php:6 includes/post-type/testimonials.php:6
+msgid "Add New"
+msgstr ""
+
+#: includes/post-type/portfolio.php:11
+msgid "Add New Portfolio"
+msgstr ""
+
+#: includes/post-type/portfolio.php:12
+msgid "Edit Portfolio"
+msgstr ""
+
+#: includes/post-type/portfolio.php:13
+msgid "New Portfolio"
+msgstr ""
+
+#: includes/post-type/portfolio.php:14
+msgid "View Portfolio"
+msgstr ""
+
+#: includes/post-type/portfolio.php:15
+msgid "Search Portfolio"
+msgstr ""
+
+#: includes/post-type/portfolio.php:16
+msgid "No Portfolios found"
+msgstr ""
+
+#: includes/post-type/portfolio.php:17
+msgid "No Portfolios found in trash"
+msgstr ""
+
+#: includes/post-type/portfolio.php:42 includes/post-type/portfolio.php:63
+msgid "Skills"
+msgstr ""
+
+#: includes/post-type/portfolio.php:43
+msgid "Skill"
+msgstr ""
+
+#: includes/post-type/portfolio.php:62
+msgid "Portfolio Title"
+msgstr ""
+
+#: includes/post-type/portfolio.php:64 includes/post-type/project.php:83
+#: includes/post-type/slides.php:39 includes/post-type/team.php:40
+#: includes/post-type/testimonials.php:39
+msgid "Date"
+msgstr ""
+
+#: includes/post-type/project.php:15
+msgid "Add New Project"
+msgstr ""
+
+#: includes/post-type/project.php:16
+msgid "New Project"
+msgstr ""
+
+#: includes/post-type/project.php:17
+msgid "Edit Project"
+msgstr ""
+
+#: includes/post-type/project.php:18
+msgid "View Project"
+msgstr ""
+
+#: includes/post-type/project.php:19
+msgid "All Projects"
+msgstr ""
+
+#: includes/post-type/project.php:20
+msgid "Search Projects"
+msgstr ""
+
+#: includes/post-type/project.php:21
+msgid "Parent Projects:"
+msgstr ""
+
+#: includes/post-type/project.php:22
+msgid "No Projects found."
+msgstr ""
+
+#: includes/post-type/project.php:23
+msgid "No Projects found in Trash."
+msgstr ""
+
+#: includes/post-type/project.php:46 includes/post-type/project.php:81
+msgid "Project Types"
+msgstr ""
+
+#: includes/post-type/project.php:47
+msgid "Project Type"
+msgstr ""
+
+#: includes/post-type/project.php:58 includes/post-type/project.php:82
+msgid "Project Tags"
+msgstr ""
+
+#: includes/post-type/project.php:59
+msgid "Project Tag"
+msgstr ""
+
+#: includes/post-type/project.php:80
+msgid "Project"
+msgstr ""
+
+#: includes/post-type/slides.php:4
+msgid "Slides"
+msgstr ""
+
+#: includes/post-type/slides.php:5
+msgid "Slide"
+msgstr ""
+
+#: includes/post-type/slides.php:7
+msgid "Add New Slide"
+msgstr ""
+
+#: includes/post-type/slides.php:8
+msgid "Edit Slide"
+msgstr ""
+
+#: includes/post-type/slides.php:9
+msgid "New Slide"
+msgstr ""
+
+#: includes/post-type/slides.php:10
+msgid "View Slide"
+msgstr ""
+
+#: includes/post-type/slides.php:11
+msgid "Search Slide"
+msgstr ""
+
+#: includes/post-type/slides.php:12
+msgid "No Slides found"
+msgstr ""
+
+#: includes/post-type/slides.php:13
+msgid "No Slides found in trash"
+msgstr ""
+
+#: includes/post-type/slides.php:38
+msgid "Slide Title"
+msgstr ""
+
+#: includes/post-type/team.php:4 includes/post-type/team.php:5
+msgid "Team"
+msgstr ""
+
+#: includes/post-type/team.php:7
+msgid "Add New Team Member"
+msgstr ""
+
+#: includes/post-type/team.php:8
+msgid "Edit Team Member"
+msgstr ""
+
+#: includes/post-type/team.php:9
+msgid "New Team Member"
+msgstr ""
+
+#: includes/post-type/team.php:10
+msgid "View Team Member"
+msgstr ""
+
+#: includes/post-type/team.php:11
+msgid "Search Team Member"
+msgstr ""
+
+#: includes/post-type/team.php:12
+msgid "No Team Member found"
+msgstr ""
+
+#: includes/post-type/team.php:13
+msgid "No Team Member in trash"
+msgstr ""
+
+#: includes/post-type/team.php:38
+msgid "Team Member Title"
+msgstr ""
+
+#: includes/post-type/team.php:39
+msgid "Member Info"
+msgstr ""
+
+#: includes/post-type/testimonials.php:4
+msgid "Testimonials"
+msgstr ""
+
+#: includes/post-type/testimonials.php:5
+msgid "Testimonial"
+msgstr ""
+
+#: includes/post-type/testimonials.php:7
+msgid "Add New Testimonial"
+msgstr ""
+
+#: includes/post-type/testimonials.php:8
+msgid "Edit Testimonial"
+msgstr ""
+
+#: includes/post-type/testimonials.php:9
+msgid "New Testimonial"
+msgstr ""
+
+#: includes/post-type/testimonials.php:10
+msgid "View Testimonial"
+msgstr ""
+
+#: includes/post-type/testimonials.php:11
+msgid "Search Testimonials"
+msgstr ""
+
+#: includes/post-type/testimonials.php:12
+msgid "No Testimonials found"
+msgstr ""
+
+#: includes/post-type/testimonials.php:13
+msgid "No Testimonials in trash"
+msgstr ""
+
+#: includes/post-type/testimonials.php:38
+msgid "Testimonial Title"
+msgstr ""
+
+#: includes/settings/settings.php:97
+msgid "General"
+msgstr ""
+
+#: includes/settings/settings.php:98
+msgid "Social"
+msgstr ""
+
+#: includes/settings/settings.php:154
+msgid "Settings Updated"
+msgstr ""
+
+#: includes/settings/settings.php:215
+msgid "Twitter Settings"
+msgstr ""
+
+#: includes/settings/settings.php:216
+msgid "Configure the twitter settings"
+msgstr ""
+
+#: includes/settings/settings.php:221
+msgid "OAuth Consumer Key"
+msgstr ""
+
+#: includes/settings/settings.php:222
+msgid "Enter twitter OAuth Consumer Key"
+msgstr ""
+
+#: includes/settings/settings.php:227
+msgid "OAuth Consumer Secret"
+msgstr ""
+
+#: includes/settings/settings.php:228
+msgid "Enter twitter OAuth Consumer Secret"
+msgstr ""
+
+#: includes/settings/settings.php:233
+msgid "OAuth Access Token"
+msgstr ""
+
+#: includes/settings/settings.php:234
+msgid "Enter twitter OAuth Access Token"
+msgstr ""
+
+#: includes/settings/settings.php:239
+msgid "OAuth Access Secret"
+msgstr ""
+
+#: includes/settings/settings.php:240
+msgid "Enter twitter OAuth Access Secret"
+msgstr ""
+
+#: includes/settings/settings.php:434
+msgid "Portfolio Slug"
+msgstr ""
+
+#: includes/settings/settings.php:435
+msgid "Enter the slug of custom post type <strong>portfolio</strong>."
+msgstr ""
+
+#: includes/settings/settings.php:441
+msgid "Skills Slug"
+msgstr ""
+
+#: includes/settings/settings.php:442
+msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
+msgstr ""
+
+#: includes/settings/settings.php:455
+msgid "The callback function used for the <strong>%s</strong> setting is missing."
+msgstr ""
+
+#: includes/tinymce.php:117
+msgid "Run In"
+msgstr ""
+
+#: includes/tinymce.php:122
+msgid "Alert"
+msgstr ""
+
+#: includes/tinymce.php:125 shortcodes/config.php:22
+msgid "Green"
+msgstr ""
+
+#: includes/tinymce.php:132 shortcodes/config.php:25
+msgid "Red"
+msgstr ""
+
+#: includes/tinymce.php:139
+msgid "Yellow"
+msgstr ""
+
+#: includes/tinymce.php:146 shortcodes/config.php:24
+msgid "Blue"
+msgstr ""
+
+#: includes/tinymce.php:153 shortcodes/config.php:20
+msgid "Grey"
+msgstr ""
+
+#: includes/tinymce.php:229
+msgid "Insert Horizontal Line"
+msgstr ""
+
+#: includes/tinymce.php:230
+msgid "Horizontal line"
+msgstr ""
+
+#: includes/tinymce.php:231
+msgid "Style"
+msgstr ""
+
+#: includes/tinymce.php:232
+msgid "Plain"
+msgstr ""
+
+#: includes/tinymce.php:233
+msgid "Strong"
+msgstr ""
+
+#: includes/tinymce.php:234
+msgid "Double"
+msgstr ""
+
+#: includes/tinymce.php:235
+msgid "Dashed"
+msgstr ""
+
+#: includes/tinymce.php:236
+msgid "Dotted"
+msgstr ""
+
+#: includes/widgets/stagtools-widget.php:156
+msgid "All"
+msgstr ""
+
+#: includes/widgets/widget-dribbble.php:12
+msgid "Display your latest Dribbble shots."
+msgstr ""
+
+#: includes/widgets/widget-dribbble.php:13
+msgid "Stag Dribbble Shots"
+msgstr ""
+
+#: includes/widgets/widget-dribbble.php:18
+#: includes/widgets/widget-flickr.php:18
+#: includes/widgets/widget-instagram.php:20
+#: includes/widgets/widget-twitter.php:19
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/widget-dribbble.php:23
+msgid "Dribbble Username:"
+msgstr ""
+
+#: includes/widgets/widget-dribbble.php:28
+msgid "Number of shots to show:"
+msgstr ""
+
+#: includes/widgets/widget-flickr.php:12
+msgid "Display your latest Flickr photos."
+msgstr ""
+
+#: includes/widgets/widget-flickr.php:13
+msgid "Stag Flickr Photos"
+msgstr ""
+
+#: includes/widgets/widget-flickr.php:23
+msgid "Your Flickr User ID:"
+msgstr ""
+
+#: includes/widgets/widget-flickr.php:27
+msgid "Head over to %s to find your Flickr user ID."
+msgstr ""
+
+#: includes/widgets/widget-flickr.php:32
+msgid "Number of photos to show:"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:14
+msgid "Display your latest Instagrams photos."
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:15
+msgid "Stag Instagram Photos"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:19
+msgid "Instagram Photos"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:26
+msgid "Instagram Username:"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:32
+msgid "User ID:"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:36
+msgid "Lookup your User ID <a href=\"%1$s\" target=\"_blank\">here</a>"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:42
+msgid "Client ID:"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:46
+msgid "Register a new client <a href=\"%1$s\" target=\"_blank\">here</a>"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:51
+msgid "Photo Count:"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:59
+msgid "Photo Size"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:61
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:62
+msgid "Low Resolution"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:63
+msgid "High Resolution"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:69
+msgid "Cache time (in hours):"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:133
+msgid "Follow %1$s on Instagram"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:136
+msgid "Error: We were unable to fetch your instagram feed."
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:13
+msgid "Display a list of a user&rsquo;s latest tweets."
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:14
+msgid "Stag Twitter Feed"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:24
+msgid "Twitter Username:"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:29
+msgid "Number of Tweets to show:"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:37
+msgid "Hide @ Replies"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:42
+msgid "Hide Retweets"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:47
+msgid "Show Tweet Timestamp"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:52
+msgid "Load new Tweets every:"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:54
+msgid "5 Minutes"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:55
+msgid "15 Minutes"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:56
+msgid "30 Minutes"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:57
+msgid "1 Hour"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:58
+msgid "2 Hours"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:59
+msgid "4 Hours"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:60
+msgid "12 Hours"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:61
+msgid "24 Hours"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:67
+msgid "Include link to twitter page?"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:72
+msgid "Link Text:"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:153
+msgid "Please provide a Twitter Username."
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:181
+msgid "Please fill in the <a href=\"%s\">Twitter oAuth settings</a>"
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:200
+msgid "The Twitter API is taking too long to respond. Please try again later."
+msgstr ""
+
+#: includes/widgets/widget-twitter.php:222
+msgid "%s ago"
+msgstr ""
+
+#: shortcodes/config.php:11
+msgid "Button URL"
+msgstr ""
+
+#: shortcodes/config.php:12
+msgid "Add the button&lsquo;s url e.g. http://example.com"
+msgstr ""
+
+#: shortcodes/config.php:16
+msgid "Button Style"
+msgstr ""
+
+#: shortcodes/config.php:17
+msgid "Select the button&lsquo;s style, ie the button&lsquo;s colour"
+msgstr ""
+
+#: shortcodes/config.php:21
+msgid "Black"
+msgstr ""
+
+#: shortcodes/config.php:23
+msgid "Light Blue"
+msgstr ""
+
+#: shortcodes/config.php:26
+msgid "Orange"
+msgstr ""
+
+#: shortcodes/config.php:27
+msgid "Purple"
+msgstr ""
+
+#: shortcodes/config.php:28
+msgid "White"
+msgstr ""
+
+#: shortcodes/config.php:33
+msgid "Button Size"
+msgstr ""
+
+#: shortcodes/config.php:34
+msgid "Select the button&lsquo;s size"
+msgstr ""
+
+#: shortcodes/config.php:37
+msgid "Small"
+msgstr ""
+
+#: shortcodes/config.php:38
+msgid "Medium"
+msgstr ""
+
+#: shortcodes/config.php:39
+msgid "Large"
+msgstr ""
+
+#: shortcodes/config.php:44
+msgid "Button Type"
+msgstr ""
+
+#: shortcodes/config.php:45
+msgid "Select the button&lsquo;s type"
+msgstr ""
+
+#: shortcodes/config.php:47 shortcodes/config.php:96 shortcodes/config.php:183
+#: shortcodes/config.php:219
+msgid "Normal"
+msgstr ""
+
+#: shortcodes/config.php:48 shortcodes/config.php:97 shortcodes/config.php:184
+msgid "Stroke"
+msgstr ""
+
+#: shortcodes/config.php:54
+msgid "Button Icon"
+msgstr ""
+
+#: shortcodes/config.php:55 shortcodes/config.php:310
+msgid "Choose an icon"
+msgstr ""
+
+#: shortcodes/config.php:59
+msgid "Font Order"
+msgstr ""
+
+#: shortcodes/config.php:60
+msgid "Select if the icon should display before text or after text."
+msgstr ""
+
+#: shortcodes/config.php:63
+msgid "Before Text"
+msgstr ""
+
+#: shortcodes/config.php:64
+msgid "After Text"
+msgstr ""
+
+#: shortcodes/config.php:69
+msgid "Button Target"
+msgstr ""
+
+#: shortcodes/config.php:70
+msgid "_self = open in same window. _blank = open in new window"
+msgstr ""
+
+#: shortcodes/config.php:73
+msgid "_self"
+msgstr ""
+
+#: shortcodes/config.php:74
+msgid "_blank"
+msgstr ""
+
+#: shortcodes/config.php:80
+msgid "Button&lsquo;s Text"
+msgstr ""
+
+#: shortcodes/config.php:81
+msgid "Add the button&lsquo;s text"
+msgstr ""
+
+#: shortcodes/config.php:85
+msgid "Insert Button Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:93
+msgid "Toggle Style"
+msgstr ""
+
+#: shortcodes/config.php:94
+msgid "Select the toggle&lsquo;s style"
+msgstr ""
+
+#: shortcodes/config.php:102
+msgid "Toggle Content Title"
+msgstr ""
+
+#: shortcodes/config.php:103
+msgid "Add the title that will go above the toggle content"
+msgstr ""
+
+#: shortcodes/config.php:109
+msgid "Toggle Content"
+msgstr ""
+
+#: shortcodes/config.php:110
+msgid "Add the toggle content. Will accept HTML"
+msgstr ""
+
+#: shortcodes/config.php:114
+msgid "Toggle State"
+msgstr ""
+
+#: shortcodes/config.php:115
+msgid "Select the state of the toggle on page load"
+msgstr ""
+
+#: shortcodes/config.php:117
+msgid "Open"
+msgstr ""
+
+#: shortcodes/config.php:118
+msgid "Closed"
+msgstr ""
+
+#: shortcodes/config.php:123
+msgid "Insert Toggle Content Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:129
+msgid "Insert Columns Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:137
+msgid "Column Type"
+msgstr ""
+
+#: shortcodes/config.php:138
+msgid "Select the type, ie width of the column."
+msgstr ""
+
+#: shortcodes/config.php:140
+msgid "One Third"
+msgstr ""
+
+#: shortcodes/config.php:141
+msgid "One Third Last"
+msgstr ""
+
+#: shortcodes/config.php:142
+msgid "Two Thirds"
+msgstr ""
+
+#: shortcodes/config.php:143
+msgid "Two Thirds Last"
+msgstr ""
+
+#: shortcodes/config.php:144
+msgid "One Half"
+msgstr ""
+
+#: shortcodes/config.php:145
+msgid "One Half Last"
+msgstr ""
+
+#: shortcodes/config.php:146
+msgid "One Fourth"
+msgstr ""
+
+#: shortcodes/config.php:147
+msgid "One Fourth Last"
+msgstr ""
+
+#: shortcodes/config.php:148
+msgid "Three Fourth"
+msgstr ""
+
+#: shortcodes/config.php:149
+msgid "Three Fourth Last"
+msgstr ""
+
+#: shortcodes/config.php:150
+msgid "One Fifth"
+msgstr ""
+
+#: shortcodes/config.php:151
+msgid "One Fifth Last"
+msgstr ""
+
+#: shortcodes/config.php:152
+msgid "Two Fifth"
+msgstr ""
+
+#: shortcodes/config.php:153
+msgid "Two Fifth Last"
+msgstr ""
+
+#: shortcodes/config.php:154
+msgid "Three Fifth"
+msgstr ""
+
+#: shortcodes/config.php:155
+msgid "Three Fifth Last"
+msgstr ""
+
+#: shortcodes/config.php:156
+msgid "Four Fifth"
+msgstr ""
+
+#: shortcodes/config.php:157
+msgid "Four Fifth Last"
+msgstr ""
+
+#: shortcodes/config.php:158
+msgid "One Sixth"
+msgstr ""
+
+#: shortcodes/config.php:159
+msgid "One Sixth Last"
+msgstr ""
+
+#: shortcodes/config.php:160
+msgid "Five Sixth"
+msgstr ""
+
+#: shortcodes/config.php:161
+msgid "Five Sixth Last"
+msgstr ""
+
+#: shortcodes/config.php:167
+msgid "Column Content"
+msgstr ""
+
+#: shortcodes/config.php:168
+msgid "Add the column content."
+msgstr ""
+
+#: shortcodes/config.php:172
+msgid "Add Column"
+msgstr ""
+
+#: shortcodes/config.php:180
+msgid "Tabs Style"
+msgstr ""
+
+#: shortcodes/config.php:181
+msgid "Select the tabs&lsquo;s style"
+msgstr ""
+
+#: shortcodes/config.php:190
+msgid "Insert Tab Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:196
+msgid "Tab Title"
+msgstr ""
+
+#: shortcodes/config.php:197
+msgid "Title of the tab"
+msgstr ""
+
+#: shortcodes/config.php:202
+msgid "Tab Content"
+msgstr ""
+
+#: shortcodes/config.php:203
+msgid "Add the tabs content"
+msgstr ""
+
+#: shortcodes/config.php:207
+msgid "Add Tab"
+msgstr ""
+
+#: shortcodes/config.php:216
+msgid "Dropcap Style"
+msgstr ""
+
+#: shortcodes/config.php:217
+msgid "Select the dropcap&lsquo;s style"
+msgstr ""
+
+#: shortcodes/config.php:220
+msgid "Squared"
+msgstr ""
+
+#: shortcodes/config.php:226
+msgid "Dropcap Text"
+msgstr ""
+
+#: shortcodes/config.php:227
+msgid "Enter the dropcap&lsquo;s text"
+msgstr ""
+
+#: shortcodes/config.php:232 shortcodes/config.php:330
+msgid "Font Size"
+msgstr ""
+
+#: shortcodes/config.php:233
+msgid "Enter the font&lsquo;s size in px, em or %"
+msgstr ""
+
+#: shortcodes/config.php:237
+msgid "Insert Dropcap Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:247
+msgid "Choose your image"
+msgstr ""
+
+#: shortcodes/config.php:251
+msgid "Image Filter"
+msgstr ""
+
+#: shortcodes/config.php:252
+msgid "Select the CSS3 image filter style"
+msgstr ""
+
+#: shortcodes/config.php:255
+msgid "No Filter"
+msgstr ""
+
+#: shortcodes/config.php:256
+msgid "Grayscale"
+msgstr ""
+
+#: shortcodes/config.php:257
+msgid "Sepia"
+msgstr ""
+
+#: shortcodes/config.php:258
+msgid "Blur"
+msgstr ""
+
+#: shortcodes/config.php:259
+msgid "Hue Rotate"
+msgstr ""
+
+#: shortcodes/config.php:260
+msgid "Contrast"
+msgstr ""
+
+#: shortcodes/config.php:261
+msgid "Brightness"
+msgstr ""
+
+#: shortcodes/config.php:262
+msgid "Invert"
+msgstr ""
+
+#: shortcodes/config.php:267
+msgid "Alignment"
+msgstr ""
+
+#: shortcodes/config.php:268
+msgid "Choose Image Alignment"
+msgstr ""
+
+#: shortcodes/config.php:271 shortcodes/config.php:377
+msgid "None"
+msgstr ""
+
+#: shortcodes/config.php:272
+msgid "Left"
+msgstr ""
+
+#: shortcodes/config.php:273
+msgid "Center"
+msgstr ""
+
+#: shortcodes/config.php:274
+msgid "Right"
+msgstr ""
+
+#: shortcodes/config.php:280 shortcodes/config.php:315
+msgid "URL"
+msgstr ""
+
+#: shortcodes/config.php:281
+msgid "Enter the URL where image should be linked (optional)"
+msgstr ""
+
+#: shortcodes/config.php:285
+msgid "Insert Image Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:295 shortcodes/shortcode-class.php:127
+msgid "Choose Video"
+msgstr ""
+
+#: shortcodes/config.php:296
+msgid ""
+"Either upload a new video, choose an existing video from your media library "
+"or link to a video by URL. <br><br>"
+msgstr ""
+
+#: shortcodes/config.php:296
+msgid "A list of all shortcode video services can be found on %s.<br>"
+msgstr ""
+
+#: shortcodes/config.php:300
+msgid "Insert Video Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:309
+msgid "Icon"
+msgstr ""
+
+#: shortcodes/config.php:316
+msgid "Enter the URL where icon should be linked (optional)"
+msgstr ""
+
+#: shortcodes/config.php:320
+msgid "Open in new window"
+msgstr ""
+
+#: shortcodes/config.php:321
+msgid "Do you want to open the link in a new window?"
+msgstr ""
+
+#: shortcodes/config.php:323
+msgid "No"
+msgstr ""
+
+#: shortcodes/config.php:324
+msgid "Yes"
+msgstr ""
+
+#: shortcodes/config.php:331
+msgid "Enter the icon&lsquo;s font size in px, em or %"
+msgstr ""
+
+#: shortcodes/config.php:335
+msgid "Insert Icon Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:344
+msgid "Latitude"
+msgstr ""
+
+#: shortcodes/config.php:345
+msgid "Enter the place latitude coordinate. E.g.: 37.42200"
+msgstr ""
+
+#: shortcodes/config.php:350
+msgid "Longitude"
+msgstr ""
+
+#: shortcodes/config.php:351
+msgid ""
+"Enter the place longitude coordinate. E.g.: -122.08395. You may find "
+"longitude and latitude <a href=\"%1$s\" target=\"_blank\">here</a>."
+msgstr ""
+
+#: shortcodes/config.php:356
+msgid "Width"
+msgstr ""
+
+#: shortcodes/config.php:357
+msgid "Enter the map width."
+msgstr ""
+
+#: shortcodes/config.php:362
+msgid "Height"
+msgstr ""
+
+#: shortcodes/config.php:363
+msgid "Enter the map height."
+msgstr ""
+
+#: shortcodes/config.php:368
+msgid "Zoom Level"
+msgstr ""
+
+#: shortcodes/config.php:369
+msgid ""
+"Enter the map zoom level between 0-21. Highest value zooms in and lowest "
+"zooms out."
+msgstr ""
+
+#: shortcodes/config.php:374
+msgid "Map Style"
+msgstr ""
+
+#: shortcodes/config.php:375
+msgid "Select from a list of predefined map styles."
+msgstr ""
+
+#: shortcodes/config.php:378
+msgid "Pale Dawn"
+msgstr ""
+
+#: shortcodes/config.php:379
+msgid "Subtle Grayscale"
+msgstr ""
+
+#: shortcodes/config.php:380
+msgid "Bright & Bubbly"
+msgstr ""
+
+#: shortcodes/config.php:381
+msgid "Greyscale"
+msgstr ""
+
+#: shortcodes/config.php:382
+msgid "Mixed"
+msgstr ""
+
+#: shortcodes/config.php:387
+msgid "Insert Google Map Shortcode"
+msgstr ""
+
+#: shortcodes/config.php:412
+msgid "Choose Widget Area"
+msgstr ""
+
+#: shortcodes/config.php:413
+msgid "Choose which sidebar area you want to display."
+msgstr ""
+
+#: shortcodes/config.php:419
+msgid "Class"
+msgstr ""
+
+#: shortcodes/config.php:420
+msgid "Enter Class name, if you want to use one on frontend."
+msgstr ""
+
+#: shortcodes/config.php:424
+msgid "Insert a custom widget area"
+msgstr ""
+
+#: shortcodes/shortcode-class.php:24
+msgid "Config file does not exist"
+msgstr ""
+
+#: shortcodes/shortcode-class.php:119
+msgid "Choose Image"
+msgstr ""
+
+#: shortcodes/shortcodes.php:304
+msgid "Tab"
+msgstr ""
+
+#: shortcodes/shortcodes.php:317
+msgid "Title Goes Here"
+msgstr ""
+
+#: shortcodes/stag-shortcodes.php:32
+msgid "Upload or Choose Your Custom Video File"
+msgstr ""
+
+#: shortcodes/stag-shortcodes.php:33
+msgid "Upload or Choose Your Custom Image File"
+msgstr ""
+
+#: shortcodes/stag-shortcodes.php:105
+msgid "Insert Shortcode"
+msgstr ""
+
+#: stagtools.php:118
 msgid "Settings"
 msgstr ""
 
-#: ../stagtools.php:130
+#: stagtools.php:166
 msgid "StagTools Options"
 msgstr ""
 
-#: ../stagtools.php:130
+#. Plugin Name of the plugin/theme
 msgid "StagTools"
 msgstr ""
 
-#: ../stagtools.php:313
+#: stagtools.php:364
 msgid "For more information:"
 msgstr ""
 
-#: ../stagtools.php:314
-#, php-format
-msgid ""
-"Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
+#: stagtools.php:365
+msgid "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#: ../stagtools.php:316
-#, php-format
+#: stagtools.php:367
 msgid ""
-"<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
-"\"_blank\">GitHub</a>."
+"<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" "
+"target=\"_blank\">GitHub</a>."
 msgstr ""
 
-#: ../stagtools.php:324
+#: stagtools.php:375
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: ../stagtools.php:325
+#: stagtools.php:376
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: ../stagtools.php:326
+#: stagtools.php:377
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: ../stagtools.php:327
-#, php-format
+#: stagtools.php:378
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by <a href="
-"\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
+"app, which will provide you with the keys you see above. Start by <a "
+"href=\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer "
+"dashboard."
 msgstr ""
 
-#: ../stagtools.php:328
+#: stagtools.php:379
 msgid "Where are my widgets?"
 msgstr ""
 
-#: ../stagtools.php:329
-#, php-format
+#: stagtools.php:380
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by <a href="
-"\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
+"app, which will provide you with the keys you see above. Start by <a "
+"href=\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
 "developer dashboard."
 msgstr ""
 
-#: ../stagtools.php:330
+#: stagtools.php:381
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: ../stagtools.php:331
-#, php-format
+#: stagtools.php:382
 msgid ""
-"Yes; although we have a shortcode builder you can also see a list of <a href="
-"\"%s\" target=\"_blank\">all available shortcodes</a> and use it manually in "
-"any supported area."
+"Yes; although we have a shortcode builder you can also see a list of <a "
+"href=\"%s\" target=\"_blank\">all available shortcodes</a> and use it "
+"manually in any supported area."
 msgstr ""
 
-#: ../stagtools.php:337
+#: stagtools.php:388
 msgid "Portfolio Settings"
 msgstr ""
 
-#: ../stagtools.php:338
+#: stagtools.php:389
 msgid ""
-"You can use the following settigns to control the slug/taxonomies for custom "
-"post type portfolio and skills."
+"You can use the following settigns to control the slug/taxonomies for "
+"custom post type portfolio and skills."
 msgstr ""
 
-#: ../stagtools.php:339
+#: stagtools.php:390
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: ../stagtools.php:340
+#: stagtools.php:391
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
 msgstr ""
 
-#: ../stagtools.php:346
+#: stagtools.php:397
 msgid "Using Social Icons"
 msgstr ""
 
-#: ../stagtools.php:347
+#: stagtools.php:398
 msgid "Using Social Icons Shortcode"
 msgstr ""
 
-#: ../stagtools.php:348
+#: stagtools.php:399
 msgid "To use the social icon use the following shortcode:"
 msgstr ""
 
-#: ../stagtools.php:349
-msgid ""
-"passing \"all\" in id would display all social icons with filled settings."
+#: stagtools.php:400
+msgid "It would display all social icons with non-empty profile URLs."
 msgstr ""
 
-#: ../stagtools.php:350
+#: stagtools.php:401
 msgid "or you can pass specific ids."
 msgstr ""
 
-#: ../stagtools.php:351
+#: stagtools.php:402
 msgid "Using Different Styled Icons"
 msgstr ""
 
-#: ../stagtools.php:352
+#: stagtools.php:403
 msgid ""
 "You can use the social icons in two different styles: normal and square. "
 "Just pass the <code>style</code> argument in sidebar.<br>E.g.: "
 "<code>[stag_social id=\"twitter,facebook\" style=\"square\"]</code>."
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:5
-msgid "Insert Stag Shortcode"
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/stagtools/"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:6
-msgid "Alerts / Notification"
+#. Description of the plugin/theme
+msgid ""
+"A poweful plugin to extend functionality to your WordPress themes offering "
+"shortcodes, font icons and useful widgets."
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:7
-msgid "Buttons"
+#. Author of the plugin/theme
+msgid "Ram Ratan Maurya"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:8
-msgid "Columns"
+#. Author URI of the plugin/theme
+msgid "http://mauryaratan.me"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:9
-msgid "Divider / Horizontal Ruler"
+#: includes/post-type/project.php:10
+msgctxt "post type general name"
+msgid "Projects"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:10 ../shortcodes/config.php:224
-msgid "Intro Text"
+#: includes/post-type/project.php:11
+msgctxt "post type singular name"
+msgid "Project"
 msgstr ""
 
-#: ../assets/js/plugin-lang.php:11
-msgid "Tabs"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:12
-msgid "Toggle"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:13
-msgid "Dropcap"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:14
-msgid "Font Icon"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:16
-msgid "Media Elements"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:17
-msgid "Widget Area"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:18 ../shortcodes/config.php:303
-msgid "Image"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:19
-msgid "Video"
-msgstr ""
-
-#: ../assets/js/plugin-lang.php:20
-msgid "Google Map"
-msgstr ""
-
-#: ../post-type/portfolio.php:8 ../post-type/portfolio.php:9
-#: ../settings/settings.php:99
+#: includes/post-type/project.php:12
+msgctxt "admin menu"
 msgid "Portfolio"
 msgstr ""
 
-#: ../post-type/portfolio.php:10 ../post-type/slides.php:6
-#: ../post-type/team.php:6 ../post-type/testimonials.php:6
+#: includes/post-type/project.php:13
+msgctxt "add new on admin bar"
+msgid "Project"
+msgstr ""
+
+#: includes/post-type/project.php:14
+msgctxt "Project"
 msgid "Add New"
 msgstr ""
 
-#: ../post-type/portfolio.php:11
-msgid "Add New Portfolio"
-msgstr ""
-
-#: ../post-type/portfolio.php:12
-msgid "Edit Portfolio"
-msgstr ""
-
-#: ../post-type/portfolio.php:13
-msgid "New Portfolio"
-msgstr ""
-
-#: ../post-type/portfolio.php:14
-msgid "View Portfolio"
-msgstr ""
-
-#: ../post-type/portfolio.php:15
-msgid "Search Portfolio"
-msgstr ""
-
-#: ../post-type/portfolio.php:16
-msgid "No Portfolios found"
-msgstr ""
-
-#: ../post-type/portfolio.php:17
-msgid "No Portfolios found in trash"
-msgstr ""
-
-#: ../post-type/portfolio.php:42 ../post-type/portfolio.php:63
-msgid "Skills"
-msgstr ""
-
-#: ../post-type/portfolio.php:43
-msgid "Skill"
-msgstr ""
-
-#: ../post-type/portfolio.php:62
-msgid "Portfolio Title"
-msgstr ""
-
-#: ../post-type/portfolio.php:64 ../post-type/slides.php:39
-#: ../post-type/team.php:40 ../post-type/testimonials.php:39
-msgid "Date"
-msgstr ""
-
-#: ../post-type/slides.php:4
-msgid "Slides"
-msgstr ""
-
-#: ../post-type/slides.php:5
-msgid "Slide"
-msgstr ""
-
-#: ../post-type/slides.php:7
-msgid "Add New Slide"
-msgstr ""
-
-#: ../post-type/slides.php:8
-msgid "Edit Slide"
-msgstr ""
-
-#: ../post-type/slides.php:9
-msgid "New Slide"
-msgstr ""
-
-#: ../post-type/slides.php:10
-msgid "View Slide"
-msgstr ""
-
-#: ../post-type/slides.php:11
-msgid "Search Slide"
-msgstr ""
-
-#: ../post-type/slides.php:12
-msgid "No Slides found"
-msgstr ""
-
-#: ../post-type/slides.php:13
-msgid "No Slides found in trash"
-msgstr ""
-
-#: ../post-type/slides.php:38
-msgid "Slide Title"
-msgstr ""
-
-#: ../post-type/team.php:4 ../post-type/team.php:5
-msgid "Team"
-msgstr ""
-
-#: ../post-type/team.php:7
-msgid "Add New Team Member"
-msgstr ""
-
-#: ../post-type/team.php:8
-msgid "Edit Team Member"
-msgstr ""
-
-#: ../post-type/team.php:9
-msgid "New Team Member"
-msgstr ""
-
-#: ../post-type/team.php:10
-msgid "View Team Member"
-msgstr ""
-
-#: ../post-type/team.php:11
-msgid "Search Team Member"
-msgstr ""
-
-#: ../post-type/team.php:12
-msgid "No Team Member found"
-msgstr ""
-
-#: ../post-type/team.php:13
-msgid "No Team Member in trash"
-msgstr ""
-
-#: ../post-type/team.php:38
-msgid "Team Member Title"
-msgstr ""
-
-#: ../post-type/team.php:39
-msgid "Member Info"
-msgstr ""
-
-#: ../post-type/testimonials.php:4
-msgid "Testimonials"
-msgstr ""
-
-#: ../post-type/testimonials.php:5
-msgid "Testimonial"
-msgstr ""
-
-#: ../post-type/testimonials.php:7
-msgid "Add New Testimonial"
-msgstr ""
-
-#: ../post-type/testimonials.php:8
-msgid "Edit Testimonial"
-msgstr ""
-
-#: ../post-type/testimonials.php:9
-msgid "New Testimonial"
-msgstr ""
-
-#: ../post-type/testimonials.php:10
-msgid "View Testimonial"
-msgstr ""
-
-#: ../post-type/testimonials.php:11
-msgid "Search Testimonials"
-msgstr ""
-
-#: ../post-type/testimonials.php:12
-msgid "No Testimonials found"
-msgstr ""
-
-#: ../post-type/testimonials.php:13
-msgid "No Testimonials in trash"
-msgstr ""
-
-#: ../post-type/testimonials.php:38
-msgid "Testimonial Title"
-msgstr ""
-
-#: ../settings/settings.php:97
-msgid "General"
-msgstr ""
-
-#: ../settings/settings.php:98
-msgid "Social"
-msgstr ""
-
-#: ../settings/settings.php:155
-msgid "Settings Updated"
-msgstr ""
-
-#: ../settings/settings.php:216
-msgid "Twitter Settings"
-msgstr ""
-
-#: ../settings/settings.php:217
-msgid "Configure the twitter settings"
-msgstr ""
-
-#: ../settings/settings.php:222
-msgid "OAuth Consumer Key"
-msgstr ""
-
-#: ../settings/settings.php:223
-msgid "Enter twitter OAuth Consumer Key"
-msgstr ""
-
-#: ../settings/settings.php:228
-msgid "OAuth Consumer Secret"
-msgstr ""
-
-#: ../settings/settings.php:229
-msgid "Enter twitter OAuth Consumer Secret"
-msgstr ""
-
-#: ../settings/settings.php:234
-msgid "OAuth Access Token"
-msgstr ""
-
-#: ../settings/settings.php:235
-msgid "Enter twitter OAuth Access Token"
-msgstr ""
-
-#: ../settings/settings.php:240
-msgid "OAuth Access Secret"
-msgstr ""
-
-#: ../settings/settings.php:241
-msgid "Enter twitter OAuth Access Secret"
-msgstr ""
-
-#: ../settings/settings.php:405
-msgid "Portfolio Slug"
-msgstr ""
-
-#: ../settings/settings.php:406
-msgid "Enter the slug of custom post type <strong>portfolio</strong>."
-msgstr ""
-
-#: ../settings/settings.php:412
-msgid "Skills Slug"
-msgstr ""
-
-#: ../settings/settings.php:413
-msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
-msgstr ""
-
-#: ../settings/settings.php:426
-#, php-format
-msgid ""
-"The callback function used for the <strong>%s</strong> setting is missing."
-msgstr ""
-
-#: ../shortcodes/config.php:11
-msgid "Button URL"
-msgstr ""
-
-#: ../shortcodes/config.php:12
-msgid "Add the button's url e.g. http://example.com"
-msgstr ""
-
-#: ../shortcodes/config.php:16
-msgid "Button Style"
-msgstr ""
-
-#: ../shortcodes/config.php:17
-msgid "Select the button's style, ie the button's colour"
-msgstr ""
-
-#: ../shortcodes/config.php:19 ../shortcodes/config.php:93
-msgid "Grey"
-msgstr ""
-
-#: ../shortcodes/config.php:20
-msgid "Black"
-msgstr ""
-
-#: ../shortcodes/config.php:21 ../shortcodes/config.php:96
-msgid "Green"
-msgstr ""
-
-#: ../shortcodes/config.php:22
-msgid "Light Blue"
-msgstr ""
-
-#: ../shortcodes/config.php:23 ../shortcodes/config.php:97
-msgid "Blue"
-msgstr ""
-
-#: ../shortcodes/config.php:24 ../shortcodes/config.php:94
-msgid "Red"
-msgstr ""
-
-#: ../shortcodes/config.php:25
-msgid "Orange"
-msgstr ""
-
-#: ../shortcodes/config.php:26
-msgid "Purple"
-msgstr ""
-
-#: ../shortcodes/config.php:31
-msgid "Button Size"
-msgstr ""
-
-#: ../shortcodes/config.php:32
-msgid "Select the button's size"
-msgstr ""
-
-#: ../shortcodes/config.php:34
-msgid "Small"
-msgstr ""
-
-#: ../shortcodes/config.php:35
-msgid "Medium"
-msgstr ""
-
-#: ../shortcodes/config.php:36
-msgid "Large"
-msgstr ""
-
-#: ../shortcodes/config.php:41
-msgid "Button Type"
-msgstr ""
-
-#: ../shortcodes/config.php:42
-msgid "Select the button's type"
-msgstr ""
-
-#: ../shortcodes/config.php:44 ../shortcodes/config.php:119
-#: ../shortcodes/config.php:240 ../shortcodes/config.php:276
-msgid "Normal"
-msgstr ""
-
-#: ../shortcodes/config.php:45 ../shortcodes/config.php:120
-#: ../shortcodes/config.php:241
-msgid "Stroke"
-msgstr ""
-
-#: ../shortcodes/config.php:51
-msgid "Button Icon"
-msgstr ""
-
-#: ../shortcodes/config.php:52 ../shortcodes/config.php:366
-msgid "Choose an icon"
-msgstr ""
-
-#: ../shortcodes/config.php:56
-msgid "Font Order"
-msgstr ""
-
-#: ../shortcodes/config.php:57
-msgid "Select if the icon should display before text or after text."
-msgstr ""
-
-#: ../shortcodes/config.php:59
-msgid "Before Text"
-msgstr ""
-
-#: ../shortcodes/config.php:60
-msgid "After Text"
-msgstr ""
-
-#: ../shortcodes/config.php:65
-msgid "Button Target"
-msgstr ""
-
-#: ../shortcodes/config.php:66
-msgid "_self = open in same window. _blank = open in new window"
-msgstr ""
-
-#: ../shortcodes/config.php:68
-msgid "_self"
-msgstr ""
-
-#: ../shortcodes/config.php:69
-msgid "_blank"
-msgstr ""
-
-#: ../shortcodes/config.php:75
-msgid "Button's Text"
-msgstr ""
-
-#: ../shortcodes/config.php:76
-msgid "Add the button's text"
-msgstr ""
-
-#: ../shortcodes/config.php:80
-msgid "Insert Button Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:89
-msgid "Alert Style"
-msgstr ""
-
-#: ../shortcodes/config.php:90
-msgid "Select the alert's style, ie the alert colour"
-msgstr ""
-
-#: ../shortcodes/config.php:92
-msgid "White"
-msgstr ""
-
-#: ../shortcodes/config.php:95
-msgid "Yellow"
-msgstr ""
-
-#: ../shortcodes/config.php:103
-msgid "Alert Text"
-msgstr ""
-
-#: ../shortcodes/config.php:104
-msgid "Add the alert's text"
-msgstr ""
-
-#: ../shortcodes/config.php:108
-msgid "Insert Alert Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:116
-msgid "Toggle Style"
-msgstr ""
-
-#: ../shortcodes/config.php:117
-msgid "Select the toggle's style"
-msgstr ""
-
-#: ../shortcodes/config.php:125
-msgid "Toggle Content Title"
-msgstr ""
-
-#: ../shortcodes/config.php:126
-msgid "Add the title that will go above the toggle content"
-msgstr ""
-
-#: ../shortcodes/config.php:132
-msgid "Toggle Content"
-msgstr ""
-
-#: ../shortcodes/config.php:133
-msgid "Add the toggle content. Will accept HTML"
-msgstr ""
-
-#: ../shortcodes/config.php:137
-msgid "Toggle State"
-msgstr ""
-
-#: ../shortcodes/config.php:138
-msgid "Select the state of the toggle on page load"
-msgstr ""
-
-#: ../shortcodes/config.php:140
-msgid "Open"
-msgstr ""
-
-#: ../shortcodes/config.php:141
-msgid "Closed"
-msgstr ""
-
-#: ../shortcodes/config.php:146
-msgid "Insert Toggle Content Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:152
-msgid "Insert Columns Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:160
-msgid "Column Type"
-msgstr ""
-
-#: ../shortcodes/config.php:161
-msgid "Select the type, ie width of the column."
-msgstr ""
-
-#: ../shortcodes/config.php:163
-msgid "One Third"
-msgstr ""
-
-#: ../shortcodes/config.php:164
-msgid "One Third Last"
-msgstr ""
-
-#: ../shortcodes/config.php:165
-msgid "Two Thirds"
-msgstr ""
-
-#: ../shortcodes/config.php:166
-msgid "Two Thirds Last"
-msgstr ""
-
-#: ../shortcodes/config.php:167
-msgid "One Half"
-msgstr ""
-
-#: ../shortcodes/config.php:168
-msgid "One Half Last"
-msgstr ""
-
-#: ../shortcodes/config.php:169
-msgid "One Fourth"
-msgstr ""
-
-#: ../shortcodes/config.php:170
-msgid "One Fourth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:171
-msgid "Three Fourth"
-msgstr ""
-
-#: ../shortcodes/config.php:172
-msgid "Three Fourth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:173
-msgid "One Fifth"
-msgstr ""
-
-#: ../shortcodes/config.php:174
-msgid "One Fifth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:175
-msgid "Two Fifth"
-msgstr ""
-
-#: ../shortcodes/config.php:176
-msgid "Two Fifth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:177
-msgid "Three Fifth"
-msgstr ""
-
-#: ../shortcodes/config.php:178
-msgid "Three Fifth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:179
-msgid "Four Fifth"
-msgstr ""
-
-#: ../shortcodes/config.php:180
-msgid "Four Fifth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:181
-msgid "One Sixth"
-msgstr ""
-
-#: ../shortcodes/config.php:182
-msgid "One Sixth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:183
-msgid "Five Sixth"
-msgstr ""
-
-#: ../shortcodes/config.php:184
-msgid "Five Sixth Last"
-msgstr ""
-
-#: ../shortcodes/config.php:190
-msgid "Column Content"
-msgstr ""
-
-#: ../shortcodes/config.php:191
-msgid "Add the column content."
-msgstr ""
-
-#: ../shortcodes/config.php:195
-msgid "Add Column"
-msgstr ""
-
-#: ../shortcodes/config.php:204
-msgid "Divider"
-msgstr ""
-
-#: ../shortcodes/config.php:205
-msgid "Select the style of the Divider"
-msgstr ""
-
-#: ../shortcodes/config.php:207
-msgid "Plain"
-msgstr ""
-
-#: ../shortcodes/config.php:208
-msgid "Strong"
-msgstr ""
-
-#: ../shortcodes/config.php:209
-msgid "Double"
-msgstr ""
-
-#: ../shortcodes/config.php:210
-msgid "Dashed"
-msgstr ""
-
-#: ../shortcodes/config.php:211
-msgid "Dotted"
-msgstr ""
-
-#: ../shortcodes/config.php:216
-msgid "Insert Divider"
-msgstr ""
-
-#: ../shortcodes/config.php:225
-msgid "Enter the intro text."
-msgstr ""
-
-#: ../shortcodes/config.php:230
-msgid "Insert Author Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:237
-msgid "Tabs Style"
-msgstr ""
-
-#: ../shortcodes/config.php:238
-msgid "Select the tabs's style"
-msgstr ""
-
-#: ../shortcodes/config.php:247
-msgid "Insert Tab Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:253
-msgid "Tab Title"
-msgstr ""
-
-#: ../shortcodes/config.php:254
-msgid "Title of the tab"
-msgstr ""
-
-#: ../shortcodes/config.php:259
-msgid "Tab Content"
-msgstr ""
-
-#: ../shortcodes/config.php:260
-msgid "Add the tabs content"
-msgstr ""
-
-#: ../shortcodes/config.php:264
-msgid "Add Tab"
-msgstr ""
-
-#: ../shortcodes/config.php:273
-msgid "Dropcap Style"
-msgstr ""
-
-#: ../shortcodes/config.php:274
-msgid "Select the dropcap's style"
-msgstr ""
-
-#: ../shortcodes/config.php:277
-msgid "Squared"
-msgstr ""
-
-#: ../shortcodes/config.php:283
-msgid "Dropcap Text"
-msgstr ""
-
-#: ../shortcodes/config.php:284
-msgid "Enter the dropcap's text"
-msgstr ""
-
-#: ../shortcodes/config.php:289 ../shortcodes/config.php:386
-msgid "Font Size"
-msgstr ""
-
-#: ../shortcodes/config.php:290
-msgid "Enter the font's size in px, em or %"
-msgstr ""
-
-#: ../shortcodes/config.php:294
-msgid "Insert Dropcap Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:304
-msgid "Choose your image"
-msgstr ""
-
-#: ../shortcodes/config.php:308
-msgid "Image Filter"
-msgstr ""
-
-#: ../shortcodes/config.php:309
-msgid "Select the CSS3 image filter style"
-msgstr ""
-
-#: ../shortcodes/config.php:311
-msgid "No Filter"
-msgstr ""
-
-#: ../shortcodes/config.php:312
-msgid "Grayscale"
-msgstr ""
-
-#: ../shortcodes/config.php:313
-msgid "Sepia"
-msgstr ""
-
-#: ../shortcodes/config.php:314
-msgid "Blur"
-msgstr ""
-
-#: ../shortcodes/config.php:315
-msgid "Hue Rotate"
-msgstr ""
-
-#: ../shortcodes/config.php:316
-msgid "Contrast"
-msgstr ""
-
-#: ../shortcodes/config.php:317
-msgid "Brightness"
-msgstr ""
-
-#: ../shortcodes/config.php:318
-msgid "Invert"
-msgstr ""
-
-#: ../shortcodes/config.php:323
-msgid "Alignment"
-msgstr ""
-
-#: ../shortcodes/config.php:324
-msgid "Choose Image Alignment"
-msgstr ""
-
-#: ../shortcodes/config.php:326 ../shortcodes/config.php:433
-msgid "None"
-msgstr ""
-
-#: ../shortcodes/config.php:327
-msgid "Left"
-msgstr ""
-
-#: ../shortcodes/config.php:328
-msgid "Center"
-msgstr ""
-
-#: ../shortcodes/config.php:329
-msgid "Right"
-msgstr ""
-
-#: ../shortcodes/config.php:335 ../shortcodes/config.php:371
-msgid "URL"
-msgstr ""
-
-#: ../shortcodes/config.php:336
-msgid "Enter the URL where image should be linked (optional)"
-msgstr ""
-
-#: ../shortcodes/config.php:340
-msgid "Insert Image Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:350 ../shortcodes/shortcode-class.php:123
-msgid "Choose Video"
-msgstr ""
-
-#: ../shortcodes/config.php:351
-msgid ""
-"Either upload a new video, choose an existing video from your media library "
-"or link to a video by URL. <br><br>"
-msgstr ""
-
-#: ../shortcodes/config.php:352
-#, php-format
-msgid "A list of all shortcode video services can be found on %s.<br>"
-msgstr ""
-
-#: ../shortcodes/config.php:356
-msgid "Insert Video Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:365
-msgid "Icon"
-msgstr ""
-
-#: ../shortcodes/config.php:372
-msgid "Enter the URL where icon should be linked (optional)"
-msgstr ""
-
-#: ../shortcodes/config.php:376
-msgid "Open in new window"
-msgstr ""
-
-#: ../shortcodes/config.php:377
-msgid "Do you want to open the link in a new window?"
-msgstr ""
-
-#: ../shortcodes/config.php:379
-msgid "No"
-msgstr ""
-
-#: ../shortcodes/config.php:380
-msgid "Yes"
-msgstr ""
-
-#: ../shortcodes/config.php:387
-msgid "Enter the icon's font size in px, em or %"
-msgstr ""
-
-#: ../shortcodes/config.php:391
-msgid "Insert Icon Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:400
-msgid "Latitude"
-msgstr ""
-
-#: ../shortcodes/config.php:401
-msgid "Enter the place latitude coordinate. E.g.: 37.42200"
-msgstr ""
-
-#: ../shortcodes/config.php:406
-msgid "Longitude"
-msgstr ""
-
-#: ../shortcodes/config.php:407
-#, php-format
-msgid ""
-"Enter the place longitude coordinate. E.g.: -122.08395. You may find "
-"longitude and latitude <a href=\"%1$s\" target=\"_blank\">here</a>."
-msgstr ""
-
-#: ../shortcodes/config.php:412
-msgid "Width"
-msgstr ""
-
-#: ../shortcodes/config.php:413
-msgid "Enter the map width."
-msgstr ""
-
-#: ../shortcodes/config.php:418
-msgid "Height"
-msgstr ""
-
-#: ../shortcodes/config.php:419
-msgid "Enter the map height."
-msgstr ""
-
-#: ../shortcodes/config.php:424
-msgid "Zoom Level"
-msgstr ""
-
-#: ../shortcodes/config.php:425
-msgid ""
-"Enter the map zoom level between 0-21. Highest value zooms in and lowest "
-"zooms out."
-msgstr ""
-
-#: ../shortcodes/config.php:430
-msgid "Map Style"
-msgstr ""
-
-#: ../shortcodes/config.php:431
-msgid "Select from a list of predefined map styles."
-msgstr ""
-
-#: ../shortcodes/config.php:434
-msgid "Pale Dawn"
-msgstr ""
-
-#: ../shortcodes/config.php:435
-msgid "Subtle Grayscale"
-msgstr ""
-
-#: ../shortcodes/config.php:436
-msgid "Bright & Bubbly"
-msgstr ""
-
-#: ../shortcodes/config.php:437
-msgid "Greyscale"
-msgstr ""
-
-#: ../shortcodes/config.php:438
-msgid "Mixed"
-msgstr ""
-
-#: ../shortcodes/config.php:443 ../shortcodes/config.php:480
-msgid "Insert Google Map Shortcode"
-msgstr ""
-
-#: ../shortcodes/config.php:468
-msgid "Choose Widget Area"
-msgstr ""
-
-#: ../shortcodes/config.php:469
-msgid "Choose which sidebar area you want to display."
-msgstr ""
-
-#: ../shortcodes/config.php:475
-msgid "Class"
-msgstr ""
-
-#: ../shortcodes/config.php:476
-msgid "Enter Class name, if you want to use one on frontend."
-msgstr ""
-
-#: ../shortcodes/shortcode-class.php:24
-msgid "Config file does not exist"
-msgstr ""
-
-#: ../shortcodes/shortcode-class.php:115
-msgid "Choose Image"
-msgstr ""
-
-#: ../shortcodes/shortcodes.php:275
-msgid "Tab"
-msgstr ""
-
-#: ../shortcodes/shortcodes.php:286
-msgid "Title Goes Here"
-msgstr ""
-
-#: ../shortcodes/stag-shortcodes.php:28
-msgid "Upload or Choose Your Custom Video File"
-msgstr ""
-
-#: ../shortcodes/stag-shortcodes.php:29
-msgid "Upload or Choose Your Custom Image File"
-msgstr ""
-
-#: ../shortcodes/stag-shortcodes.php:95
-msgid "Insert Shortcode"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1138
-msgid "right now"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1141
-msgid " seconds ago"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1144
-msgid "About 1 minute ago"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1147
-msgid " minutes ago"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1150
-msgid "about 1 hour ago"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1153
-msgid " hours ago"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1156
-msgid "Yesterday"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1159
-msgid " days ago"
-msgstr ""
-
-#: ../widgets/twitteroauth.php:1162
-msgid "over a year ago"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:8
-msgid "Display your latest Dribbble shots"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:10
-msgid "Stag Dribbble Shots"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:55
+#: includes/widgets/widget-dribbble.php:83
+msgctxt "Dribbble username error message"
 msgid "Please check your dribbble username"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:77
-msgid "Dribbble Shots"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:88 ../widgets/widget-flickr.php:80
-#: ../widgets/widget-instagram.php:244 ../widgets/widget-twitter.php:164
-msgid "Title:"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:93
-msgid "Username:"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:98
-msgid "Number of shots to show:"
-msgstr ""
-
-#: ../widgets/widget-dribbble.php:104
-msgid "Open links in new window?"
-msgstr ""
-
-#: ../widgets/widget-flickr.php:8
-msgid "Display your latest Flickr photos"
-msgstr ""
-
-#: ../widgets/widget-flickr.php:10
-msgid "Stag Flickr Photos"
-msgstr ""
-
-#: ../widgets/widget-flickr.php:70
-msgid "Flickr Photos"
-msgstr ""
-
-#: ../widgets/widget-flickr.php:85
-msgid "Your Flickr User ID:"
-msgstr ""
-
-#: ../widgets/widget-flickr.php:87
-#, php-format
-msgid "Head over to %s to find your Flickr user ID."
-msgstr ""
-
-#: ../widgets/widget-flickr.php:91
-msgid "Number of photos to show:"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:8
-msgid "A widget that displays your Instagram feed, posts, or likes."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:10
-msgid "Stag Instagram Photos"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:26
-msgid ""
-"<strong>Please fill all the widget settings and request an access token.</"
-"strong>"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:106
-msgid "An undefined error occurred while contacting the Instagram API."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:110
-msgid "The access token seems to be invalid or has expired."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:145
-msgid "<strong>Could not retrieve Instagram posts."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:181
-msgid "Instagram Photos"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:234
-#, php-format
-msgid ""
-"This widget requires that you register an application on the <a href=\"%s\" "
-"target=\"_blank\">Instagram Developer</a> page in order to access feed."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:238
-#, php-format
-msgid ""
-"When registering your app, set the Redirect URI field to the following: "
-"&lsquo;%swidgets.php&rsquo;"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:249
-msgid "Client ID:"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:254
-msgid "Client Secret:"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:259
-msgid "Access Token:"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:263
-msgid "Not available."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:269
-msgid ""
-"Please set the \"Client ID\" and \"Client Secret\" fields and press save to "
-"retrieve the access token."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:275
-msgid "Get Access Token"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:277
-msgid "Click to retrieve your access token."
-msgstr ""
-
-#: ../widgets/widget-instagram.php:283
-msgid "Available"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:292
-msgid "Show:"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:294
-msgid "Recent Uploads"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:295
-msgid "Following"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:296
-msgid "Liked Posts"
-msgstr ""
-
-#: ../widgets/widget-instagram.php:301
-msgid "Cache every:"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:8
-msgid "Display your latest tweets"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:10
-msgid "Stag Twitter Feed"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:36
-msgid "Please fill all widget settings."
-msgstr ""
-
-#: ../widgets/widget-twitter.php:66
-msgid "Couldn't retrieve tweets! Wrong username!"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:74
-msgid ""
-"You will need to regenerate it <a href=\"//dev.twitter.com/apps\">here</a>."
-msgstr ""
-
-#: ../widgets/widget-twitter.php:116
-msgid "Follow"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:147
-msgid "Tweets"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:160
-#, php-format
-msgid "Make sure you have filled your twitter oAuth keys under %s."
-msgstr ""
-
-#: ../widgets/widget-twitter.php:169
-msgid "Twitter Handle:"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:174
-msgid "Cache tweets in every "
-msgstr ""
-
-#: ../widgets/widget-twitter.php:176
-msgid "hours"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:180
-msgid "Number of tweets to show:"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:186
-msgid "Show retweets?"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:191
-msgid "Show replies?"
-msgstr ""
-
-#: ../widgets/widget-twitter.php:196
-msgid "Show Follow Button?"
 msgstr ""

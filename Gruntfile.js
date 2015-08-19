@@ -83,7 +83,23 @@ module.exports = function( grunt ) {
 				src: [ 'assets/temp/fontawesome.json' ],
 				dest: 'assets/js/icons.js'
 			}
-		}
+		},
+		makepot: {
+			target: {
+				options: {
+					cwd: '',
+					potFilename: 'stagtools.pot',
+					exclude: ['includes/widgets/lib/.*'],
+					type: 'wp-plugin',
+					processPot: function( pot, options ) {
+						pot.headers['report-msgid-bugs-to'] = 'https://codestag.com/support/';
+						pot.headers['last-translator'] = 'Codestag';
+						pot.headers['language-team'] = 'Codestag';
+						return pot;
+					}
+				}
+			}
+		},
 	});
 
 	// Process the icons YAML file

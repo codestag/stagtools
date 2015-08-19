@@ -1,6 +1,6 @@
 {
 	"name": "stagtools",
-	"version": "1.2.6",
+	"version": "2.0.1",
 	"description": "A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.",
 	"homepage": "https://github.com/mauryaratan/stagtools",
 	"bugs": "https://github.com/mauryaratan/stagtools/issues",
@@ -21,6 +21,7 @@
         "lodash": "~2.4.1",
         "grunt-contrib-clean": "~0.5.0",
         "grunt-text-replace": "~0.3.9",
+        "grunt-wp-i18n": "~0.5.3",
         "semver": "~2.2.1"
 	}
 }
