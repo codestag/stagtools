@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 2.0
+Tested up to: 4.3
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,8 +64,8 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 1. StagTools widgets will appear in you list of available widgets.
 2. Shortcode builder is located on your WordPress editor at very last.
-2. All widgets added by StagTools are highlighted.
-3. Settings panel for adding twitter oAuth keys.
+3. All widgets added by StagTools are highlighted.
+4. Settings panel for adding twitter oAuth keys.
 
 == Installation ==
 
@@ -92,6 +92,13 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.0.1 - August 21, 2014 =
+* Fix - PHP constructor method error, introduced in WordPress 4.3
+* Fix - Invalid flickr ID error when adding widget, props @ragzor
+* Fix - StagTools modal excessive padding in some cases
+* Fix - Updated language files
+* Updated - FontAwesome library v4.4.0
 
 = 2.0 - July 15, 2014 =
 * New - Restyled and simplified font icon selector
