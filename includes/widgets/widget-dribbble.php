@@ -14,7 +14,7 @@ class Stag_Dribbble extends ST_Widget {
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
-				'std'   => 'Latest Posts',
+				'std'   => 'Latest Shots',
 				'label' => __( 'Title:', 'stag' ),
 			),
 			'dribbble_name' => array(

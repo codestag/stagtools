@@ -69,14 +69,18 @@ class Stag_Flickr extends ST_Widget {
 			<ul class="flickr-photos">
 				<?php
 
-				foreach ( $items as $item ) {
+				if (isset($items)) {
+					foreach ( $items as $item ) {
 
-					$image_group = $item->get_item_tags( 'http://search.yahoo.com/mrss/', 'thumbnail' );
-					$image_attrs = $image_group[0]['attribs'];
+						$image_group = $item->get_item_tags( 'http://search.yahoo.com/mrss/', 'thumbnail' );
+						$image_attrs = $image_group[0]['attribs'];
 
-					foreach ( $image_attrs as $image ) {
-						echo '<li><a target="_blank" href="' . esc_url( $item->get_permalink() ) . '"><img src="'. esc_url( $image['url'] ) .'" width="' . esc_attr( $image['width'] ) . '" height="' . esc_attr( $image['height'] ) . '" alt="'. esc_attr( $item->get_title() ) .'"></a></li>';
+						foreach ( $image_attrs as $image ) {
+							echo '<li><a target="_blank" href="' . esc_url( $item->get_permalink() ) . '"><img src="'. esc_url( $image['url'] ) .'" width="' . esc_attr( $image['width'] ) . '" height="' . esc_attr( $image['height'] ) . '" alt="'. esc_attr( $item->get_title() ) .'"></a></li>';
+						}
 					}
+				} else {
+					_e( 'Invalid flickr ID', 'stag' );
 				}
 
 				?>
