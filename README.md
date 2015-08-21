@@ -39,6 +39,6 @@ Stagtools includes the following shortcodes:
 
 Shortcodes can easily be inserted via the button include in the editor, check the screenshot:
 
-![StagTools shortcodes](https://i.cloudup.com/kccxOo7_Xh.png)
+![StagTools shortcodes](https://cldup.com/XhBvxAfAhH.jpg)
 
 Apart from above, the plugin also comes with 4 widgets: Twitter, Dribbble, Flickr, and Instagram

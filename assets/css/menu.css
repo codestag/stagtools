@@ -243,3 +243,7 @@
 	font-weight: bold;
 	margin: 20px 0 20px 5px;
 }
+
+#TB_ajaxContent#TB_ajaxContent {
+	padding: 0 !important;
+}
