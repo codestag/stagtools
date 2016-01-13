@@ -52,7 +52,7 @@ class Stag_Dribbble extends ST_Widget {
 		// Includes feed function
 		include_once( ABSPATH . WPINC . '/feed.php' );
 
-		$rss = fetch_feed( "http://dribbble.com/players/$dribbble_name/shots.rss" );
+		$rss = fetch_feed( "https://dribbble.com/$dribbble_name/shots.rss" );
 
 		add_filter( 'wp_feed_cache_transient_lifetime', create_function( '$a', 'return 1800;' ) );
 
