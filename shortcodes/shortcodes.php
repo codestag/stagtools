@@ -537,7 +537,11 @@ function stag_social( $atts ) {
 			if ( 'mail' == $slug ) $class = 'envelope';
 			if ( 'vimeo' == $slug ) $class = 'vimeo-square';
 
-			$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
+			if ( 'skype' == $slug ) {
+				$output .= "<a href='". $settings[$slug] ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
+			} else {
+				$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
+			}
 		}
 	}
 	$output .= '</div>';
