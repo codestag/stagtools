@@ -348,7 +348,7 @@ $stag_shortcodes['map'] = array(
 			'std'   => '',
 			'type'  => 'text',
 			'label' => __( 'Longitude', 'stag' ),
-			'desc'  => sprintf( __( 'Enter the place longitude coordinate. E.g.: -122.08395. You may find longitude and latitude <a href="%1$s" target="_blank">here</a>.', 'stag' ), esc_url( 'http://universimmedia.pagesperso-orange.fr/geo/loc.htm' ) )
+			'desc'  => sprintf( __( 'Enter the place longitude coordinate. E.g.: -122.08395. You may find the coordinates <a href="%1$s" target="_blank">here</a>.', 'stag' ), esc_url( 'http://universimmedia.pagesperso-orange.fr/geo/loc.htm' ) )
 		),
 		'width' => array(
 			'std'   => '100%',
@@ -361,6 +361,18 @@ $stag_shortcodes['map'] = array(
 			'type'  => 'text',
 			'label' => __( 'Height', 'stag' ),
 			'desc'  => __( 'Enter the map height.', 'stag' )
+		),
+		'type' => array(
+			'std'     => 'roadmap',
+			'type'    => 'select',
+			'label'   => __( 'Map Type', 'stag' ),
+			'desc'    => __( 'Select the map type for Google Maps.', 'stag' ),
+			'options' => array(
+				'roadmap'   => __( 'Roadmap', 'stag' ),
+				'satellite' => __( 'Satellite', 'stag' ),
+				'hybrid'    => __( 'Hybrid', 'stag' ),
+				'terrain'   => __( 'Terrain', 'stag' ),
+			)
 		),
 		'zoom' => array(
 			'std'   => '15',
@@ -383,7 +395,7 @@ $stag_shortcodes['map'] = array(
 			)
 		),
 	),
-	'shortcode'   => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}" zoom="{{zoom}}"]',
+	'shortcode'   => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}" zoom="{{zoom}}" type="{{type}}"]',
 	'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
 );
 

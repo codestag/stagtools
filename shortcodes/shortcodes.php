@@ -430,6 +430,7 @@ function stag_map( $atts ) {
 		'height' => '350px',
 		'zoom'   => 15,
 		'style'  => 'none',
+		'type'   => 'roadmap',
 	), $atts, 'stag_map' );
 
 	$map_styles = array(
@@ -461,6 +462,7 @@ function stag_map( $atts ) {
 	    				zoom: parseFloat(options.zoom),
 	    				center: new google.maps.LatLng(options.center.lat, options.center.long),
 	    				scrollwheel: false,
+	    				mapTypeId: options.mapTypeId,
 	    				styles: options.styles
 	    			};
 
@@ -483,6 +485,7 @@ function stag_map( $atts ) {
     	    	id: "<?php echo esc_js( $map_id ); ?>",
     	    	styles: <?php echo $map_styles[$args['style']]; ?>,
     	    	zoom: <?php echo esc_js( $args['zoom'] ); ?>,
+    	    	mapTypeId: google.maps.MapTypeId.<?php echo esc_js( strtoupper( $args['type'] ) ); ?>,
     	    	center: {
     	    		lat: "<?php echo esc_js( $args['lat'] ); ?>",
     	    		long: "<?php echo esc_js( $args['long'] ); ?>"
