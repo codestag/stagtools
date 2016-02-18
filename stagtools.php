@@ -298,7 +298,7 @@ class StagTools {
 	 */
 	public function widget_styles() {
 		global $pagenow;
-		if ( $pagenow != 'widgets.php' ) return;
+		if ( 'widgets.php' != $pagenow ) return;
 		?>
 		<style type="text/css">
 		div[id*="_stag"] .widget-top {

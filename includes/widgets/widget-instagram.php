@@ -117,7 +117,6 @@ class Stag_Instagram extends ST_Widget {
 								esc_html( $image['caption']['text'] )
 							), $image );
 						}
-
 					}
 				?>
 
@@ -187,7 +186,7 @@ class Stag_Instagram extends ST_Widget {
 	}
 
 	public static function register() {
-	    register_widget( __CLASS__ );
+		register_widget( __CLASS__ );
 	}
 }
 endif;

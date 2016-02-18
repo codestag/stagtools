@@ -70,7 +70,7 @@ function stagtools_options_page() {
 				<table class="form-table">
 				<?php
 
-				if ( $_GET['page'] == 'stagtools' && isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == 'true' ) {
+				if ( 'stagtools' == $_GET['page'] && isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) {
 					flush_rewrite_rules();
 				}
 

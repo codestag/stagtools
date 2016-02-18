@@ -69,7 +69,7 @@ class Stag_Flickr extends ST_Widget {
 			<ul class="flickr-photos">
 				<?php
 
-				if (isset($items)) {
+				if ( isset( $items ) ) {
 					foreach ( $items as $item ) {
 
 						$image_group = $item->get_item_tags( 'http://search.yahoo.com/mrss/', 'thumbnail' );
@@ -98,7 +98,7 @@ class Stag_Flickr extends ST_Widget {
 	}
 
 	public static function register() {
-	    register_widget( __CLASS__ );
+		register_widget( __CLASS__ );
 	}
 }
 

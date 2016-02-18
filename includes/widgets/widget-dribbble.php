@@ -96,7 +96,7 @@ class Stag_Dribbble extends ST_Widget {
 	}
 
 	public static function register() {
-	    register_widget( __CLASS__ );
+		register_widget( __CLASS__ );
 	}
 }
 

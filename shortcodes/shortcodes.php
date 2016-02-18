@@ -185,7 +185,7 @@ function stag_button( $atts, $content = null ) {
 	$class       .= " stag-button--{$args['type']}";
 
 	if ( ! empty( $args['icon'] ) ) {
-		if ( $args['icon_order'] == 'before' ) {
+		if ( 'before' == $args['icon_order'] ) {
 			$button_content = stag_icon( array( 'icon' => $args['icon'] ) );
 			$button_content .= do_shortcode( $content );
 		} else {
@@ -211,9 +211,9 @@ if ( ! function_exists( 'stag_alert' ) ) :
  * @deprecated 2.0.0.
  */
 function stag_alert( $atts, $content = null ) {
-    $args = shortcode_atts( array(
-    	'style' => 'white',
-    ), $atts, 'stag_alert' );
+	$args = shortcode_atts( array(
+		'style' => 'white',
+	), $atts, 'stag_alert' );
 
 	return '<div class="stag-section stag-alert stag-alert--'. esc_attr( $args['style'] ) .'">' . do_shortcode( $content ) . '</div>';
 }
@@ -271,27 +271,27 @@ function stag_tabs( $atts, $content = null ) {
 	preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
 
 	$tab_titles = array();
-    if ( isset($matches[1]) ) {
-    	$tab_titles = $matches[1];
-    }
+	if ( isset($matches[1]) ) {
+		$tab_titles = $matches[1];
+	}
 
-    $output = '';
+	$output = '';
 
-    if ( count( $tab_titles ) ) {
-    	$output .= '<section id="stag-tabs-'. rand( 1, 100 ) .'" class="stag-section stag-tabs stag-tabs--'. esc_attr( $args['style'] ) .'"><div class="stag-tab-inner">';
-    	$output .= '<ul class="stag-nav stag-clearfix">';
+	if ( count( $tab_titles ) ) {
+		$output .= '<section id="stag-tabs-'. rand( 1, 100 ) .'" class="stag-section stag-tabs stag-tabs--'. esc_attr( $args['style'] ) .'"><div class="stag-tab-inner">';
+		$output .= '<ul class="stag-nav stag-clearfix">';
 
-    	foreach ( $tab_titles as $tab ) {
-    		$output .= '<li><a href="#stag-tab-'. sanitize_title( $tab[0] ) .'">' . $tab[0] . '</a></li>';
-    	}
+		foreach ( $tab_titles as $tab ) {
+			$output .= '<li><a href="#stag-tab-'. sanitize_title( $tab[0] ) .'">' . $tab[0] . '</a></li>';
+		}
 
-    	$output .= '</ul>';
-    	$output .= do_shortcode( $content );
-    	$output .= '</div></section>';
-    } else {
-    	$output .= do_shortcode( $content );
-    }
-    return $output;
+		$output .= '</ul>';
+		$output .= do_shortcode( $content );
+		$output .= '</div></section>';
+	} else {
+		$output .= do_shortcode( $content );
+	}
+	return $output;
 }
 endif;
 
@@ -449,51 +449,51 @@ function stag_map( $atts ) {
 	?>
 
 	<script type="text/javascript">
-	    jQuery(window).load(function(){
-	    	var Stagtools = {};
+		jQuery(window).load(function(){
+			var Stagtools = {};
 
-	    	Stagtools.Map = ( function($) {
-	    		function setupMap(options) {
-	    			var mapOptions, mapElement, map, marker;
+			Stagtools.Map = ( function($) {
+				function setupMap(options) {
+					var mapOptions, mapElement, map, marker;
 
-	    			if ( typeof google === 'undefined' ) return;
+					if ( typeof google === 'undefined' ) return;
 
-	    			mapOptions = {
-	    				zoom: parseFloat(options.zoom),
-	    				center: new google.maps.LatLng(options.center.lat, options.center.long),
-	    				scrollwheel: false,
-	    				mapTypeId: options.mapTypeId,
-	    				styles: options.styles
-	    			};
+					mapOptions = {
+						zoom: parseFloat(options.zoom),
+						center: new google.maps.LatLng(options.center.lat, options.center.long),
+						scrollwheel: false,
+						mapTypeId: options.mapTypeId,
+						styles: options.styles
+					};
 
-	    			mapElement = document.getElementById(options.id);
-	    		 	map = new google.maps.Map(mapElement, mapOptions);
+					mapElement = document.getElementById(options.id);
+					map = new google.maps.Map(mapElement, mapOptions);
 
-	    			marker = new google.maps.Marker({
-	    				position: new google.maps.LatLng(options.center.lat, options.center.long),
-	    				map: map
-	    			});
-	    		}
-	    		return {
-	    			init: function(options) {
-	    				setupMap(options);
-	    			}
-	    		}
-	    	} )(jQuery);
+					marker = new google.maps.Marker({
+						position: new google.maps.LatLng(options.center.lat, options.center.long),
+						map: map
+					});
+				}
+				return {
+					init: function(options) {
+						setupMap(options);
+					}
+				}
+			} )(jQuery);
 
-    	    var options = {
-    	    	id: "<?php echo esc_js( $map_id ); ?>",
-    	    	styles: <?php echo $map_styles[$args['style']]; ?>,
-    	    	zoom: <?php echo esc_js( $args['zoom'] ); ?>,
-    	    	mapTypeId: google.maps.MapTypeId.<?php echo esc_js( strtoupper( $args['type'] ) ); ?>,
-    	    	center: {
-    	    		lat: "<?php echo esc_js( $args['lat'] ); ?>",
-    	    		long: "<?php echo esc_js( $args['long'] ); ?>"
-    	    	}
-    	    };
+			var options = {
+				id: "<?php echo esc_js( $map_id ); ?>",
+				styles: <?php echo $map_styles[$args['style']]; ?>,
+				zoom: <?php echo esc_js( $args['zoom'] ); ?>,
+				mapTypeId: google.maps.MapTypeId.<?php echo esc_js( strtoupper( $args['type'] ) ); ?>,
+				center: {
+					lat: "<?php echo esc_js( $args['lat'] ); ?>",
+					long: "<?php echo esc_js( $args['long'] ); ?>"
+				}
+			};
 
-    	    Stagtools.Map.init(options);
-	    });
+			Stagtools.Map.init(options);
+		});
 	</script>
 
 	<?php
@@ -523,7 +523,7 @@ function stag_social( $atts ) {
 	$settings            = get_option( 'stag_options' );
 	$output              = '<div class="stag-social-icons '. esc_attr( $args['style'] ) .'">';
 
-	if ( $args['id'] == '' || $args['id'] == 'all' ) {
+	if ( '' == $args['id'] || 'all' == $args['id'] ) {
 		$social_ids = $social_urls;
 	} else {
 		$social_ids = explode( ',', $args['id'] );
@@ -566,7 +566,7 @@ if ( ! function_exists( 'stag_columns' ) ) :
  * @return mixed
  */
 function stag_columns( $atts, $content = null ) {
-    return '<section class="stag-section stag-columns">' . do_shortcode( $content ) . '</section>';
+	return '<section class="stag-section stag-columns">' . do_shortcode( $content ) . '</section>';
 }
 endif;
 add_shortcode( 'stag_columns', 'stag_columns' );
