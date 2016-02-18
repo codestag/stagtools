@@ -89,10 +89,11 @@ $stag_shortcodes['button'] = array(
 $stag_shortcodes['toggle'] = array(
 	'no_preview' => true,
 	'params' => array(
-		'style' => array(
-			'type'    => 'select',
+		'toggle-style' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Toggle Style', 'stag' ),
 			'desc'    => __( 'Select the toggle&lsquo;s style', 'stag' ),
+			'std'     => 'normal',
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' ),
@@ -110,17 +111,18 @@ $stag_shortcodes['toggle'] = array(
 			'label' => __( 'Toggle Content', 'stag' ),
 			'desc'  => __( 'Add the toggle content. Will accept HTML', 'stag' ),
 		),
-		'state' => array(
-			'type'    => 'select',
+		'toggle-state' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Toggle State', 'stag' ),
 			'desc'    => __( 'Select the state of the toggle on page load', 'stag' ),
+			'std'     => 'open',
 			'options' => array(
 				'open'   => __( 'Open', 'stag' ),
 				'closed' => __( 'Closed', 'stag' )
 			)
 		),
 	),
-	'shortcode'   => '[stag_toggle style="{{style}}" title="{{title}}" state="{{state}}"]{{content}}[/stag_toggle]',
+	'shortcode'   => '[stag_toggle style="{{toggle-style}}" title="{{title}}" state="{{toggle-state}}"]{{content}}[/stag_toggle]',
 	'popup_title' => __( 'Insert Toggle Content Shortcode', 'stag' )
 );
 
@@ -176,10 +178,11 @@ $stag_shortcodes['columns'] = array(
 
 $stag_shortcodes['tabs'] = array(
 	'params' => array(
-		'style' => array(
-			'type'    => 'select',
+		'tabs-style' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Tabs Style', 'stag' ),
 			'desc'    => __( 'Select the tabs&lsquo;s style', 'stag' ),
+			'std'     => 'normal',
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' ),
@@ -187,7 +190,7 @@ $stag_shortcodes['tabs'] = array(
 		)
 	),
 	'no_preview'  => true,
-	'shortcode'   => '[stag_tabs style="{{style}}"]{{child_shortcode}} [/stag_tabs]',
+	'shortcode'   => '[stag_tabs style="{{tabs-style}}"]{{child_shortcode}} [/stag_tabs]',
 	'popup_title' => __( 'Insert Tab Shortcode', 'stag' ),
 	'child_shortcode' => array(
 		'params' => array(
@@ -212,10 +215,11 @@ $stag_shortcodes['tabs'] = array(
 $stag_shortcodes['dropcap'] = array(
 	'no_preview' => true,
 	'params' => array(
-		'style' => array(
-			'type'    => 'select',
-			'label'   => __( 'Dropcap Style', 'stag' ),
-			'desc'    => __( 'Select the dropcap&lsquo;s style', 'stag' ),
+		'dropcap-style' => array(
+			'type'  => 'buttonset',
+			'label' => __( 'Dropcap Style', 'stag' ),
+			'desc'  => __( 'Select the dropcap&lsquo;s style', 'stag' ),
+			'std'   => 'normal',
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'squared' => __( 'Squared', 'stag' ),
@@ -234,7 +238,7 @@ $stag_shortcodes['dropcap'] = array(
 			'desc'  => __( 'Enter the font&lsquo;s size in px, em or %', 'stag' ),
 		),
 	),
-	'shortcode'   => '[stag_dropcap font_size="{{size}}" style="{{style}}"]{{content}}[/stag_dropcap]',
+	'shortcode'   => '[stag_dropcap font_size="{{size}}" style="{{dropcap-style}}"]{{content}}[/stag_dropcap]',
 	'popup_title' => __( 'Insert Dropcap Shortcode', 'stag' )
 );
 
@@ -263,8 +267,8 @@ $stag_shortcodes['image'] = array(
 				'invert'     => __( 'Invert', 'stag' ),
 			)
 		),
-		'alignment' => array(
-			'type'    => 'select',
+		'image-alignment' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Alignment', 'stag' ),
 			'desc'    => __( 'Choose Image Alignment', 'stag' ),
 			'std'     => 'none',
@@ -282,7 +286,7 @@ $stag_shortcodes['image'] = array(
 			'desc' => __( 'Enter the URL where image should be linked (optional)', 'stag' )
 		)
 	),
-	'shortcode'   => '[stag_image style="{{style}}" src="{{src}}" alignment="{{alignment}}" url="{{url}}"]',
+	'shortcode'   => '[stag_image style="{{style}}" src="{{src}}" alignment="{{image-alignment}}" url="{{url}}"]',
 	'popup_title' => __( 'Insert Image Shortcode', 'stag' )
 );
 
@@ -316,10 +320,11 @@ $stag_shortcodes['icon'] = array(
 			'label' => __( 'URL', 'stag' ),
 			'desc'  => __( 'Enter the URL where icon should be linked (optional)', 'stag' )
 		),
-		'new_window' => array(
-			'type'    => 'select',
+		'icon_new_window' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Open in new window', 'stag' ),
 			'desc'    => __( 'Do you want to open the link in a new window?', 'stag' ),
+			'std'     => 'no',
 			'options' => array(
 				'no'  => __( 'No', 'stag' ),
 				'yes' => __( 'Yes', 'stag' ),
@@ -332,7 +337,7 @@ $stag_shortcodes['icon'] = array(
 			'desc' => __( 'Enter the icon&lsquo;s font size in px, em or %', 'stag' ),
 		)
 	),
-	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{new_window}}"]',
+	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{icon_new_window}}"]',
 	'popup_title' => __( 'Insert Icon Shortcode', 'stag' )
 );
 
@@ -363,9 +368,9 @@ $stag_shortcodes['map'] = array(
 			'label' => __( 'Height', 'stag' ),
 			'desc'  => __( 'Enter the map height.', 'stag' )
 		),
-		'type' => array(
+		'map-type' => array(
 			'std'     => 'roadmap',
-			'type'    => 'select',
+			'type'    => 'buttonset',
 			'label'   => __( 'Map Type', 'stag' ),
 			'desc'    => __( 'Select the map type for Google Maps.', 'stag' ),
 			'options' => array(
@@ -396,7 +401,7 @@ $stag_shortcodes['map'] = array(
 			)
 		),
 	),
-	'shortcode'   => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}" zoom="{{zoom}}" type="{{type}}"]',
+	'shortcode'   => '[stag_map lat="{{lat}}" long="{{long}}" width="{{width}}" height="{{height}}" style="{{style}}" zoom="{{zoom}}" type="{{map-type}}"]',
 	'popup_title' => __( 'Insert Google Map Shortcode', 'stag' )
 );
 
