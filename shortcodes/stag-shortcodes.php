@@ -22,6 +22,8 @@ class StagShortcodes {
 			wp_register_script( 'font-awesome-icons-list', $stagtools->plugin_url() . '/assets/js/icons'. SCRIPT_SUFFIX .'.js', array(), false, true );
 			wp_enqueue_script( 'font-awesome-icons-list' );
 
+			wp_enqueue_script( 'jquery-ui-button' );
+
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins'. SCRIPT_SUFFIX .'.js', array( 'font-awesome-icons-list' ), $stagtools->version, true );
 

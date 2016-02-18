@@ -362,6 +362,13 @@ jQuery(document).ready(function($) {
                 $('.stag-input').trigger('change');
             } );
 
+            $('.stag-control-buttonset').buttonset();
+            $('.stag-control-buttonset').on( 'change', 'input', function(e) {
+                var id = $(this).data('key');
+                $('#'+id).val( $(this).val() );
+                $('.stag-input').trigger('change');
+            });
+
             // when insert is clicked
             $('.stag-insert', form).click(function() {
                 if(window.tinyMCE) {

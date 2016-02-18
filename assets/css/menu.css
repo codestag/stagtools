@@ -241,9 +241,37 @@
 .stag-all-icons .icon-category {
 	display: block;
 	font-weight: bold;
-	margin: 20px 0 20px 5px;
+	margin: 15px 0 15px 5px;
 }
 
 #TB_ajaxContent#TB_ajaxContent {
 	padding: 0 !important;
+}
+
+.stag-control-buttonset {
+	position: relative;
+	width: 100%;
+	padding: 1px;
+	overflow: auto;
+	height: auto;
+}
+
+.stag-control-buttonset label {
+	display: inline-block;
+	float: left;
+	font-size: 13px;
+	border: none;
+	outline: 1px solid #ccc;
+	line-height: 28px;
+    padding: 5px 10px;
+    border-color: #ccc;
+}
+
+.stag-control-buttonset label.ui-state-default {
+	background: #eee;
+}
+
+.stag-control-buttonset label.ui-state-active {
+	color: #212121;
+    background: #fff;
 }

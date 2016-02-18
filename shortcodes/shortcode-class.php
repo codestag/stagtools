@@ -105,6 +105,26 @@ class Stag_Shortcodes {
 						$this->append_output( $output );
 					break;
 
+					case 'buttonset' :
+						$output = $row_start;
+
+						ksort( $param['options'] );
+
+						$output .= "<div class='stag-control-buttonset'>";
+
+						if ( ! isset( $param['std'] ) ) $param['std'] = '';
+
+						foreach ( $param['options'] as $value => $option ) {
+							$output .= "<input data-key='$pkey' id='{$pkey}_{$value}' name='$pkey' type='radio' value='$value' ". checked( $value, $param['std'], false ) ." />";
+							$output .= "<label data-key='$pkey' for='{$pkey}_{$value}'>$option</label>";
+						}
+
+						$output .= '</div>';
+						$output .= '<input class="stag-input" type="hidden" name="' . $pkey . '" id="' . $pkey . '" value="' . $param['std'] . '" />';
+						$output .= $row_end;
+						$this->append_output( $output );
+					break;
+
 					case 'checkbox' :
 						$output = $row_start;
 						$output .= '<label for="' . $pkey . '" class="stag-form-checkbox">' . "\n";
