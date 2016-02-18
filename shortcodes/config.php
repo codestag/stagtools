@@ -11,8 +11,8 @@ $stag_shortcodes['button'] = array(
 			'label' => __( 'Button URL', 'stag' ),
 			'desc'  => __( 'Add the button&lsquo;s url e.g. http://example.com', 'stag' )
 		),
-		'style' => array(
-			'type'    => 'select',
+		'button-style' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Button Style', 'stag' ),
 			'desc'    => __( 'Select the button&lsquo;s style, ie the button&lsquo;s colour', 'stag' ),
 			'std'     => 'black',
@@ -28,8 +28,8 @@ $stag_shortcodes['button'] = array(
 				'white'      => __( 'White', 'stag' )
 			)
 		),
-		'size' => array(
-			'type'    => 'select',
+		'button-size' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Button Size', 'stag' ),
 			'desc'    => __( 'Select the button&lsquo;s size', 'stag' ),
 			'std'     => 'small',
@@ -39,10 +39,11 @@ $stag_shortcodes['button'] = array(
 				'large'  => __( 'Large', 'stag' )
 			)
 		),
-		'type' => array(
-			'type'    => 'select',
+		'button-type' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Button Type', 'stag' ),
 			'desc'    => __( 'Select the button&lsquo;s type', 'stag' ),
+			'std'     => 'normal',
 			'options' => array(
 				'normal' => __( 'Normal', 'stag' ),
 				'stroke' => __( 'Stroke', 'stag' )
@@ -54,8 +55,8 @@ $stag_shortcodes['button'] = array(
 			'label' => __( 'Button Icon', 'stag' ),
 			'desc'  => __( 'Choose an icon', 'stag' )
 		),
-		'icon_order' => array(
-			'type'    => 'select',
+		'button-icon_order' => array(
+			'type'    => 'buttonset',
 			'label'   => __( 'Font Order', 'stag' ),
 			'desc'    => __( 'Select if the icon should display before text or after text.', 'stag' ),
 			'std'     => 'before',
@@ -64,14 +65,14 @@ $stag_shortcodes['button'] = array(
 				'after'  => __( 'After Text', 'stag' )
 			)
 		),
-		'target' => array(
-			'type'    => 'select',
-			'label'   => __( 'Button Target', 'stag' ),
-			'desc'    => __( '_self = open in same window. _blank = open in new window', 'stag' ),
+		'button-target' => array(
+			'type'    => 'buttonset',
+			'label'   => __( 'Open links in same window?', 'stag' ),
+			'desc'    => null,
 			'std'     => '_self',
 			'options' => array(
-				'_self'  => __( '_self', 'stag' ),
-				'_blank' => __( '_blank', 'stag' )
+				'_blank' => __( 'Same Window', 'stag' ),
+				'_self'  => __( 'New Window', 'stag' ),
 			)
 		),
 		'content' => array(
@@ -81,7 +82,7 @@ $stag_shortcodes['button'] = array(
 			'desc'  => __( 'Add the button&lsquo;s text', 'stag' ),
 		)
 	),
-	'shortcode'   => '[stag_button url="{{url}}" style="{{style}}" size="{{size}}" type="{{type}}" target="{{target}}" icon="{{icon}}" icon_order="{{icon_order}}"]{{content}}[/stag_button]',
+	'shortcode'   => '[stag_button url="{{url}}" style="{{button-style}}" size="{{button-size}}" type="{{button-type}}" target="{{button-target}}" icon="{{icon}}" icon_order="{{button-icon_order}}"]{{content}}[/stag_button]',
 	'popup_title' => __( 'Insert Button Shortcode', 'stag' )
 );
 
