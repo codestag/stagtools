@@ -112,9 +112,9 @@ class Stag_Instagram extends ST_Widget {
 
 						if ( $displayed <= $count ) {
 							echo apply_filters( 'st_instagram_widget_image_html', sprintf( '<li><a href="%1$s"><img class="instagram-image" src="%2$s" alt="%3$s" title="%3$s" /></a></li>',
-								$image['link'],
-								$image['images'][ $image_res ]['url'],
-								$image['caption']['text']
+								esc_url( $image['link'] ),
+								esc_url( $image['images'][ $image_res ]['url'] ),
+								esc_html( $image['caption']['text'] )
 							), $image );
 						}
 
