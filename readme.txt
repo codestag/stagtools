@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 2.0.1
+Tested up to: 4.5
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,20 +13,17 @@ StagTools is a powerful plugin to extend functionality to your WordPress themes 
 
 == Description ==
 
-StagTools powers your WordPress website with some regularly needed shortcodes including buttons, columns, alerts, font icons etc. It also includes several widgets and custom post types (only for Codestag Themes).
+StagTools powers your WordPress website with some regularly needed shortcodes including buttons, columns, alerts, font icons etc. It also includes several widgets and editor styles.
 
 **Shortcodes:**
 
-* Alerts
 * Buttons ( optionally, with font icons )
 * Columns
-* Divider / Horizontal Ruler
 * Dropcaps
-* Intro Text
 * Tabs
 * Toggle
 * Font Icons by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-* Google Maps with 5 predefined styles
+* Google Maps with 5 predefined styles, and map types
 * Custom Sidebars Area ( requires [Stag Custom Sidebars](https://wordpress.org/plugins/stag-custom-sidebars/) plugin )
 * Image with CSS3 filters
 * Videos ( supports [oEmbeds](https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
@@ -66,6 +63,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 2. Shortcode builder is located on your WordPress editor at very last.
 3. All widgets added by StagTools are highlighted.
 4. Settings panel for adding twitter oAuth keys.
+5. Editor styles; includes Intro Text/Run In and alerts.
 
 == Installation ==
 
@@ -92,6 +90,14 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.1.0 - February 26, 2016 =
+* New - Google map shortcode now supports map type to choose between Roadmap, Satellite, Hybrid, and Terrain
+* Tweak - Replaced dropdown fields in Shortcode generator with buttonsets
+* Fix - Instagram widget to work with new API
+* Fix - Dribbble widget feed URL causing widget to fail
+* Fix - Fix an issue with Skype field showing incorrect value due to URL escaping
+* Updated - FontAwesome library v4.5.0
 
 = 2.0.1 - August 21, 2014 =
 * Fix - PHP constructor method error, introduced in WordPress 4.3

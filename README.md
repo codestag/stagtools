@@ -23,19 +23,16 @@ The purpose of StagTools is to keep your content consistent, while you want to c
 
 ### Shortcodes
 Stagtools includes the following shortcodes:
-* Alerts
 * Buttons ( optionally, with font icons )
 * Columns
-* Divider / Horizontal Ruler
 * Dropcaps
-* Intro Text
 * Tabs
 * Toggle
-* Font Icons by Font Awesome
-* Google Maps with 5 predefined styles
+* Font Icons by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+* Google Maps with 5 predefined styles, and map types
 * Custom Sidebars Area ( requires [Stag Custom Sidebars](https://wordpress.org/plugins/stag-custom-sidebars/) plugin )
 * Image with CSS3 filters
-* Videos ( supports oEmbeds )
+* Videos ( supports [oEmbeds](https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
 
 Shortcodes can easily be inserted via the button include in the editor, check the screenshot:
 
