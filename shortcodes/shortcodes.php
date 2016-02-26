@@ -521,7 +521,7 @@ function stag_social( $atts ) {
 	$registered_settings = stagtools_get_registered_settings();
 	$social_urls         = array_keys( $registered_settings['social'] );
 	$settings            = get_option( 'stag_options' );
-	$output              = '<div class="stag-social-icons '. esc_attr( $args['style'] ) .'">';
+	$output              = '<p class="stag-social-icons '. esc_attr( $args['style'] ) .'">';
 
 	if ( '' == $args['id'] || 'all' == $args['id'] ) {
 		$social_ids = $social_urls;
@@ -544,7 +544,7 @@ function stag_social( $atts ) {
 			}
 		}
 	}
-	$output .= '</div>';
+	$output .= '</p>';
 
 	return $output;
 
