@@ -535,7 +535,6 @@ function stag_social( $atts ) {
 			$class = $slug;
 
 			if ( 'mail' == $slug ) $class = 'envelope';
-			if ( 'vimeo' == $slug ) $class = 'vimeo-square';
 
 			if ( 'skype' == $slug ) {
 				$output .= "<a href='". $settings[$slug] ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
