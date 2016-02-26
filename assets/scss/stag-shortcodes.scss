@@ -446,17 +446,20 @@
 		text-align: center;
 		vertical-align: top;
 		margin: 0 10px 10px 0;
+		text-decoration: none;
 	}
 
 	&.normal{
 		a{
 			color: #2f322b;
+			border: none;
 		}
 	}
 	&.square{
 		a{
 			background: #2f322b;
 			color: #fff;
+			border: none;
 		}
 	}
 }
