@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 4.5
-Stable tag: 2.1.0
+Tested up to: 4.5.1
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.1.1 - May 02, 2016 =
+* Updated - FontAwesome library v4.6.1
 
 = 2.1.0 - February 26, 2016 =
 * New - Google map shortcode now supports map type to choose between Roadmap, Satellite, Hybrid, and Terrain
