@@ -405,9 +405,9 @@ function stag_icon( $atts, $content = null ) {
 	}
 
 	if ( $args['url'] != '' ){
-		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
+		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i aria-hidden="true" class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
 	} else {
-		$output .= '<i class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
+		$output .= '<i aria-hidden="true" class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
 	}
 
 	return $output;
