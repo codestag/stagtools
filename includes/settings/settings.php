@@ -240,6 +240,20 @@ function stagtools_get_registered_settings() {
 					'desc' => __( 'Enter twitter OAuth Access Secret', 'stag' ),
 					'type' => 'text',
 				),
+				'google_api_header' => array(
+					'id'   => 'google_api_header',
+					'name' => '<strong>' . __( 'Google Maps API key', 'stag' ) . '</strong>',
+					'type' => 'header',
+				),
+				'google_api_key' => array(
+					'id'   => 'google_api_key',
+					'name' => __( 'API Key', 'stag' ),
+					'desc' =>
+						sprintf( __( 'An API key is required for Google Maps shortcode to work. Here is how you can %s.', 'mono' ),
+						sprintf( '<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key">%s</a>', esc_html__( 'get a key', 'stag' ) )
+					 ),
+					'type' => 'text',
+				),
 			)
 		),
 		'social' => apply_filters( 'stagtools_social_settings',
