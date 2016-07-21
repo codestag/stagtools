@@ -7,7 +7,7 @@
  * @since 2.0.0
  */
 
-class ST_Widget extends WP_Widget {
+abstract class ST_Widget extends WP_Widget {
 	public $widget_cssclass;
 	public $widget_description;
 	public $widget_id;
