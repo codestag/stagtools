@@ -450,13 +450,15 @@ function stag_map( $atts ) {
 	if ( '' != $api_key ) {
 		wp_enqueue_script( 'google-maps', add_query_arg( 'key', $api_key, 'https://maps.googleapis.com/maps/api/js' ) );
 	} else {
-		echo '<small class="stag-alert stag-alert--red">';
+		if ( current_user_can( 'edit_posts' ) ) :
+			echo '<small class="stag-alert stag-alert--red">';
 
-			/* translators: %s is a link, do not remove/modify it. */
-			echo sprintf( esc_html__( 'To be able to use Google Maps, you first need to set an %s.', 'stag' ),
-				sprintf( '<a href="' . admin_url( 'options-general.php?page=stagtools#stagtools_settings_general[google_api_key]' ) . '">%1$s</a>', esc_html__( 'API key', 'stag' ) )
-			);
-		echo '</small>';
+				/* translators: %s is a link, do not remove/modify it. */
+				echo sprintf( esc_html__( 'To be able to use Google Maps, you first need to set an %s.', 'stag' ),
+					sprintf( '<a href="' . admin_url( 'options-general.php?page=stagtools#stagtools_settings_general[google_api_key]' ) . '">%1$s</a>', esc_html__( 'API key', 'stag' ) )
+				);
+			echo '</small>';
+		endif;
 
 		return;
 	}
