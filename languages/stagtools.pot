@@ -1,17 +1,24 @@
-# Copyright (C) 2016 Ram Ratan Maurya
-# This file is distributed under the GPL2.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: StagTools 2.1.0\n"
-"Report-Msgid-Bugs-To: https://codestag.com/support/\n"
-"POT-Creation-Date: 2016-02-26 13:34:16+00:00\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: StagTools\n"
+"POT-Creation-Date: 2016-07-21 16:31+0530\n"
+"PO-Revision-Date: 2016-07-21 16:29+0530\n"
+"Last-Translator: Ram Ratan Maurya <ram@codestag.com>\n"
+"Language-Team: Ram Ratan Maurya <ram@codestag.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Codestag\n"
-"Language-Team: Codestag\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: stagtools.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: assets/js/plugin-lang.php:5
 msgid "Insert Stag Shortcode"
@@ -115,6 +122,31 @@ msgstr ""
 #: includes/post-type/slides.php:39 includes/post-type/team.php:40
 #: includes/post-type/testimonials.php:39
 msgid "Date"
+msgstr ""
+
+#: includes/post-type/project.php:10
+msgctxt "post type general name"
+msgid "Projects"
+msgstr ""
+
+#: includes/post-type/project.php:11
+msgctxt "post type singular name"
+msgid "Project"
+msgstr ""
+
+#: includes/post-type/project.php:12
+msgctxt "admin menu"
+msgid "Portfolio"
+msgstr ""
+
+#: includes/post-type/project.php:13
+msgctxt "add new on admin bar"
+msgid "Project"
+msgstr ""
+
+#: includes/post-type/project.php:14
+msgctxt "Project"
+msgid "Add New"
 msgstr ""
 
 #: includes/post-type/project.php:15
@@ -345,24 +377,45 @@ msgstr ""
 msgid "Enter twitter OAuth Access Secret"
 msgstr ""
 
-#: includes/settings/settings.php:434
+#: includes/settings/settings.php:245
+msgid "Google Maps API key"
+msgstr ""
+
+#: includes/settings/settings.php:250
+msgid "API Key"
+msgstr ""
+
+#: includes/settings/settings.php:252
+#, php-format
+msgid ""
+"An API key is required for Google Maps shortcode to work. Here is how you "
+"can %s."
+msgstr ""
+
+#: includes/settings/settings.php:253
+msgid "get a key"
+msgstr ""
+
+#: includes/settings/settings.php:448
 msgid "Portfolio Slug"
 msgstr ""
 
-#: includes/settings/settings.php:435
+#: includes/settings/settings.php:449
 msgid "Enter the slug of custom post type <strong>portfolio</strong>."
 msgstr ""
 
-#: includes/settings/settings.php:441
+#: includes/settings/settings.php:455
 msgid "Skills Slug"
 msgstr ""
 
-#: includes/settings/settings.php:442
+#: includes/settings/settings.php:456
 msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
 msgstr ""
 
-#: includes/settings/settings.php:455
-msgid "The callback function used for the <strong>%s</strong> setting is missing."
+#: includes/settings/settings.php:469
+#, php-format
+msgid ""
+"The callback function used for the <strong>%s</strong> setting is missing."
 msgstr ""
 
 #: includes/tinymce.php:117
@@ -425,6 +478,18 @@ msgstr ""
 msgid "Dotted"
 msgstr ""
 
+#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:219
+msgid "ERROR: You need to provide a user."
+msgstr ""
+
+#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:332
+msgid "ERROR: Could not retrieve bearer token."
+msgstr ""
+
+#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:702
+msgid "ERROR: Missing Twitter App credentials."
+msgstr ""
+
 #: includes/widgets/stagtools-widget.php:156
 msgid "All"
 msgstr ""
@@ -452,6 +517,11 @@ msgstr ""
 msgid "Number of shots to show:"
 msgstr ""
 
+#: includes/widgets/widget-dribbble.php:83
+msgctxt "Dribbble username error message"
+msgid "Please check your dribbble username"
+msgstr ""
+
 #: includes/widgets/widget-flickr.php:12
 msgid "Display your latest Flickr photos."
 msgstr ""
@@ -465,6 +535,7 @@ msgid "Your Flickr User ID:"
 msgstr ""
 
 #: includes/widgets/widget-flickr.php:27
+#, php-format
 msgid "Head over to %s to find your Flickr user ID."
 msgstr ""
 
@@ -602,6 +673,7 @@ msgid "Please provide a Twitter Username."
 msgstr ""
 
 #: includes/widgets/widget-twitter.php:181
+#, php-format
 msgid "Please fill in the <a href=\"%s\">Twitter oAuth settings</a>"
 msgstr ""
 
@@ -610,7 +682,56 @@ msgid "The Twitter API is taking too long to respond. Please try again later."
 msgstr ""
 
 #: includes/widgets/widget-twitter.php:222
+#, php-format
 msgid "%s ago"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
+msgid "Exclude"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
+msgid "Include"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:4
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:6
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:7
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:8
+msgctxt "a string"
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:9
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:10
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:11
+#, php-format
+msgid "1 Star"
+msgid_plural "%s Stars"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: A single line translators comment.
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:7
+msgid "A"
+msgstr ""
+
+#. translators: A
+#. multiline
+#. translators
+#. comment.
+#.
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:15
+msgid "B"
 msgstr ""
 
 #: shortcodes/config.php:11
@@ -1045,6 +1166,7 @@ msgid ""
 msgstr ""
 
 #: shortcodes/config.php:301
+#, php-format
 msgid "A list of all shortcode video services can be found on %s.<br>"
 msgstr ""
 
@@ -1097,6 +1219,7 @@ msgid "Longitude"
 msgstr ""
 
 #: shortcodes/config.php:357
+#, php-format
 msgid ""
 "Enter the place longitude coordinate. E.g.: -122.08395. You may find the "
 "coordinates <a href=\"%1$s\" target=\"_blank\">here</a>."
@@ -1220,6 +1343,16 @@ msgstr ""
 msgid "Title Goes Here"
 msgstr ""
 
+#. translators: %s is a link, do not remove/modify it.
+#: shortcodes/shortcodes.php:456
+#, php-format
+msgid "To be able to use Google Maps, you first need to set an %s."
+msgstr ""
+
+#: shortcodes/shortcodes.php:457
+msgid "API key"
+msgstr ""
+
 #: shortcodes/stag-shortcodes.php:34
 msgid "Upload or Choose Your Custom Video File"
 msgstr ""
@@ -1228,7 +1361,7 @@ msgstr ""
 msgid "Upload or Choose Your Custom Image File"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:107
+#: shortcodes/stag-shortcodes.php:113
 msgid "Insert Shortcode"
 msgstr ""
 
@@ -1241,6 +1374,7 @@ msgid "StagTools Options"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
+#: stagtools.php:166
 msgid "StagTools"
 msgstr ""
 
@@ -1249,13 +1383,16 @@ msgid "For more information:"
 msgstr ""
 
 #: stagtools.php:365
-msgid "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
+#, php-format
+msgid ""
+"Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
 #: stagtools.php:367
+#, php-format
 msgid ""
-"<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" "
-"target=\"_blank\">GitHub</a>."
+"<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
+"\"_blank\">GitHub</a>."
 msgstr ""
 
 #: stagtools.php:375
@@ -1273,11 +1410,11 @@ msgid "Where do I find these keys?"
 msgstr ""
 
 #: stagtools.php:378
+#, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by <a "
-"href=\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer "
-"dashboard."
+"app, which will provide you with the keys you see above. Start by <a href="
+"\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
 #: stagtools.php:379
@@ -1285,10 +1422,11 @@ msgid "Where are my widgets?"
 msgstr ""
 
 #: stagtools.php:380
+#, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by <a "
-"href=\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
+"app, which will provide you with the keys you see above. Start by <a href="
+"\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
 "developer dashboard."
 msgstr ""
 
@@ -1297,10 +1435,11 @@ msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
 #: stagtools.php:382
+#, php-format
 msgid ""
-"Yes; although we have a shortcode builder you can also see a list of <a "
-"href=\"%s\" target=\"_blank\">all available shortcodes</a> and use it "
-"manually in any supported area."
+"Yes; although we have a shortcode builder you can also see a list of <a href="
+"\"%s\" target=\"_blank\">all available shortcodes</a> and use it manually in "
+"any supported area."
 msgstr ""
 
 #: stagtools.php:388
@@ -1309,8 +1448,8 @@ msgstr ""
 
 #: stagtools.php:389
 msgid ""
-"You can use the following settigns to control the slug/taxonomies for "
-"custom post type portfolio and skills."
+"You can use the following settigns to control the slug/taxonomies for custom "
+"post type portfolio and skills."
 msgstr ""
 
 #: stagtools.php:390
@@ -1372,34 +1511,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://mauryaratan.me"
-msgstr ""
-
-#: includes/post-type/project.php:10
-msgctxt "post type general name"
-msgid "Projects"
-msgstr ""
-
-#: includes/post-type/project.php:11
-msgctxt "post type singular name"
-msgid "Project"
-msgstr ""
-
-#: includes/post-type/project.php:12
-msgctxt "admin menu"
-msgid "Portfolio"
-msgstr ""
-
-#: includes/post-type/project.php:13
-msgctxt "add new on admin bar"
-msgid "Project"
-msgstr ""
-
-#: includes/post-type/project.php:14
-msgctxt "Project"
-msgid "Add New"
-msgstr ""
-
-#: includes/widgets/widget-dribbble.php:83
-msgctxt "Dribbble username error message"
-msgid "Please check your dribbble username"
 msgstr ""
