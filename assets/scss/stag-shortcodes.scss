@@ -87,6 +87,7 @@
 	color: #fff;
 	padding: 20px 15px;
 	margin: 1em 0;
+	display: block;
 
 	@each $alert, $color in $alert-map {
 		&--#{$alert} {

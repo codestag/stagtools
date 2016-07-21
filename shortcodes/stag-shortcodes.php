@@ -35,6 +35,12 @@ class StagShortcodes {
 				'media_frame_image_title' => __( 'Upload or Choose Your Custom Image File', 'stag' )
 			) );
 		}
+
+		if ( 'settings_page_stagtools' == $hook ) {
+			$custom_css = '.settings_page_stagtools .form-table th>label>strong{font-size:1.2em;font-weight:600;}';
+
+			wp_add_inline_style( 'forms', $custom_css );
+		}
 	}
 
 	public function shortcodes_init() {
