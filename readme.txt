@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: http://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 4.5.1
-Stable tag: 2.1.1
+Tested up to: 4.6
+Stable tag: 2.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,11 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.1.2 - July 21, 2016 =
+* Added a new settings for Google Maps API key under Settings > StagTools
+* Minor tweak on settings page
+* Updated FontAwesome library to v4.6.3
 
 = 2.1.1 - May 02, 2016 =
 * Updated - FontAwesome library v4.6.1
@@ -227,6 +232,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.1.2 =
+If you're using Google Maps shortcode anywhere on your site. Please make sure fill-in the API key for Google Maps under Settings > StagTools > API key.
 
 = 1.2.6 =
 Fixes an issue with buttons shortcodes not showing icons in some cases.
