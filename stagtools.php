@@ -250,7 +250,7 @@ class StagTools {
 	 * @return void
 	 */
 	public function frontend_style() {
-		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/font-awesome'. SCRIPT_SUFFIX .'.css' , '', '4.6.1', 'all' );
+		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/font-awesome'. SCRIPT_SUFFIX .'.css' , '', '4.7.0', 'all' );
 		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css' , array( 'font-awesome' ), $this->version, 'all' );
 
 		wp_enqueue_style( 'font-awesome' );
