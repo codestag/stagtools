@@ -41,7 +41,7 @@ class Stag_Instagram extends ST_Widget {
 					'thumbnail'           => __( 'Thumbnail', 'stag' ),
 					'low_resolution'      => __( 'Low Resolution', 'stag' ),
 					'standard_resolution' => __( 'High Resolution', 'stag' ),
-				)
+				),
 			),
 			'cachetime' => array(
 				'type'  => 'number',
@@ -74,7 +74,7 @@ class Stag_Instagram extends ST_Widget {
 	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		if ( $this->get_cached_widget( $args ) )
 			return;
 
@@ -82,7 +82,7 @@ class Stag_Instagram extends ST_Widget {
 
 		extract( $args );
 
-		echo $before_widget;
+		echo $before_widget; // WPCS: XSS Ok.
 
 		$title     = apply_filters( 'widget_title', $instance['title'] );
 		$username  = esc_html( $instance['username'] );
@@ -90,16 +90,16 @@ class Stag_Instagram extends ST_Widget {
 		$image_res = esc_html( $instance['size'] );
 		$cachetime = absint( $instance['cachetime'] );
 
-		// Get Instagrams
+		// Get Instagrams.
 		$instagram = $this->get_instagrams( array(
 			'username'  => $username,
 			'count'     => $count,
 			'cachetime' => $cachetime,
 		) );
 
-		if ( $title ) echo $before_title . $title . $after_title;
+		if ( $title ) echo $before_title . $title . $after_title; // WPCS: XSS Ok.
 
-		// And if we have Instagrams
+		// And if we have Instagrams.
 		if ( false !== $instagram ) :
 
 		?>
@@ -127,14 +127,15 @@ class Stag_Instagram extends ST_Widget {
 			<?php endif; ?>
 
 		<?php elseif ( ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) && ( defined( 'WP_DEBUG_DISPLAY' ) && false !== WP_DEBUG_DISPLAY ) ) : ?>
-			<div id="message" class="error"><p><?php _e( 'Error: We were unable to fetch your instagram feed.', 'stag' ); ?></p></div>
-		<?php endif;
+			<div id="message" class="error"><p><?php esc_html_e( 'Error: We were unable to fetch your instagram feed.', 'stag' ); ?></p></div>
+		<?php
+		endif;
 
-		echo $after_widget;
+		echo $after_widget; // WPCS: XSS Ok.
 
 		$content = ob_get_clean();
 
-		echo $content;
+		echo $content; // WPCS: XSS Ok.
 
 		$this->cache_widget( $args, $content );
 	}
@@ -142,33 +143,34 @@ class Stag_Instagram extends ST_Widget {
 	/**
 	 * Get relevant data from Instagram API.
 	 *
-	 * @param	array $args Argument to passed to Instagram API.
-	 * @return  array 		An array returning Instagram API data.
+	 * @param array $args Argument to passed to Instagram API.
+	 * @return array An array returning Instagram API data.
 	 */
 	public function get_instagrams( $args = array() ) {
-		// Get args
-		$username   = ( ! empty( $args['username'] ) ) ? $args['username'] : '';
+		// Get args.
+		$username  = ( ! empty( $args['username'] ) ) ? $args['username'] : '';
 		$count     = ( ! empty( $args['count'] ) ) ? $args['count'] : 9;
 		$cachetime = ( ! empty( $args['cachetime'] ) ) ? $args['cachetime'] : 2;
 
-		// If no user id, bail
+		// If no user id, bail.
 		if ( empty( $username ) ) {
 			return false;
 		}
 
-		$key = "stag_instagram_{$username}";
+		$key        = "stag_instagram_{$username}";
+		$instagrams = get_transient( $key );
 
-		if ( false === ( $instagrams = get_transient( $key ) ) ) {
-			// Ping Instagram's API
-			$api_url = "https://www.instagram.com/{$username}/media/";
+		if ( false === $instagrams ) {
+			// Ping Instagram's API.
+			$api_url  = "https://www.instagram.com/{$username}/media/";
 			$response = wp_remote_get( $api_url );
 
 			// Check if the API is up.
-			if ( ! 200 == wp_remote_retrieve_response_code( $response ) ) {
+			if ( ! 200 === wp_remote_retrieve_response_code( $response ) ) {
 				return false;
 			}
 
-			// Parse the API data and place into an array
+			// Parse the API data and place into an array.
 			$instagrams = json_decode( wp_remote_retrieve_body( $response ), true );
 
 			// Are the results in an array?
@@ -178,13 +180,18 @@ class Stag_Instagram extends ST_Widget {
 
 			$instagrams = maybe_unserialize( $instagrams );
 
-			// Store Instagrams in a transient, and expire every hour
+			// Store Instagrams in a transient, and expire every hour.
 			set_transient( $key, $instagrams, $cachetime * HOUR_IN_SECONDS );
 		}
 
 		return $instagrams;
 	}
 
+	/**
+	 * Register class.
+	 *
+	 * @return void
+	 */
 	public static function register() {
 		register_widget( __CLASS__ );
 	}
