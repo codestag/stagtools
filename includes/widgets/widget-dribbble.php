@@ -22,6 +22,16 @@ class Stag_Dribbble extends ST_Widget {
 				'std'   => 'Codestag',
 				'label' => __( 'Dribbble Username:', 'stag' ),
 			),
+			'access_token' => array(
+				'type'  => 'text',
+				'std'   => '',
+				'label' => __( 'Client Access Token:', 'stag' ),
+				'description' => sprintf(
+					/* translators: %s: Dribbble API application URL. */
+					__( 'You need a client access token from Dribbble in order to access their API. Create an <a href="%s" target="_blank">application</a> and enter the access token.', 'stag' ),
+					'https://dribbble.com/account/applications'
+				),
+			),
 			'count' => array(
 				'type'  => 'number',
 				'std'   => 4,
@@ -35,7 +45,7 @@ class Stag_Dribbble extends ST_Widget {
 		parent::__construct();
 	}
 
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		if ( $this->get_cached_widget( $args ) )
 			return;
 
@@ -47,40 +57,39 @@ class Stag_Dribbble extends ST_Widget {
 
 		$title         = apply_filters( 'widget_title', $instance['title'] );
 		$dribbble_name = esc_html( $instance['dribbble_name'] );
+		$access_token  = esc_html( $instance['access_token'] );
 		$count         = absint( $instance['count'] );
+		$index         = 0;
 
-		// Includes feed function
-		include_once( ABSPATH . WPINC . '/feed.php' );
-
-		$rss = fetch_feed( "https://dribbble.com/$dribbble_name/shots.rss" );
-
-		add_filter( 'wp_feed_cache_transient_lifetime', create_function( '$a', 'return 1800;' ) );
-
-		if ( ! is_wp_error( $rss ) ) {
-			$items = $rss->get_items( 0, $rss->get_item_quantity( $count ) );
+		if ( '' === $access_token ) {
+			?>
+			<p class="stag-alert stag-alert--red">
+				<?php esc_html_e( 'Please fill-in all widget settings.', 'stag' ); ?>
+			</p>
+			<?php
+			return;
 		}
 
+		$shots = $this->dribbble_shots( $dribbble_name, $access_token );
 		?>
+
 
 		<div class='stag-dribbble-widget'>
 			<?php if ( $title ) echo $before_title . $title . $after_title; ?>
-			<ul class="dribbbles">
-				<?php if ( isset( $items ) ) : ?>
-				<?php foreach ( $items as $item ) :
-					$shot_title       = $item->get_title();
-					$shot_link        = $item->get_permalink();
-					$shot_date        = $item->get_date( 'F d, Y' );
-					$shot_description = $item->get_description();
 
-					preg_match( '/src=\"(http.*(jpg|jpeg|gif|png))/', $shot_description, $shot_image_url );
-					$shot_image = $shot_image_url[1];
-				?>
-				<li class="dribbble-shot">
-					<a href="<?php echo esc_url( $shot_link ); ?>" class="dribbble-link" title="<?php echo $shot_title; ?>"><img src="<?php echo esc_url( $shot_image ); ?>" alt="<?php echo esc_attr( $shot_title ); ?>"></a>
-				</li>
-				<?php endforeach; ?>
-				<?php else : ?>
-				<?php _x( 'Please check your dribbble username', 'Dribbble username error message', 'stag' ); ?>
+			<ul class="dribbbles">
+				<?php if ( ! empty( $shots ) ) : ?>
+					<?php foreach ( $shots as $shot ) : ?>
+					<li class="dribbble-shot">
+						<a href="<?php echo esc_url( $shot->html_url ); ?>" class="dribbble-link" title="<?php echo esc_attr( $shot->title ); ?>">
+							<img src="<?php echo esc_url( $shot->images->normal ); ?>" srcset="<?php echo esc_url( $shot->images->normal ); ?> 1x, <?php echo esc_url( $shot->images->hidpi ); ?> 2x" alt="<?php echo esc_attr( $shot->title ); ?>" width="<?php echo esc_attr( $shot->width ); ?>" height="<?php echo esc_attr( $shot->height ); ?>">
+						</a>
+					</li>
+					<?php
+					$index++;
+					if ( $index === $count ) return;
+					?>
+					<?php endforeach; ?>
 				<?php endif; ?>
 			</ul>
 		</div>
@@ -97,6 +106,42 @@ class Stag_Dribbble extends ST_Widget {
 
 	public static function register() {
 		register_widget( __CLASS__ );
+	}
+
+	/**
+	 * Get Dribbble shots.
+	 *
+	 * @param string $username Dribbble username.
+	 * @param string $access_token Client access token.
+	 *
+	 * @since 2.2.0.
+	 *
+	 * @return mixed
+	 */
+	public function dribbble_shots( $username, $access_token ) {
+		if ( '' === ( $username || $access_token ) ) return;
+
+		$shots = get_transient( 'st_dribbble_' . sanitize_title_with_dashes( $username ) );
+
+		if ( empty( $shots ) || false === $shots ) {
+			$remote_url = "https://api.dribbble.com/v1/users/{$username}/shots?access_token={$access_token}";
+			$request    = wp_remote_get( $remote_url, array(
+				'sslverify' => false,
+			) );
+
+			if ( is_wp_error( $request ) ) {
+				return false;
+			} else {
+				$body  = wp_remote_retrieve_body( $request );
+				$shots = json_decode( $body );
+
+				if ( ! empty( $shots ) ) {
+					set_transient( 'st_dribbble_' . sanitize_title_with_dashes( $username ), $shots, DAY_IN_SECONDS );
+				}
+			}
+		}
+
+		return $shots;
 	}
 }
 
