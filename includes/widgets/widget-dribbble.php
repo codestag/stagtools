@@ -87,7 +87,7 @@ class Stag_Dribbble extends ST_Widget {
 					</li>
 					<?php
 					$index++;
-					if ( $index === $count ) return;
+					if ( $index === $count ) break;
 					?>
 					<?php endforeach; ?>
 				<?php endif; ?>
