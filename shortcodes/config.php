@@ -409,7 +409,7 @@ $stag_shortcodes['map'] = array(
  * Process only if the plugin Stag Custom Sidebar is active
  *
  * @since 1.1
- * @link http://wordpress.org/plugins/stag-custom-sidebars
+ * @link https://wordpress.org/plugins/stag-custom-sidebars
  */
 if ( $stagtools->is_scs_active() ) {
 	$option = get_option( 'stag_custom_sidebars' );

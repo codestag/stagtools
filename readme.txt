@@ -1,13 +1,13 @@
 === StagTools ===
 
 Contributors: mauryaratan, codestag
-Donate link: http://codest.ag/st-donate
+Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 3.5
-Tested up to: 4.7
-Stable tag: 2.1.3
+Tested up to: 4.9
+Stable tag: 2.2.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 StagTools is a powerful plugin to extend functionality to your WordPress themes offering shortcodes, FontAwesome icons and useful widgets.
 
@@ -35,7 +35,7 @@ StagTools powers your WordPress website with some regularly needed shortcodes in
 = Get Involved =
 If you are a developer, you can contribute to the source code on [StagTools Github Repository](https://github.com/mauryaratan/stagtools)
 
-*Checkout our finely tuned WordPress themes over at [Codestag](http://codestag.com).*
+*Checkout our finely tuned WordPress themes over at [Codestag](https://codestag.com?ref=WordPress).*
 
 == Frequently Asked Questions ==
 
@@ -49,7 +49,7 @@ Yes; although we have a shortcode builder you can also see a list of [all availa
 
 = Can I use this plugin with other themes? =
 
-The StagTools was developed to work with any WordPress theme as it includes default styling. However, we provide our extra bit of styling to all of our [themes](http://codestag.com) at Codestag.
+The StagTools was developed to work with any WordPress theme as it includes default styling. However, we provide our extra bit of styling to all of our [themes](https://codestag.com) at Codestag.
 
 = Why shortcodes are prefixed with stag_ ? =
 Simply to avoid any conflict with other shortcodes on your site enabled via any third-party plugin or theme.
@@ -90,6 +90,15 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.2.0 - Nov 19, 2017 =
+* Compatible upto WordPress 4.9+
+* Fixed an issue with Instagram widget not working due to public feed not being available any longer.
+* Fixed an issue with Dribbble widget not working due to API authentication changes
+* Added support for Widgets selective refresh
+* Use new Codestag icon for editor button
+* Fixed issue with Google Map error showing out of place
+* Make use of CSS variables for StagTools' accent color, to easily customize accent colors in theme
 
 = 2.1.3 - Nov 07, 2016 =
 * Updated FontAwesome library to v4.7.0

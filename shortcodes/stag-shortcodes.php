@@ -29,7 +29,7 @@ class StagShortcodes {
 
 			wp_localize_script( 'jquery', 'StagShortcodes', array(
 				'plugin_folder'           => WP_PLUGIN_URL .'/shortcodes',
-				/** Check if Stag Custom Sidebars plugin is active {@link http://wordpress.org/plugins/stag-custom-sidebars/} */
+				/** Check if Stag Custom Sidebars plugin is active {@link https://wordpress.org/plugins/stag-custom-sidebars/} */
 				'is_scs_active'           => $stagtools->is_scs_active(),
 				'media_frame_video_title' => __( 'Upload or Choose Your Custom Video File', 'stag' ),
 				'media_frame_image_title' => __( 'Upload or Choose Your Custom Image File', 'stag' )
