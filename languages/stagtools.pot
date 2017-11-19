@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: StagTools\n"
-"POT-Creation-Date: 2016-07-21 16:31+0530\n"
+"POT-Creation-Date: 2017-11-19 16:49+0530\n"
 "PO-Revision-Date: 2016-07-21 16:29+0530\n"
 "Last-Translator: Ram Ratan Maurya <ram@codestag.com>\n"
 "Language-Team: Ram Ratan Maurya <ram@codestag.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: stagtools.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -478,19 +478,19 @@ msgstr ""
 msgid "Dotted"
 msgstr ""
 
-#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:219
+#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:239
 msgid "ERROR: You need to provide a user."
 msgstr ""
 
-#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:332
+#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:352
 msgid "ERROR: Could not retrieve bearer token."
 msgstr ""
 
-#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:702
+#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:717
 msgid "ERROR: Missing Twitter App credentials."
 msgstr ""
 
-#: includes/widgets/stagtools-widget.php:156
+#: includes/widgets/stagtools-widget.php:160
 msgid "All"
 msgstr ""
 
@@ -514,12 +514,24 @@ msgid "Dribbble Username:"
 msgstr ""
 
 #: includes/widgets/widget-dribbble.php:28
+msgid "Client Access Token:"
+msgstr ""
+
+#. translators: %s: Dribbble API application URL.
+#: includes/widgets/widget-dribbble.php:31
+#, php-format
+msgid ""
+"You need a client access token from Dribbble in order to access their API. "
+"Create an <a href=\"%s\" target=\"_blank\">application</a> and enter the "
+"access token."
+msgstr ""
+
+#: includes/widgets/widget-dribbble.php:38
 msgid "Number of shots to show:"
 msgstr ""
 
-#: includes/widgets/widget-dribbble.php:83
-msgctxt "Dribbble username error message"
-msgid "Please check your dribbble username"
+#: includes/widgets/widget-dribbble.php:67
+msgid "Please fill-in all widget settings."
 msgstr ""
 
 #: includes/widgets/widget-flickr.php:12
@@ -564,40 +576,62 @@ msgid "Instagram Username:"
 msgstr ""
 
 #: includes/widgets/widget-instagram.php:31
-msgid "Photo Count:"
+msgid "Photo Count (max 12):"
 msgstr ""
 
 #: includes/widgets/widget-instagram.php:39
-msgid "Photo Size"
+msgid "Photo Size:"
 msgstr ""
 
 #: includes/widgets/widget-instagram.php:41
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:42
-msgid "Low Resolution"
+#: includes/widgets/widget-instagram.php:42 shortcodes/config.php:37
+msgid "Small"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:43
-msgid "High Resolution"
+#: includes/widgets/widget-instagram.php:43 shortcodes/config.php:39
+msgid "Large"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:49
+#: includes/widgets/widget-instagram.php:44
+msgid "Original"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:50
 msgid "Cache time (in hours):"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:57
+#: includes/widgets/widget-instagram.php:58
 msgid "Include link to Instagram page?"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:62
+#: includes/widgets/widget-instagram.php:63
 #: includes/widgets/widget-twitter.php:72
 msgid "Link Text:"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:130
-msgid "Error: We were unable to fetch your instagram feed."
+#: includes/widgets/widget-instagram.php:168
+msgid "Unable to communicate with Instagram."
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:172
+msgid "Instagram did not return a 200."
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:180
+#: includes/widgets/widget-instagram.php:188
+#: includes/widgets/widget-instagram.php:192
+msgid "Instagram has returned invalid data."
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:224
+msgid "Instagram Image"
+msgstr ""
+
+#: includes/widgets/widget-instagram.php:253
+msgid "Instagram did not return any images."
 msgstr ""
 
 #: includes/widgets/widget-twitter.php:13
@@ -686,54 +720,6 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
-#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
-#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
-msgid "Exclude"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
-msgid "Include"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:3
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:4
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
-msgid "String"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:6
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:7
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:8
-msgctxt "a string"
-msgid "String"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:9
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:10
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:11
-#, php-format
-msgid "1 Star"
-msgid_plural "%s Stars"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: A single line translators comment.
-#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:7
-msgid "A"
-msgstr ""
-
-#. translators: A
-#. multiline
-#. translators
-#. comment.
-#.
-#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:15
-msgid "B"
-msgstr ""
-
 #: shortcodes/config.php:11
 msgid "Button URL"
 msgstr ""
@@ -778,16 +764,8 @@ msgstr ""
 msgid "Select the button&lsquo;s size"
 msgstr ""
 
-#: shortcodes/config.php:37
-msgid "Small"
-msgstr ""
-
 #: shortcodes/config.php:38
 msgid "Medium"
-msgstr ""
-
-#: shortcodes/config.php:39
-msgid "Large"
 msgstr ""
 
 #: shortcodes/config.php:44
@@ -1344,12 +1322,12 @@ msgid "Title Goes Here"
 msgstr ""
 
 #. translators: %s is a link, do not remove/modify it.
-#: shortcodes/shortcodes.php:456
+#: shortcodes/shortcodes.php:457
 #, php-format
 msgid "To be able to use Google Maps, you first need to set an %s."
 msgstr ""
 
-#: shortcodes/shortcodes.php:457
+#: shortcodes/shortcodes.php:458
 msgid "API key"
 msgstr ""
 
@@ -1365,51 +1343,54 @@ msgstr ""
 msgid "Insert Shortcode"
 msgstr ""
 
-#: stagtools.php:118
+#: stagtools.php:133
 msgid "Settings"
 msgstr ""
 
-#: stagtools.php:166
+#: stagtools.php:183
 msgid "StagTools Options"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: stagtools.php:166
+#: stagtools.php:183
 msgid "StagTools"
 msgstr ""
 
-#: stagtools.php:364
+#: stagtools.php:382
 msgid "For more information:"
 msgstr ""
 
-#: stagtools.php:365
+#. translators: %s: Link to Github wiki.
+#: stagtools.php:384
 #, php-format
 msgid ""
 "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#: stagtools.php:367
+#. translators: %1$s: Link to Github issues, %2$s: Link to Github repo.
+#: stagtools.php:387
 #, php-format
 msgid ""
-"<a href=\"%s\" target=\"_blank\">Post an issue</a> on <a href=\"%s\" target="
-"\"_blank\">GitHub</a>."
+"<a href=\"%1$s\" target=\"_blank\">Post an issue</a> on <a href=\"%2$s\" "
+"target=\"_blank\">GitHub</a>."
 msgstr ""
 
-#: stagtools.php:375
+#: stagtools.php:395
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: stagtools.php:376
+#: stagtools.php:396
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: stagtools.php:377
+#: stagtools.php:397
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: stagtools.php:378
+#. translators: %s: Link to Twitter Developer documentation site.
+#: stagtools.php:399
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -1417,11 +1398,12 @@ msgid ""
 "\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
-#: stagtools.php:379
+#: stagtools.php:400
 msgid "Where are my widgets?"
 msgstr ""
 
-#: stagtools.php:380
+#. translators: %s: Link to twitter screenshot.
+#: stagtools.php:402
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -1430,11 +1412,12 @@ msgid ""
 "developer dashboard."
 msgstr ""
 
-#: stagtools.php:381
+#: stagtools.php:403
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: stagtools.php:382
+#. translators: %s: Link to Github gist for code snippet.
+#: stagtools.php:405
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of <a href="
@@ -1442,53 +1425,53 @@ msgid ""
 "any supported area."
 msgstr ""
 
-#: stagtools.php:388
+#: stagtools.php:411
 msgid "Portfolio Settings"
 msgstr ""
 
-#: stagtools.php:389
+#: stagtools.php:412
 msgid ""
 "You can use the following settigns to control the slug/taxonomies for custom "
 "post type portfolio and skills."
 msgstr ""
 
-#: stagtools.php:390
+#: stagtools.php:413
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: stagtools.php:391
+#: stagtools.php:414
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
 msgstr ""
 
-#: stagtools.php:397
+#: stagtools.php:420
 msgid "Using Social Icons"
 msgstr ""
 
-#: stagtools.php:398
+#: stagtools.php:421
 msgid "Using Social Icons Shortcode"
 msgstr ""
 
-#: stagtools.php:399
+#: stagtools.php:422
 msgid "To use the social icon use the following shortcode:"
 msgstr ""
 
-#: stagtools.php:400
+#: stagtools.php:423
 msgid "It would display all social icons with non-empty profile URLs."
 msgstr ""
 
-#: stagtools.php:401
+#: stagtools.php:424
 msgid "or you can pass specific ids."
 msgstr ""
 
-#: stagtools.php:402
+#: stagtools.php:425
 msgid "Using Different Styled Icons"
 msgstr ""
 
-#: stagtools.php:403
+#: stagtools.php:426
 msgid ""
 "You can use the social icons in two different styles: normal and square. "
 "Just pass the <code>style</code> argument in sidebar.<br>E.g.: "
@@ -1510,5 +1493,5 @@ msgid "Ram Ratan Maurya"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://mauryaratan.me"
+msgid "https://mauryaratan.me"
 msgstr ""
