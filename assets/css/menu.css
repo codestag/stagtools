@@ -1,7 +1,8 @@
 /* Menu */
 .mceIcon.mce_stagShortcodes,
 .mce-i-stagtools {
-	background: url('../img/stag.png') no-repeat center !important;
+	background: url('../img/codestag-icon.svg') no-repeat center !important;
+	background-size: 20px !important;
 }
 
 .wp-core-ui .stag-insert {
@@ -78,6 +79,7 @@
 #stag-sc-form-table .field {
 	width: 77%;
 	display: inline-block;
+	padding: 0;
 }
 #stag-sc-form-table tr.form-row {
 	display: block;
@@ -178,11 +180,6 @@
 
 /* Retina Queries */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
-	.mceIcon.mce_stagShortcodes,
-	.mce-i-stagtools {
-		background-image: url('../img/stag-2x.png') !important;
-		background-size: 18px 17px !important;
-	}
 	#close-popup {
 		background-size: 22px 105px;
 		background-position-y: -49px;
