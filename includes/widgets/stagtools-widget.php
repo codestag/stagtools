@@ -17,8 +17,9 @@ abstract class ST_Widget extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array(
-			'classname'   => $this->widget_cssclass,
-			'description' => $this->widget_description,
+			'classname'                   => $this->widget_id,
+			'description'                 => $this->widget_description,
+			'customize_selective_refresh' => true,
 		);
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_ops, $this->control_ops );
@@ -100,6 +101,9 @@ abstract class ST_Widget extends WP_Widget {
 					<p>
 						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting[ 'label' ]; ?></label>
 						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" <?php if ( isset( $setting['placeholder'] ) ) echo 'placeholder="'. $setting['placeholder'] .'"'; ?> />
+						<?php if ( isset( $setting['description'] ) ) : ?>
+						<br><small><?php echo $setting['description']; ?></small>
+						<?php endif; ?>
 					</p>
 					<?php
 				break;
