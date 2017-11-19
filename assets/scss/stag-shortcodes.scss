@@ -108,6 +108,7 @@
 
 .stag-dropcap--squared {
 	background: $accent;
+	background: $accent_new;
 	color: #fff;
 }
 
@@ -116,6 +117,7 @@
 	border: 0;
 	height: 1px;
 	background: $accent;
+	background: $accent_new;
 	margin: 2em 0;
 	&--strong {
 		height: 7px;
@@ -128,6 +130,7 @@
 		content: '';
 		display: block;
 		border-bottom: 1px solid $accent;
+		border-bottom: 1px solid $accent_new;
 		position: relative;
 		top: 10px;
 	}
@@ -135,11 +138,13 @@
 	&--dashed {
 		background: none;
 		border-bottom: 1px dashed $accent;
+		border-bottom: 1px dashed $accent_new;
 	}
 
 	&--dotted {
 		background: none;
 		border-bottom: 1px dotted $accent;
+		border-bottom: 1px dotted $accent_new;
 	}
 }
 
@@ -194,13 +199,16 @@
 }
 .stag-tabs--stroke .stag-nav a {
 	border: 1px solid $accent;
+	border: 1px solid $accent_new;
 	color: $accent;
+	color: $accent_new;
 }
 .stag-tabs--stroke .stag-nav .ui-tabs-active a {
 	border-bottom-color: white;
 }
 .stag-tabs--stroke .stag-tab {
 	border: 1px solid $accent;
+	border: 1px solid $accent_new;
 	margin-top: -1px;
 }
 
@@ -235,6 +243,7 @@
 
 .stag-toggle--stroke .stag-toggle-title {
 	border: 1px solid $accent;
+	border: 1px solid $accent_new;
 }
 .stag-toggle--stroke .stag-toggle-title:after {
 	color: $accent;

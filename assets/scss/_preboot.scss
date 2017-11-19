@@ -2,6 +2,7 @@
 
 // Vars
 $accent: #363f48;
+$accent_new: var(--stagtools-accent, #363f48);
 
 $button-map: (
 	black: #000,
