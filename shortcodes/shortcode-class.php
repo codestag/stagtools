@@ -59,10 +59,14 @@ class Stag_Shortcodes {
 
 			foreach ( $this->params as $pkey => $param ) {
 
-				// prefix the name and id with stag_
+				// Prefix the name and id with stag_.
 				$pkey = 'stag_' . $pkey;
+				$hidden_class = '';
+				if ( isset( $param['hidden'] ) && $param['hidden'] ) {
+					$hidden_class = 'hidden';
+				}
 
-				$row_start  = '<tbody>' . "\n";
+				$row_start  = '<tbody ' . $hidden_class . '>' . "\n";
 				$row_start .= '<tr class="form-row">' . "\n";
 				$row_start .= '<td class="label">' . $param['label'] . '</td>' . "\n";
 				$row_start .= '<td class="field">' . "\n";

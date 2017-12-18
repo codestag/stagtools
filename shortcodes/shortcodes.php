@@ -387,6 +387,7 @@ function stag_icon( $atts, $content = null ) {
 		'url'        => '',
 		'size'       => '',
 		'new_window' => 'no',
+		'style'      => 'fas',
 	), $atts, 'stag_icon' );
 
 	$new_window = ( $args['new_window'] == 'no' ) ? '_self' : '_blank';
@@ -407,7 +408,7 @@ function stag_icon( $atts, $content = null ) {
 	if ( $args['url'] != '' ){
 		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i aria-hidden="true" class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
 	} else {
-		$output .= '<i aria-hidden="true" class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
+		$output .= '<i aria-hidden="true" class="' . $args['style'] . ' fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
 	}
 
 	return $output;

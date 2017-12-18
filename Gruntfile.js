@@ -36,34 +36,45 @@ module.exports = function( grunt ) {
 		json_massager: {
 			fontawesome: {
 				modifier: function( json ) {
-					var icons = json.icons,
+					var icons = json,
+						style = '',
 						newObj = {};
 
-					_.forEach( icons, function( data ) {
-						_.forEach( data.categories, function( category ) {
+					_.forEach( icons, function( data, key ) {
+						_.forEach( data.styles, function( category ) {
 							if ( 'undefined' === typeof newObj[category] ) {
 								newObj[category] = [];
 							}
+
+							if( 'regular' === category ) {
+								style = 'far';
+							} else if ( 'brands' === category ) {
+								style = 'fab';
+							} else if ( 'solid' === category ) {
+								style = 'fas';
+							}
+
 							var icon = {
-								name: data.name,
-								id: 'fa-' + data.id,
-								unicode: data.unicode
+								name: data.label,
+								id: key,
+								unicode: data.unicode,
+								style: style,
 							};
 							newObj[category].push( icon );
 						} );
 					} );
 
-					_.forEach( newObj, function( category ) {
-						category.sort( function( a, b ) {
-							if (a.name.toLowerCase() > b.name.toLowerCase()) {
-								return 1;
-							}
-							if (a.name.toLowerCase() < b.name.toLowerCase()) {
-								return -1;
-							}
-							return 0;
-						} );
-					} );
+					// _.forEach( newObj, function( category ) {
+					// 	category.sort( function( a, b ) {
+					// 		if (a.name.toLowerCase() > b.name.toLowerCase()) {
+					// 			return 1;
+					// 		}
+					// 		if (a.name.toLowerCase() < b.name.toLowerCase()) {
+					// 			return -1;
+					// 		}
+					// 		return 0;
+					// 	} );
+					// } );
 
 					return newObj;
 				},

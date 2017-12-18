@@ -132,9 +132,6 @@ jQuery.appendo = function() {
     return this;
 }();
 
-// 3. base64.js
-function base64_decode(h){var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";var c,b,a,m,l,k,j,n,g=0,o=0,e="",f=[];if(!h){return h}h+="";do{m=d.indexOf(h.charAt(g++));l=d.indexOf(h.charAt(g++));k=d.indexOf(h.charAt(g++));j=d.indexOf(h.charAt(g++));n=m<<18|l<<12|k<<6|j;c=n>>16&255;b=n>>8&255;a=n&255;if(k==64){f[o++]=String.fromCharCode(c)}else{if(j==64){f[o++]=String.fromCharCode(c,b)}else{f[o++]=String.fromCharCode(c,b,a)}}}while(g<h.length);e=f.join("");e=this.utf8_decode(e);return e}function base64_encode(h){var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";var c,b,a,m,l,k,j,n,g=0,o=0,f="",e=[];if(!h){return h}h=this.utf8_encode(h+"");do{c=h.charCodeAt(g++);b=h.charCodeAt(g++);a=h.charCodeAt(g++);n=c<<16|b<<8|a;m=n>>18&63;l=n>>12&63;k=n>>6&63;j=n&63;e[o++]=d.charAt(m)+d.charAt(l)+d.charAt(k)+d.charAt(j)}while(g<h.length);f=e.join("");switch(h.length%3){case 1:f=f.slice(0,-2)+"==";break;case 2:f=f.slice(0,-1)+"=";break}return f}function utf8_decode(a){var c=[],e=0,g=0,f=0,d=0,b=0;a+="";while(e<a.length){f=a.charCodeAt(e);if(f<128){c[g++]=String.fromCharCode(f);e++}else{if(f>191&&f<224){d=a.charCodeAt(e+1);c[g++]=String.fromCharCode(((f&31)<<6)|(d&63));e+=2}else{d=a.charCodeAt(e+1);b=a.charCodeAt(e+2);c[g++]=String.fromCharCode(((f&15)<<12)|((d&63)<<6)|(b&63));e+=3}}}return c.join("")}function utf8_encode(a){var h=(a+"");var i="",b,e,c=0;b=e=0;c=h.length;for(var d=0;d<c;d++){var g=h.charCodeAt(d);var f=null;if(g<128){e++}else{if(g>127&&g<2048){f=String.fromCharCode((g>>6)|192)+String.fromCharCode((g&63)|128)}else{f=String.fromCharCode((g>>12)|224)+String.fromCharCode(((g>>6)&63)|128)+String.fromCharCode((g&63)|128)}}if(f!==null){if(e>b){i+=h.slice(b,e)}i+=f;b=e=d+1}}if(e>b){i+=h.slice(b,c)}return i};
-
 // 4. custom
 var FontAwesomeIcons;
 
@@ -148,7 +145,7 @@ var FontAwesomeIcons;
             html += '<span class="icon-category">' + cat + '</span>';
 
             icons.map(function(icon){
-              html += '<i class="fa ' + icon.id + '" data-icon-id="' + icon.id.replace( 'fa-', '' ) + '" title="' + icon.name + '"></i>';
+                html += '<i class="'+ icon.style +' fa-' + icon.id + '" data-icon-id="' + icon.id + '" data-style="' + icon.style + '"></i>';
             });
         });
 
@@ -359,6 +356,7 @@ jQuery(document).ready(function($) {
                 iconContainer.find('i').removeClass('active-icon');
                 $(this).addClass('active-icon');
                 $('#stag_icon').val( $(this).data('icon-id') );
+                $('#stag_style').val( $(this).data('style') );
                 $('.stag-input').trigger('change');
             } );
 

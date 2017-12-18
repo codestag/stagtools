@@ -328,16 +328,27 @@ $stag_shortcodes['icon'] = array(
 			'options' => array(
 				'no'  => __( 'No', 'stag' ),
 				'yes' => __( 'Yes', 'stag' ),
-			)
+			),
 		),
 		'size' => array(
 			'std' => '50px',
 			'type' => 'text',
 			'label' => __( 'Font Size', 'stag' ),
 			'desc' => __( 'Enter the icon&lsquo;s font size in px, em or %', 'stag' ),
-		)
+		),
+		'style' => array(
+			'std' => 'fas',
+			'type' => 'buttonset',
+			'hidden' => true,
+			'label' => __( 'Icon Style', 'stag' ),
+			'options' => array(
+				'fas' => __( 'Solid', 'stag' ),
+				'far' => __( 'Regular', 'stag' ),
+				'fab' => __( 'Brands', 'stag' ),
+			),
+		),
 	),
-	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{icon_new_window}}"]',
+	'shortcode' => '[stag_icon icon="{{icon}}" url="{{url}}" size="{{size}}" new_window="{{icon_new_window}}" style="{{style}}"]',
 	'popup_title' => __( 'Insert Icon Shortcode', 'stag' )
 );
 

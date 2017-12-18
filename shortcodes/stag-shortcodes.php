@@ -17,7 +17,7 @@ class StagShortcodes {
 
 			wp_enqueue_style( 'stag_admin_menu_styles', $stagtools->plugin_url() . '/assets/css/menu.css' );
 
-			wp_enqueue_style( 'font-awesome', $stagtools->plugin_url() . '/assets/css/font-awesome'. SCRIPT_SUFFIX .'.css', '', '4.7.0' );
+			wp_enqueue_style( 'font-awesome', $stagtools->plugin_url() . '/assets/css/fontawesome-all'. SCRIPT_SUFFIX .'.css', '', '5.0.1' );
 
 			wp_register_script( 'font-awesome-icons-list', $stagtools->plugin_url() . '/assets/js/icons'. SCRIPT_SUFFIX .'.js', array(), false, true );
 			wp_enqueue_script( 'font-awesome-icons-list' );
