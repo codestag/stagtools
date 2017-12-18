@@ -91,6 +91,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
+= 2.2.1 - Dec 18, 2017 =
+* Compatible with FontAwesome v5.0.1
+
 = 2.2.0 - Nov 19, 2017 =
 * Compatible upto WordPress 4.9+
 * Fixed an issue with Instagram widget not working due to public feed not being available any longer.
@@ -244,6 +247,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Adds compatibility with FontAwesome v5.0.1
 
 = 2.1.2 =
 If you're using Google Maps shortcode anywhere on your site. Please make sure fill-in the API key for Google Maps under Settings > StagTools > API key.
