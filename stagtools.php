@@ -3,11 +3,11 @@
  * Plugin Name: StagTools
  * Plugin URI: https://wordpress.org/plugins/stagtools/
  * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: Ram Ratan Maurya
  * Author URI: https://mauryaratan.me
  * License: GPL2
- * Requires at least: 3.5
+ * Requires at least: 4.0
  * Tested up to: 4.9.1
  *
  * Text Domain: stag
