@@ -406,7 +406,7 @@ function stag_icon( $atts, $content = null ) {
 	}
 
 	if ( $args['url'] != '' ){
-		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i aria-hidden="true" class="fa fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
+		$output .= '<a class="stag-icon-link" '. $a_attrs .'><i aria-hidden="true" class="' . $args['style'] . ' fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i></a>';
 	} else {
 		$output .= '<i aria-hidden="true" class="' . $args['style'] . ' fa-'. esc_attr( $args['icon'] ) .'" '. $attrs .'></i>';
 	}
@@ -553,12 +553,19 @@ function stag_social( $atts ) {
 		if ( isset( $settings[$slug] ) && $settings[$slug] != '' ) {
 			$class = $slug;
 
-			if ( 'mail' == $slug ) $class = 'envelope';
+			$fa_prefix = 'fab';
+			if ( 'mail' == $slug ) {
+				$class = 'envelope';
+				$fa_prefix = 'far';
+			}
+			if ( 'rss' === $slug ) {
+				$fa_prefix = 'fas';
+			}
 
 			if ( 'skype' == $slug ) {
-				$output .= "<a href='". $settings[$slug] ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
+				$output .= "<a href='" . $settings[ $slug ] . "' target='_blank'><i class='fab fa-" . esc_attr( $class ) . "'></i></a>";
 			} else {
-				$output .= "<a href='". esc_url( $settings[$slug] ) ."' target='_blank'><i class='fa fa-". esc_attr( $class ) ."'></i></a>";
+				$output .= "<a href='" . esc_url( $settings[ $slug ] ) . "' target='_blank'><i class='$fa_prefix fa-" . esc_attr( $class ) . "'></i></a>";
 			}
 		}
 	}
