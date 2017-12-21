@@ -387,7 +387,7 @@ function stag_icon( $atts, $content = null ) {
 		'url'        => '',
 		'size'       => '',
 		'new_window' => 'no',
-		'style'      => 'fas',
+		'style'      => 'fa',
 	), $atts, 'stag_icon' );
 
 	$new_window = ( $args['new_window'] == 'no' ) ? '_self' : '_blank';

@@ -149,6 +149,8 @@ class StagTools {
 
 		add_filter( 'contextual_help', array( &$this, 'contextual_help' ), 10, 3 );
 
+		add_filter( 'script_loader_tag', array( &$this, 'add_defer_attribute' ), 10, 2 );
+
 		/**
 		 * Deprecataed lines.
 		 *
@@ -268,12 +270,34 @@ class StagTools {
 	 */
 	public function frontend_style() {
 		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.0.2', 'all' );
-		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css', array( 'font-awesome' ), $this->version, 'all' );
+		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css', array(), $this->version, 'all' );
 
-		wp_enqueue_style( 'font-awesome' );
 		wp_enqueue_style( 'stag-shortcode-styles' );
 
 		wp_register_script( 'stag-shortcode-scripts', $this->plugin_url() . '/assets/js/stag-shortcode-scripts.js', array( 'jquery', 'jquery-ui-accordion', 'jquery-ui-tabs' ), $this->version, true );
+
+		wp_enqueue_script( 'font-awesome-v5-svg', $this->plugin_url() . '/assets/js/fontawesome-all.min.js', array(), '5.0.2', true );
+		wp_enqueue_script( 'font-awesome-v4-shim', $this->plugin_url() . '/assets/js/fa-v4-shims.min.js', array( 'font-awesome-v5-svg' ), '5.0.2', true );
+	}
+
+	/**
+	 * Add defer attribute to selected scripts.
+	 *
+	 * @since 2.2.3.
+	 *
+	 * @param string $tag Script tag.
+	 * @param string $handle Script handle.
+	 * @return mixed|void
+	 */
+	public function add_defer_attribute( $tag, $handle ) {
+		$scripts_to_defer = array( 'font-awesome-v5-svg', 'font-awesome-v4-shim' );
+
+		foreach ( $scripts_to_defer as $defer_script ) {
+			if ( $defer_script === $handle ) {
+				return str_replace( ' src', ' defer src', $tag );
+			}
+		}
+		return $tag;
 	}
 
 	/**
