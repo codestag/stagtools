@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: StagTools\n"
-"POT-Creation-Date: 2017-11-19 16:49+0530\n"
+"POT-Creation-Date: 2017-12-21 23:03+0530\n"
 "PO-Revision-Date: 2016-07-21 16:29+0530\n"
 "Last-Translator: Ram Ratan Maurya <ram@codestag.com>\n"
 "Language-Team: Ram Ratan Maurya <ram@codestag.com>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: assets/js/plugin-lang.php:5
 msgid "Insert Stag Shortcode"
@@ -1105,7 +1106,7 @@ msgstr ""
 msgid "Choose Image Alignment"
 msgstr ""
 
-#: shortcodes/config.php:276 shortcodes/config.php:395
+#: shortcodes/config.php:276 shortcodes/config.php:406
 msgid "None"
 msgstr ""
 
@@ -1133,7 +1134,7 @@ msgstr ""
 msgid "Insert Image Shortcode"
 msgstr ""
 
-#: shortcodes/config.php:300 shortcodes/shortcode-class.php:147
+#: shortcodes/config.php:300 shortcodes/shortcode-class.php:151
 msgid "Choose Video"
 msgstr ""
 
@@ -1180,128 +1181,144 @@ msgstr ""
 msgid "Enter the icon&lsquo;s font size in px, em or %"
 msgstr ""
 
-#: shortcodes/config.php:341
+#: shortcodes/config.php:343
+msgid "Icon Style"
+msgstr ""
+
+#: shortcodes/config.php:345
+msgid "Solid"
+msgstr ""
+
+#: shortcodes/config.php:346
+msgid "Regular"
+msgstr ""
+
+#: shortcodes/config.php:347
+msgid "Brands"
+msgstr ""
+
+#: shortcodes/config.php:352
 msgid "Insert Icon Shortcode"
 msgstr ""
 
-#: shortcodes/config.php:350
+#: shortcodes/config.php:361
 msgid "Latitude"
 msgstr ""
 
-#: shortcodes/config.php:351
+#: shortcodes/config.php:362
 msgid "Enter the place latitude coordinate. E.g.: 37.42200"
 msgstr ""
 
-#: shortcodes/config.php:356
+#: shortcodes/config.php:367
 msgid "Longitude"
 msgstr ""
 
-#: shortcodes/config.php:357
+#: shortcodes/config.php:368
 #, php-format
 msgid ""
 "Enter the place longitude coordinate. E.g.: -122.08395. You may find the "
 "coordinates <a href=\"%1$s\" target=\"_blank\">here</a>."
 msgstr ""
 
-#: shortcodes/config.php:362
+#: shortcodes/config.php:373
 msgid "Width"
 msgstr ""
 
-#: shortcodes/config.php:363
+#: shortcodes/config.php:374
 msgid "Enter the map width."
 msgstr ""
 
-#: shortcodes/config.php:368
+#: shortcodes/config.php:379
 msgid "Height"
 msgstr ""
 
-#: shortcodes/config.php:369
+#: shortcodes/config.php:380
 msgid "Enter the map height."
 msgstr ""
 
-#: shortcodes/config.php:374
+#: shortcodes/config.php:385
 msgid "Map Type"
 msgstr ""
 
-#: shortcodes/config.php:375
+#: shortcodes/config.php:386
 msgid "Select the map type for Google Maps."
 msgstr ""
 
-#: shortcodes/config.php:377
+#: shortcodes/config.php:388
 msgid "Roadmap"
 msgstr ""
 
-#: shortcodes/config.php:378
+#: shortcodes/config.php:389
 msgid "Satellite"
 msgstr ""
 
-#: shortcodes/config.php:379
+#: shortcodes/config.php:390
 msgid "Hybrid"
 msgstr ""
 
-#: shortcodes/config.php:380
+#: shortcodes/config.php:391
 msgid "Terrain"
 msgstr ""
 
-#: shortcodes/config.php:386
+#: shortcodes/config.php:397
 msgid "Zoom Level"
 msgstr ""
 
-#: shortcodes/config.php:387
+#: shortcodes/config.php:398
 msgid ""
 "Enter the map zoom level between 0-21. Highest value zooms in and lowest "
 "zooms out."
 msgstr ""
 
-#: shortcodes/config.php:392
+#: shortcodes/config.php:403
 msgid "Map Style"
 msgstr ""
 
-#: shortcodes/config.php:393
+#: shortcodes/config.php:404
 msgid "Select from a list of predefined map styles."
 msgstr ""
 
-#: shortcodes/config.php:396
+#: shortcodes/config.php:407
 msgid "Pale Dawn"
 msgstr ""
 
-#: shortcodes/config.php:397
+#: shortcodes/config.php:408
 msgid "Subtle Grayscale"
 msgstr ""
 
-#: shortcodes/config.php:398
+#: shortcodes/config.php:409
 msgid "Bright & Bubbly"
 msgstr ""
 
-#: shortcodes/config.php:399
+#: shortcodes/config.php:410
 msgid "Greyscale"
 msgstr ""
 
-#: shortcodes/config.php:400
+#: shortcodes/config.php:411
 msgid "Mixed"
 msgstr ""
 
-#: shortcodes/config.php:405
+#: shortcodes/config.php:416
 msgid "Insert Google Map Shortcode"
 msgstr ""
 
-#: shortcodes/config.php:430
+#: shortcodes/config.php:441
 msgid "Choose Widget Area"
 msgstr ""
 
-#: shortcodes/config.php:431
+#: shortcodes/config.php:442
 msgid "Choose which sidebar area you want to display."
 msgstr ""
 
-#: shortcodes/config.php:437
+#: shortcodes/config.php:448
 msgid "Class"
 msgstr ""
 
-#: shortcodes/config.php:438
+#: shortcodes/config.php:449
 msgid "Enter Class name, if you want to use one on frontend."
 msgstr ""
 
-#: shortcodes/config.php:442
+#: shortcodes/config.php:453
 msgid "Insert a custom widget area"
 msgstr ""
 
@@ -1309,7 +1326,7 @@ msgstr ""
 msgid "Config file does not exist"
 msgstr ""
 
-#: shortcodes/shortcode-class.php:139
+#: shortcodes/shortcode-class.php:143
 msgid "Choose Image"
 msgstr ""
 
@@ -1322,12 +1339,12 @@ msgid "Title Goes Here"
 msgstr ""
 
 #. translators: %s is a link, do not remove/modify it.
-#: shortcodes/shortcodes.php:457
+#: shortcodes/shortcodes.php:458
 #, php-format
 msgid "To be able to use Google Maps, you first need to set an %s."
 msgstr ""
 
-#: shortcodes/shortcodes.php:458
+#: shortcodes/shortcodes.php:459
 msgid "API key"
 msgstr ""
 
@@ -1347,50 +1364,50 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: stagtools.php:183
+#: stagtools.php:185
 msgid "StagTools Options"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: stagtools.php:183
+#: stagtools.php:185
 msgid "StagTools"
 msgstr ""
 
-#: stagtools.php:382
+#: stagtools.php:406
 msgid "For more information:"
 msgstr ""
 
 #. translators: %s: Link to Github wiki.
-#: stagtools.php:384
+#: stagtools.php:408
 #, php-format
 msgid ""
 "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
 #. translators: %1$s: Link to Github issues, %2$s: Link to Github repo.
-#: stagtools.php:387
+#: stagtools.php:411
 #, php-format
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Post an issue</a> on <a href=\"%2$s\" "
 "target=\"_blank\">GitHub</a>."
 msgstr ""
 
-#: stagtools.php:395
+#: stagtools.php:419
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: stagtools.php:396
+#: stagtools.php:420
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: stagtools.php:397
+#: stagtools.php:421
 msgid "Where do I find these keys?"
 msgstr ""
 
 #. translators: %s: Link to Twitter Developer documentation site.
-#: stagtools.php:399
+#: stagtools.php:423
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -1398,12 +1415,12 @@ msgid ""
 "\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
 msgstr ""
 
-#: stagtools.php:400
+#: stagtools.php:424
 msgid "Where are my widgets?"
 msgstr ""
 
 #. translators: %s: Link to twitter screenshot.
-#: stagtools.php:402
+#: stagtools.php:426
 #, php-format
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -1412,12 +1429,12 @@ msgid ""
 "developer dashboard."
 msgstr ""
 
-#: stagtools.php:403
+#: stagtools.php:427
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
 #. translators: %s: Link to Github gist for code snippet.
-#: stagtools.php:405
+#: stagtools.php:429
 #, php-format
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of <a href="
@@ -1425,53 +1442,53 @@ msgid ""
 "any supported area."
 msgstr ""
 
-#: stagtools.php:411
+#: stagtools.php:435
 msgid "Portfolio Settings"
 msgstr ""
 
-#: stagtools.php:412
+#: stagtools.php:436
 msgid ""
 "You can use the following settigns to control the slug/taxonomies for custom "
 "post type portfolio and skills."
 msgstr ""
 
-#: stagtools.php:413
+#: stagtools.php:437
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: stagtools.php:414
+#: stagtools.php:438
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
 msgstr ""
 
-#: stagtools.php:420
+#: stagtools.php:444
 msgid "Using Social Icons"
 msgstr ""
 
-#: stagtools.php:421
+#: stagtools.php:445
 msgid "Using Social Icons Shortcode"
 msgstr ""
 
-#: stagtools.php:422
+#: stagtools.php:446
 msgid "To use the social icon use the following shortcode:"
 msgstr ""
 
-#: stagtools.php:423
+#: stagtools.php:447
 msgid "It would display all social icons with non-empty profile URLs."
 msgstr ""
 
-#: stagtools.php:424
+#: stagtools.php:448
 msgid "or you can pass specific ids."
 msgstr ""
 
-#: stagtools.php:425
+#: stagtools.php:449
 msgid "Using Different Styled Icons"
 msgstr ""
 
-#: stagtools.php:426
+#: stagtools.php:450
 msgid ""
 "You can use the social icons in two different styles: normal and square. "
 "Just pass the <code>style</code> argument in sidebar.<br>E.g.: "
