@@ -5,7 +5,7 @@ Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font-icons, fontawesome, sidebar, social, social media, maps, flickr, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.2.4 - Dec 21, 2017 =
+* Fix an issue with Instagram widget returning images with 403 response due to recent change to Instagram
 
 = 2.2.3 - Dec 21, 2017 =
 * Updated FontAwesome library to v5.0.2
