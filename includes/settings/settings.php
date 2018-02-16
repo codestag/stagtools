@@ -213,7 +213,7 @@ function stagtools_get_registered_settings() {
 				'twitter_settings' => array(
 					'id'   => 'twitter_settings',
 					'name' => '<strong>' . __( 'Twitter Settings', 'stag' ) . '</strong>',
-					'desc' => __( 'Configure the twitter settings', 'stag' ),
+					'desc' => '',
 					'type' => 'header',
 				),
 				'consumer_key' => array(
@@ -238,6 +238,20 @@ function stagtools_get_registered_settings() {
 					'id'   => 'access_secret',
 					'name' => __( 'OAuth Access Secret', 'stag' ),
 					'desc' => __( 'Enter twitter OAuth Access Secret', 'stag' ),
+					'type' => 'text',
+				),
+				'dribbble_header' => array(
+					'id'   => 'dribbble_header',
+					'name' => '<strong>' . __( 'Dribbble Settings', 'stag' ) . '</strong>',
+					'type' => 'header',
+				),
+				'dribbble_access_token' => array(
+					'id'   => 'dribbble_access_token',
+					'name' => __( 'Access Token', 'stag' ),
+					'desc' => sprintf(
+						__( 'You can get an access token manually from <a target="_blank" rel="nopener noreferrer" href="%s">here</a>.', 'stag' ),
+						'https://codestag.com/dribbble-authentication/'
+					),
 					'type' => 'text',
 				),
 				'google_api_header' => array(

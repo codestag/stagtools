@@ -17,21 +17,6 @@ class Stag_Dribbble extends ST_Widget {
 				'std'   => 'Latest Shots',
 				'label' => __( 'Title:', 'stag' ),
 			),
-			'dribbble_name' => array(
-				'type'  => 'text',
-				'std'   => 'Codestag',
-				'label' => __( 'Dribbble Username:', 'stag' ),
-			),
-			'access_token' => array(
-				'type'  => 'text',
-				'std'   => '',
-				'label' => __( 'Client Access Token:', 'stag' ),
-				'description' => sprintf(
-					/* translators: %s: Dribbble API application URL. */
-					__( 'You need a client access token from Dribbble in order to access their API. Create an <a href="%s" target="_blank">application</a> and enter the access token.', 'stag' ),
-					'https://dribbble.com/account/applications'
-				),
-			),
 			'count' => array(
 				'type'  => 'number',
 				'std'   => 4,
@@ -53,24 +38,32 @@ class Stag_Dribbble extends ST_Widget {
 
 		extract( $args );
 
-		echo $before_widget;
-
 		$title         = apply_filters( 'widget_title', $instance['title'] );
-		$dribbble_name = esc_html( $instance['dribbble_name'] );
-		$access_token  = esc_html( $instance['access_token'] );
 		$count         = absint( $instance['count'] );
 		$index         = 0;
 
-		if ( '' === $access_token ) {
+		$stag_options = get_option( 'stag_options' );
+		if ( ! isset( $stag_options['dribbble_access_token'] ) || '' === $stag_options['dribbble_access_token'] ) {
+			if ( current_user_can( 'edit_theme_options' ) ) :
 			?>
 			<p class="stag-alert stag-alert--red">
-				<?php esc_html_e( 'Please fill-in all widget settings.', 'stag' ); ?>
+			<?php
+				echo sprintf(
+					__( 'Please generate an access token from <a href="">StagTools settings</a>', 'stag' ),
+					admin_url( 'options-general.php?page=stagtools#stagtools_settings_general[dribbble_access_token]' )
+				);
+			?>
 			</p>
 			<?php
+			endif;
 			return;
 		}
 
-		$shots = $this->dribbble_shots( $dribbble_name, $access_token );
+		$access_token = $stag_options['dribbble_access_token'];
+		$shots = $this->dribbble_shots( $access_token, $count );
+
+		echo $before_widget;
+
 		?>
 
 
@@ -113,18 +106,24 @@ class Stag_Dribbble extends ST_Widget {
 	 *
 	 * @param string $username Dribbble username.
 	 * @param string $access_token Client access token.
+	 * @param int    $count Number of posts to return.
 	 *
 	 * @since 2.2.0.
 	 *
 	 * @return mixed
 	 */
-	public function dribbble_shots( $username, $access_token ) {
-		if ( '' === ( $username || $access_token ) ) return;
+	public function dribbble_shots( $access_token, $count ) {
+		if ( '' === $access_token ) return;
 
-		$shots = get_transient( 'st_dribbble_' . sanitize_title_with_dashes( $username ) );
+		$transient_key = "st_dribble_${access_token}_${count}";
+		$shots         = get_transient( $transient_key );
 
 		if ( empty( $shots ) || false === $shots ) {
-			$remote_url = "https://api.dribbble.com/v1/users/{$username}/shots?access_token={$access_token}";
+			$remote_url = add_query_arg( array(
+				'access_token' => $access_token,
+				'per_page'     => $count,
+			), 'https://api.dribbble.com/v2/user/shots' );
+
 			$request    = wp_remote_get( $remote_url, array(
 				'sslverify' => false,
 			) );
@@ -136,7 +135,7 @@ class Stag_Dribbble extends ST_Widget {
 				$shots = json_decode( $body );
 
 				if ( ! empty( $shots ) ) {
-					set_transient( 'st_dribbble_' . sanitize_title_with_dashes( $username ), $shots, DAY_IN_SECONDS );
+					set_transient( $transient_key, $shots, DAY_IN_SECONDS );
 				}
 			}
 		}
