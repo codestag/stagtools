@@ -29,11 +29,8 @@
   border-radius: 0;
   text-decoration: none;
   text-align: center;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-transition: all 200ms ease-in-out;
-  -o-transition: all 200ms ease-in-out;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
@@ -370,15 +367,13 @@
   top: 50%;
   right: 15px;
   font-size: 18px;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   content: '\f067';
   display: inline-block;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -539,8 +534,6 @@
 }
 .stag-icon-link {
   text-decoration: none;
-  -moz-transition: color 150ms;
-  -o-transition: color 150ms;
   -webkit-transition: color 150ms;
   transition: color 150ms;
 }
@@ -562,6 +555,14 @@
 .stag-icon,
 .stag-icon--after
 .stag-icon {
+  margin-left: 0.7em;
+}
+
+.stag-icon--before svg {
+  margin-right: 0.7em;
+}
+
+.stag-icon--after svg {
   margin-left: 0.7em;
 }
 
