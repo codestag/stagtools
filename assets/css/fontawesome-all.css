@@ -1,5 +1,5 @@
 /*!
- * Font Awesome Free 5.0.2 by @fontawesome - http://fontawesome.com
+ * Font Awesome Free 5.0.6 by @fontawesome - http://fontawesome.com
  * License - http://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 .fa,
@@ -394,6 +394,12 @@ readers do not read off random characters that represent icons */
 .fa-bars:before {
   content: "\f0c9"; }
 
+.fa-baseball-ball:before {
+  content: "\f433"; }
+
+.fa-basketball-ball:before {
+  content: "\f434"; }
+
 .fa-bath:before {
   content: "\f2cd"; }
 
@@ -486,6 +492,9 @@ readers do not read off random characters that represent icons */
 
 .fa-bookmark:before {
   content: "\f02e"; }
+
+.fa-bowling-ball:before {
+  content: "\f436"; }
 
 .fa-braille:before {
   content: "\f2a1"; }
@@ -633,6 +642,30 @@ readers do not read off random characters that represent icons */
 
 .fa-check-square:before {
   content: "\f14a"; }
+
+.fa-chess:before {
+  content: "\f439"; }
+
+.fa-chess-bishop:before {
+  content: "\f43a"; }
+
+.fa-chess-board:before {
+  content: "\f43c"; }
+
+.fa-chess-king:before {
+  content: "\f43f"; }
+
+.fa-chess-knight:before {
+  content: "\f441"; }
+
+.fa-chess-pawn:before {
+  content: "\f443"; }
+
+.fa-chess-queen:before {
+  content: "\f445"; }
+
+.fa-chess-rook:before {
+  content: "\f447"; }
 
 .fa-chevron-circle-down:before {
   content: "\f13a"; }
@@ -868,6 +901,9 @@ readers do not read off random characters that represent icons */
 .fa-eject:before {
   content: "\f052"; }
 
+.fa-elementor:before {
+  content: "\f430"; }
+
 .fa-ellipsis-h:before {
   content: "\f141"; }
 
@@ -1036,6 +1072,9 @@ readers do not read off random characters that represent icons */
 .fa-flickr:before {
   content: "\f16e"; }
 
+.fa-flipboard:before {
+  content: "\f44d"; }
+
 .fa-fly:before {
   content: "\f417"; }
 
@@ -1062,6 +1101,9 @@ readers do not read off random characters that represent icons */
 
 .fa-fonticons-fi:before {
   content: "\f3a2"; }
+
+.fa-football-ball:before {
+  content: "\f44e"; }
 
 .fa-fort-awesome:before {
   content: "\f286"; }
@@ -1152,6 +1194,9 @@ readers do not read off random characters that represent icons */
 
 .fa-gofore:before {
   content: "\f3a7"; }
+
+.fa-golf-ball:before {
+  content: "\f450"; }
 
 .fa-goodreads:before {
   content: "\f3a8"; }
@@ -1261,11 +1306,17 @@ readers do not read off random characters that represent icons */
 .fa-heartbeat:before {
   content: "\f21e"; }
 
+.fa-hips:before {
+  content: "\f452"; }
+
 .fa-hire-a-helper:before {
   content: "\f3b0"; }
 
 .fa-history:before {
   content: "\f1da"; }
+
+.fa-hockey-puck:before {
+  content: "\f453"; }
 
 .fa-home:before {
   content: "\f015"; }
@@ -1735,6 +1786,9 @@ readers do not read off random characters that represent icons */
 .fa-phone-volume:before {
   content: "\f2a0"; }
 
+.fa-php:before {
+  content: "\f457"; }
+
 .fa-pied-piper:before {
   content: "\f2ae"; }
 
@@ -1812,6 +1866,12 @@ readers do not read off random characters that represent icons */
 
 .fa-question-circle:before {
   content: "\f059"; }
+
+.fa-quidditch:before {
+  content: "\f458"; }
+
+.fa-quinscape:before {
+  content: "\f459"; }
 
 .fa-quora:before {
   content: "\f2c4"; }
@@ -2077,6 +2137,9 @@ readers do not read off random characters that represent icons */
 .fa-square:before {
   content: "\f0c8"; }
 
+.fa-square-full:before {
+  content: "\f45c"; }
+
 .fa-stack-exchange:before {
   content: "\f18d"; }
 
@@ -2178,6 +2241,9 @@ readers do not read off random characters that represent icons */
 
 .fa-table:before {
   content: "\f0ce"; }
+
+.fa-table-tennis:before {
+  content: "\f45d"; }
 
 .fa-tablet:before {
   content: "\f10a"; }
@@ -2449,6 +2515,9 @@ readers do not read off random characters that represent icons */
 .fa-vnv:before {
   content: "\f40b"; }
 
+.fa-volleyball-ball:before {
+  content: "\f45f"; }
+
 .fa-volume-down:before {
   content: "\f027"; }
 
@@ -2553,6 +2622,9 @@ readers do not read off random characters that represent icons */
 
 .fa-youtube:before {
   content: "\f167"; }
+
+.fa-youtube-square:before {
+  content: "\f431"; }
 
 .sr-only {
   border: 0;
