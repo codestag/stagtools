@@ -183,11 +183,13 @@
 
 .stag-tabs--normal .stag-nav a {
 	background: $accent;
+	background: $accent_new;
 	color: #fff;
 }
 .stag-tabs--normal .stag-nav .ui-tabs-active a {
 	background: #fbfbfb;
 	color: $accent;
+	color: $accent_new;
 	outline: 0;
 }
 .stag-tabs--normal .stag-tab {
@@ -238,6 +240,7 @@
 
 .stag-toggle--normal .stag-toggle-title {
 	background: $accent;
+	background: $accent_new;
 	color: white;
 }
 
@@ -247,6 +250,7 @@
 }
 .stag-toggle--stroke .stag-toggle-title:after {
 	color: $accent;
+	color: $accent_new;
 }
 
 /* Image */

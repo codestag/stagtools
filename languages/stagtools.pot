@@ -1,25 +1,17 @@
-#, fuzzy
+# Copyright (C) 2018 Ram Ratan Maurya
+# This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: StagTools\n"
-"POT-Creation-Date: 2017-12-21 23:03+0530\n"
-"PO-Revision-Date: 2016-07-21 16:29+0530\n"
-"Last-Translator: Ram Ratan Maurya <ram@codestag.com>\n"
-"Language-Team: Ram Ratan Maurya <ram@codestag.com>\n"
+"Project-Id-Version: StagTools 2.2.5\n"
+"Report-Msgid-Bugs-To: https://codestag.com/support/\n"
+"POT-Creation-Date: 2018-02-16 11:09:26+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-WPHeader: stagtools.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Codestag\n"
+"Language-Team: Codestag\n"
+"X-Generator: grunt-wp-i18n1.0.1\n"
 
 #: assets/js/plugin-lang.php:5
 msgid "Insert Stag Shortcode"
@@ -123,31 +115,6 @@ msgstr ""
 #: includes/post-type/slides.php:39 includes/post-type/team.php:40
 #: includes/post-type/testimonials.php:39
 msgid "Date"
-msgstr ""
-
-#: includes/post-type/project.php:10
-msgctxt "post type general name"
-msgid "Projects"
-msgstr ""
-
-#: includes/post-type/project.php:11
-msgctxt "post type singular name"
-msgid "Project"
-msgstr ""
-
-#: includes/post-type/project.php:12
-msgctxt "admin menu"
-msgid "Portfolio"
-msgstr ""
-
-#: includes/post-type/project.php:13
-msgctxt "add new on admin bar"
-msgid "Project"
-msgstr ""
-
-#: includes/post-type/project.php:14
-msgctxt "Project"
-msgid "Add New"
 msgstr ""
 
 #: includes/post-type/project.php:15
@@ -342,10 +309,6 @@ msgstr ""
 msgid "Twitter Settings"
 msgstr ""
 
-#: includes/settings/settings.php:216
-msgid "Configure the twitter settings"
-msgstr ""
-
 #: includes/settings/settings.php:221
 msgid "OAuth Consumer Key"
 msgstr ""
@@ -379,44 +342,55 @@ msgid "Enter twitter OAuth Access Secret"
 msgstr ""
 
 #: includes/settings/settings.php:245
-msgid "Google Maps API key"
+msgid "Dribbble Settings"
 msgstr ""
 
 #: includes/settings/settings.php:250
-msgid "API Key"
+msgid "Access Token"
 msgstr ""
 
 #: includes/settings/settings.php:252
-#, php-format
+msgid ""
+"You can get an access token manually from <a target=\"_blank\" "
+"rel=\"nopener noreferrer\" href=\"%s\">here</a>."
+msgstr ""
+
+#: includes/settings/settings.php:259
+msgid "Google Maps API key"
+msgstr ""
+
+#: includes/settings/settings.php:264
+msgid "API Key"
+msgstr ""
+
+#: includes/settings/settings.php:266
 msgid ""
 "An API key is required for Google Maps shortcode to work. Here is how you "
 "can %s."
 msgstr ""
 
-#: includes/settings/settings.php:253
+#: includes/settings/settings.php:267
 msgid "get a key"
 msgstr ""
 
-#: includes/settings/settings.php:448
+#: includes/settings/settings.php:462
 msgid "Portfolio Slug"
 msgstr ""
 
-#: includes/settings/settings.php:449
+#: includes/settings/settings.php:463
 msgid "Enter the slug of custom post type <strong>portfolio</strong>."
 msgstr ""
 
-#: includes/settings/settings.php:455
+#: includes/settings/settings.php:469
 msgid "Skills Slug"
 msgstr ""
 
-#: includes/settings/settings.php:456
+#: includes/settings/settings.php:470
 msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
 msgstr ""
 
-#: includes/settings/settings.php:469
-#, php-format
-msgid ""
-"The callback function used for the <strong>%s</strong> setting is missing."
+#: includes/settings/settings.php:483
+msgid "The callback function used for the <strong>%s</strong> setting is missing."
 msgstr ""
 
 #: includes/tinymce.php:117
@@ -479,18 +453,6 @@ msgstr ""
 msgid "Dotted"
 msgstr ""
 
-#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:239
-msgid "ERROR: You need to provide a user."
-msgstr ""
-
-#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:352
-msgid "ERROR: Could not retrieve bearer token."
-msgstr ""
-
-#: includes/widgets/lib/TwitterWP/lib/TwitterWP.php:717
-msgid "ERROR: Missing Twitter App credentials."
-msgstr ""
-
 #: includes/widgets/stagtools-widget.php:160
 msgid "All"
 msgstr ""
@@ -511,28 +473,11 @@ msgid "Title:"
 msgstr ""
 
 #: includes/widgets/widget-dribbble.php:23
-msgid "Dribbble Username:"
-msgstr ""
-
-#: includes/widgets/widget-dribbble.php:28
-msgid "Client Access Token:"
-msgstr ""
-
-#. translators: %s: Dribbble API application URL.
-#: includes/widgets/widget-dribbble.php:31
-#, php-format
-msgid ""
-"You need a client access token from Dribbble in order to access their API. "
-"Create an <a href=\"%s\" target=\"_blank\">application</a> and enter the "
-"access token."
-msgstr ""
-
-#: includes/widgets/widget-dribbble.php:38
 msgid "Number of shots to show:"
 msgstr ""
 
-#: includes/widgets/widget-dribbble.php:67
-msgid "Please fill-in all widget settings."
+#: includes/widgets/widget-dribbble.php:52
+msgid "Please generate an access token from <a href=\"\">StagTools settings</a>"
 msgstr ""
 
 #: includes/widgets/widget-flickr.php:12
@@ -548,7 +493,6 @@ msgid "Your Flickr User ID:"
 msgstr ""
 
 #: includes/widgets/widget-flickr.php:27
-#, php-format
 msgid "Head over to %s to find your Flickr user ID."
 msgstr ""
 
@@ -613,25 +557,26 @@ msgstr ""
 msgid "Link Text:"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:168
+#: includes/widgets/widget-instagram.php:175
 msgid "Unable to communicate with Instagram."
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:172
+#: includes/widgets/widget-instagram.php:179
 msgid "Instagram did not return a 200."
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:180
-#: includes/widgets/widget-instagram.php:188
-#: includes/widgets/widget-instagram.php:192
+#: includes/widgets/widget-instagram.php:187
+#: includes/widgets/widget-instagram.php:195
+#: includes/widgets/widget-instagram.php:199
 msgid "Instagram has returned invalid data."
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:224
+#: includes/widgets/widget-instagram.php:213
+#: includes/widgets/widget-instagram.php:239
 msgid "Instagram Image"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:253
+#: includes/widgets/widget-instagram.php:270
 msgid "Instagram did not return any images."
 msgstr ""
 
@@ -708,7 +653,6 @@ msgid "Please provide a Twitter Username."
 msgstr ""
 
 #: includes/widgets/widget-twitter.php:181
-#, php-format
 msgid "Please fill in the <a href=\"%s\">Twitter oAuth settings</a>"
 msgstr ""
 
@@ -717,7 +661,6 @@ msgid "The Twitter API is taking too long to respond. Please try again later."
 msgstr ""
 
 #: includes/widgets/widget-twitter.php:222
-#, php-format
 msgid "%s ago"
 msgstr ""
 
@@ -1145,7 +1088,6 @@ msgid ""
 msgstr ""
 
 #: shortcodes/config.php:301
-#, php-format
 msgid "A list of all shortcode video services can be found on %s.<br>"
 msgstr ""
 
@@ -1214,7 +1156,6 @@ msgid "Longitude"
 msgstr ""
 
 #: shortcodes/config.php:368
-#, php-format
 msgid ""
 "Enter the place longitude coordinate. E.g.: -122.08395. You may find the "
 "coordinates <a href=\"%1$s\" target=\"_blank\">here</a>."
@@ -1338,9 +1279,8 @@ msgstr ""
 msgid "Title Goes Here"
 msgstr ""
 
-#. translators: %s is a link, do not remove/modify it.
 #: shortcodes/shortcodes.php:458
-#, php-format
+#. translators: %s is a link, do not remove/modify it.
 msgid "To be able to use Google Maps, you first need to set an %s."
 msgstr ""
 
@@ -1369,7 +1309,6 @@ msgid "StagTools Options"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: stagtools.php:185
 msgid "StagTools"
 msgstr ""
 
@@ -1377,16 +1316,13 @@ msgstr ""
 msgid "For more information:"
 msgstr ""
 
-#. translators: %s: Link to Github wiki.
 #: stagtools.php:408
-#, php-format
-msgid ""
-"Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
+#. translators: %s: Link to Github wiki.
+msgid "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#. translators: %1$s: Link to Github issues, %2$s: Link to Github repo.
 #: stagtools.php:411
-#, php-format
+#. translators: %1$s: Link to Github issues, %2$s: Link to Github repo.
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Post an issue</a> on <a href=\"%2$s\" "
 "target=\"_blank\">GitHub</a>."
@@ -1406,26 +1342,25 @@ msgstr ""
 msgid "Where do I find these keys?"
 msgstr ""
 
-#. translators: %s: Link to Twitter Developer documentation site.
 #: stagtools.php:423
-#, php-format
+#. translators: %s: Link to Twitter Developer documentation site.
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by <a href="
-"\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer dashboard."
+"app, which will provide you with the keys you see above. Start by <a "
+"href=\"%s\" target=\"_blank\">signing-in</a> to the Twitter developer "
+"dashboard."
 msgstr ""
 
 #: stagtools.php:424
 msgid "Where are my widgets?"
 msgstr ""
 
-#. translators: %s: Link to twitter screenshot.
 #: stagtools.php:426
-#, php-format
+#. translators: %s: Link to twitter screenshot.
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
-"app, which will provide you with the keys you see above. Start by <a href="
-"\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
+"app, which will provide you with the keys you see above. Start by <a "
+"href=\"%s\" target=\"_blank\">creating a new application</a> to the Twitter "
 "developer dashboard."
 msgstr ""
 
@@ -1433,13 +1368,12 @@ msgstr ""
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#. translators: %s: Link to Github gist for code snippet.
 #: stagtools.php:429
-#, php-format
+#. translators: %s: Link to Github gist for code snippet.
 msgid ""
-"Yes; although we have a shortcode builder you can also see a list of <a href="
-"\"%s\" target=\"_blank\">all available shortcodes</a> and use it manually in "
-"any supported area."
+"Yes; although we have a shortcode builder you can also see a list of <a "
+"href=\"%s\" target=\"_blank\">all available shortcodes</a> and use it "
+"manually in any supported area."
 msgstr ""
 
 #: stagtools.php:435
@@ -1448,8 +1382,8 @@ msgstr ""
 
 #: stagtools.php:436
 msgid ""
-"You can use the following settigns to control the slug/taxonomies for custom "
-"post type portfolio and skills."
+"You can use the following settigns to control the slug/taxonomies for "
+"custom post type portfolio and skills."
 msgstr ""
 
 #: stagtools.php:437
@@ -1511,4 +1445,29 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://mauryaratan.me"
+msgstr ""
+
+#: includes/post-type/project.php:10
+msgctxt "post type general name"
+msgid "Projects"
+msgstr ""
+
+#: includes/post-type/project.php:11
+msgctxt "post type singular name"
+msgid "Project"
+msgstr ""
+
+#: includes/post-type/project.php:12
+msgctxt "admin menu"
+msgid "Portfolio"
+msgstr ""
+
+#: includes/post-type/project.php:13
+msgctxt "add new on admin bar"
+msgid "Project"
+msgstr ""
+
+#: includes/post-type/project.php:14
+msgctxt "Project"
+msgid "Add New"
 msgstr ""

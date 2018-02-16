@@ -3,12 +3,12 @@
  * Plugin Name: StagTools
  * Plugin URI: https://wordpress.org/plugins/stagtools/
  * Description: A poweful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.
- * Version: 2.2.4
+ * Version: 2.2.5
  * Author: Ram Ratan Maurya
  * Author URI: https://mauryaratan.me
  * License: GPL2
  * Requires at least: 4.0
- * Tested up to: 4.9.1
+ * Tested up to: 4.9.4
  *
  * Text Domain: stag
  * Domain Path: /languages/
@@ -24,7 +24,7 @@ if ( ! class_exists( 'StagTools' ) ) :
  * Main StagTools Class
  *
  * @package StagTools
- * @version 2.2.4
+ * @version 2.2.5
  * @author Ram Ratan Maurya (Codestag)
  * @link https://mauryaratan.me
  * @link https://codestag.com
@@ -35,7 +35,7 @@ class StagTools {
 	 *
 	 * @var string
 	 */
-	public $version = '2.2.4';
+	public $version = '2.2.5';
 
 	/**
 	 * The single instance of the class.
@@ -269,7 +269,7 @@ class StagTools {
 	 * @return void
 	 */
 	public function frontend_style() {
-		wp_register_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.0.6', 'all' );
+		wp_enqueue_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.0.6', 'all' );
 		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css', array(), $this->version, 'all' );
 
 		wp_enqueue_style( 'stag-shortcode-styles' );
@@ -294,7 +294,7 @@ class StagTools {
 
 		foreach ( $scripts_to_defer as $defer_script ) {
 			if ( $defer_script === $handle ) {
-				return str_replace( ' src', ' defer src', $tag );
+				return str_replace( ' src', 'async defer src', $tag );
 			}
 		}
 		return $tag;

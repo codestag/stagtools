@@ -320,12 +320,14 @@
 
 .stag-tabs--normal .stag-nav a {
   background: #363f48;
+  background: var(--stagtools-accent, #363f48);
   color: #fff;
 }
 
 .stag-tabs--normal .stag-nav .ui-tabs-active a {
   background: #fbfbfb;
   color: #363f48;
+  color: var(--stagtools-accent, #363f48);
   outline: 0;
 }
 
@@ -389,6 +391,7 @@
 
 .stag-toggle--normal .stag-toggle-title {
   background: #363f48;
+  background: var(--stagtools-accent, #363f48);
   color: white;
 }
 
@@ -399,6 +402,7 @@
 
 .stag-toggle--stroke .stag-toggle-title:after {
   color: #363f48;
+  color: var(--stagtools-accent, #363f48);
 }
 
 /* Image */
