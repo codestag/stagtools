@@ -187,8 +187,8 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 					return new WP_Error( 'bad_json', esc_html__( 'Instagram has returned invalid data.', 'stag' ) );
 				}
 
-				if ( isset( $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'] ) ) {
-					$images = $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'];
+				if ( isset( $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'] ) ) {
+					$images = $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'];
 				} elseif ( isset( $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'] ) ) {
 					$images = $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
 				} else {
@@ -202,55 +202,48 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 				$instagram = array();
 
 				foreach ( $images as $image ) {
+					$image = $image['node'];
 					switch ( substr( $username, 0, 1 ) ) {
 						case '#':
-							if ( true === $image['node']['is_video'] ) {
-								$type = 'video';
-							} else {
-								$type = 'image';
-							}
+							$type = ( $image['is_video'] ) ? 'video' : 'image';
 
 							$caption = __( 'Instagram Image', 'stag' );
-							if ( ! empty( $image['node']['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
-								$caption = $image['node']['edge_media_to_caption']['edges'][0]['node']['text'];
+							if ( ! empty( $image['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
+								$caption = $image['edge_media_to_caption']['edges'][0]['node']['text'];
 							}
 
 							$instagram[] = array(
 								'description' => $caption,
-								'link'        => trailingslashit( '//instagram.com/p/' . $image['node']['shortcode'] ),
-								'time'        => $image['node']['taken_at_timestamp'],
-								'comments'    => $image['node']['edge_media_to_comment']['count'],
-								'likes'       => $image['node']['edge_liked_by']['count'],
-								'thumbnail'   => preg_replace( '/^https?\:/i', '', $image['node']['thumbnail_resources'][0]['src'] ),
-								'small'       => preg_replace( '/^https?\:/i', '', $image['node']['thumbnail_resources'][2]['src'] ),
-								'large'       => preg_replace( '/^https?\:/i', '', $image['node']['thumbnail_resources'][4]['src'] ),
-								'original'    => preg_replace( '/^https?\:/i', '', $image['node']['display_url'] ),
+								'link'        => trailingslashit( '//instagram.com/p/' . $image['shortcode'] ),
+								'time'        => $image['taken_at_timestamp'],
+								'comments'    => $image['edge_media_to_comment']['count'],
+								'likes'       => $image['edge_liked_by']['count'],
+								'thumbnail'   => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][0]['src'] ),
+								'small'       => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][2]['src'] ),
+								'large'       => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][4]['src'] ),
+								'original'    => preg_replace( '/^https?\:/i', '', $image['display_url'] ),
 								'type'        => $type,
 							);
 							break;
 
 						default:
-							if ( true === $image['is_video'] ) {
-								$type = 'video';
-							} else {
-								$type = 'image';
-							}
+							$type = ( $image['is_video'] ) ? 'video' : 'image';
 
-							$caption = __( 'Instagram Image', 'wp-instagram-widget' );
-							if ( ! empty( $image['caption'] ) ) {
-								$caption = $image['caption'];
+							$caption = __( 'Instagram Image', 'stag' );
+							if ( ! empty( $image['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
+								$caption = $image['edge_media_to_caption']['edges'][0]['node']['text'];
 							}
 
 							$instagram[] = array(
 								'description' => $caption,
-								'link'        => trailingslashit( '//instagram.com/p/' . $image['code'] ),
-								'time'        => $image['date'],
-								'comments'    => $image['comments']['count'],
-								'likes'       => $image['likes']['count'],
-								'thumbnail'   => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][0]['src'] ),
-								'small'       => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][2]['src'] ),
-								'large'       => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][4]['src'] ),
-								'original'    => preg_replace( '/^https?\:/i', '', $image['display_src'] ),
+								'link'        => trailingslashit( 'https://instagram.com/p/' . $image['shortcode'] ),
+								'time'        => $image['taken_at_timestamp'],
+								'comments'    => $image['edge_media_to_comment']['count'],
+								'likes'       => $image['edge_liked_by']['count'],
+								'thumbnail'   => $image['thumbnail_resources'][0]['src'],
+								'small'       => $image['thumbnail_resources'][2]['src'],
+								'large'       => $image['thumbnail_resources'][4]['src'],
+								'original'    => $image['display_url'],
 								'type'        => $type,
 							);
 							break;
