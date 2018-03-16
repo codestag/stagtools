@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: StagTools 2.2.5\n"
 "Report-Msgid-Bugs-To: https://codestag.com/support/\n"
-"POT-Creation-Date: 2018-02-16 11:09:26+00:00\n"
+"POT-Creation-Date: 2018-03-16 00:08:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -571,12 +571,12 @@ msgstr ""
 msgid "Instagram has returned invalid data."
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:213
-#: includes/widgets/widget-instagram.php:239
+#: includes/widgets/widget-instagram.php:210
+#: includes/widgets/widget-instagram.php:232
 msgid "Instagram Image"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:270
+#: includes/widgets/widget-instagram.php:263
 msgid "Instagram did not return any images."
 msgstr ""
 
@@ -1288,15 +1288,15 @@ msgstr ""
 msgid "API key"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:34
+#: shortcodes/stag-shortcodes.php:35
 msgid "Upload or Choose Your Custom Video File"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:35
+#: shortcodes/stag-shortcodes.php:36
 msgid "Upload or Choose Your Custom Image File"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:113
+#: shortcodes/stag-shortcodes.php:118
 msgid "Insert Shortcode"
 msgstr ""
 

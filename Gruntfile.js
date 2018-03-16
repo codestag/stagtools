@@ -16,10 +16,10 @@ module.exports = function( grunt ) {
 		// 		]
 		// 	}
 		// },
-		clean:{
+		clean: {
 			assets: {
-				src: [ 'assets/temp' ]
-			}
+				src: [ 'assets/temp' ],
+			},
 		},
 		yaml: {
 			fontawesome: {
@@ -28,10 +28,10 @@ module.exports = function( grunt ) {
 						expand: true,
 						cwd: 'assets',
 						src: 'icons*.yml',
-						dest: 'assets/temp'
-					}
-				]
-			}
+						dest: 'assets/temp',
+					},
+				],
+			},
 		},
 		json_massager: {
 			fontawesome: {
@@ -42,11 +42,11 @@ module.exports = function( grunt ) {
 
 					_.forEach( icons, function( data, key ) {
 						_.forEach( data.styles, function( category ) {
-							if ( 'undefined' === typeof newObj[category] ) {
-								newObj[category] = [];
+							if ( 'undefined' === typeof newObj[ category ] ) {
+								newObj[ category ] = [];
 							}
 
-							if( 'regular' === category ) {
+							if ( 'regular' === category ) {
 								style = 'far';
 							} else if ( 'brands' === category ) {
 								style = 'fab';
@@ -60,9 +60,9 @@ module.exports = function( grunt ) {
 								unicode: data.unicode,
 								style: style,
 							};
-							newObj[category].push( icon );
-						} );
-					} );
+							newObj[ category ].push( icon );
+						});
+					});
 
 					// _.forEach( newObj, function( category ) {
 					// 	category.sort( function( a, b ) {
@@ -79,9 +79,9 @@ module.exports = function( grunt ) {
 					return newObj;
 				},
 				files: {
-					'assets/temp/fontawesome.json': [ 'assets/temp/icons*.json' ]
-				}
-			}
+					'assets/temp/fontawesome.json': [ 'assets/temp/icons*.json' ],
+				},
+			},
 		},
 		json: {
 			fontawesome: {
@@ -89,11 +89,11 @@ module.exports = function( grunt ) {
 					namespace: 'stIconObj',
 					processName: function( filename ) {
 						return filename.toLowerCase();
-					}
+					},
 				},
 				src: [ 'assets/temp/fontawesome.json' ],
-				dest: 'assets/js/icons.js'
-			}
+				dest: 'assets/js/icons.js',
+			},
 		},
 		makepot: {
 			target: {
@@ -107,9 +107,9 @@ module.exports = function( grunt ) {
 						pot.headers['last-translator'] = 'Codestag';
 						pot.headers['language-team'] = 'Codestag';
 						return pot;
-					}
-				}
-			}
+					},
+				},
+			},
 		},
 	});
 
@@ -118,6 +118,6 @@ module.exports = function( grunt ) {
 		'yaml:fontawesome',
 		'json_massager:fontawesome',
 		'json:fontawesome',
-		'clean:assets'
-	] );
+		'clean:assets',
+	]);
 };
