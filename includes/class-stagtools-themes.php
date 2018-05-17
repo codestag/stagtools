@@ -10,12 +10,6 @@
  */
 class StagTools_Themes {
 	public function __construct() {
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-	}
-
-	public function admin_menu() {
-		add_submenu_page( 'options-general.php', __( 'Codestag Themes', 'stag' ), __( 'Codestag Themes', 'stag' ), 'switch_themes', 'codestag_themes', array( $this, 'admin_page' ) );
-
 		$this->get_codestag_themes();
 	}
 
