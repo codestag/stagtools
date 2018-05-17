@@ -252,6 +252,7 @@ class StagTools {
 		include_once 'shortcodes/stag-shortcodes.php';
 		include_once 'includes/settings/settings.php';
 		include_once 'includes/tinymce.php';
+		include_once 'includes/class-stagtools-themes.php';
 	}
 
 	/**
