@@ -99,9 +99,22 @@ class StagTools_Themes {
 			@supports (display:grid) {
 				.codestag-themes {
 					display: grid;
-					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-columns: 1fr;
 					grid-gap: 20px;
 				}
+
+				@media (min-width: 1024px) {
+					.codestag-themes {
+						grid-template-columns: 1fr 1fr 1fr;
+					}
+				}
+
+				@media only screen and (min-width: 480px) and (max-width: 1023px) {
+					.codestag-themes {
+						grid-template-columns: 1fr 1fr;
+					}
+				}
+
 				.codestag-theme {
 					margin-right: 0;
 					margin-bottom: 0;
