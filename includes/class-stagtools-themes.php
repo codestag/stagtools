@@ -113,10 +113,16 @@ class StagTools_Themes {
 				margin-bottom: -5px;
 			}
 
-			.codestag-themes img {
-				max-width: 100%;
+			.codestag-theme__cover {
+				display: block;
 				max-width: calc(100% + 28px);
 				margin: 0 -14px;
+				max-height: 270px;
+				overflow: hidden;
+			}
+
+			.codestag-themes img {
+				max-width: 100%;
 			}
 			.codestag-theme__title { margin: 0 0 12px; font-size: 13px; }
 
