@@ -29,6 +29,7 @@ $portfolio_args = array(
 	'publicly_queryable' => true,
 	'show_ui'            => true,
 	'show_in_menu'       => true,
+	'show_in_rest'       => true,
 	'menu_position'      => 100,
 	'menu_icon'          => 'dashicons-portfolio',
 	'query_var'          => true,
