@@ -12,21 +12,21 @@ class Stag_Flickr extends ST_Widget {
 		$this->widget_description = __( 'Display your latest Flickr photos.', 'stag' );
 		$this->widget_name        = __( 'Stag Flickr Photos', 'stag' );
 		$this->settings           = array(
-			'title' => array(
+			'title'          => array(
 				'type'  => 'text',
 				'std'   => 'Flickr Photos',
 				'label' => __( 'Title:', 'stag' ),
 			),
-			'flickr_id' => array(
+			'flickr_id'      => array(
 				'type'  => 'text',
 				'std'   => null,
 				'label' => __( 'Your Flickr User ID:', 'stag' ),
 			),
 			'flickr_id_desc' => array(
-				'type'  => 'description',
-				'std'   => sprintf( __( 'Head over to %s to find your Flickr user ID.', 'stag' ), '<a href="//idgettr.com" target="_blank" rel="nofollow">idgettr</a>' ),
+				'type' => 'description',
+				'std'  => sprintf( __( 'Head over to %s to find your Flickr user ID.', 'stag' ), '<a href="//idgettr.com" target="_blank" rel="nofollow">idgettr</a>' ),
 			),
-			'count' => array(
+			'count'          => array(
 				'type'  => 'number',
 				'std'   => 4,
 				'label' => __( 'Number of photos to show:', 'stag' ),
@@ -51,11 +51,15 @@ class Stag_Flickr extends ST_Widget {
 		$flickr_id = esc_attr( $instance['flickr_id'] );
 		$count     = absint( $instance['count'] );
 
-		include_once( ABSPATH . WPINC . '/feed.php' );
+		include_once ABSPATH . WPINC . '/feed.php';
 
-		$rss = fetch_feed( 'https://api.flickr.com/services/feeds/photos_public.gne?ids='. $flickr_id .'&lang=en-us&format=rss_200' );
+		$rss = fetch_feed( 'https://api.flickr.com/services/feeds/photos_public.gne?ids=' . $flickr_id . '&lang=en-us&format=rss_200' );
 
-		add_filter( 'wp_feed_cache_transient_lifetime', create_function( '$a', 'return 1800;' ) );
+		add_filter(
+			'wp_feed_cache_transient_lifetime', function() {
+				return 1800;
+			}
+		);
 
 		if ( ! is_wp_error( $rss ) ) {
 			$items = $rss->get_items( 0, $rss->get_item_quantity( $count ) );
@@ -76,7 +80,7 @@ class Stag_Flickr extends ST_Widget {
 						$image_attrs = $image_group[0]['attribs'];
 
 						foreach ( $image_attrs as $image ) {
-							echo '<li><a target="_blank" href="' . esc_url( $item->get_permalink() ) . '"><img src="'. esc_url( $image['url'] ) .'" width="' . esc_attr( $image['width'] ) . '" height="' . esc_attr( $image['height'] ) . '" alt="'. esc_attr( $item->get_title() ) .'"></a></li>';
+							echo '<li><a target="_blank" href="' . esc_url( $item->get_permalink() ) . '"><img src="' . esc_url( $image['url'] ) . '" width="' . esc_attr( $image['width'] ) . '" height="' . esc_attr( $image['height'] ) . '" alt="' . esc_attr( $item->get_title() ) . '"></a></li>';
 						}
 					}
 				} else {
