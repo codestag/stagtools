@@ -270,15 +270,15 @@ class StagTools {
 	 * @return void
 	 */
 	public function frontend_style() {
-		wp_enqueue_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.3.1', 'all' );
+		wp_enqueue_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.4.1', 'all' );
 		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css', array(), $this->version, 'all' );
 
 		wp_enqueue_style( 'stag-shortcode-styles' );
 
 		wp_register_script( 'stag-shortcode-scripts', $this->plugin_url() . '/assets/js/stag-shortcode-scripts.js', array( 'jquery', 'jquery-ui-accordion', 'jquery-ui-tabs' ), $this->version, true );
 
-		wp_enqueue_script( 'font-awesome-v5-svg', $this->plugin_url() . '/assets/js/fontawesome-all.min.js', array(), '5.3.1', true );
-		wp_enqueue_script( 'font-awesome-v4-shim', $this->plugin_url() . '/assets/js/fa-v4-shims.min.js', array( 'font-awesome-v5-svg' ), '5.0.8', true );
+		wp_enqueue_script( 'font-awesome-v5-svg', $this->plugin_url() . '/assets/js/fontawesome-all.min.js', array(), '5.4.1', true );
+		wp_enqueue_script( 'font-awesome-v4-shim', $this->plugin_url() . '/assets/js/fa-v4-shims.min.js', array( 'font-awesome-v5-svg' ), '5.4.1', true );
 	}
 
 	/**
