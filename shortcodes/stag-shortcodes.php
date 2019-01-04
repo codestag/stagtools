@@ -18,9 +18,9 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 
 				wp_enqueue_style( 'stag_admin_menu_styles', $stagtools->plugin_url() . '/assets/css/menu.css' );
 
-				wp_enqueue_style( 'font-awesome-5', $stagtools->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.4.1' );
+				wp_enqueue_style( 'font-awesome', $stagtools->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.6.3' );
 
-				wp_register_script( 'font-awesome-icons-list', $stagtools->plugin_url() . '/assets/js/icons.js', array(), '5.4.1', true );
+				wp_register_script( 'font-awesome-icons-list', $stagtools->plugin_url() . '/assets/js/icons.js', array(), '5.6.3', true );
 				wp_enqueue_script( 'font-awesome-icons-list' );
 
 				wp_enqueue_script( 'jquery-ui-button' );
