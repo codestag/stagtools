@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 2.2.6
+Tested up to: 5.0.2
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,15 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.3 =
+* Compatibility with WordPress 5.0+
+* Update FontAwesome to v5.6.3
+* Added REST API support for all custom post types
+* Remove deprecate function call to create_function
+* Added themes list on settings page
+* Fix StagTools popup not opening inside Gutenberg
+* Fix JS translation for Classic editor custom buttons
 
 = 2.2.6 - March 16, 2018 =
 * Fixed an issue with Instagram widget
@@ -268,6 +277,9 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.3 =
+* Adds compatibility with WordPress 5.0+. Includes various fixes.
 
 = 2.2.3 =
 Updated to FontAwesome v5.0.2
