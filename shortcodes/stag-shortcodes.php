@@ -26,7 +26,11 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 				wp_enqueue_script( 'jquery-ui-button' );
 
 				wp_enqueue_script( 'jquery-ui-sortable' );
-				wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins' . SCRIPT_SUFFIX . '.js', array( 'font-awesome-icons-list' ), $stagtools->version, true );
+				wp_enqueue_script( 'stag-shortcode-plugins', $stagtools->plugin_url() . '/assets/js/shortcodes_plugins' . SCRIPT_SUFFIX . '.js', array( 'font-awesome-icons-list', 'wp-i18n' ), $stagtools->version, true );
+
+				if ( function_exists( 'wp_set_script_translations' ) ) {
+					wp_set_script_translations( 'stag-shortcode-plugins', 'stag' );
+				}
 
 				wp_localize_script(
 					'jquery', 'StagShortcodes', array(

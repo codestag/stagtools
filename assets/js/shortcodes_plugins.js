@@ -9,7 +9,125 @@
  */
 
 // 1. jQuery Live Query
-(function(a){a.extend(a.fn,{livequery:function(e,d,c){var b=this,f;if(a.isFunction(e)){c=d,d=e,e=undefined}a.each(a.livequery.queries,function(g,h){if(b.selector==h.selector&&b.context==h.context&&e==h.type&&(!d||d.$lqguid==h.fn.$lqguid)&&(!c||c.$lqguid==h.fn2.$lqguid)){return(f=h)&&false}});f=f||new a.livequery(this.selector,this.context,e,d,c);f.stopped=false;f.run();return this},expire:function(e,d,c){var b=this;if(a.isFunction(e)){c=d,d=e,e=undefined}a.each(a.livequery.queries,function(f,g){if(b.selector==g.selector&&b.context==g.context&&(!e||e==g.type)&&(!d||d.$lqguid==g.fn.$lqguid)&&(!c||c.$lqguid==g.fn2.$lqguid)&&!this.stopped){a.livequery.stop(g.id)}});return this}});a.livequery=function(b,d,f,e,c){this.selector=b;this.context=d;this.type=f;this.fn=e;this.fn2=c;this.elements=[];this.stopped=false;this.id=a.livequery.queries.push(this)-1;e.$lqguid=e.$lqguid||a.livequery.guid++;if(c){c.$lqguid=c.$lqguid||a.livequery.guid++}return this};a.livequery.prototype={stop:function(){var b=this;if(this.type){this.elements.unbind(this.type,this.fn)}else{if(this.fn2){this.elements.each(function(c,d){b.fn2.apply(d)})}}this.elements=[];this.stopped=true},run:function(){if(this.stopped){return}var d=this;var e=this.elements,c=a(this.selector,this.context),b=c.not(e);this.elements=c;if(this.type){b.bind(this.type,this.fn);if(e.length>0){a.each(e,function(f,g){if(a.inArray(g,c)<0){a.event.remove(g,d.type,d.fn)}})}}else{b.each(function(){d.fn.apply(this)});if(this.fn2&&e.length>0){a.each(e,function(f,g){if(a.inArray(g,c)<0){d.fn2.apply(g)}})}}}};a.extend(a.livequery,{guid:0,queries:[],queue:[],running:false,timeout:null,checkQueue:function(){if(a.livequery.running&&a.livequery.queue.length){var b=a.livequery.queue.length;while(b--){a.livequery.queries[a.livequery.queue.shift()].run()}}},pause:function(){a.livequery.running=false},play:function(){a.livequery.running=true;a.livequery.run()},registerPlugin:function(){a.each(arguments,function(c,d){if(!a.fn[d]){return}var b=a.fn[d];a.fn[d]=function(){var e=b.apply(this,arguments);a.livequery.run();return e}})},run:function(b){if(b!=undefined){if(a.inArray(b,a.livequery.queue)<0){a.livequery.queue.push(b)}}else{a.each(a.livequery.queries,function(c){if(a.inArray(c,a.livequery.queue)<0){a.livequery.queue.push(c)}})}if(a.livequery.timeout){clearTimeout(a.livequery.timeout)}a.livequery.timeout=setTimeout(a.livequery.checkQueue,20)},stop:function(b){if(b!=undefined){a.livequery.queries[b].stop()}else{a.each(a.livequery.queries,function(c){a.livequery.queries[c].stop()})}}});a.livequery.registerPlugin("append","prepend","after","before","wrap","attr","removeAttr","addClass","removeClass","toggleClass","empty","remove","html");a(function(){a.livequery.play()})})(jQuery);
+( function( a ) {
+a.extend( a.fn, {livequery: function( e, d, c ) {
+var b = this,
+ f;if ( a.isFunction( e ) ) {
+c = d, d = e, e = undefined;
+}a.each( a.livequery.queries, function( g, h ) {
+if ( b.selector == h.selector && b.context == h.context && e == h.type && ( ! d || d.$lqguid == h.fn.$lqguid ) && ( ! c || c.$lqguid == h.fn2.$lqguid ) ) {
+return ( f = h ) && false
+;
+}
+});f = f || new a.livequery( this.selector, this.context, e, d, c );f.stopped = false;f.run();return this;
+}, expire: function( e, d, c ) {
+var b = this;if ( a.isFunction( e ) ) {
+c = d, d = e, e = undefined
+;
+}a.each( a.livequery.queries, function( f, g ) {
+if ( b.selector == g.selector && b.context == g.context && ( ! e || e == g.type ) && ( ! d || d.$lqguid == g.fn.$lqguid ) && ( ! c || c.$lqguid == g.fn2.$lqguid ) && ! this.stopped ) {
+a.livequery.stop( g.id )
+;
+}
+});return this;
+}});a.livequery = function( b, d, f, e, c ) {
+this.selector = b;this.context = d;this.type = f;this.fn = e;this.fn2 = c;this.elements = [];this.stopped = false;this.id = a.livequery.queries.push( this ) - 1;e.$lqguid = e.$lqguid || a.livequery.guid++;if ( c ) {
+c.$lqguid = c.$lqguid || a.livequery.guid++
+;
+} return this;
+};a.livequery.prototype = {stop: function() {
+var b = this;if ( this.type ) {
+this.elements.unbind( this.type, this.fn );
+} else {
+if ( this.fn2 ) {
+this.elements.each( function( c, d ) {
+b.fn2.apply( d )
+;
+})
+;
+}
+} this.elements = [];this.stopped = true
+;
+}, run: function() {
+if ( this.stopped ) {
+return;
+} var d = this;var e = this.elements,
+c = a( this.selector, this.context ),
+ b = c.not( e );this.elements = c;if ( this.type ) {
+b.bind( this.type, this.fn );if ( 0 < e.length ) {
+a.each( e, function( f, g ) {
+if ( 0 > a.inArray( g, c ) ) {
+a.event.remove( g, d.type, d.fn )
+;
+}
+});
+}
+} else {
+b.each( function() {
+d.fn.apply( this )
+;
+});if ( this.fn2 && 0 < e.length ) {
+a.each( e, function( f, g ) {
+if ( 0 > a.inArray( g, c ) ) {
+d.fn2.apply( g );
+}
+})
+;
+}
+}
+}};a.extend( a.livequery, {guid: 0, queries: [], queue: [], running: false, timeout: null, checkQueue: function() {
+if ( a.livequery.running && a.livequery.queue.length ) {
+var b = a.livequery.queue.length;while ( b-- ) {
+a.livequery.queries[a.livequery.queue.shift()].run();
+}
+}
+}, pause: function() {
+a.livequery.running = false
+;
+}, play: function() {
+a.livequery.running = true;a.livequery.run()
+;
+}, registerPlugin: function() {
+a.each( arguments, function( c, d ) {
+if ( ! a.fn[d]) {
+return;
+} var b = a.fn[d];a.fn[d] = function() {
+var e = b.apply( this, arguments );a.livequery.run();return e;
+};
+});
+}, run: function( b ) {
+if ( b != undefined ) {
+if ( 0 > a.inArray( b, a.livequery.queue ) ) {
+a.livequery.queue.push( b );
+}
+} else {
+a.each( a.livequery.queries, function( c ) {
+if ( 0 > a.inArray( c, a.livequery.queue ) ) {
+a.livequery.queue.push( c );
+}
+})
+;
+} if ( a.livequery.timeout ) {
+clearTimeout( a.livequery.timeout )
+;
+}a.livequery.timeout = setTimeout( a.livequery.checkQueue, 20 )
+;
+}, stop: function( b ) {
+if ( b != undefined ) {
+a.livequery.queries[b].stop()
+;
+} else {
+a.each( a.livequery.queries, function( c ) {
+a.livequery.queries[c].stop()
+;
+})
+;
+}
+}});a.livequery.registerPlugin( 'append', 'prepend', 'after', 'before', 'wrap', 'attr', 'removeAttr', 'addClass', 'removeClass', 'toggleClass', 'empty', 'remove', 'html' );a( function() {
+a.livequery.play();
+})
+;
+}( jQuery ) );
 
 // 2. jQuery.appendo
 /**
@@ -20,13 +138,15 @@
  */
 
 // Attach appendo as a jQuery plugin
-jQuery.fn.appendo = function(opt) {
-    this.each(function() { jQuery.appendo.init(this,opt); });
+jQuery.fn.appendo = function( opt ) {
+    this.each( function() {
+ jQuery.appendo.init( this, opt );
+});
     return this;
 };
 
 // appendo namespace
-jQuery.appendo = function() {
+jQuery.appendo = ( function() {
 
     // Create a closure so that we can refer to "this" correctly down the line
     var myself = this;
@@ -38,99 +158,115 @@ jQuery.appendo = function() {
     // (no need, in fact you shouldn't, wrap in jQuery(document).ready() etc)
     this.opt = { };
 
-    this.init = function(obj,opt) {
+    this.init = function( obj, opt ) {
 
         // Extend the defaults with global options and options given, if any
         var options = jQuery.extend({
-                labelAdd:       'Add Row',
-                labelDel:       'Remove',
-                allowDelete:    true,
+                labelAdd: 'Add Row',
+                labelDel: 'Remove',
+                allowDelete: true,
+
                 // copyHandlers does not seem to work
                 // it's been removed from the docs for now...
-                copyHandlers:   false,
-                focusFirst:     true,
-                onAdd:          function() { return true; },
-                onDel:      function() { return true; },
-                maxRows:        0,
-                wrapClass:      'appendoButtons',
-                wrapStyle:      { padding: '.4em .2em .5em' },
-                buttonStyle:    { marginRight: '.5em' },
-                subSelect:      'tr:last'
+                copyHandlers: false,
+                focusFirst: true,
+                onAdd: function() {
+ return true;
+},
+                onDel: function() {
+ return true;
+},
+                maxRows: 0,
+                wrapClass: 'appendoButtons',
+                wrapStyle: { padding: '.4em .2em .5em' },
+                buttonStyle: { marginRight: '.5em' },
+                subSelect: 'tr:last'
             },
             myself.opt,
             opt
         );
 
         // Store clone of last table row
-        var $cpy = jQuery(obj).find(options.subSelect).clone(options.copyHandlers);
+        var $cpy = jQuery( obj ).find( options.subSelect ).clone( options.copyHandlers );
+
         // We consider this starting off with 1 row
         var rows = 1;
+
         // Create two button objects
-        var $add_btn = jQuery('#form-child-add').click(clicked_add),
-            $del_btn = new_button(options.labelDel).click(clicked_del).hide()
+        var $add_btn = jQuery( '#form-child-add' ).click( clicked_add ),
+            $del_btn = new_button( options.labelDel ).click( clicked_del ).hide()
         ;
 
         // Append a row to table instance
         function add_row() {
-            var $dup = $cpy.clone(options.copyHandlers);
-            $dup.appendTo(obj);
-            update_buttons(1);
-            if (typeof(options.onAdd) == "function") options.onAdd($dup);
-            if (!!options.focusFirst) $dup.find('input:first').focus();
-        };
+            var $dup = $cpy.clone( options.copyHandlers );
+            $dup.appendTo( obj );
+            update_buttons( 1 );
+            if ( 'function' == typeof( options.onAdd ) ) {
+options.onAdd( $dup );
+}
+            if ( options.focusFirst ) {
+$dup.find( 'input:first' ).focus();
+}
+        }
 
         // Remove last row from table instance
         function del_row() {
-            var $row = jQuery(obj).find(options.subSelect);
-            if ((typeof(options.onDel) != "function") || options.onDel($row))
-            {
+            var $row = jQuery( obj ).find( options.subSelect );
+            if ( ( 'function' != typeof( options.onDel ) ) || options.onDel( $row ) ) {
                 $row.remove();
-                update_buttons(-1);
+                update_buttons( -1 );
             }
-        };
+        }
 
         // Updates the button states after rows change
-        function update_buttons(rowdelta) {
+        function update_buttons( rowdelta ) {
+
             // Update rows if a delta is provided
-            rows = rows + (rowdelta || 0);
+            rows = rows + ( rowdelta || 0 );
+
             // Disable the add button if maxRows is set and we have that many rows
             // $add_btn.attr('disabled',(!options.maxRows || (rows < options.maxRows))?false:true);
             // Show remove button if we've added rows and allowDelete is set
-            (options.allowDelete && (rows > 1))? $del_btn.show(): $del_btn.hide();
-        };
+            ( options.allowDelete && ( 1 < rows ) ) ? $del_btn.show() : $del_btn.hide();
+        }
 
         // Returns (jQuery) button objects with label
-        function new_button(label) {
-            return jQuery('<button />')
-                .css(options.buttonStyle)
-                .html(label);
-        };
+        function new_button( label ) {
+            return jQuery( '<button />' )
+                .css( options.buttonStyle )
+                .html( label );
+        }
 
         // This function can be returned to kill a received event
-        function nothing(e) {
+        function nothing( e ) {
             e.stopPropagation();
             e.preventDefault();
             return false;
-        };
+        }
 
         // Handles a click on the add button
-        function clicked_add(e) {
-            if (!options.maxRows || (rows < options.maxRows)) add_row();
-            return nothing(e);
-        };
+        function clicked_add( e ) {
+            if ( ! options.maxRows || ( rows < options.maxRows ) ) {
+add_row();
+}
+            return nothing( e );
+        }
 
         // Handles a click event on the remove button
-        function clicked_del(e) {
-            if (rows > 1) del_row();
-            return nothing(e);
-        };
+        function clicked_del( e ) {
+            if ( 1 < rows ) {
+del_row();
+}
+            return nothing( e );
+        }
 
         // Update the buttons
         update_buttons();
 
     };
     return this;
-}();
+}() );
 
 // 4. custom
 var FontAwesomeIcons;
@@ -141,115 +277,116 @@ var FontAwesomeIcons;
     FontAwesomeIcons = function() {
         var html = '';
 
-        $.each( stIconObj['fontawesome'], function( cat, icons ) {
+        $.each( stIconObj.fontawesome, function( cat, icons ) {
             html += '<span class="icon-category">' + cat + '</span>';
 
-            icons.map(function(icon){
-                html += '<i class="'+ icon.style +' fa-' + icon.id + '" data-icon-id="' + icon.id + '" data-style="' + icon.style + '"></i>';
+            icons.map( function( icon ) {
+                html += '<i class="' + icon.style + ' fa-' + icon.id + '" data-icon-id="' + icon.id + '" data-style="' + icon.style + '"></i>';
             });
         });
 
         return html;
     };
 
-})( jQuery );
+}( jQuery ) );
 
-jQuery(document).ready(function($) {
+jQuery( document ).ready( function( $ ) {
     var stags = {
         loadVals: function() {
-            var shortcode = $('#_stag_shortcode').text(),
+            var shortcode = $( '#_stag_shortcode' ).text(),
                 uShortcode = shortcode;
 
             // fill in the gaps eg {{param}}
-            $('.stag-input').each(function() {
-                var input = $(this),
-                    id = input.attr('id'),
-                    id = id.replace('stag_', ''),       // gets rid of the stag_ prefix
-                    re = new RegExp("{{"+id+"}}","g");
+            $( '.stag-input' ).each( function() {
+                var input = $( this ),
+                    id = input.attr( 'id' ),
+                    id = id.replace( 'stag_', '' ),       // gets rid of the stag_ prefix
+                    re = new RegExp( '{{' + id + '}}', 'g' );
 
-                uShortcode = uShortcode.replace(re, input.val());
+                uShortcode = uShortcode.replace( re, input.val() );
             });
 
             // adds the filled-in shortcode as hidden input
-            $('#_stag_ushortcode').remove();
-            $('#stag-sc-form-table').prepend('<div id="_stag_ushortcode" class="hidden">' + uShortcode + '</div>');
+            $( '#_stag_ushortcode' ).remove();
+            $( '#stag-sc-form-table' ).prepend( '<div id="_stag_ushortcode" class="hidden">' + uShortcode + '</div>' );
         },
 
         cLoadVals: function() {
-            var shortcode = $('#_stag_cshortcode').text(),
+            var shortcode = $( '#_stag_cshortcode' ).text(),
                 pShortcode = '';
                 shortcodes = '';
 
             // fill in the gaps eg {{param}}
-            $('.child-clone-row').each(function() {
-                var row = $(this),
+            $( '.child-clone-row' ).each( function() {
+                var row = $( this ),
                     rShortcode = shortcode;
 
-                $('.stag-cinput', this).each(function() {
-                    var input = $(this),
-                        id = input.attr('id'),
-                        id = id.replace('stag_', '')        // gets rid of the stag_ prefix
-                        re = new RegExp("{{"+id+"}}","g");
+                $( '.stag-cinput', this ).each( function() {
+                    var input = $( this ),
+                        id = input.attr( 'id' ),
+                        id = id.replace( 'stag_', '' );        // gets rid of the stag_ prefix
+                        re = new RegExp( '{{' + id + '}}', 'g' );
 
-                    rShortcode = rShortcode.replace(re, input.val());
+                    rShortcode = rShortcode.replace( re, input.val() );
                 });
 
-                shortcodes = shortcodes + rShortcode + "\n";
+                shortcodes = shortcodes + rShortcode + '\n';
             });
 
             // adds the filled-in shortcode as hidden input
-            $('#_stag_cshortcodes').remove();
-            $('.child-clone-rows').prepend('<div id="_stag_cshortcodes" class="hidden">' + shortcodes + '</div>');
+            $( '#_stag_cshortcodes' ).remove();
+            $( '.child-clone-rows' ).prepend( '<div id="_stag_cshortcodes" class="hidden">' + shortcodes + '</div>' );
 
             // add to parent shortcode
             this.loadVals();
-            pShortcode = $('#_stag_ushortcode').text().replace('{{child_shortcode}}', shortcodes);
+            pShortcode = $( '#_stag_ushortcode' ).text().replace( '{{child_shortcode}}', shortcodes );
 
             // add updated parent shortcode
-            $('#_stag_ushortcode').remove();
-            $('#stag-sc-form-table').prepend('<div id="_stag_ushortcode" class="hidden">' + pShortcode + '</div>');
+            $( '#_stag_ushortcode' ).remove();
+            $( '#stag-sc-form-table' ).prepend( '<div id="_stag_ushortcode" class="hidden">' + pShortcode + '</div>' );
         },
 
         children: function() {
+
             // assign the cloning plugin
-            $('.child-clone-rows').appendo({
+            $( '.child-clone-rows' ).appendo({
                 subSelect: '> div.child-clone-row:last-child',
                 allowDelete: false,
                 focusFirst: false
             });
 
             // remove button
-            $('.child-clone-row-remove').live('click', function() {
-                var btn = $(this),
+            $( '.child-clone-row-remove' ).live( 'click', function() {
+                var btn = $( this ),
                     row = btn.parent();
 
-                if( $('.child-clone-row').size() > 1 ) {
+                if ( 1 < $( '.child-clone-row' ).size() ) {
                     row.remove();
-                }else{
-                    alert('You need a minimum of one row');
+                } else {
+                    alert( 'You need a minimum of one row' );
                 }
 
                 return false;
             });
 
             // assign jUI sortable
-            $( ".child-clone-rows" ).sortable({
-                placeholder: "sortable-placeholder",
+            $( '.child-clone-rows' ).sortable({
+                placeholder: 'sortable-placeholder',
                 items: '.child-clone-row'
             });
         },
 
         resizeTB: function() {
-            var ajaxCont = $('#TB_ajaxContent'),
-                tbWindow = $('#TB_window'),
-                stagPopup = $('#stag-popup');
+            var ajaxCont = $( '#TB_ajaxContent' ),
+                tbWindow = $( '#TB_window' ),
+                stagPopup = $( '#stag-popup' );
 
             tbWindow.css({
                 height: stagPopup.outerHeight(),
                 width: stagPopup.outerWidth(),
-                marginLeft: -(stagPopup.outerWidth()/2),
-                maxHeight: "85%",
-                overflowY: "scroll"
+                marginLeft: -( stagPopup.outerWidth() / 2 ),
+                maxHeight: '85%',
+                overflowY: 'scroll'
             });
 
             ajaxCont.css({
@@ -257,29 +394,29 @@ jQuery(document).ready(function($) {
                 paddingLeft: 0,
                 paddingRight: 0,
                 paddingBottom: 0,
-                height: (tbWindow.outerHeight()),
+                height: ( tbWindow.outerHeight() ),
                 overflow: 'auto', // IMPORTANT
-                width: stagPopup.outerWidth(),
+                width: stagPopup.outerWidth()
             });
 
-            $('#stag-popup').addClass('no_preview');
+            $( '#stag-popup' ).addClass( 'no_preview' );
         },
 
-        media: function(){
+        media: function() {
             var stag_media_frame,
                 frame_title,
-                insertButton = $('.stag-open-media');
+                insertButton = $( '.stag-open-media' );
 
-            if ( insertButton.data('type') === "image" ) {
+            if ( 'image' === insertButton.data( 'type' ) ) {
                 frame_title = StagShortcodes.media_frame_image_title;
-            } else if ( insertButton.data('type') === "video" ) {
+            } else if ( 'video' === insertButton.data( 'type' ) ) {
                 frame_title = StagShortcodes.media_frame_video_title;
             }
 
-            insertButton.on('click', function(e){
+            insertButton.on( 'click', function( e ) {
                 e.preventDefault();
 
-                if(stag_media_frame){
+                if ( stag_media_frame ) {
                     stag_media_frame.open();
                     return;
                 }
@@ -290,17 +427,17 @@ jQuery(document).ready(function($) {
                     multiple: false,
                     title: frame_title,
                     library: {
-                        type: insertButton.data('type')
+                        type: insertButton.data( 'type' )
                     },
                     button: {
-                        text: insertButton.data('text')
+                        text: insertButton.data( 'text' )
                     }
                 });
 
-                stag_media_frame.on('select', function(){
-                    var media_attachment = stag_media_frame.state().get('selection').first().toJSON();
-                    $('#stag_src').val(media_attachment.url);
-                    $('.stag-input').trigger('change');
+                stag_media_frame.on( 'select', function() {
+                    var media_attachment = stag_media_frame.state().get( 'selection' ).first().toJSON();
+                    $( '#stag_src' ).val( media_attachment.url );
+                    $( '.stag-input' ).trigger( 'change' );
                 });
 
                 stag_media_frame.open();
@@ -310,28 +447,30 @@ jQuery(document).ready(function($) {
 
         load: function() {
             var stags = this,
-                tbWindow = $('#TB_window'),
-                popup = $('#stag-popup'),
-                form = $('#stag-sc-form', popup),
-                shortcode = $('#_stag_shortcode', form).text(),
-                popupType = $('#_stag_popup', form).text(),
+                tbWindow = $( '#TB_window' ),
+                popup = $( '#stag-popup' ),
+                form = $( '#stag-sc-form', popup ),
+                shortcode = $( '#_stag_shortcode', form ).text(),
+                popupType = $( '#_stag_popup', form ).text(),
                 uShortcode = '',
-                iconSelector = $('.stag-all-icons').find('i'),
-                closePopup = $('#close-popup');
+                iconSelector = $( '.stag-all-icons' ).find( 'i' ),
+                closePopup = $( '#close-popup' );
 
-            closePopup.on('click', function(){
+            closePopup.on( 'click', function() {
                 tb_remove();
             });
 
             // resize TB
             stags.resizeTB();
-            $(window).resize(function() { stags.resizeTB() });
+            $( window ).resize( function() {
+ stags.resizeTB();
+});
 
             tbWindow.css({
-                border: "none",
+                border: 'none'
             });
 
-            tbWindow.find('#TB_title').remove();
+            tbWindow.find( '#TB_title' ).remove();
 
             // initialise
             stags.loadVals();
@@ -340,53 +479,70 @@ jQuery(document).ready(function($) {
             stags.media();
 
             // update on children value change
-            $('.stag-cinput', form).live('change', function() {
+            $( '.stag-cinput', form ).live( 'change', function() {
                 stags.cLoadVals();
             });
 
             // update on value change
-            $('.stag-input', form).live('change', function() {
+            $( '.stag-input', form ).live( 'change', function() {
                 stags.loadVals();
             });
 
-            var iconContainer = $('.stag-all-icons');
+            var iconContainer = $( '.stag-all-icons' );
             iconContainer.append( FontAwesomeIcons() );
 
-            iconContainer.on( 'click', 'i', function(e) {
-                iconContainer.find('i').removeClass('active-icon');
-                $(this).addClass('active-icon');
-                $('#stag_icon').val( $(this).data('icon-id') );
-                $('#stag_style').val( $(this).data('style') );
-                $('.stag-input').trigger('change');
-            } );
+            iconContainer.on( 'click', 'i', function( e ) {
+                iconContainer.find( 'i' ).removeClass( 'active-icon' );
+                $( this ).addClass( 'active-icon' );
+                $( '#stag_icon' ).val( $( this ).data( 'icon-id' ) );
+                $( '#stag_style' ).val( $( this ).data( 'style' ) );
+                $( '.stag-input' ).trigger( 'change' );
+            });
 
-            $('.stag-control-buttonset').buttonset();
-            $('.stag-control-buttonset').on( 'change', 'input', function(e) {
-                var id = $(this).data('key');
-                $('#'+id).val( $(this).val() );
-                $('.stag-input').trigger('change');
+            $( '.stag-control-buttonset' ).buttonset();
+            $( '.stag-control-buttonset' ).on( 'change', 'input', function( e ) {
+                var id = $( this ).data( 'key' );
+                $( '#' + id ).val( $( this ).val() );
+                $( '.stag-input' ).trigger( 'change' );
             });
 
             // when insert is clicked
-            $('.stag-insert', form).click(function() {
-                if(window.tinyMCE) {
+            $( '.stag-insert', form ).click( function() {
+                if ( window.tinyMCE ) {
                     var version = tinyMCE.majorVersion;
 
-                    if ( version === '3' ) {
-                        window.tinyMCE.execInstanceCommand( window.tinyMCE.activeEditor.id, 'mceInsertContent', false, $('#_stag_ushortcode', form).html());
+                    if ( '3' === version ) {
+                        window.tinyMCE.execInstanceCommand( window.tinyMCE.activeEditor.id, 'mceInsertContent', false, $( '#_stag_ushortcode', form ).html() );
                         tb_remove();
-                    } else if ( version === '4' ) {
-                        window.tinyMCE.activeEditor.insertContent( $('#_stag_ushortcode', form).html() );
+                    } else if ( '4' === version ) {
+                        window.tinyMCE.activeEditor.insertContent( $( '#_stag_ushortcode', form ).html() );
                         tb_remove();
                     }
 
                 }
             });
         }
-    }
+    };
 
     // run
-    $('#stag-popup').livequery( function() {
+    $( '#stag-popup' ).livequery( function() {
         stags.load();
-    } );
+    });
 });
+
+var __ = wp.i18n.__;
+
+window.StagLang = {
+    insert: __( 'Insert Stag Shortcode', 'stag' ),
+    button: __( 'Buttons', 'stag' ),
+    columns: __( 'Columns', 'stag' ),
+    tabs: __( 'Tabs', 'stag' ),
+    toggle: __( 'Toggle', 'stag' ),
+    dropcap: __( 'Dropcap', 'stag' ),
+    icon: __( 'Font Icon', 'stag' ),
+    media_elements: __( 'Media Elements', 'stag' ),
+    widget_area: __( 'Widget Area', 'stag' ),
+    image: __( 'Image', 'stag' ),
+    video: __( 'Video', 'stag' ),
+    map: __( 'Google Map', 'stag' )
+};
