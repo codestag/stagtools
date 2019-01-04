@@ -9,6 +9,7 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 			add_action( 'admin_enqueue_scripts', array( &$this, 'admin_menu_styles' ) );
 			add_filter( 'mce_external_languages', array( &$this, 'add_tinymce_lang' ), 10, 1 );
 			add_action( 'wp_ajax_popup', array( &$this, 'shortcode_popup_callback' ) );
+			add_action( 'admin_enqueue_scripts', 'add_thickbox' );
 		}
 
 		public function admin_menu_styles( $hook ) {
