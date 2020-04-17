@@ -19,8 +19,8 @@ $portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
 ) );
 
 $stag_options    = get_option( 'stag_options' );
-@$portfolio_slug = $stag_options['portfolio_slug'];
-@$skills_slug    = $stag_options['skills_slug'];
+$portfolio_slug = isset( $stag_options['portfolio_slug'] ) ? $stag_options['portfolio_slug'] : 'portfolio';
+$skills_slug    = isset( $stag_options['skills_slug'] ) ? $stag_options['skills_slug'] : 'skill';
 $rewrite         = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array( 'slug' => $portfolio_slug, 'with_front' => false );
 
 $portfolio_args = array(
