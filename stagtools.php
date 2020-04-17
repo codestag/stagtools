@@ -147,7 +147,7 @@ class StagTools {
 		add_action( 'wp_enqueue_scripts', array( &$this, 'frontend_style' ), 0 );
 		add_filter( 'body_class', array( &$this, 'body_class' ) );
 
-		add_filter( 'contextual_help', array( &$this, 'contextual_help' ), 10, 3 );
+		add_action( 'current_screen', array( &$this, 'stag_contextual_help' ), 10, 3 );
 
 		add_filter( 'script_loader_tag', array( &$this, 'add_defer_attribute' ), 10, 2 );
 
@@ -393,17 +393,17 @@ class StagTools {
 	/**
 	 * Add help screen for StagTools settings page.
 	 *
-	 * @param  string $contextual_help Screen ID.
-	 * @param  string $screen_id       String of the settings page.
-	 * @param  object $screen          Current screen object containing all details.
 	 * @since  1.1
-	 * @return object Help object
+	 * @return void
 	 */
-	public function contextual_help( $contextual_help, $screen_id, $screen ) {
-		if ( 'settings_page_stagtools' !== $screen_id )
-			return;
+	public function stag_contextual_help() {
+		$currentScreen = get_current_screen();
 
-		$screen->set_help_sidebar(
+		if ( 'settings_page_stagtools' !== $currentScreen->id ) {
+			return;
+		}
+
+		$currentScreen->set_help_sidebar(
 			'<p><strong>' . sprintf( __( 'For more information:', 'stag' ) . '</strong></p>' .
 			/* translators: %s: Link to Github wiki. */
 			'<p>' . sprintf( __( 'Visit the <a href="%s" target="_blank">documentation</a> on the Github.', 'stag' ), esc_url( 'https://github.com/mauryaratan/stagtools/wiki' ) ) ) . '</p>' .
@@ -415,7 +415,7 @@ class StagTools {
 					) . '</p>'
 		);
 
-		$screen->add_help_tab( array(
+		$currentScreen->add_help_tab( array(
 			'id'      => 'stagtools-help-oauth',
 			'title'   => __( 'Twitter oAuth Settings', 'stag' ),
 			'content' => '<p>' . __( 'Here you can find how to add twitter oAuth keys to get Twitter widget working.', 'stag' ) . '</p>' .
@@ -431,16 +431,16 @@ class StagTools {
 		) );
 
 		if ( current_theme_supports( 'post-type', array( 'portfolio' ) ) ) :
-		$screen->add_help_tab( array(
-			'id'      => 'stagtools-help-portfolio',
-			'title'   => __( 'Portfolio Settings', 'stag' ),
-			'content' => '<p>' . __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) . '</p>' .
-							'<p>' . __( '<strong>Portfolio Slug</strong> - This settings is used to set the slug of custom post type &lsquo;portfolio&rsquo;.', 'stag' ) . '</p>' .
-							'<p>' . __( '<strong>Skills Slug</strong> - This settings is used to set the slug of custom post taxonomy &lsquo;skill&rsquo;.', 'stag' ) . '</p>',
-		) );
+			$currentScreen->add_help_tab( array(
+				'id'      => 'stagtools-help-portfolio',
+				'title'   => __( 'Portfolio Settings', 'stag' ),
+				'content' => '<p>' . __( 'You can use the following settigns to control the slug/taxonomies for custom post type portfolio and skills.', 'stag' ) . '</p>' .
+								'<p>' . __( '<strong>Portfolio Slug</strong> - This settings is used to set the slug of custom post type &lsquo;portfolio&rsquo;.', 'stag' ) . '</p>' .
+								'<p>' . __( '<strong>Skills Slug</strong> - This settings is used to set the slug of custom post taxonomy &lsquo;skill&rsquo;.', 'stag' ) . '</p>',
+			) );
 		endif;
 
-		$screen->add_help_tab( array(
+		$currentScreen->add_help_tab( array(
 			'id'      => 'stagtools-help-social',
 			'title'   => __( 'Using Social Icons', 'stag' ),
 			'content' => '<h5>' . __( 'Using Social Icons Shortcode' ) . '</h5>' .
@@ -451,7 +451,6 @@ class StagTools {
 							'<p>' . __( 'You can use the social icons in two different styles: normal and square. Just pass the <code>style</code> argument in sidebar.<br>E.g.: <code>[stag_social id="twitter,facebook" style="square"]</code>.' ) . '</p>',
 		) );
 
-		return $contextual_help;
 	}
 
 }
