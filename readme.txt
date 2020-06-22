@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, instagram, custom post type, codestag, mauryaratan, twitter
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 2.3.1
+Tested up to: 5.4.2
+Stable tag: 2.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,10 +91,15 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
-= 2.3.1 =
+= 2.3.2 - June 22, 2019 =
+* Compatible with WordPress 5.4.2
+* Replace deprecated contextual help screen issue
+* Fix undefined error under widgets
+
+= 2.3.1 - January 11, 2019 =
 * Fix broken Twitter API library
 
-= 2.3 =
+= 2.3 - January 5, 2019 =
 * Compatibility with WordPress 5.0+
 * Update FontAwesome to v5.6.3
 * Added REST API support for all custom post types
