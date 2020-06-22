@@ -71,7 +71,7 @@ abstract class ST_Widget extends WP_Widget {
 					$instance[ $key ] = absint( $new_instance[ $key ] );
 				break;
 				default :
-					$instance[ $key ] = sanitize_text_field( $new_instance[ $key ] );
+					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : '';
 				break;
 			}
 		}
