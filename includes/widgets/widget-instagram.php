@@ -27,7 +27,7 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 		 * @param array $instance Saved values from database.
 		 */
 		public function widget( $args, $instance ) {
-			if ( ! current_user_can( 'administrator' ) ) {
+			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
 
