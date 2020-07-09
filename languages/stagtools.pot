@@ -1,14 +1,14 @@
-# Copyright (C) 2018 Ram Ratan Maurya
+# Copyright (C) 2020 <a href="https://twitter.com/mauryaratan/">Ram Ratan Maurya</a>, <a href="https://codestag.com/">Codestag</a>
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: StagTools 2.2.5\n"
+"Project-Id-Version: StagTools 2.3.2\n"
 "Report-Msgid-Bugs-To: https://codestag.com/support/\n"
-"POT-Creation-Date: 2018-03-16 00:08:27+00:00\n"
+"POT-Creation-Date: 2020-07-09 16:52:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Codestag\n"
 "Language-Team: Codestag\n"
 "X-Generator: grunt-wp-i18n1.0.1\n"
@@ -61,8 +61,31 @@ msgstr ""
 msgid "Google Map"
 msgstr ""
 
+#: includes/class-stagtools-themes.php:29
+msgid "Codestag Themes"
+msgstr ""
+
+#: includes/class-stagtools-themes.php:31
+#: includes/class-stagtools-themes.php:64
+msgid "Browse all themes"
+msgstr ""
+
+#: includes/class-stagtools-themes.php:34
+msgid ""
+"Browse our theme collection and discover beautiful, handcrafted themes that "
+"are easy to use and flexible for your content."
+msgstr ""
+
+#: includes/class-stagtools-themes.php:59
+msgid "Get this Theme"
+msgstr ""
+
+#: includes/class-stagtools-themes.php:161
+msgid "Unable to retrieve themes data."
+msgstr ""
+
 #: includes/post-type/portfolio.php:8 includes/post-type/portfolio.php:9
-#: includes/settings/settings.php:99
+#: includes/settings/settings.php:110
 msgid "Portfolio"
 msgstr ""
 
@@ -99,21 +122,21 @@ msgstr ""
 msgid "No Portfolios found in trash"
 msgstr ""
 
-#: includes/post-type/portfolio.php:42 includes/post-type/portfolio.php:63
+#: includes/post-type/portfolio.php:43 includes/post-type/portfolio.php:64
 msgid "Skills"
 msgstr ""
 
-#: includes/post-type/portfolio.php:43
+#: includes/post-type/portfolio.php:44
 msgid "Skill"
 msgstr ""
 
-#: includes/post-type/portfolio.php:62
+#: includes/post-type/portfolio.php:63
 msgid "Portfolio Title"
 msgstr ""
 
-#: includes/post-type/portfolio.php:64 includes/post-type/project.php:83
-#: includes/post-type/slides.php:39 includes/post-type/team.php:40
-#: includes/post-type/testimonials.php:39
+#: includes/post-type/portfolio.php:65 includes/post-type/project.php:84
+#: includes/post-type/slides.php:39 includes/post-type/team.php:41
+#: includes/post-type/testimonials.php:40
 msgid "Date"
 msgstr ""
 
@@ -153,23 +176,23 @@ msgstr ""
 msgid "No Projects found in Trash."
 msgstr ""
 
-#: includes/post-type/project.php:46 includes/post-type/project.php:81
+#: includes/post-type/project.php:47 includes/post-type/project.php:82
 msgid "Project Types"
 msgstr ""
 
-#: includes/post-type/project.php:47
+#: includes/post-type/project.php:48
 msgid "Project Type"
 msgstr ""
 
-#: includes/post-type/project.php:58 includes/post-type/project.php:82
+#: includes/post-type/project.php:59 includes/post-type/project.php:83
 msgid "Project Tags"
 msgstr ""
 
-#: includes/post-type/project.php:59
+#: includes/post-type/project.php:60
 msgid "Project Tag"
 msgstr ""
 
-#: includes/post-type/project.php:80
+#: includes/post-type/project.php:81
 msgid "Project"
 msgstr ""
 
@@ -245,11 +268,11 @@ msgstr ""
 msgid "No Team Member in trash"
 msgstr ""
 
-#: includes/post-type/team.php:38
+#: includes/post-type/team.php:39
 msgid "Team Member Title"
 msgstr ""
 
-#: includes/post-type/team.php:39
+#: includes/post-type/team.php:40
 msgid "Member Info"
 msgstr ""
 
@@ -289,107 +312,111 @@ msgstr ""
 msgid "No Testimonials in trash"
 msgstr ""
 
-#: includes/post-type/testimonials.php:38
+#: includes/post-type/testimonials.php:39
 msgid "Testimonial Title"
 msgstr ""
 
-#: includes/settings/settings.php:97
+#: includes/settings/settings.php:108
 msgid "General"
 msgstr ""
 
-#: includes/settings/settings.php:98
+#: includes/settings/settings.php:109
 msgid "Social"
 msgstr ""
 
-#: includes/settings/settings.php:154
+#: includes/settings/settings.php:111
+msgid "Themes"
+msgstr ""
+
+#: includes/settings/settings.php:166
 msgid "Settings Updated"
 msgstr ""
 
-#: includes/settings/settings.php:215
+#: includes/settings/settings.php:227
 msgid "Twitter Settings"
 msgstr ""
 
-#: includes/settings/settings.php:221
+#: includes/settings/settings.php:233
 msgid "OAuth Consumer Key"
 msgstr ""
 
-#: includes/settings/settings.php:222
+#: includes/settings/settings.php:234
 msgid "Enter twitter OAuth Consumer Key"
 msgstr ""
 
-#: includes/settings/settings.php:227
+#: includes/settings/settings.php:239
 msgid "OAuth Consumer Secret"
 msgstr ""
 
-#: includes/settings/settings.php:228
+#: includes/settings/settings.php:240
 msgid "Enter twitter OAuth Consumer Secret"
 msgstr ""
 
-#: includes/settings/settings.php:233
+#: includes/settings/settings.php:245
 msgid "OAuth Access Token"
 msgstr ""
 
-#: includes/settings/settings.php:234
+#: includes/settings/settings.php:246
 msgid "Enter twitter OAuth Access Token"
 msgstr ""
 
-#: includes/settings/settings.php:239
+#: includes/settings/settings.php:251
 msgid "OAuth Access Secret"
 msgstr ""
 
-#: includes/settings/settings.php:240
+#: includes/settings/settings.php:252
 msgid "Enter twitter OAuth Access Secret"
 msgstr ""
 
-#: includes/settings/settings.php:245
+#: includes/settings/settings.php:257
 msgid "Dribbble Settings"
 msgstr ""
 
-#: includes/settings/settings.php:250
+#: includes/settings/settings.php:262
 msgid "Access Token"
 msgstr ""
 
-#: includes/settings/settings.php:252
+#: includes/settings/settings.php:264
 msgid ""
 "You can get an access token manually from <a target=\"_blank\" "
 "rel=\"nopener noreferrer\" href=\"%s\">here</a>."
 msgstr ""
 
-#: includes/settings/settings.php:259
+#: includes/settings/settings.php:271
 msgid "Google Maps API key"
 msgstr ""
 
-#: includes/settings/settings.php:264
+#: includes/settings/settings.php:276
 msgid "API Key"
 msgstr ""
 
-#: includes/settings/settings.php:266
+#: includes/settings/settings.php:278
 msgid ""
 "An API key is required for Google Maps shortcode to work. Here is how you "
 "can %s."
 msgstr ""
 
-#: includes/settings/settings.php:267
+#: includes/settings/settings.php:279
 msgid "get a key"
 msgstr ""
 
-#: includes/settings/settings.php:462
+#: includes/settings/settings.php:474
 msgid "Portfolio Slug"
 msgstr ""
 
-#: includes/settings/settings.php:463
+#: includes/settings/settings.php:475
 msgid "Enter the slug of custom post type <strong>portfolio</strong>."
 msgstr ""
 
-#: includes/settings/settings.php:469
+#: includes/settings/settings.php:481
 msgid "Skills Slug"
 msgstr ""
 
-#: includes/settings/settings.php:470
+#: includes/settings/settings.php:482
 msgid "Enter the slug of custom post taxonomy <strong>skill</strong>."
 msgstr ""
 
-#: includes/settings/settings.php:483
+#: includes/settings/settings.php:494
 msgid "The callback function used for the <strong>%s</strong> setting is missing."
 msgstr ""
 
@@ -466,9 +493,7 @@ msgid "Stag Dribbble Shots"
 msgstr ""
 
 #: includes/widgets/widget-dribbble.php:18
-#: includes/widgets/widget-flickr.php:18
-#: includes/widgets/widget-instagram.php:20
-#: includes/widgets/widget-twitter.php:19
+#: includes/widgets/widget-flickr.php:18 includes/widgets/widget-twitter.php:19
 msgid "Title:"
 msgstr ""
 
@@ -500,84 +525,31 @@ msgstr ""
 msgid "Number of photos to show:"
 msgstr ""
 
-#: includes/widgets/widget-flickr.php:83
+#: includes/widgets/widget-flickr.php:87
 msgid "Invalid flickr ID"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:14
+#: includes/widgets/widget-instagram.php:15
 msgid "Display your latest Instagrams photos."
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:15
-msgid "Stag Instagram Photos"
+#: includes/widgets/widget-instagram.php:16
+msgid "(Deprecated) Stag Instagram Photos"
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:19
-msgid "Instagram Photos"
+#: includes/widgets/widget-instagram.php:35
+msgid ""
+"<br>Instagram widget has been deprecated due to changes in their API with "
+"no alternatives available. We recommend using a third-party plugin for <a "
+"href=\"%1$s\" target=\"_blank\">Instagram</a> related features.<br><br> "
+"This notice is only visible to admins."
 msgstr ""
 
-#: includes/widgets/widget-instagram.php:26
-msgid "Instagram Username:"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:31
-msgid "Photo Count (max 12):"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:39
-msgid "Photo Size:"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:41
-msgid "Thumbnail"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:42 shortcodes/config.php:37
-msgid "Small"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:43 shortcodes/config.php:39
-msgid "Large"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:44
-msgid "Original"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:50
-msgid "Cache time (in hours):"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:58
-msgid "Include link to Instagram page?"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:63
-#: includes/widgets/widget-twitter.php:72
-msgid "Link Text:"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:175
-msgid "Unable to communicate with Instagram."
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:179
-msgid "Instagram did not return a 200."
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:187
-#: includes/widgets/widget-instagram.php:195
-#: includes/widgets/widget-instagram.php:199
-msgid "Instagram has returned invalid data."
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:210
-#: includes/widgets/widget-instagram.php:232
-msgid "Instagram Image"
-msgstr ""
-
-#: includes/widgets/widget-instagram.php:263
-msgid "Instagram did not return any images."
+#: includes/widgets/widget-instagram.php:48
+msgid ""
+"<br>Instagram widget has been deprecated due to changes in their API with "
+"no alternatives available. We recommend using a third-party plugin for <a "
+"href=\"%1$s\" target=\"_blank\">Instagram</a> related features.<br><br>"
 msgstr ""
 
 #: includes/widgets/widget-twitter.php:13
@@ -648,6 +620,10 @@ msgstr ""
 msgid "Include link to twitter page?"
 msgstr ""
 
+#: includes/widgets/widget-twitter.php:72
+msgid "Link Text:"
+msgstr ""
+
 #: includes/widgets/widget-twitter.php:153
 msgid "Please provide a Twitter Username."
 msgstr ""
@@ -708,8 +684,16 @@ msgstr ""
 msgid "Select the button&lsquo;s size"
 msgstr ""
 
+#: shortcodes/config.php:37
+msgid "Small"
+msgstr ""
+
 #: shortcodes/config.php:38
 msgid "Medium"
+msgstr ""
+
+#: shortcodes/config.php:39
+msgid "Large"
 msgstr ""
 
 #: shortcodes/config.php:44
@@ -1288,15 +1272,15 @@ msgstr ""
 msgid "API key"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:35
+#: shortcodes/stag-shortcodes.php:40
 msgid "Upload or Choose Your Custom Video File"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:36
+#: shortcodes/stag-shortcodes.php:41
 msgid "Upload or Choose Your Custom Image File"
 msgstr ""
 
-#: shortcodes/stag-shortcodes.php:118
+#: shortcodes/stag-shortcodes.php:123
 msgid "Insert Shortcode"
 msgstr ""
 
@@ -1312,37 +1296,37 @@ msgstr ""
 msgid "StagTools"
 msgstr ""
 
-#: stagtools.php:406
+#: stagtools.php:407
 msgid "For more information:"
 msgstr ""
 
-#: stagtools.php:408
+#: stagtools.php:409
 #. translators: %s: Link to Github wiki.
 msgid "Visit the <a href=\"%s\" target=\"_blank\">documentation</a> on the Github."
 msgstr ""
 
-#: stagtools.php:411
+#: stagtools.php:412
 #. translators: %1$s: Link to Github issues, %2$s: Link to Github repo.
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Post an issue</a> on <a href=\"%2$s\" "
 "target=\"_blank\">GitHub</a>."
 msgstr ""
 
-#: stagtools.php:419
+#: stagtools.php:420
 msgid "Twitter oAuth Settings"
 msgstr ""
 
-#: stagtools.php:420
+#: stagtools.php:421
 msgid ""
 "Here you can find how to add twitter oAuth keys to get Twitter widget "
 "working."
 msgstr ""
 
-#: stagtools.php:421
+#: stagtools.php:422
 msgid "Where do I find these keys?"
 msgstr ""
 
-#: stagtools.php:423
+#: stagtools.php:424
 #. translators: %s: Link to Twitter Developer documentation site.
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -1351,11 +1335,11 @@ msgid ""
 "dashboard."
 msgstr ""
 
-#: stagtools.php:424
+#: stagtools.php:425
 msgid "Where are my widgets?"
 msgstr ""
 
-#: stagtools.php:426
+#: stagtools.php:427
 #. translators: %s: Link to twitter screenshot.
 msgid ""
 "In order to use the new Twitter widget, you must first register a Twitter "
@@ -1364,11 +1348,11 @@ msgid ""
 "developer dashboard."
 msgstr ""
 
-#: stagtools.php:427
+#: stagtools.php:428
 msgid "Can I insert shortcodes manually instead of using shortcode generator?"
 msgstr ""
 
-#: stagtools.php:429
+#: stagtools.php:430
 #. translators: %s: Link to Github gist for code snippet.
 msgid ""
 "Yes; although we have a shortcode builder you can also see a list of <a "
@@ -1376,53 +1360,53 @@ msgid ""
 "manually in any supported area."
 msgstr ""
 
-#: stagtools.php:435
+#: stagtools.php:436
 msgid "Portfolio Settings"
 msgstr ""
 
-#: stagtools.php:436
+#: stagtools.php:437
 msgid ""
 "You can use the following settigns to control the slug/taxonomies for "
 "custom post type portfolio and skills."
 msgstr ""
 
-#: stagtools.php:437
+#: stagtools.php:438
 msgid ""
 "<strong>Portfolio Slug</strong> - This settings is used to set the slug of "
 "custom post type &lsquo;portfolio&rsquo;."
 msgstr ""
 
-#: stagtools.php:438
+#: stagtools.php:439
 msgid ""
 "<strong>Skills Slug</strong> - This settings is used to set the slug of "
 "custom post taxonomy &lsquo;skill&rsquo;."
 msgstr ""
 
-#: stagtools.php:444
+#: stagtools.php:445
 msgid "Using Social Icons"
 msgstr ""
 
-#: stagtools.php:445
+#: stagtools.php:446
 msgid "Using Social Icons Shortcode"
 msgstr ""
 
-#: stagtools.php:446
+#: stagtools.php:447
 msgid "To use the social icon use the following shortcode:"
 msgstr ""
 
-#: stagtools.php:447
+#: stagtools.php:448
 msgid "It would display all social icons with non-empty profile URLs."
 msgstr ""
 
-#: stagtools.php:448
+#: stagtools.php:449
 msgid "or you can pass specific ids."
 msgstr ""
 
-#: stagtools.php:449
+#: stagtools.php:450
 msgid "Using Different Styled Icons"
 msgstr ""
 
-#: stagtools.php:450
+#: stagtools.php:451
 msgid ""
 "You can use the social icons in two different styles: normal and square. "
 "Just pass the <code>style</code> argument in sidebar.<br>E.g.: "
@@ -1435,16 +1419,18 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A poweful plugin to extend functionality to your WordPress themes offering "
-"shortcodes, font icons and useful widgets."
+"A powerful plugin to extend functionality to your WordPress themes offering "
+"shortcodes, font icons, and useful widgets."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Ram Ratan Maurya"
+msgid ""
+"<a href=\"https://twitter.com/mauryaratan/\">Ram Ratan Maurya</a>, <a "
+"href=\"https://codestag.com/\">Codestag</a>"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://mauryaratan.me"
+msgid "https://codestag.com"
 msgstr ""
 
 #: includes/post-type/project.php:10

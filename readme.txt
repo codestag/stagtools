@@ -2,7 +2,7 @@
 
 Contributors: mauryaratan, codestag
 Donate link: https://codest.ag/st-donate
-Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, instagram, custom post type, codestag, mauryaratan, twitter
+Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, custom post type, codestag, mauryaratan, twitter
 Requires at least: 4.0
 Tested up to: 5.4.2
 Stable tag: 2.3.2
@@ -28,7 +28,7 @@ StagTools powers your WordPress website with some regularly needed shortcodes in
 * Image with CSS3 filters
 * Videos ( supports [oEmbeds](https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) )
 
-**Widgets:** Twitter, Dribbble, Flickr, Instagram
+**Widgets:** Twitter, Dribbble, Flickr
 
 **Custom Post Types:** Portfolio, Slides, Team, Testimonials
 

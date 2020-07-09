@@ -38,4 +38,4 @@ Shortcodes can easily be inserted via the button include in the editor, check th
 
 ![StagTools shortcodes](https://cldup.com/XhBvxAfAhH.jpg)
 
-Apart from above, the plugin also comes with 4 widgets: Twitter, Dribbble, Flickr, and Instagram
+Apart from above, the plugin also comes with 3 widgets: Twitter, Dribbble & Flickr.
