@@ -53,7 +53,7 @@ abstract class ST_Widget extends WP_Widget {
 		wp_cache_delete( $this->widget_id, 'widget' );
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		if ( ! $this->settings )
@@ -81,7 +81,7 @@ abstract class ST_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		if ( ! $this->settings )
 			return;

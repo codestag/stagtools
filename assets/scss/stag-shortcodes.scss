@@ -398,41 +398,6 @@
 	margin-left: 0.7em;
 }
 
-// Instagram Widget
-.instagram-widget {
-	li {
-		display: inline-block;
-		margin: 0 5px 5px 0;
-		padding: 0 !important;
-		list-style: none;
-	}
-	a {
-		text-decoration: none;
-		border: none;
-	}
-	img {
-		height: auto;
-	}
-}
-.stag-instagram-widget__item.stag-instagram-widget__item {
-	border: none;
-}
-.instagram-follow-link {
-	display: block;
-	margin-top: 10px;
-}
-
-.stag-instagram-widget--size-small {
-	li {
-		max-width: 48%;
-	}
-}
-
-.stag-instagram-widget--size {
-	&-thumbnail img { width: 75px; }
-	&-small img { width: 160px; }
-}
-
 // Twitter Widget
 .stag-twitter {
 	.time-ago {
