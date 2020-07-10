@@ -215,7 +215,7 @@ class Stag_Twitter extends ST_Widget {
 					continue;
 
 				// Format tweet (hashtags, links, etc)
-				$content = self::twitter_linkify( $tweet->full_text );
+				$content = self::twitter_linkify( $tweet->text );
 
 				if ( $show_time ) {
 					// Calculate time difference
