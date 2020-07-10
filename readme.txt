@@ -4,7 +4,7 @@ Contributors: mauryaratan, codestag
 Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, custom post type, codestag, mauryaratan, twitter
 Requires at least: 4.0
-Tested up to: 5.4.2
+Tested up to: 5.5
 Stable tag: 2.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
