@@ -3,7 +3,7 @@
  * Plugin Name: StagTools
  * Plugin URI: https://wordpress.org/plugins/stagtools/
  * Description: A powerful plugin to extend functionality to your WordPress themes offering shortcodes, font icons, and useful widgets.
- * Version: 2.3.2
+ * Version: 2.3.3
  * Author: <a href="https://twitter.com/mauryaratan/">Ram Ratan Maurya</a>, <a href="https://codestag.com/">Codestag</a>
  * Author URI: https://codestag.com
  * License: GPL2
@@ -24,7 +24,7 @@ if ( ! class_exists( 'StagTools' ) ) :
  * Main StagTools Class
  *
  * @package StagTools
- * @version 2.3.2
+ * @version 2.3.3
  * @author Ram Ratan Maurya (Codestag)
  * @link https://mauryaratan.me
  * @link https://codestag.com
@@ -35,7 +35,7 @@ class StagTools {
 	 *
 	 * @var string
 	 */
-	public $version = '2.3.2';
+	public $version = '2.3.3';
 
 	/**
 	 * The single instance of the class.
