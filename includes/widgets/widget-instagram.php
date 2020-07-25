@@ -1,5 +1,6 @@
 <?php
 /**
+ * (Deprecated Widget)
  * Display your latest Instagrams photos.
  *
  * @package StagTools
@@ -12,57 +13,7 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 			$this->widget_id          = 'stag-instagram';
 			$this->widget_cssclass    = 'stag-instagram';
 			$this->widget_description = __( 'Display your latest Instagrams photos.', 'stag' );
-			$this->widget_name        = __( 'Stag Instagram Photos', 'stag' );
-			$this->settings           = array(
-				'title'            => array(
-					'type'  => 'text',
-					'std'   => __( 'Instagram Photos', 'stag' ),
-					'label' => __( 'Title:', 'stag' ),
-				),
-				'username'         => array(
-					'type'        => 'text',
-					'std'         => null,
-					'placeholder' => 'myusername',
-					'label'       => __( 'Instagram Username:', 'stag' ),
-				),
-				'count'            => array(
-					'type'  => 'number',
-					'std'   => 9,
-					'label' => __( 'Photo Count (max 12):', 'stag' ),
-					'step'  => 1,
-					'min'   => 1,
-					'max'   => 12,
-				),
-				'size'             => array(
-					'type'    => 'select',
-					'std'     => 'thumbnail',
-					'label'   => __( 'Photo Size:', 'stag' ),
-					'options' => array(
-						'thumbnail' => __( 'Thumbnail', 'stag' ),
-						'small'     => __( 'Small', 'stag' ),
-						'large'     => __( 'Large', 'stag' ),
-						'original'  => __( 'Original', 'stag' ),
-					),
-				),
-				'cachetime'        => array(
-					'type'  => 'number',
-					'std'   => 2,
-					'label' => __( 'Cache time (in hours):', 'stag' ),
-					'step'  => 1,
-					'min'   => 1,
-					'max'   => 500,
-				),
-				'follow_link_show' => array(
-					'type'  => 'checkbox',
-					'std'   => false,
-					'label' => __( 'Include link to Instagram page?', 'stag' ),
-				),
-				'follow_link_text' => array(
-					'type'  => 'text',
-					'std'   => 'Follow on Instagram',
-					'label' => __( 'Link Text:', 'stag' ),
-				),
-			);
+			$this->widget_name        = __( '(Deprecated) Stag Instagram Photos', 'stag' );
 
 			parent::__construct();
 		}
@@ -76,65 +27,27 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 		 * @param array $instance Saved values from database.
 		 */
 		public function widget( $args, $instance ) {
-			if ( $this->get_cached_widget( $args ) ) {
+			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
 
-			ob_start();
+			printf(
+				__( '<br>Instagram widget has been deprecated due to changes in their API with no alternatives available. We recommend using a third-party plugin for <a href="%1$s" target="_blank">Instagram</a> related features.<br><br> This notice is only visible to admins.', 'stagtools' ),
+				esc_url( 'https://wordpress.org/plugins/search/instagram/' ),
+			);
+		}
 
-			extract( $args );
-
-			echo $before_widget; // WPCS: XSS Ok.
-
-			$title     = apply_filters( 'widget_title', $instance['title'] );
-			$username  = esc_html( $instance['username'] );
-			$count     = absint( $instance['count'] );
-			$size      = esc_html( $instance['size'] );
-			$cachetime = absint( $instance['cachetime'] );
-
-			$insta = $this->scrape_instagram( $username, $cachetime );
-
-			if ( $title ) {
-				echo $before_title . $title . $after_title; // WPCS: XSS Ok.
-			}
-
-			// And if we have Instagrams.
-			if ( is_array( $insta ) ) :
-
-				// slice list down to required limit.
-				$insta = array_slice( $insta, 0, $count );
-
-				?>
-
-				<ul class="instagram-widget stag-instagram-widget stag-instagram-widget--size-<?php echo esc_attr( $size ); ?>">
-					<?php
-					foreach ( $insta as $image ) {
-							echo apply_filters(
-								'st_instagram_widget_image_html', sprintf(
-									'<li class="stag-instagram-widget__item"><a href="%1$s"><img class="instagram-image" src="%2$s" alt="%3$s" title="%3$s" /></a></li>',
-									esc_url( $image['link'] ),
-									esc_url( $image[ $size ] ),
-									esc_html( $image['description'] )
-								), $image
-							);
-					}
-					?>
-
-					</ul>
-
-					<?php if ( $instance['follow_link_show'] && $instance['follow_link_text'] ) : ?>
-					<a class="stag-button instagram-follow-link" href="https://instagram.com/<?php echo esc_html( $username ); ?>"><?php echo esc_html( $instance['follow_link_text'] ); ?></a>
-					<?php endif; ?>
-				<?php
-			endif;
-
-			echo $after_widget; // WPCS: XSS Ok.
-
-			$content = ob_get_clean();
-
-			echo $content; // WPCS: XSS Ok.
-
-			$this->cache_widget( $args, $content );
+		/**
+		 * Deprecated message for form.
+		 *
+		 * @param array $instance  Saved values from database.
+		 * @return void
+		 */
+		public function form( $instance ) {
+			printf(
+				__( '<br>Instagram widget has been deprecated due to changes in their API with no alternatives available. We recommend using a third-party plugin for <a href="%1$s" target="_blank">Instagram</a> related features.<br><br>', 'stagtools' ),
+				esc_url( 'https://wordpress.org/plugins/search/instagram/' ),
+			);
 		}
 
 		/**
@@ -144,124 +57,6 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 		 */
 		public static function register() {
 			register_widget( __CLASS__ );
-		}
-
-		/**
-		 * Scrapge Instagram data from webpage.
-		 * Based on https://gist.github.com/cosmocatalano/4544576
-		 *
-		 * @param  string $username Instagram username.
-		 * @param  string $cachetime Cache time.
-		 * @return mixed
-		 */
-		protected function scrape_instagram( $username, $cachetime ) {
-			$username  = trim( strtolower( $username ) );
-			$instagram = get_transient( 'st_instagram_' . sanitize_title_with_dashes( $username ) );
-
-			if ( false === $instagram ) {
-				switch ( substr( $username, 0, 1 ) ) {
-					case '#':
-						$url = 'https://instagram.com/explore/tags/' . str_replace( '#', '', $username );
-						break;
-
-					default:
-						$url = 'https://instagram.com/' . str_replace( '@', '', $username );
-						break;
-				}
-
-				$remote = wp_remote_get( $url );
-
-				if ( is_wp_error( $remote ) ) {
-					return new WP_Error( 'site_down', esc_html__( 'Unable to communicate with Instagram.', 'stag' ) );
-				}
-
-				if ( 200 !== wp_remote_retrieve_response_code( $remote ) ) {
-					return new WP_Error( 'invalid_response', esc_html__( 'Instagram did not return a 200.', 'stag' ) );
-				}
-
-				$shards      = explode( 'window._sharedData = ', $remote['body'] );
-				$insta_json  = explode( ';</script>', $shards[1] );
-				$insta_array = json_decode( $insta_json[0], true );
-
-				if ( ! $insta_array ) {
-					return new WP_Error( 'bad_json', esc_html__( 'Instagram has returned invalid data.', 'stag' ) );
-				}
-
-				if ( isset( $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'] ) ) {
-					$images = $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'];
-				} elseif ( isset( $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'] ) ) {
-					$images = $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
-				} else {
-					return new WP_Error( 'bad_json_2', esc_html__( 'Instagram has returned invalid data.', 'stag' ) );
-				}
-
-				if ( ! is_array( $images ) ) {
-					return new WP_Error( 'bad_array', esc_html__( 'Instagram has returned invalid data.', 'stag' ) );
-				}
-
-				$instagram = array();
-
-				foreach ( $images as $image ) {
-					$image = $image['node'];
-					switch ( substr( $username, 0, 1 ) ) {
-						case '#':
-							$type = ( $image['is_video'] ) ? 'video' : 'image';
-
-							$caption = __( 'Instagram Image', 'stag' );
-							if ( ! empty( $image['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
-								$caption = $image['edge_media_to_caption']['edges'][0]['node']['text'];
-							}
-
-							$instagram[] = array(
-								'description' => $caption,
-								'link'        => trailingslashit( '//instagram.com/p/' . $image['shortcode'] ),
-								'time'        => $image['taken_at_timestamp'],
-								'comments'    => $image['edge_media_to_comment']['count'],
-								'likes'       => $image['edge_liked_by']['count'],
-								'thumbnail'   => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][0]['src'] ),
-								'small'       => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][2]['src'] ),
-								'large'       => preg_replace( '/^https?\:/i', '', $image['thumbnail_resources'][4]['src'] ),
-								'original'    => preg_replace( '/^https?\:/i', '', $image['display_url'] ),
-								'type'        => $type,
-							);
-							break;
-
-						default:
-							$type = ( $image['is_video'] ) ? 'video' : 'image';
-
-							$caption = __( 'Instagram Image', 'stag' );
-							if ( ! empty( $image['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
-								$caption = $image['edge_media_to_caption']['edges'][0]['node']['text'];
-							}
-
-							$instagram[] = array(
-								'description' => $caption,
-								'link'        => trailingslashit( 'https://instagram.com/p/' . $image['shortcode'] ),
-								'time'        => $image['taken_at_timestamp'],
-								'comments'    => $image['edge_media_to_comment']['count'],
-								'likes'       => $image['edge_liked_by']['count'],
-								'thumbnail'   => $image['thumbnail_resources'][0]['src'],
-								'small'       => $image['thumbnail_resources'][2]['src'],
-								'large'       => $image['thumbnail_resources'][4]['src'],
-								'original'    => $image['display_url'],
-								'type'        => $type,
-							);
-							break;
-					}
-				}  // End foreach().
-
-				// Do not set an empty transient - should help catch private or empty accounts.
-				if ( ! empty( $instagram ) ) {
-					$instagram = base64_encode( serialize( $instagram ) );
-					set_transient( 'st_instagram_' . sanitize_title_with_dashes( $username ), $instagram, apply_filters( 'null_instagram_cache_time', HOUR_IN_SECONDS * $cachetime ) );
-				}
-			}
-
-			if ( ! empty( $instagram ) ) {
-				return unserialize( base64_decode( $instagram ) );
-			} else {
-				return new WP_Error( 'no_images', esc_html__( 'Instagram did not return any images.', 'stag' ) );
-			}
 		}
 	}
 endif;
