@@ -37,3 +37,6 @@ phpcs.xml
 phpunit.xml
 webpack.config.js
 webpack.gutenberg.config.js
+
+config.rb
+Gruntfile.js
