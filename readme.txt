@@ -91,7 +91,7 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
-= 2.3.3 - July 10, 2020 =
+= 2.3.3 - Aug 01, 2020 =
 * Fix tweets not showing up at twitter widget
 * Deprecate Instagram widget due to changes in Instagram's API
 

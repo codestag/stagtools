@@ -8,7 +8,7 @@
  * Author URI: https://codestag.com
  * License: GPL2
  * Requires at least: 4.0
- * Tested up to: 5.4.2
+ * Tested up to: 5.5
  *
  * Text Domain: stag
  * Domain Path: /languages/
