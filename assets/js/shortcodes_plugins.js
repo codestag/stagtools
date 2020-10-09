@@ -356,7 +356,7 @@ jQuery( document ).ready( function( $ ) {
             });
 
             // remove button
-            $( '.child-clone-row-remove' ).live( 'click', function() {
+            $( '.child-clone-rows' ).on( 'click', '.child-clone-row-remove', function() {
                 var btn = $( this ),
                     row = btn.parent();
 
@@ -479,12 +479,12 @@ jQuery( document ).ready( function( $ ) {
             stags.media();
 
             // update on children value change
-            $( '.stag-cinput', form ).live( 'change', function() {
+            $( '.child-clone-row-field', form ).on( 'change', '.stag-cinput', function() {
                 stags.cLoadVals();
             });
 
             // update on value change
-            $( '.stag-input', form ).live( 'change', function() {
+            $( '.stag-sc-form-table', form ).on( 'change', '.stag-input', function() {
                 stags.loadVals();
             });
 
