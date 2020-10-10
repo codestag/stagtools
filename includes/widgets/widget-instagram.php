@@ -32,8 +32,12 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 			}
 
 			printf(
-				__( '<br>Instagram widget has been deprecated due to changes in their API with no alternatives available. We recommend using a third-party plugin for <a href="%1$s" target="_blank">Instagram</a> related features.<br><br> This notice is only visible to admins.', 'stagtools' ),
-				esc_url( 'https://wordpress.org/plugins/search/instagram/' ),
+			    '<br>%1$s<a href="%2$s" target="_blank">%3$s</a>%4$s<br><br>%5$s',
+				__( 'Instagram widget has been deprecated due to changes in their API with no alternatives available. We recommend using a third-party plugin for ', 'stagtools' ),
+                esc_url( 'https://wordpress.org/plugins/search/instagram/' ),
+				__( 'Instagram', 'stagtools' ),
+				__( ' related features.', 'stagtools' ),
+                __( ' This notice is only visible to admins.', 'stagtools' )
 			);
 		}
 
@@ -44,10 +48,13 @@ if ( ! class_exists( 'Stag_Instagram' ) ) :
 		 * @return void
 		 */
 		public function form( $instance ) {
-			printf(
-				__( '<br>Instagram widget has been deprecated due to changes in their API with no alternatives available. We recommend using a third-party plugin for <a href="%1$s" target="_blank">Instagram</a> related features.<br><br>', 'stagtools' ),
-				esc_url( 'https://wordpress.org/plugins/search/instagram/' ),
-			);
+            printf(
+                '<br>%1$s<a href="%2$s" target="_blank">%3$s</a>%4$s<br><br>',
+                __( 'Instagram widget has been deprecated due to changes in their API with no alternatives available. We recommend using a third-party plugin for ', 'stagtools' ),
+                esc_url( 'https://wordpress.org/plugins/search/instagram/' ),
+                __( 'Instagram', 'stagtools' ),
+                __( ' related features.', 'stagtools' )
+            );
 		}
 
 		/**
