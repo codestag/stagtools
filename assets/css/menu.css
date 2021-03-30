@@ -233,6 +233,8 @@
 
 #TB_ajaxContent#TB_ajaxContent {
 	padding: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 
 .stag-control-buttonset {
@@ -252,6 +254,7 @@
 	line-height: 28px;
     padding: 5px 10px;
     border-color: #ccc;
+	background: #eee;
 }
 
 .stag-control-buttonset label.ui-state-default {
