@@ -24,7 +24,7 @@ if ( ! class_exists( 'StagTools' ) ) :
  * Main StagTools Class
  *
  * @package StagTools
- * @version 2.3.3
+ * @version 2.3.6
  * @author Ram Ratan Maurya (Codestag)
  * @link https://mauryaratan.me
  * @link https://codestag.com
@@ -35,7 +35,7 @@ class StagTools {
 	 *
 	 * @var string
 	 */
-	public $version = '2.3.3';
+	public $version = '2.3.6';
 
 	/**
 	 * The single instance of the class.

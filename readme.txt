@@ -4,8 +4,8 @@ Contributors: mauryaratan, codestag
 Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, custom post type, codestag, mauryaratan, twitter
 Requires at least: 4.0
-Tested up to: 5.5
-Stable tag: 2.3.5
+Tested up to: 5.7
+Stable tag: 2.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.3.6 - March 31, 2021 =
+* Support for WordPress 5.7
+* Fixes multiple shortcode output
 
 = 2.3.5 - October 10, 2020 =
 * Improve deprecated message formatting for Instagram widget and fix trailing comma error
