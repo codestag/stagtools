@@ -91,9 +91,10 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
-= 2.3.6 - March 31, 2021 =
-* Support for WordPress 5.7
-* Fixes multiple shortcode output
+= 2.3.6 - April 06, 2021 =
+* New: Update FontAwesome library to v5.15.3
+* Fix: Multiple shortcode output
+* Improvements: Support for WordPress 5.7
 
 = 2.3.5 - October 10, 2020 =
 * Improve deprecated message formatting for Instagram widget and fix trailing comma error

@@ -3,12 +3,12 @@
  * Plugin Name: StagTools
  * Plugin URI: https://wordpress.org/plugins/stagtools/
  * Description: A powerful plugin to extend functionality to your WordPress themes offering shortcodes, font icons, and useful widgets.
- * Version: 2.3.5
+ * Version: 2.3.6
  * Author: <a href="https://twitter.com/mauryaratan/">Ram Ratan Maurya</a>, <a href="https://codestag.com/">Codestag</a>
  * Author URI: https://codestag.com
  * License: GPL2
  * Requires at least: 4.0
- * Tested up to: 5.5.1
+ * Tested up to: 5.7
  *
  * Text Domain: stag
  * Domain Path: /languages/
@@ -270,15 +270,15 @@ class StagTools {
 	 * @return void
 	 */
 	public function frontend_style() {
-		wp_enqueue_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.6.3', 'all' );
+		wp_enqueue_style( 'font-awesome', $this->plugin_url() . '/assets/css/fontawesome-all' . SCRIPT_SUFFIX . '.css', '', '5.15.3', 'all' );
 		wp_register_style( 'stag-shortcode-styles', $this->plugin_url() . '/assets/css/stag-shortcodes.css', array(), $this->version, 'all' );
 
 		wp_enqueue_style( 'stag-shortcode-styles' );
 
 		wp_register_script( 'stag-shortcode-scripts', $this->plugin_url() . '/assets/js/stag-shortcode-scripts.js', array( 'jquery', 'jquery-ui-accordion', 'jquery-ui-tabs' ), $this->version, true );
 
-		wp_enqueue_script( 'font-awesome-v5-svg', $this->plugin_url() . '/assets/js/fontawesome-all.min.js', array(), '5.6.3', true );
-		wp_enqueue_script( 'font-awesome-v4-shim', $this->plugin_url() . '/assets/js/fa-v4-shims.min.js', array( 'font-awesome-v5-svg' ), '5.6.3', true );
+		wp_enqueue_script( 'font-awesome-v5-svg', $this->plugin_url() . '/assets/js/fontawesome-all.min.js', array(), '5.15.3', true );
+		wp_enqueue_script( 'font-awesome-v4-shim', $this->plugin_url() . '/assets/js/fa-v4-shims.min.js', array( 'font-awesome-v5-svg' ), '5.15.3', true );
 	}
 
 	/**
