@@ -1,135 +1,13 @@
 /**
  * Table of Contents
  *
- * 1. jQuery Live Query
- * 2. jQuery Appendo
- * 3. base64.js
- * 4. custom
+ * 1.jQuery Appendo
+ * 2. base64.js
+ * 3. custom
  *
  */
 
-// 1. jQuery Live Query
-( function( a ) {
-a.extend( a.fn, {livequery: function( e, d, c ) {
-var b = this,
- f;if ( a.isFunction( e ) ) {
-c = d, d = e, e = undefined;
-}a.each( a.livequery.queries, function( g, h ) {
-if ( b.selector == h.selector && b.context == h.context && e == h.type && ( ! d || d.$lqguid == h.fn.$lqguid ) && ( ! c || c.$lqguid == h.fn2.$lqguid ) ) {
-return ( f = h ) && false
-;
-}
-});f = f || new a.livequery( this.selector, this.context, e, d, c );f.stopped = false;f.run();return this;
-}, expire: function( e, d, c ) {
-var b = this;if ( a.isFunction( e ) ) {
-c = d, d = e, e = undefined
-;
-}a.each( a.livequery.queries, function( f, g ) {
-if ( b.selector == g.selector && b.context == g.context && ( ! e || e == g.type ) && ( ! d || d.$lqguid == g.fn.$lqguid ) && ( ! c || c.$lqguid == g.fn2.$lqguid ) && ! this.stopped ) {
-a.livequery.stop( g.id )
-;
-}
-});return this;
-}});a.livequery = function( b, d, f, e, c ) {
-this.selector = b;this.context = d;this.type = f;this.fn = e;this.fn2 = c;this.elements = [];this.stopped = false;this.id = a.livequery.queries.push( this ) - 1;e.$lqguid = e.$lqguid || a.livequery.guid++;if ( c ) {
-c.$lqguid = c.$lqguid || a.livequery.guid++
-;
-} return this;
-};a.livequery.prototype = {stop: function() {
-var b = this;if ( this.type ) {
-this.elements.unbind( this.type, this.fn );
-} else {
-if ( this.fn2 ) {
-this.elements.each( function( c, d ) {
-b.fn2.apply( d )
-;
-})
-;
-}
-} this.elements = [];this.stopped = true
-;
-}, run: function() {
-if ( this.stopped ) {
-return;
-} var d = this;var e = this.elements,
-c = a( this.selector, this.context ),
- b = c.not( e );this.elements = c;if ( this.type ) {
-b.bind( this.type, this.fn );if ( 0 < e.length ) {
-a.each( e, function( f, g ) {
-if ( 0 > a.inArray( g, c ) ) {
-a.event.remove( g, d.type, d.fn )
-;
-}
-});
-}
-} else {
-b.each( function() {
-d.fn.apply( this )
-;
-});if ( this.fn2 && 0 < e.length ) {
-a.each( e, function( f, g ) {
-if ( 0 > a.inArray( g, c ) ) {
-d.fn2.apply( g );
-}
-})
-;
-}
-}
-}};a.extend( a.livequery, {guid: 0, queries: [], queue: [], running: false, timeout: null, checkQueue: function() {
-if ( a.livequery.running && a.livequery.queue.length ) {
-var b = a.livequery.queue.length;while ( b-- ) {
-a.livequery.queries[a.livequery.queue.shift()].run();
-}
-}
-}, pause: function() {
-a.livequery.running = false
-;
-}, play: function() {
-a.livequery.running = true;a.livequery.run()
-;
-}, registerPlugin: function() {
-a.each( arguments, function( c, d ) {
-if ( ! a.fn[d]) {
-return;
-} var b = a.fn[d];a.fn[d] = function() {
-var e = b.apply( this, arguments );a.livequery.run();return e;
-};
-});
-}, run: function( b ) {
-if ( b != undefined ) {
-if ( 0 > a.inArray( b, a.livequery.queue ) ) {
-a.livequery.queue.push( b );
-}
-} else {
-a.each( a.livequery.queries, function( c ) {
-if ( 0 > a.inArray( c, a.livequery.queue ) ) {
-a.livequery.queue.push( c );
-}
-})
-;
-} if ( a.livequery.timeout ) {
-clearTimeout( a.livequery.timeout )
-;
-}a.livequery.timeout = setTimeout( a.livequery.checkQueue, 20 )
-;
-}, stop: function( b ) {
-if ( b != undefined ) {
-a.livequery.queries[b].stop()
-;
-} else {
-a.each( a.livequery.queries, function( c ) {
-a.livequery.queries[c].stop()
-;
-})
-;
-}
-}});a.livequery.registerPlugin( 'append', 'prepend', 'after', 'before', 'wrap', 'attr', 'removeAttr', 'addClass', 'removeClass', 'toggleClass', 'empty', 'remove', 'html' );a( function() {
-a.livequery.play();
-})
-;
-}( jQuery ) );
-
-// 2. jQuery.appendo
+// 1. jQuery.appendo
 /**
  * Appendo Plugin for jQuery v1.01
  * Creates interface to create duplicate clones of last table row (usually for forms)
@@ -268,7 +146,7 @@ del_row();
     return this;
 }() );
 
-// 4. custom
+// 3. custom
 var FontAwesomeIcons;
 
 ( function( $ ) {
@@ -479,12 +357,12 @@ jQuery( document ).ready( function( $ ) {
             stags.media();
 
             // update on children value change
-            $( '.child-clone-row-field', form ).on( 'change', '.stag-cinput', function() {
+            $( '.child-clone-rows', form ).on( 'change', '.stag-cinput', function() {
                 stags.cLoadVals();
             });
 
             // update on value change
-            $( '.stag-sc-form-table', form ).on( 'change', '.stag-input', function() {
+            $( '#stag-sc-form-table', form ).on( 'change', '.stag-input', function() {
                 stags.loadVals();
             });
 
@@ -525,9 +403,11 @@ jQuery( document ).ready( function( $ ) {
     };
 
     // run
-    $( '#stag-popup' ).livequery( function() {
-        stags.load();
-    });
+    $( 'body' ).on( 'DOMNodeInserted', '#stag-popup', function(e) {
+        if ($(e.target).attr('id') === 'stag-popup') {
+            stags.load();
+        }
+    } );
 });
 
 var __ = wp.i18n.__;
