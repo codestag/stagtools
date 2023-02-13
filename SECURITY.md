@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-You can report a vulenrability or security related issues at the below email address -
+You can report a vulnerability or security related issues at the below email address -
 support@codestag.com
 
 
