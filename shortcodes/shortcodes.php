@@ -449,9 +449,9 @@ if ( ! function_exists( 'stag_icon' ) ) :
 		}
 
 		if ( $args['url'] != '' ) {
-			$output .= '<a class="stag-icon-link" ' . $a_attrs . '><i aria-hidden="true" class="' . esc_textarea( $args['style'] ) . ' fa-' . esc_attr( $args['icon'] ) . '" ' . $attrs . '></i></a>';
+			$output .= '<a class="stag-icon-link" ' . $a_attrs . '><i aria-hidden="true" class="' . esc_attr( $args['style'] ) . ' fa-' . esc_attr( $args['icon'] ) . '" ' . $attrs . '></i></a>';
 		} else {
-			$output .= '<i aria-hidden="true" class="' . esc_textarea( $args['style'] ) . ' fa-' . esc_attr( $args['icon'] ) . '" ' . $attrs . '></i>';
+			$output .= '<i aria-hidden="true" class="' . esc_attr( $args['style'] ) . ' fa-' . esc_attr( $args['icon'] ) . '" ' . $attrs . '></i>';
 		}
 
 		return $output;
@@ -550,7 +550,7 @@ if ( ! function_exists( 'stag_map' ) ) :
 
 			var options = {
 				id: "<?php echo esc_js( $map_id ); ?>",
-				styles: <?php echo $map_styles[ $args['style'] ]; ?>,
+				styles: <?php echo esc_js( $map_styles[ $args['style'] ] ); ?>,
 				zoom: <?php echo esc_js( $args['zoom'] ); ?>,
 				mapTypeId: google.maps.MapTypeId.<?php echo esc_js( strtoupper( $args['type'] ) ); ?>,
 				center: {
