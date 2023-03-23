@@ -495,8 +495,8 @@ if ( ! function_exists( 'stag_map' ) ) :
 		$stag_options = get_option( 'stag_options' );
 		$api_key      = ( isset( $stag_options['google_api_key'] ) ) ? $stag_options['google_api_key'] : '';
 
-		if ( '' != $api_key ) {
-			wp_enqueue_script( 'google-maps', add_query_arg( 'key', $api_key, 'https://maps.googleapis.com/maps/api/js' ) );
+		if ( '' !== $api_key ) {
+			wp_enqueue_script( 'google-maps', add_query_arg( 'key', $api_key, 'https://maps.googleapis.com/maps/api/js' ), array(), STAGTOOLS_VERSION, true );
 		} else {
 			if ( current_user_can( 'edit_posts' ) ) :
 				$error_text = '<small class="stag-alert stag-alert--red">';
