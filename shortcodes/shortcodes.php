@@ -183,18 +183,21 @@ if ( ! function_exists( 'stag_button' ) ) :
 			'purchase_link'
 		);
 
-		$button_icon = '';
-		$class       = " stag-button--{$args['size']}";
-		$class      .= " stag-button--{$args['style']}";
-		$class      .= " stag-button--{$args['type']}";
+		$button_icon = esc_attr( $args['icon'] );
+		$size        = esc_attr( $args['size'] );
+		$style       = esc_attr( $args['style'] );
+		$type        = esc_attr( $args['type'] );
+		$class       = " stag-button--{$size}";
+		$class      .= " stag-button--{$style}";
+		$class      .= " stag-button--{$type}";
 
-		if ( ! empty( $args['icon'] ) ) {
+		if ( ! empty( $button_icon ) ) {
 			if ( 'before' === $args['icon_order'] ) {
-				$button_content  = stag_icon( array( 'icon' => $args['icon'] ) );
+				$button_content  = stag_icon( array( 'icon' => $button_icon ) );
 				$button_content .= do_shortcode( $content );
 			} else {
 				$button_content  = do_shortcode( $content );
-				$button_content .= stag_icon( array( 'icon' => $args['icon'] ) );
+				$button_content .= stag_icon( array( 'icon' => $button_icon ) );
 			}
 			$class .= " stag-icon--{$args['icon_order']}";
 		} else {
