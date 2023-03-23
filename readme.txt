@@ -92,6 +92,12 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 
 == Changelog ==
 
+= 2.3.7 - March 23, 2023 =
+* Fix: Escaping issues in Shortcodes
+* Fix: Replace deprecated function calls
+* Improvements: Support for WordPress 6.x.x
+* Improvements: Many code improvements
+
 = 2.3.6 - April 06, 2021 =
 * New: Update FontAwesome library to v5.15.3
 * Fix: Multiple shortcode output

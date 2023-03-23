@@ -1,9 +1,9 @@
 {
 	"name": "stagtools",
-	"version": "2.3.6",
+	"version": "2.3.7",
 	"description": "A powerful plugin to extend functionality to your WordPress themes offering shortcodes, font icons and useful widgets.",
-	"homepage": "https://github.com/mauryaratan/stagtools",
-	"bugs": "https://github.com/mauryaratan/stagtools/issues",
+	"homepage": "https://github.com/codestag/stagtools",
+	"bugs": "https://github.com/codestag/stagtools/issues",
 	"license": "GPLv2",
 	"repository": {
 		"type": "git",
