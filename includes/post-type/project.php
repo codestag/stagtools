@@ -40,7 +40,6 @@ $portfolio_args = array(
 	'capability_type'    => 'post',
 	'has_archive'        => true,
 	'hierarchical'       => false,
-	'menu_position'      => null,
 	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' ),
 );
 
