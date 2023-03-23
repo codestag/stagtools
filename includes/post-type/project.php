@@ -109,7 +109,8 @@ function stag_portfolio_custom_columns( $column ) {
 	switch ( $column ) {
 		case 'stag-portfolio-type':
 		case 'stag-portfolio-tag':
-			if ( ! $terms = get_the_terms( $post->ID, $column ) ) {
+			$terms = get_the_terms( $post->ID, $column );
+			if ( ! $terms ) {
 				echo '<span class="na">&mdash;</span>';
 			} else {
 				foreach ( $terms as $term ) {
@@ -130,8 +131,9 @@ add_action( 'manage_stag-portfolio_posts_custom_column', 'stag_portfolio_custom_
 function stag_portfolio_admin_css() {
 	global $pagenow;
 
-	if ( 'edit.php' != $pagenow && 'stag-portfolio' != get_post_type() )
+	if ( 'edit.php' !== $pagenow && 'stag-portfolio' !== get_post_type() ) {
 		return;
+	}
 
 	?>
 

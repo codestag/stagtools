@@ -29,7 +29,7 @@ function stagtools_get_settings() {
 }
 
 function stagtools_options_page() {
-	$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
+	$active_tab = $_GET['tab'] ?? 'general';
 
 	ob_start(); ?>
 

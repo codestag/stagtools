@@ -92,7 +92,8 @@ function stag_portfolio_custom_column( $column ) {
 	global $post;
 	switch ( $column ) {
 		case 'skill':
-			if ( ! $terms = get_the_terms( $post->ID, $column ) ) {
+			$terms = get_the_terms( $post->ID, $column );
+			if ( ! $terms ) {
 				echo '<span class="na">&mdash;</span>';
 			} else {
 				foreach ( $terms as $term ) {
