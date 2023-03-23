@@ -2,19 +2,19 @@
 
 class Stag_Shortcodes {
 
-	var	$conf;
-	var	$popup;
-	var	$params;
-	var	$shortcode;
-	var $cparams;
-	var $cshortcode;
-	var $popup_title;
-	var $no_preview;
-	var $has_child;
-	var	$output;
-	var	$errors;
+	public $conf;
+	public $popup;
+	public $params;
+	public $shortcode;
+	public $cparams;
+	public $cshortcode;
+	public $popup_title;
+	public $no_preview;
+	public $has_child;
+	public $output;
+	public $errors;
 
-	function __construct( $popup ) {
+	public function __construct( $popup ) {
 		if ( file_exists( dirname( __FILE__ ) . '/config.php' ) ) {
 			$this->conf = dirname( __FILE__ ) . '/config.php';
 			$this->popup = $popup;
@@ -25,19 +25,19 @@ class Stag_Shortcodes {
 		}
 	}
 
-	function append_output( $output ) {
+	public function append_output( $output ) {
 		$this->output = $this->output . "\n" . $output;
 	}
 
-	function reset_output( $output ) {
+	public function reset_output( $output ) {
 		$this->output = '';
 	}
 
-	function append_error( $error ) {
+	public function append_error( $error ) {
 		$this->errors = $this->errors . "\n" . $error;
 	}
 
-	function format_shortcode() {
+	public function format_shortcode() {
 		global $stagtools;
 		require_once( $this->conf );
 
