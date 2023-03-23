@@ -4,24 +4,30 @@
  *
  * @package StagTools
  */
-$portfolio_labels = apply_filters( 'stag_portfolio_labels', array(
-	'name'               => __( 'Portfolio', 'stag' ),
-	'singular_name'      => __( 'Portfolio', 'stag' ),
-	'add_new'            => __( 'Add New', 'stag' ),
-	'add_new_item'       => __( 'Add New Portfolio', 'stag' ),
-	'edit_item'          => __( 'Edit Portfolio', 'stag' ),
-	'new_item'           => __( 'New Portfolio', 'stag' ),
-	'view_item'          => __( 'View Portfolio', 'stag' ),
-	'search_items'       => __( 'Search Portfolio', 'stag' ),
-	'not_found'          => __( 'No Portfolios found', 'stag' ),
-	'not_found_in_trash' => __( 'No Portfolios found in trash', 'stag' ),
-	'parent_item_colon'  => '',
-) );
+$portfolio_labels = apply_filters(
+	'stag_portfolio_labels',
+	array(
+		'name'               => __( 'Portfolio', 'stag' ),
+		'singular_name'      => __( 'Portfolio', 'stag' ),
+		'add_new'            => __( 'Add New', 'stag' ),
+		'add_new_item'       => __( 'Add New Portfolio', 'stag' ),
+		'edit_item'          => __( 'Edit Portfolio', 'stag' ),
+		'new_item'           => __( 'New Portfolio', 'stag' ),
+		'view_item'          => __( 'View Portfolio', 'stag' ),
+		'search_items'       => __( 'Search Portfolio', 'stag' ),
+		'not_found'          => __( 'No Portfolios found', 'stag' ),
+		'not_found_in_trash' => __( 'No Portfolios found in trash', 'stag' ),
+		'parent_item_colon'  => '',
+	)
+);
 
-$stag_options    = get_option( 'stag_options' );
-$portfolio_slug = isset( $stag_options['portfolio_slug'] ) ? $stag_options['portfolio_slug'] : 'portfolio';
-$skills_slug    = isset( $stag_options['skills_slug'] ) ? $stag_options['skills_slug'] : 'skill';
-$rewrite         = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array( 'slug' => $portfolio_slug, 'with_front' => false );
+$stag_options   = get_option( 'stag_options' );
+$portfolio_slug = $stag_options['portfolio_slug'] ?? 'portfolio';
+$skills_slug    = $stag_options['skills_slug'] ?? 'skill';
+$rewrite        = defined( 'STAG_PORTFOLIO_DISABLE_REWRITE' ) && STAG_PORTFOLIO_DISABLE_REWRITE ? false : array(
+	'slug'       => $portfolio_slug,
+	'with_front' => false,
+);
 
 $portfolio_args = array(
 	'labels'            => $portfolio_labels,
@@ -39,17 +45,24 @@ $portfolio_args = array(
 
 register_post_type( 'portfolio', apply_filters( 'stag_portfolio_post_type_args', $portfolio_args ) );
 
-register_taxonomy( 'skill', 'portfolio', array(
-	'label'             => __( 'Skills', 'stag' ),
-	'singular_label'    => __( 'Skill', 'stag' ),
-	'public'            => true,
-	'hierarchical'      => true,
-	'show_ui'           => true,
-	'show_in_nav_menus' => true,
-	'args'              => array( 'orderby' => 'term_order' ),
-	'query_var'         => true,
-	'rewrite'           => array( 'slug' => $skills_slug, 'hierarchical' => true)
-) );
+register_taxonomy(
+	'skill',
+	'portfolio',
+	array(
+		'label'             => __( 'Skills', 'stag' ),
+		'singular_label'    => __( 'Skill', 'stag' ),
+		'public'            => true,
+		'hierarchical'      => true,
+		'show_ui'           => true,
+		'show_in_nav_menus' => true,
+		'args'              => array( 'orderby' => 'term_order' ),
+		'query_var'         => true,
+		'rewrite'           => array(
+			'slug'         => $skills_slug,
+			'hierarchical' => true,
+		),
+	)
+);
 
 /**
  * Modify Portfolio columns
@@ -62,7 +75,7 @@ function stag_portfolio_edit_columns( $columns ) {
 		'cb'    => '<input type="checkbox">',
 		'title' => __( 'Portfolio Title', 'stag' ),
 		'skill' => __( 'Skills', 'stag' ),
-		'date'  => __( 'Date', 'stag' )
+		'date'  => __( 'Date', 'stag' ),
 	);
 
 	return $columns;

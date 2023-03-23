@@ -19,7 +19,7 @@ $args = array(
 	'public'              => false,
 	'exclude_from_search' => true,
 	'publicly_queryable'  => false,
-	'rewrite'             => array('slug' => 'team'),
+	'rewrite'             => array( 'slug' => 'team' ),
 	'show_ui'             => true,
 	'show_in_rest'        => true,
 	'query_var'           => true,
@@ -45,12 +45,12 @@ function stag_team_edit_columns( $columns ) {
 
 function stag_team_custom_column( $columns ) {
 	global $post;
-	switch ( $columns ){
+	switch ( $columns ) {
 		case 'member_info':
-		echo get_post_meta( $post->ID, '_stag_team_info', true );
-		break;
+			echo get_post_meta( $post->ID, '_stag_team_info', true );
+			break;
 	}
 }
 
 add_filter( 'manage_edit-team_columns', 'stag_team_edit_columns' );
-add_action( 'manage_posts_custom_column',  'stag_team_custom_column' );
+add_action( 'manage_posts_custom_column', 'stag_team_custom_column' );

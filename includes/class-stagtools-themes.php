@@ -16,12 +16,15 @@ class StagTools_Themes {
 	public function admin_page() {
 		$themes = json_decode( $this->get_codestag_themes() );
 
-		$browse_all_link = add_query_arg( [
-			'utm_source'   => 'stagtools-plugin-page',
-			'utm_medium'   => 'stagtools',
-			'utm_campaign' => 'StagTools',
-			'utm_content'  => 'All themes',
-		], 'https://codestag.com/themes/' );
+		$browse_all_link = add_query_arg(
+			array(
+				'utm_source'   => 'stagtools-plugin-page',
+				'utm_medium'   => 'stagtools',
+				'utm_campaign' => 'StagTools',
+				'utm_content'  => 'All themes',
+			),
+			'https://codestag.com/themes/'
+		);
 
 		?>
 		<div class="wrap">
@@ -35,15 +38,18 @@ class StagTools_Themes {
 
 			<?php if ( is_array( $themes ) ) : ?>
 			<div id="tab_container" class="codestag-themes">
-			<?php
+				<?php
 				foreach ( $themes as $theme ) :
-					$link = add_query_arg( [
-						'utm_source'   => 'stagtools-plugin-page',
-						'utm_medium'   => 'stagtools',
-						'utm_campaign' => 'StagTools',
-						'utm_content'  => $theme->title,
-					], $theme->link );
-				?>
+					$link = add_query_arg(
+						array(
+							'utm_source'   => 'stagtools-plugin-page',
+							'utm_medium'   => 'stagtools',
+							'utm_campaign' => 'StagTools',
+							'utm_content'  => $theme->title,
+						),
+						$theme->link
+					);
+					?>
 
 				<div class="codestag-theme">
 					<?php if ( $theme->is_new ) : ?>
