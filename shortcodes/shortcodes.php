@@ -386,7 +386,7 @@ if ( ! function_exists( 'stag_image' ) ) :
 
 		$output = '<figure class="stag-section stag-image stag-image--' . esc_attr( $args['style'] ) . ' stag-image--' . esc_attr( $args['alignment'] ) . '">';
 
-		if ( $args['url'] != '' ) {
+		if ( '' !== $args['url'] ) {
 			$output .= '<a href="' . esc_url( $args['url'] ) . '"><img src="' . esc_url( $args['src'] ) . '" alt=""></a>';
 		} else {
 			$output .= '<img src="' . esc_url( $args['src'] ) . '" alt="">';
@@ -433,7 +433,7 @@ if ( ! function_exists( 'stag_icon' ) ) :
 			'stag_icon'
 		);
 
-		$new_window = ( $args['new_window'] == 'no' ) ? '_self' : '_blank';
+		$new_window = ( 'no' === $args['new_window'] ) ? '_self' : '_blank';
 
 		$size = esc_attr( $args['size'] );
 
@@ -448,7 +448,7 @@ if ( ! function_exists( 'stag_icon' ) ) :
 			$attrs .= ' style="font-size:' . $size . ';line-height:' . $size . '"';
 		}
 
-		if ( $args['url'] != '' ) {
+		if ( '' !== $args['url'] ) {
 			$output .= '<a class="stag-icon-link" ' . $a_attrs . '><i aria-hidden="true" class="' . esc_attr( $args['style'] ) . ' fa-' . esc_attr( $args['icon'] ) . '" ' . $attrs . '></i></a>';
 		} else {
 			$output .= '<i aria-hidden="true" class="' . esc_attr( $args['style'] ) . ' fa-' . esc_attr( $args['icon'] ) . '" ' . $attrs . '></i>';
@@ -501,8 +501,8 @@ if ( ! function_exists( 'stag_map' ) ) :
 			if ( current_user_can( 'edit_posts' ) ) :
 				$error_text = '<small class="stag-alert stag-alert--red">';
 
-				/* translators: %s is a link, do not remove/modify it. */
 				$error_text .= sprintf(
+					/* translators: %s: is a link, do not remove/modify it. */
 					esc_html__( 'To be able to use Google Maps, you first need to set an %s.', 'stag' ),
 					sprintf( '<a href="' . admin_url( 'options-general.php?page=stagtools#stagtools_settings_general[google_api_key]' ) . '">%1$s</a>', esc_html__( 'API key', 'stag' ) )
 				);
@@ -594,7 +594,7 @@ if ( ! function_exists( 'stag_social' ) ) :
 		$settings            = get_option( 'stag_options' );
 		$output              = '<p class="stag-social-icons ' . esc_attr( $args['style'] ) . '">';
 
-		if ( '' == $args['id'] || 'all' == $args['id'] ) {
+		if ( '' === $args['id'] || 'all' === $args['id'] ) {
 			$social_ids = $social_urls;
 		} else {
 			$social_ids = explode( ',', $args['id'] );
@@ -602,11 +602,11 @@ if ( ! function_exists( 'stag_social' ) ) :
 
 		foreach ( $social_ids as $slug ) {
 			$slug = trim( $slug );
-			if ( isset( $settings[ $slug ] ) && $settings[ $slug ] != '' ) {
+			if ( isset( $settings[ $slug ] ) && '' !== $settings[ $slug ] ) {
 				$class = $slug;
 
 				$fa_prefix = 'fab';
-				if ( 'mail' == $slug ) {
+				if ( 'mail' === $slug ) {
 					$class     = 'envelope';
 					$fa_prefix = 'far';
 				}
@@ -614,7 +614,7 @@ if ( ! function_exists( 'stag_social' ) ) :
 					$fa_prefix = 'fas';
 				}
 
-				if ( 'skype' == $slug ) {
+				if ( 'skype' === $slug ) {
 					$output .= "<a href='" . $settings[ $slug ] . "' target='_blank'><i class='fab fa-" . esc_attr( $class ) . "'></i></a>";
 				} else {
 					$output .= "<a href='" . esc_url( $settings[ $slug ] ) . "' target='_blank'><i class='$fa_prefix fa-" . esc_attr( $class ) . "'></i></a>";
