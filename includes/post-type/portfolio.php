@@ -102,7 +102,7 @@ function stag_portfolio_custom_column( $column ) {
 
 				echo implode( ', ', $termlist );
 			}
-		break;
+			break;
 	}
 }
-add_action( 'manage_posts_custom_column',  'stag_portfolio_custom_column' );
+add_action( 'manage_posts_custom_column', 'stag_portfolio_custom_column' );
