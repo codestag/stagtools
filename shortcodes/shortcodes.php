@@ -297,7 +297,7 @@ if ( ! function_exists( 'stag_tabs' ) ) :
 		$output = '';
 
 		if ( count( $tab_titles ) ) {
-			$output .= '<section id="stag-tabs-' . rand( 1, 100 ) . '" class="stag-section stag-tabs stag-tabs--' . esc_attr( $args['style'] ) . '"><div class="stag-tab-inner">';
+			$output .= '<section id="stag-tabs-' . wp_rand( 1, 100 ) . '" class="stag-section stag-tabs stag-tabs--' . esc_attr( $args['style'] ) . '"><div class="stag-tab-inner">';
 			$output .= '<ul class="stag-nav stag-clearfix">';
 
 			foreach ( $tab_titles as $tab ) {
@@ -490,7 +490,7 @@ if ( ! function_exists( 'stag_map' ) ) :
 			'subtle_grayscale' => '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]',
 		);
 
-		$map_id = 'map-' . rand( 0, 99 );
+		$map_id = 'map-' . wp_rand( 0, 99 );
 
 		$stag_options = get_option( 'stag_options' );
 		$api_key      = ( isset( $stag_options['google_api_key'] ) ) ? $stag_options['google_api_key'] : '';
