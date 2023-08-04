@@ -33,7 +33,9 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 				}
 
 				wp_localize_script(
-					'jquery', 'StagShortcodes', array(
+					'jquery',
+					'StagShortcodes',
+					array(
 						'plugin_folder'           => WP_PLUGIN_URL . '/shortcodes',
 						/** Check if Stag Custom Sidebars plugin is active {@link https://wordpress.org/plugins/stag-custom-sidebars/} */
 						'is_scs_active'           => $stagtools->is_scs_active(),
@@ -82,7 +84,26 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 
 		public function shortcode_popup_callback() {
 			require_once 'shortcode-class.php';
-			$shortcode = new Stag_Shortcodes( $_REQUEST['popup'] );
+			$popup_key = esc_html( wp_unslash( $_REQUEST['popup'] ) );
+
+			$available_tools = array(
+				'button',
+				'toggle',
+				'columns',
+				'tabs',
+				'dropcap',
+				'image',
+				'video',
+				'icon',
+				'map',
+				'widget_area',
+			);
+
+			if ( ! is_string( $popup_key ) || ! in_array( $popup_key, $available_tools ) ) {
+				exit( 'Invalid request!' );
+			}
+
+			$shortcode = new Stag_Shortcodes( $popup_key );
 
 			?>
 			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -109,7 +130,7 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 							<tr class="form-row">
 								<?php
 								if ( ! $shortcode->has_child ) :
-								?>
+									?>
 								<td class="label">&nbsp;</td><?php endif; ?>
 								<!-- <td class="field insert-field"> -->
 
@@ -133,9 +154,9 @@ if ( ! class_exists( 'StagShortcodes' ) ) {
 
 		</body>
 		</html>
-		<?php
+			<?php
 
-		die();
+			die();
 		}
 
 	}

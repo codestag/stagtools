@@ -341,6 +341,7 @@ $stag_shortcodes['icon'] = array(
 			'type'    => 'buttonset',
 			'hidden'  => true,
 			'label'   => __( 'Icon Style', 'stag' ),
+			'desc'    => __( 'Select from the styles', 'stag' ),
 			'options' => array(
 				'fas' => __( 'Solid', 'stag' ),
 				'far' => __( 'Regular', 'stag' ),
