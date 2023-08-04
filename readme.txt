@@ -5,8 +5,8 @@ Donate link: https://codest.ag/st-donate
 Tags: widget, icons, retina, shortcodes, themeforest, font icons, fontawesome, font awesome 5, sidebar, social, social media, maps, google maps, flickr, dribbble, custom post type, codestag, mauryaratan, twitter
 Requires at least: 5.0
 Requires PHP: 7.3
-Tested up to: 6.1.1
-Stable tag: 2.3.7
+Tested up to: 6.2.2
+Stable tag: 2.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,11 @@ Yes you can! Join me on [Github Repository](https://github.com/mauryaratan/stagt
 5. Navigate to Settings &rarr; StagTools to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 == Changelog ==
+
+= 2.3.8 - August 04, 2023 =
+* Fix: Escape Stag Shortcodes Popup in Editor
+* Fix: Undefined key at Shortcodes Popups
+* Improvements: Other minor code changes
 
 = 2.3.7 - March 23, 2023 =
 * Fix: Escaping issues in Shortcodes
